@@ -28,240 +28,373 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.groupBoxReadings = new System.Windows.Forms.GroupBox();
+            this.readingsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.moduleReading4 = new System.Windows.Forms.Label();
+            this.moduleReading3 = new System.Windows.Forms.Label();
+            this.moduleReading2 = new System.Windows.Forms.Label();
+            this.moduleIcon1 = new System.Windows.Forms.PictureBox();
+            this.moduleIcon2 = new System.Windows.Forms.PictureBox();
+            this.moduleIcon3 = new System.Windows.Forms.PictureBox();
+            this.moduleIcon4 = new System.Windows.Forms.PictureBox();
+            this.moduleReading1 = new System.Windows.Forms.Label();
+            this.groupBoxLimits = new System.Windows.Forms.GroupBox();
+            this.limitsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.maxLimitModule4 = new System.Windows.Forms.Label();
+            this.minLimitModule4 = new System.Windows.Forms.Label();
+            this.maxLimitModule3 = new System.Windows.Forms.Label();
+            this.minLimitModule3 = new System.Windows.Forms.Label();
+            this.maxLimitModule2 = new System.Windows.Forms.Label();
+            this.minLimitModule2 = new System.Windows.Forms.Label();
+            this.maxLimitModule1 = new System.Windows.Forms.Label();
+            this.minLimitModule1 = new System.Windows.Forms.Label();
+            this.alarmButton = new System.Windows.Forms.Button();
+            this.limitsButton = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.modulesButton = new System.Windows.Forms.Button();
+            this.panelMonitorNumberContainer = new System.Windows.Forms.Panel();
+            this.panelMonitorNumber = new System.Windows.Forms.Panel();
+            this.monitorNumber = new System.Windows.Forms.Label();
+            this.panelAlertMessageContainer = new System.Windows.Forms.Panel();
+            this.panelAlertMessage = new System.Windows.Forms.Panel();
+            this.alertMessage = new System.Windows.Forms.Label();
+            this.groupBoxReadings.SuspendLayout();
+            this.readingsTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon4)).BeginInit();
+            this.groupBoxLimits.SuspendLayout();
+            this.limitsTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.panelMonitorNumberContainer.SuspendLayout();
+            this.panelMonitorNumber.SuspendLayout();
+            this.panelAlertMessageContainer.SuspendLayout();
+            this.panelAlertMessage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxReadings
             // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.groupBox1.Location = new System.Drawing.Point(12, 152);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(669, 442);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Readings";
+            this.groupBoxReadings.Controls.Add(this.readingsTable);
+            this.groupBoxReadings.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.groupBoxReadings.Location = new System.Drawing.Point(12, 152);
+            this.groupBoxReadings.Name = "groupBoxReadings";
+            this.groupBoxReadings.Size = new System.Drawing.Size(669, 442);
+            this.groupBoxReadings.TabIndex = 0;
+            this.groupBoxReadings.TabStop = false;
+            this.groupBoxReadings.Text = "Readings";
             // 
-            // groupBox2
+            // readingsTable
             // 
-            this.groupBox2.AccessibleDescription = "";
-            this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.groupBox2.Location = new System.Drawing.Point(687, 152);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(515, 442);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Limits";
+            this.readingsTable.ColumnCount = 2;
+            this.readingsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.readingsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.readingsTable.Controls.Add(this.moduleReading4, 1, 3);
+            this.readingsTable.Controls.Add(this.moduleReading3, 1, 2);
+            this.readingsTable.Controls.Add(this.moduleReading2, 1, 1);
+            this.readingsTable.Controls.Add(this.moduleIcon1, 0, 0);
+            this.readingsTable.Controls.Add(this.moduleIcon2, 0, 1);
+            this.readingsTable.Controls.Add(this.moduleIcon3, 0, 2);
+            this.readingsTable.Controls.Add(this.moduleIcon4, 0, 3);
+            this.readingsTable.Controls.Add(this.moduleReading1, 1, 0);
+            this.readingsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.readingsTable.Location = new System.Drawing.Point(3, 22);
+            this.readingsTable.Name = "readingsTable";
+            this.readingsTable.RowCount = 4;
+            this.readingsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.readingsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.readingsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.readingsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.readingsTable.Size = new System.Drawing.Size(663, 417);
+            this.readingsTable.TabIndex = 0;
             // 
-            // button1
+            // moduleReading4
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1052, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 57);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Stop Alarm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.moduleReading4.AutoSize = true;
+            this.moduleReading4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleReading4.Location = new System.Drawing.Point(135, 312);
+            this.moduleReading4.Name = "moduleReading4";
+            this.moduleReading4.Size = new System.Drawing.Size(525, 105);
+            this.moduleReading4.TabIndex = 7;
             // 
-            // button2
+            // moduleReading3
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(871, 600);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 57);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Edit Limits";
-            this.button2.UseVisualStyleBackColor = false;
+            this.moduleReading3.AutoSize = true;
+            this.moduleReading3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleReading3.Location = new System.Drawing.Point(135, 208);
+            this.moduleReading3.Name = "moduleReading3";
+            this.moduleReading3.Size = new System.Drawing.Size(525, 104);
+            this.moduleReading3.TabIndex = 6;
             // 
-            // pictureBox1
+            // moduleReading2
             // 
-            this.pictureBox1.AccessibleDescription = "";
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 121);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.moduleReading2.AutoSize = true;
+            this.moduleReading2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleReading2.Location = new System.Drawing.Point(135, 104);
+            this.moduleReading2.Name = "moduleReading2";
+            this.moduleReading2.Size = new System.Drawing.Size(525, 104);
+            this.moduleReading2.TabIndex = 5;
             // 
-            // tableLayoutPanel1
+            // moduleIcon1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox5, 0, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(663, 417);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.moduleIcon1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleIcon1.Location = new System.Drawing.Point(3, 3);
+            this.moduleIcon1.Name = "moduleIcon1";
+            this.moduleIcon1.Size = new System.Drawing.Size(126, 98);
+            this.moduleIcon1.TabIndex = 0;
+            this.moduleIcon1.TabStop = false;
             // 
-            // tableLayoutPanel2
+            // moduleIcon2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(509, 417);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.moduleIcon2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleIcon2.Location = new System.Drawing.Point(3, 107);
+            this.moduleIcon2.Name = "moduleIcon2";
+            this.moduleIcon2.Size = new System.Drawing.Size(126, 98);
+            this.moduleIcon2.TabIndex = 1;
+            this.moduleIcon2.TabStop = false;
             // 
-            // pictureBox2
+            // moduleIcon3
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(126, 98);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.moduleIcon3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleIcon3.Location = new System.Drawing.Point(3, 211);
+            this.moduleIcon3.Name = "moduleIcon3";
+            this.moduleIcon3.Size = new System.Drawing.Size(126, 98);
+            this.moduleIcon3.TabIndex = 2;
+            this.moduleIcon3.TabStop = false;
             // 
-            // pictureBox3
+            // moduleIcon4
             // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 107);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(126, 98);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.moduleIcon4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleIcon4.Location = new System.Drawing.Point(3, 315);
+            this.moduleIcon4.Name = "moduleIcon4";
+            this.moduleIcon4.Size = new System.Drawing.Size(126, 99);
+            this.moduleIcon4.TabIndex = 3;
+            this.moduleIcon4.TabStop = false;
             // 
-            // pictureBox4
+            // moduleReading1
             // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 211);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(126, 98);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.moduleReading1.AutoSize = true;
+            this.moduleReading1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moduleReading1.Location = new System.Drawing.Point(135, 0);
+            this.moduleReading1.Name = "moduleReading1";
+            this.moduleReading1.Size = new System.Drawing.Size(525, 104);
+            this.moduleReading1.TabIndex = 4;
             // 
-            // pictureBox5
+            // groupBoxLimits
             // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 315);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(126, 99);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.groupBoxLimits.AccessibleDescription = "";
+            this.groupBoxLimits.Controls.Add(this.limitsTable);
+            this.groupBoxLimits.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.groupBoxLimits.Location = new System.Drawing.Point(687, 152);
+            this.groupBoxLimits.Name = "groupBoxLimits";
+            this.groupBoxLimits.Size = new System.Drawing.Size(515, 442);
+            this.groupBoxLimits.TabIndex = 1;
+            this.groupBoxLimits.TabStop = false;
+            this.groupBoxLimits.Text = "Limits";
             // 
-            // button3
+            // limitsTable
             // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(275, 600);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 57);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Select Modules";
-            this.button3.UseVisualStyleBackColor = false;
+            this.limitsTable.ColumnCount = 2;
+            this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.limitsTable.Controls.Add(this.maxLimitModule4, 1, 3);
+            this.limitsTable.Controls.Add(this.minLimitModule4, 0, 3);
+            this.limitsTable.Controls.Add(this.maxLimitModule3, 1, 2);
+            this.limitsTable.Controls.Add(this.minLimitModule3, 0, 2);
+            this.limitsTable.Controls.Add(this.maxLimitModule2, 1, 1);
+            this.limitsTable.Controls.Add(this.minLimitModule2, 0, 1);
+            this.limitsTable.Controls.Add(this.maxLimitModule1, 1, 0);
+            this.limitsTable.Controls.Add(this.minLimitModule1, 0, 0);
+            this.limitsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.limitsTable.Location = new System.Drawing.Point(3, 22);
+            this.limitsTable.Name = "limitsTable";
+            this.limitsTable.RowCount = 4;
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.Size = new System.Drawing.Size(509, 417);
+            this.limitsTable.TabIndex = 0;
             // 
-            // panel1
+            // maxLimitModule4
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(221, 77);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(2);
-            this.panel1.Size = new System.Drawing.Size(78, 57);
-            this.panel1.TabIndex = 7;
+            this.maxLimitModule4.AutoSize = true;
+            this.maxLimitModule4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maxLimitModule4.Location = new System.Drawing.Point(257, 312);
+            this.maxLimitModule4.Name = "maxLimitModule4";
+            this.maxLimitModule4.Size = new System.Drawing.Size(249, 105);
+            this.maxLimitModule4.TabIndex = 7;
             // 
-            // panel2
+            // minLimitModule4
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.ForeColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(305, 77);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(2);
-            this.panel2.Size = new System.Drawing.Size(741, 57);
-            this.panel2.TabIndex = 8;
+            this.minLimitModule4.AutoSize = true;
+            this.minLimitModule4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.minLimitModule4.Location = new System.Drawing.Point(3, 312);
+            this.minLimitModule4.Name = "minLimitModule4";
+            this.minLimitModule4.Size = new System.Drawing.Size(248, 105);
+            this.minLimitModule4.TabIndex = 6;
             // 
-            // label1
+            // maxLimitModule3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.maxLimitModule3.AutoSize = true;
+            this.maxLimitModule3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maxLimitModule3.Location = new System.Drawing.Point(257, 208);
+            this.maxLimitModule3.Name = "maxLimitModule3";
+            this.maxLimitModule3.Size = new System.Drawing.Size(249, 104);
+            this.maxLimitModule3.TabIndex = 5;
             // 
-            // label2
+            // minLimitModule3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 46);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.minLimitModule3.AutoSize = true;
+            this.minLimitModule3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.minLimitModule3.Location = new System.Drawing.Point(3, 208);
+            this.minLimitModule3.Name = "minLimitModule3";
+            this.minLimitModule3.Size = new System.Drawing.Size(248, 104);
+            this.minLimitModule3.TabIndex = 4;
             // 
-            // panel3
+            // maxLimitModule2
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(737, 53);
-            this.panel3.TabIndex = 2;
+            this.maxLimitModule2.AutoSize = true;
+            this.maxLimitModule2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maxLimitModule2.Location = new System.Drawing.Point(257, 104);
+            this.maxLimitModule2.Name = "maxLimitModule2";
+            this.maxLimitModule2.Size = new System.Drawing.Size(249, 104);
+            this.maxLimitModule2.TabIndex = 3;
             // 
-            // panel4
+            // minLimitModule2
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(2, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(74, 53);
-            this.panel4.TabIndex = 0;
+            this.minLimitModule2.AutoSize = true;
+            this.minLimitModule2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.minLimitModule2.Location = new System.Drawing.Point(3, 104);
+            this.minLimitModule2.Name = "minLimitModule2";
+            this.minLimitModule2.Size = new System.Drawing.Size(248, 104);
+            this.minLimitModule2.TabIndex = 2;
+            // 
+            // maxLimitModule1
+            // 
+            this.maxLimitModule1.AutoSize = true;
+            this.maxLimitModule1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maxLimitModule1.Location = new System.Drawing.Point(257, 0);
+            this.maxLimitModule1.Name = "maxLimitModule1";
+            this.maxLimitModule1.Size = new System.Drawing.Size(249, 104);
+            this.maxLimitModule1.TabIndex = 1;
+            // 
+            // minLimitModule1
+            // 
+            this.minLimitModule1.AutoSize = true;
+            this.minLimitModule1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.minLimitModule1.Location = new System.Drawing.Point(3, 0);
+            this.minLimitModule1.Name = "minLimitModule1";
+            this.minLimitModule1.Size = new System.Drawing.Size(248, 104);
+            this.minLimitModule1.TabIndex = 0;
+            // 
+            // alarmButton
+            // 
+            this.alarmButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.alarmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.alarmButton.ForeColor = System.Drawing.Color.White;
+            this.alarmButton.Location = new System.Drawing.Point(1052, 77);
+            this.alarmButton.Name = "alarmButton";
+            this.alarmButton.Size = new System.Drawing.Size(150, 57);
+            this.alarmButton.TabIndex = 3;
+            this.alarmButton.Text = "Stop Alarm";
+            this.alarmButton.UseVisualStyleBackColor = false;
+            // 
+            // limitsButton
+            // 
+            this.limitsButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.limitsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.limitsButton.ForeColor = System.Drawing.Color.White;
+            this.limitsButton.Location = new System.Drawing.Point(871, 600);
+            this.limitsButton.Name = "limitsButton";
+            this.limitsButton.Size = new System.Drawing.Size(150, 57);
+            this.limitsButton.TabIndex = 4;
+            this.limitsButton.Text = "Edit Limits";
+            this.limitsButton.UseVisualStyleBackColor = false;
+            // 
+            // logo
+            // 
+            this.logo.AccessibleDescription = "";
+            this.logo.BackColor = System.Drawing.Color.Transparent;
+            this.logo.Image = global::spital.Properties.Resources.eaht_logo;
+            this.logo.Location = new System.Drawing.Point(13, 13);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(201, 121);
+            this.logo.TabIndex = 5;
+            this.logo.TabStop = false;
+            // 
+            // modulesButton
+            // 
+            this.modulesButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.modulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modulesButton.ForeColor = System.Drawing.Color.White;
+            this.modulesButton.Location = new System.Drawing.Point(275, 600);
+            this.modulesButton.Name = "modulesButton";
+            this.modulesButton.Size = new System.Drawing.Size(150, 57);
+            this.modulesButton.TabIndex = 6;
+            this.modulesButton.Text = "Select Modules";
+            this.modulesButton.UseVisualStyleBackColor = false;
+            // 
+            // panelMonitorNumberContainer
+            // 
+            this.panelMonitorNumberContainer.BackColor = System.Drawing.Color.LightGray;
+            this.panelMonitorNumberContainer.Controls.Add(this.panelMonitorNumber);
+            this.panelMonitorNumberContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelMonitorNumberContainer.Location = new System.Drawing.Point(221, 77);
+            this.panelMonitorNumberContainer.Name = "panelMonitorNumberContainer";
+            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(2);
+            this.panelMonitorNumberContainer.Size = new System.Drawing.Size(78, 57);
+            this.panelMonitorNumberContainer.TabIndex = 7;
+            // 
+            // panelMonitorNumber
+            // 
+            this.panelMonitorNumber.BackColor = System.Drawing.Color.White;
+            this.panelMonitorNumber.Controls.Add(this.monitorNumber);
+            this.panelMonitorNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMonitorNumber.Location = new System.Drawing.Point(2, 2);
+            this.panelMonitorNumber.Name = "panelMonitorNumber";
+            this.panelMonitorNumber.Size = new System.Drawing.Size(74, 53);
+            this.panelMonitorNumber.TabIndex = 0;
+            // 
+            // monitorNumber
+            // 
+            this.monitorNumber.AutoSize = true;
+            this.monitorNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monitorNumber.Location = new System.Drawing.Point(0, 0);
+            this.monitorNumber.Name = "monitorNumber";
+            this.monitorNumber.Size = new System.Drawing.Size(0, 46);
+            this.monitorNumber.TabIndex = 0;
+            // 
+            // panelAlertMessageContainer
+            // 
+            this.panelAlertMessageContainer.BackColor = System.Drawing.Color.LightGray;
+            this.panelAlertMessageContainer.Controls.Add(this.panelAlertMessage);
+            this.panelAlertMessageContainer.ForeColor = System.Drawing.Color.Red;
+            this.panelAlertMessageContainer.Location = new System.Drawing.Point(305, 77);
+            this.panelAlertMessageContainer.Name = "panelAlertMessageContainer";
+            this.panelAlertMessageContainer.Padding = new System.Windows.Forms.Padding(2);
+            this.panelAlertMessageContainer.Size = new System.Drawing.Size(741, 57);
+            this.panelAlertMessageContainer.TabIndex = 8;
+            // 
+            // panelAlertMessage
+            // 
+            this.panelAlertMessage.BackColor = System.Drawing.Color.White;
+            this.panelAlertMessage.Controls.Add(this.alertMessage);
+            this.panelAlertMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAlertMessage.Location = new System.Drawing.Point(2, 2);
+            this.panelAlertMessage.Name = "panelAlertMessage";
+            this.panelAlertMessage.Size = new System.Drawing.Size(737, 53);
+            this.panelAlertMessage.TabIndex = 2;
+            // 
+            // alertMessage
+            // 
+            this.alertMessage.AutoSize = true;
+            this.alertMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.alertMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alertMessage.Location = new System.Drawing.Point(0, 0);
+            this.alertMessage.Name = "alertMessage";
+            this.alertMessage.Size = new System.Drawing.Size(0, 46);
+            this.alertMessage.TabIndex = 1;
             // 
             // Monitor
             // 
@@ -269,57 +402,72 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1214, 669);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.logo);
+            this.Controls.Add(this.panelAlertMessageContainer);
+            this.Controls.Add(this.panelMonitorNumberContainer);
+            this.Controls.Add(this.modulesButton);
+            this.Controls.Add(this.limitsButton);
+            this.Controls.Add(this.alarmButton);
+            this.Controls.Add(this.groupBoxLimits);
+            this.Controls.Add(this.groupBoxReadings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Monitor";
             this.Text = "Monitor";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.groupBoxReadings.ResumeLayout(false);
+            this.readingsTable.ResumeLayout(false);
+            this.readingsTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon4)).EndInit();
+            this.groupBoxLimits.ResumeLayout(false);
+            this.limitsTable.ResumeLayout(false);
+            this.limitsTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.panelMonitorNumberContainer.ResumeLayout(false);
+            this.panelMonitorNumber.ResumeLayout(false);
+            this.panelMonitorNumber.PerformLayout();
+            this.panelAlertMessageContainer.ResumeLayout(false);
+            this.panelAlertMessage.ResumeLayout(false);
+            this.panelAlertMessage.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.GroupBox groupBoxReadings;
+        private System.Windows.Forms.GroupBox groupBoxLimits;
+        private System.Windows.Forms.Button alarmButton;
+        private System.Windows.Forms.Button limitsButton;
+        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.TableLayoutPanel readingsTable;
+        private System.Windows.Forms.TableLayoutPanel limitsTable;
+        private System.Windows.Forms.PictureBox moduleIcon1;
+        private System.Windows.Forms.PictureBox moduleIcon2;
+        private System.Windows.Forms.PictureBox moduleIcon3;
+        private System.Windows.Forms.PictureBox moduleIcon4;
+        private System.Windows.Forms.Button modulesButton;
+        private System.Windows.Forms.Panel panelMonitorNumberContainer;
+        private System.Windows.Forms.Panel panelAlertMessageContainer;
+        private System.Windows.Forms.Label monitorNumber;
+        private System.Windows.Forms.Label alertMessage;
+        private System.Windows.Forms.Panel panelAlertMessage;
+        private System.Windows.Forms.Panel panelMonitorNumber;
+        private System.Windows.Forms.Label moduleReading4;
+        private System.Windows.Forms.Label moduleReading3;
+        private System.Windows.Forms.Label moduleReading2;
+        private System.Windows.Forms.Label moduleReading1;
+        private System.Windows.Forms.Label maxLimitModule4;
+        private System.Windows.Forms.Label minLimitModule4;
+        private System.Windows.Forms.Label maxLimitModule3;
+        private System.Windows.Forms.Label minLimitModule3;
+        private System.Windows.Forms.Label maxLimitModule2;
+        private System.Windows.Forms.Label minLimitModule2;
+        private System.Windows.Forms.Label maxLimitModule1;
+        private System.Windows.Forms.Label minLimitModule1;
     }
 }
 

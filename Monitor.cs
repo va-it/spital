@@ -32,6 +32,8 @@ namespace spital
         private void limitsButton_Click(object sender, EventArgs e)
         {
             // Code to edit the modules limits
+            Form limits = new Limits();
+            limits.Show();
         }
     }
 }

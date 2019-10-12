@@ -70,7 +70,7 @@
             this.modulesButton.BackColor = System.Drawing.Color.DodgerBlue;
             this.modulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modulesButton.ForeColor = System.Drawing.Color.White;
-            this.modulesButton.Location = new System.Drawing.Point(691, 367);
+            this.modulesButton.Location = new System.Drawing.Point(756, 367);
             this.modulesButton.Name = "modulesButton";
             this.modulesButton.Size = new System.Drawing.Size(150, 57);
             this.modulesButton.TabIndex = 8;
@@ -86,7 +86,7 @@
             this.ModulesBox.Controls.Add(this.panelModule1);
             this.ModulesBox.Location = new System.Drawing.Point(13, 13);
             this.ModulesBox.Name = "ModulesBox";
-            this.ModulesBox.Size = new System.Drawing.Size(512, 348);
+            this.ModulesBox.Size = new System.Drawing.Size(540, 345);
             this.ModulesBox.TabIndex = 9;
             this.ModulesBox.TabStop = false;
             this.ModulesBox.Text = "Modules";
@@ -97,9 +97,9 @@
             this.minBox.Controls.Add(this.minLimit3);
             this.minBox.Controls.Add(this.minLimit2);
             this.minBox.Controls.Add(this.minLimit1);
-            this.minBox.Location = new System.Drawing.Point(531, 13);
+            this.minBox.Location = new System.Drawing.Point(559, 13);
             this.minBox.Name = "minBox";
-            this.minBox.Size = new System.Drawing.Size(150, 348);
+            this.minBox.Size = new System.Drawing.Size(170, 345);
             this.minBox.TabIndex = 10;
             this.minBox.TabStop = false;
             this.minBox.Text = "MIN";
@@ -110,9 +110,9 @@
             this.maxBox.Controls.Add(this.maxLimit3);
             this.maxBox.Controls.Add(this.maxLimit1);
             this.maxBox.Controls.Add(this.maxLimit2);
-            this.maxBox.Location = new System.Drawing.Point(691, 13);
+            this.maxBox.Location = new System.Drawing.Point(735, 13);
             this.maxBox.Name = "maxBox";
-            this.maxBox.Size = new System.Drawing.Size(150, 348);
+            this.maxBox.Size = new System.Drawing.Size(170, 345);
             this.maxBox.TabIndex = 11;
             this.maxBox.TabStop = false;
             this.maxBox.Text = "MAX";
@@ -120,7 +120,7 @@
             // minLimit1
             // 
             this.minLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit1.Location = new System.Drawing.Point(6, 30);
+            this.minLimit1.Location = new System.Drawing.Point(17, 30);
             this.minLimit1.Name = "minLimit1";
             this.minLimit1.Size = new System.Drawing.Size(138, 53);
             this.minLimit1.TabIndex = 0;
@@ -128,7 +128,7 @@
             // maxLimit2
             // 
             this.maxLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit2.Location = new System.Drawing.Point(6, 110);
+            this.maxLimit2.Location = new System.Drawing.Point(18, 110);
             this.maxLimit2.Name = "maxLimit2";
             this.maxLimit2.Size = new System.Drawing.Size(138, 53);
             this.maxLimit2.TabIndex = 1;
@@ -136,7 +136,7 @@
             // minLimit2
             // 
             this.minLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit2.Location = new System.Drawing.Point(6, 110);
+            this.minLimit2.Location = new System.Drawing.Point(17, 110);
             this.minLimit2.Name = "minLimit2";
             this.minLimit2.Size = new System.Drawing.Size(138, 53);
             this.minLimit2.TabIndex = 2;
@@ -144,7 +144,7 @@
             // maxLimit1
             // 
             this.maxLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit1.Location = new System.Drawing.Point(6, 30);
+            this.maxLimit1.Location = new System.Drawing.Point(18, 30);
             this.maxLimit1.Name = "maxLimit1";
             this.maxLimit1.Size = new System.Drawing.Size(138, 53);
             this.maxLimit1.TabIndex = 3;
@@ -152,7 +152,7 @@
             // maxLimit3
             // 
             this.maxLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit3.Location = new System.Drawing.Point(6, 189);
+            this.maxLimit3.Location = new System.Drawing.Point(18, 189);
             this.maxLimit3.Name = "maxLimit3";
             this.maxLimit3.Size = new System.Drawing.Size(138, 53);
             this.maxLimit3.TabIndex = 4;
@@ -160,7 +160,7 @@
             // minLimit3
             // 
             this.minLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit3.Location = new System.Drawing.Point(8, 189);
+            this.minLimit3.Location = new System.Drawing.Point(17, 189);
             this.minLimit3.Name = "minLimit3";
             this.minLimit3.Size = new System.Drawing.Size(136, 53);
             this.minLimit3.TabIndex = 5;
@@ -168,7 +168,7 @@
             // minLimit4
             // 
             this.minLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit4.Location = new System.Drawing.Point(6, 267);
+            this.minLimit4.Location = new System.Drawing.Point(17, 267);
             this.minLimit4.Name = "minLimit4";
             this.minLimit4.Size = new System.Drawing.Size(138, 53);
             this.minLimit4.TabIndex = 6;
@@ -176,7 +176,7 @@
             // maxLimit4
             // 
             this.maxLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit4.Location = new System.Drawing.Point(6, 267);
+            this.maxLimit4.Location = new System.Drawing.Point(18, 267);
             this.maxLimit4.Name = "maxLimit4";
             this.maxLimit4.Size = new System.Drawing.Size(138, 53);
             this.maxLimit4.TabIndex = 7;
@@ -185,7 +185,7 @@
             // 
             this.panelModule1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule1.Controls.Add(this.labelModule1);
-            this.panelModule1.Location = new System.Drawing.Point(7, 30);
+            this.panelModule1.Location = new System.Drawing.Point(22, 30);
             this.panelModule1.Name = "panelModule1";
             this.panelModule1.Size = new System.Drawing.Size(499, 53);
             this.panelModule1.TabIndex = 0;
@@ -194,7 +194,7 @@
             // 
             this.panelModule2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule2.Controls.Add(this.labelModule2);
-            this.panelModule2.Location = new System.Drawing.Point(7, 110);
+            this.panelModule2.Location = new System.Drawing.Point(22, 110);
             this.panelModule2.Name = "panelModule2";
             this.panelModule2.Size = new System.Drawing.Size(499, 53);
             this.panelModule2.TabIndex = 1;
@@ -203,7 +203,7 @@
             // 
             this.panelModule3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule3.Controls.Add(this.labelModule3);
-            this.panelModule3.Location = new System.Drawing.Point(7, 189);
+            this.panelModule3.Location = new System.Drawing.Point(22, 189);
             this.panelModule3.Name = "panelModule3";
             this.panelModule3.Size = new System.Drawing.Size(499, 53);
             this.panelModule3.TabIndex = 1;
@@ -212,7 +212,7 @@
             // 
             this.panelModule4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule4.Controls.Add(this.labelModule4);
-            this.panelModule4.Location = new System.Drawing.Point(6, 267);
+            this.panelModule4.Location = new System.Drawing.Point(21, 267);
             this.panelModule4.Name = "panelModule4";
             this.panelModule4.Size = new System.Drawing.Size(500, 53);
             this.panelModule4.TabIndex = 1;
@@ -259,7 +259,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(853, 429);
+            this.ClientSize = new System.Drawing.Size(918, 429);
             this.Controls.Add(this.maxBox);
             this.Controls.Add(this.minBox);
             this.Controls.Add(this.ModulesBox);

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Monitor : Form
+    public partial class Limits : Form
     {
-        public Monitor()
+        public Limits()
         {
             InitializeComponent();
+        }
+
+        private void modulesButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

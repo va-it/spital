@@ -20,6 +20,7 @@ namespace spital
         private void alarmButton_Click(object sender, EventArgs e)
         {
             // Code to stop the alarm
+            MessageBox.Show("Alarm has been stopped", "Alarm stopped");
         }
 
         private void modulesButton_Click(object sender, EventArgs e)

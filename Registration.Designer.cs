@@ -40,15 +40,15 @@
             this.panel_line_confirmPassword = new System.Windows.Forms.Panel();
             this.label_registration = new System.Windows.Forms.Label();
             this.label_copyRight = new System.Windows.Forms.Label();
+            this.panel_registrationUnderline = new System.Windows.Forms.Panel();
+            this.pictureBox_confirmPassword = new System.Windows.Forms.PictureBox();
             this.pictureBox_password = new System.Windows.Forms.PictureBox();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
             this.pictureBox_leftDock = new System.Windows.Forms.PictureBox();
-            this.pictureBox_confirmPassword = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_leftDock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // label_username
@@ -175,6 +175,24 @@
             this.label_copyRight.TabIndex = 0;
             this.label_copyRight.Text = "© 2019 East Anglia Hospital Trust";
             // 
+            // panel_registrationUnderline
+            // 
+            this.panel_registrationUnderline.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel_registrationUnderline.Location = new System.Drawing.Point(388, 130);
+            this.panel_registrationUnderline.Name = "panel_registrationUnderline";
+            this.panel_registrationUnderline.Size = new System.Drawing.Size(218, 1);
+            this.panel_registrationUnderline.TabIndex = 17;
+            // 
+            // pictureBox_confirmPassword
+            // 
+            this.pictureBox_confirmPassword.Image = global::spital.Properties.Resources.icon_Password;
+            this.pictureBox_confirmPassword.Location = new System.Drawing.Point(388, 257);
+            this.pictureBox_confirmPassword.Name = "pictureBox_confirmPassword";
+            this.pictureBox_confirmPassword.Size = new System.Drawing.Size(30, 34);
+            this.pictureBox_confirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_confirmPassword.TabIndex = 16;
+            this.pictureBox_confirmPassword.TabStop = false;
+            // 
             // pictureBox_password
             // 
             this.pictureBox_password.Image = global::spital.Properties.Resources.icon_Password;
@@ -205,31 +223,13 @@
             this.pictureBox_leftDock.TabIndex = 13;
             this.pictureBox_leftDock.TabStop = false;
             // 
-            // pictureBox_confirmPassword
-            // 
-            this.pictureBox_confirmPassword.Image = global::spital.Properties.Resources.icon_Password;
-            this.pictureBox_confirmPassword.Location = new System.Drawing.Point(388, 257);
-            this.pictureBox_confirmPassword.Name = "pictureBox_confirmPassword";
-            this.pictureBox_confirmPassword.Size = new System.Drawing.Size(30, 34);
-            this.pictureBox_confirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_confirmPassword.TabIndex = 16;
-            this.pictureBox_confirmPassword.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Location = new System.Drawing.Point(388, 130);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 1);
-            this.panel1.TabIndex = 17;
-            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(684, 461);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_registrationUnderline);
             this.Controls.Add(this.pictureBox_confirmPassword);
             this.Controls.Add(this.pictureBox_password);
             this.Controls.Add(this.pictureBox_user);
@@ -246,15 +246,15 @@
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.label_username);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_leftDock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,6 +277,6 @@
         private System.Windows.Forms.PictureBox pictureBox_user;
         private System.Windows.Forms.PictureBox pictureBox_password;
         private System.Windows.Forms.PictureBox pictureBox_confirmPassword;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_registrationUnderline;
     }
 }

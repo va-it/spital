@@ -63,16 +63,6 @@ namespace spital.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_eaht {
-            get {
-                object obj = ResourceManager.GetObject("bg-eaht", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon_Password {
             get {
                 object obj = ResourceManager.GetObject("icon_Password", resourceCulture);
@@ -96,16 +86,6 @@ namespace spital.Properties {
         internal static System.Drawing.Bitmap leftDock {
             get {
                 object obj = ResourceManager.GetObject("leftDock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Logo_EAHT {
-            get {
-                object obj = ResourceManager.GetObject("Logo_EAHT", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

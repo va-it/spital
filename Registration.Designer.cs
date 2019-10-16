@@ -55,6 +55,7 @@
             // 
             this.label_username.AutoSize = true;
             this.label_username.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_username.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label_username.Location = new System.Drawing.Point(424, 159);
             this.label_username.Name = "label_username";
             this.label_username.Size = new System.Drawing.Size(62, 15);
@@ -75,6 +76,7 @@
             // 
             this.label_password.AutoSize = true;
             this.label_password.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.label_password.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label_password.Location = new System.Drawing.Point(424, 207);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(61, 15);
@@ -96,6 +98,7 @@
             // 
             this.label_confirmPassword.AutoSize = true;
             this.label_confirmPassword.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.label_confirmPassword.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label_confirmPassword.Location = new System.Drawing.Point(424, 255);
             this.label_confirmPassword.Name = "label_confirmPassword";
             this.label_confirmPassword.Size = new System.Drawing.Size(107, 15);
@@ -132,7 +135,7 @@
             // 
             // panel_line_username
             // 
-            this.panel_line_username.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel_line_username.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel_line_username.Location = new System.Drawing.Point(426, 194);
             this.panel_line_username.Name = "panel_line_username";
             this.panel_line_username.Size = new System.Drawing.Size(180, 1);
@@ -140,7 +143,7 @@
             // 
             // panel_line_password
             // 
-            this.panel_line_password.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel_line_password.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel_line_password.Location = new System.Drawing.Point(427, 242);
             this.panel_line_password.Name = "panel_line_password";
             this.panel_line_password.Size = new System.Drawing.Size(180, 1);
@@ -148,7 +151,7 @@
             // 
             // panel_line_confirmPassword
             // 
-            this.panel_line_confirmPassword.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel_line_confirmPassword.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel_line_confirmPassword.Location = new System.Drawing.Point(426, 290);
             this.panel_line_confirmPassword.Name = "panel_line_confirmPassword";
             this.panel_line_confirmPassword.Size = new System.Drawing.Size(180, 1);
@@ -159,6 +162,7 @@
             this.label_registration.AutoSize = true;
             this.label_registration.BackColor = System.Drawing.Color.Transparent;
             this.label_registration.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_registration.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label_registration.Location = new System.Drawing.Point(383, 102);
             this.label_registration.Name = "label_registration";
             this.label_registration.Size = new System.Drawing.Size(114, 26);
@@ -177,7 +181,7 @@
             // 
             // panel_registrationUnderline
             // 
-            this.panel_registrationUnderline.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel_registrationUnderline.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel_registrationUnderline.Location = new System.Drawing.Point(388, 130);
             this.panel_registrationUnderline.Name = "panel_registrationUnderline";
             this.panel_registrationUnderline.Size = new System.Drawing.Size(218, 1);

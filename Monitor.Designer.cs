@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monitor));
             this.groupBoxReadings = new System.Windows.Forms.GroupBox();
             this.readingsTable = new System.Windows.Forms.TableLayoutPanel();
             this.moduleReading4 = new System.Windows.Forms.Label();
@@ -409,12 +410,12 @@
             // logo
             // 
             this.logo.AccessibleDescription = "";
-            this.logo.BackColor = System.Drawing.Color.White;
-            this.logo.Image = global::spital.Properties.Resources.eaht_logo;
-            this.logo.Location = new System.Drawing.Point(0, 0);
+            this.logo.BackColor = System.Drawing.Color.Transparent;
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(12, 3);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(278, 133);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo.Size = new System.Drawing.Size(255, 125);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 5;
             this.logo.TabStop = false;
             // 
@@ -443,7 +444,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1228, 646);
+            this.ClientSize = new System.Drawing.Size(1228, 644);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.modulesButton);

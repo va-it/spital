@@ -65,7 +65,7 @@ namespace spital.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap eaht_logo {
             get {
-                object obj = ResourceManager.GetObject("eaht-logo", resourceCulture);
+                object obj = ResourceManager.GetObject("eaht_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

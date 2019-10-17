@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.label_username = new System.Windows.Forms.Label();
             this.textBox_username = new System.Windows.Forms.TextBox();
             this.label_password = new System.Windows.Forms.Label();
@@ -44,10 +45,16 @@
             this.pictureBox_confirmPassword = new System.Windows.Forms.PictureBox();
             this.pictureBox_password = new System.Windows.Forms.PictureBox();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
+            this.panel_header = new System.Windows.Forms.Panel();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
+            this.panel_footer = new System.Windows.Forms.Panel();
             this.pictureBox_leftDock = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).BeginInit();
+            this.panel_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
+            this.panel_footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_leftDock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,8 +62,8 @@
             // 
             this.label_username.AutoSize = true;
             this.label_username.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_username.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_username.Location = new System.Drawing.Point(424, 159);
+            this.label_username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_username.Location = new System.Drawing.Point(425, 180);
             this.label_username.Name = "label_username";
             this.label_username.Size = new System.Drawing.Size(62, 15);
             this.label_username.TabIndex = 3;
@@ -67,7 +74,7 @@
             this.textBox_username.BackColor = System.Drawing.SystemColors.Control;
             this.textBox_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_username.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_username.Location = new System.Drawing.Point(431, 177);
+            this.textBox_username.Location = new System.Drawing.Point(432, 198);
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(175, 16);
             this.textBox_username.TabIndex = 4;
@@ -76,8 +83,8 @@
             // 
             this.label_password.AutoSize = true;
             this.label_password.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_password.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_password.Location = new System.Drawing.Point(424, 207);
+            this.label_password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_password.Location = new System.Drawing.Point(425, 228);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(61, 15);
             this.label_password.TabIndex = 5;
@@ -88,7 +95,7 @@
             this.textBox_password.BackColor = System.Drawing.SystemColors.Control;
             this.textBox_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_password.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_password.Location = new System.Drawing.Point(431, 224);
+            this.textBox_password.Location = new System.Drawing.Point(432, 245);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(175, 16);
             this.textBox_password.TabIndex = 6;
@@ -98,8 +105,8 @@
             // 
             this.label_confirmPassword.AutoSize = true;
             this.label_confirmPassword.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_confirmPassword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_confirmPassword.Location = new System.Drawing.Point(424, 255);
+            this.label_confirmPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_confirmPassword.Location = new System.Drawing.Point(425, 276);
             this.label_confirmPassword.Name = "label_confirmPassword";
             this.label_confirmPassword.Size = new System.Drawing.Size(107, 15);
             this.label_confirmPassword.TabIndex = 7;
@@ -111,7 +118,7 @@
             this.textBox_ConfirmPassword.BackColor = System.Drawing.SystemColors.Control;
             this.textBox_ConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_ConfirmPassword.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.textBox_ConfirmPassword.Location = new System.Drawing.Point(431, 273);
+            this.textBox_ConfirmPassword.Location = new System.Drawing.Point(432, 294);
             this.textBox_ConfirmPassword.Name = "textBox_ConfirmPassword";
             this.textBox_ConfirmPassword.Size = new System.Drawing.Size(175, 16);
             this.textBox_ConfirmPassword.TabIndex = 8;
@@ -121,12 +128,12 @@
             // button_Register
             // 
             this.button_Register.AutoSize = true;
-            this.button_Register.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_Register.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.button_Register.FlatAppearance.BorderSize = 0;
             this.button_Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Register.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Register.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button_Register.Location = new System.Drawing.Point(469, 318);
+            this.button_Register.Location = new System.Drawing.Point(470, 339);
             this.button_Register.Name = "button_Register";
             this.button_Register.Size = new System.Drawing.Size(75, 29);
             this.button_Register.TabIndex = 9;
@@ -136,7 +143,7 @@
             // panel_line_username
             // 
             this.panel_line_username.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_line_username.Location = new System.Drawing.Point(426, 194);
+            this.panel_line_username.Location = new System.Drawing.Point(427, 215);
             this.panel_line_username.Name = "panel_line_username";
             this.panel_line_username.Size = new System.Drawing.Size(180, 1);
             this.panel_line_username.TabIndex = 10;
@@ -144,7 +151,7 @@
             // panel_line_password
             // 
             this.panel_line_password.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_line_password.Location = new System.Drawing.Point(427, 242);
+            this.panel_line_password.Location = new System.Drawing.Point(428, 263);
             this.panel_line_password.Name = "panel_line_password";
             this.panel_line_password.Size = new System.Drawing.Size(180, 1);
             this.panel_line_password.TabIndex = 11;
@@ -152,7 +159,7 @@
             // panel_line_confirmPassword
             // 
             this.panel_line_confirmPassword.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_line_confirmPassword.Location = new System.Drawing.Point(426, 290);
+            this.panel_line_confirmPassword.Location = new System.Drawing.Point(427, 311);
             this.panel_line_confirmPassword.Name = "panel_line_confirmPassword";
             this.panel_line_confirmPassword.Size = new System.Drawing.Size(180, 1);
             this.panel_line_confirmPassword.TabIndex = 11;
@@ -162,8 +169,8 @@
             this.label_registration.AutoSize = true;
             this.label_registration.BackColor = System.Drawing.Color.Transparent;
             this.label_registration.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_registration.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label_registration.Location = new System.Drawing.Point(383, 102);
+            this.label_registration.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_registration.Location = new System.Drawing.Point(384, 123);
             this.label_registration.Name = "label_registration";
             this.label_registration.Size = new System.Drawing.Size(114, 26);
             this.label_registration.TabIndex = 12;
@@ -173,7 +180,7 @@
             // 
             this.label_copyRight.AutoSize = true;
             this.label_copyRight.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_copyRight.Location = new System.Drawing.Point(414, 426);
+            this.label_copyRight.Location = new System.Drawing.Point(224, 17);
             this.label_copyRight.Name = "label_copyRight";
             this.label_copyRight.Size = new System.Drawing.Size(193, 15);
             this.label_copyRight.TabIndex = 0;
@@ -182,7 +189,7 @@
             // panel_registrationUnderline
             // 
             this.panel_registrationUnderline.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_registrationUnderline.Location = new System.Drawing.Point(388, 130);
+            this.panel_registrationUnderline.Location = new System.Drawing.Point(389, 151);
             this.panel_registrationUnderline.Name = "panel_registrationUnderline";
             this.panel_registrationUnderline.Size = new System.Drawing.Size(218, 1);
             this.panel_registrationUnderline.TabIndex = 17;
@@ -190,7 +197,7 @@
             // pictureBox_confirmPassword
             // 
             this.pictureBox_confirmPassword.Image = global::spital.Properties.Resources.icon_Password;
-            this.pictureBox_confirmPassword.Location = new System.Drawing.Point(388, 257);
+            this.pictureBox_confirmPassword.Location = new System.Drawing.Point(389, 278);
             this.pictureBox_confirmPassword.Name = "pictureBox_confirmPassword";
             this.pictureBox_confirmPassword.Size = new System.Drawing.Size(30, 34);
             this.pictureBox_confirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -200,7 +207,7 @@
             // pictureBox_password
             // 
             this.pictureBox_password.Image = global::spital.Properties.Resources.icon_Password;
-            this.pictureBox_password.Location = new System.Drawing.Point(388, 209);
+            this.pictureBox_password.Location = new System.Drawing.Point(389, 230);
             this.pictureBox_password.Name = "pictureBox_password";
             this.pictureBox_password.Size = new System.Drawing.Size(30, 34);
             this.pictureBox_password.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,21 +217,50 @@
             // pictureBox_user
             // 
             this.pictureBox_user.Image = global::spital.Properties.Resources.icon_User;
-            this.pictureBox_user.Location = new System.Drawing.Point(388, 161);
+            this.pictureBox_user.Location = new System.Drawing.Point(389, 182);
             this.pictureBox_user.Name = "pictureBox_user";
             this.pictureBox_user.Size = new System.Drawing.Size(30, 32);
             this.pictureBox_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_user.TabIndex = 14;
             this.pictureBox_user.TabStop = false;
             // 
+            // panel_header
+            // 
+            this.panel_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel_header.Controls.Add(this.pictureBox_logo);
+            this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_header.Location = new System.Drawing.Point(0, 0);
+            this.panel_header.Name = "panel_header";
+            this.panel_header.Size = new System.Drawing.Size(684, 90);
+            this.panel_header.TabIndex = 18;
+            // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.Image = global::spital.Properties.Resources.Logo_EAHT;
+            this.pictureBox_logo.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(233, 63);
+            this.pictureBox_logo.TabIndex = 1;
+            this.pictureBox_logo.TabStop = false;
+            // 
+            // panel_footer
+            // 
+            this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel_footer.Controls.Add(this.label_copyRight);
+            this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_footer.Location = new System.Drawing.Point(0, 416);
+            this.panel_footer.Name = "panel_footer";
+            this.panel_footer.Size = new System.Drawing.Size(684, 45);
+            this.panel_footer.TabIndex = 19;
+            // 
             // pictureBox_leftDock
             // 
             this.pictureBox_leftDock.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox_leftDock.Image = global::spital.Properties.Resources.leftDock;
-            this.pictureBox_leftDock.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_leftDock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_leftDock.Image")));
+            this.pictureBox_leftDock.Location = new System.Drawing.Point(0, 90);
             this.pictureBox_leftDock.Name = "pictureBox_leftDock";
-            this.pictureBox_leftDock.Size = new System.Drawing.Size(335, 461);
-            this.pictureBox_leftDock.TabIndex = 13;
+            this.pictureBox_leftDock.Size = new System.Drawing.Size(342, 326);
+            this.pictureBox_leftDock.TabIndex = 20;
             this.pictureBox_leftDock.TabStop = false;
             // 
             // Registration
@@ -233,12 +269,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.pictureBox_leftDock);
+            this.Controls.Add(this.panel_footer);
+            this.Controls.Add(this.panel_header);
             this.Controls.Add(this.panel_registrationUnderline);
             this.Controls.Add(this.pictureBox_confirmPassword);
             this.Controls.Add(this.pictureBox_password);
             this.Controls.Add(this.pictureBox_user);
-            this.Controls.Add(this.pictureBox_leftDock);
-            this.Controls.Add(this.label_copyRight);
             this.Controls.Add(this.label_registration);
             this.Controls.Add(this.panel_line_confirmPassword);
             this.Controls.Add(this.panel_line_password);
@@ -258,6 +295,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).EndInit();
+            this.panel_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
+            this.panel_footer.ResumeLayout(false);
+            this.panel_footer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_leftDock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -277,10 +318,13 @@
         private System.Windows.Forms.Panel panel_line_confirmPassword;
         private System.Windows.Forms.Label label_registration;
         private System.Windows.Forms.Label label_copyRight;
-        private System.Windows.Forms.PictureBox pictureBox_leftDock;
         private System.Windows.Forms.PictureBox pictureBox_user;
         private System.Windows.Forms.PictureBox pictureBox_password;
         private System.Windows.Forms.PictureBox pictureBox_confirmPassword;
         private System.Windows.Forms.Panel panel_registrationUnderline;
+        private System.Windows.Forms.Panel panel_header;
+        private System.Windows.Forms.Panel panel_footer;
+        private System.Windows.Forms.PictureBox pictureBox_logo;
+        private System.Windows.Forms.PictureBox pictureBox_leftDock;
     }
 }

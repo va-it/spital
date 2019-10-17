@@ -92,16 +92,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg-eaht.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\leftDock.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon_Password.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_EAHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftDock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

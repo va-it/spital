@@ -8,18 +8,17 @@ namespace spital
 {
     class Monitor
     {
+        // Auto-implemented properties for trivial get and set
         private int Id { get; }
-        public List<Module> Modules { get; set; }
+        public bool Active { get; set; }
 
-        public Monitor(Module[] modules)
+        /// <summary>
+        /// Constructor. Sets Id and active flag
+        /// </summary>
+        public Monitor()
         {
-            this.Id = 1;
-
-            foreach (Module module in modules)
-            {
-                this.Modules.Add(module);
-            }
-            
+            Id = 1;
+            Active = true;            
         }
     }
 }

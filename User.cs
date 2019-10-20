@@ -17,7 +17,7 @@ namespace spital
 
         public string Username { get; set; }
 
-        public string Passowrd
+        public string Password
         {
             get
             {
@@ -65,6 +65,11 @@ namespace spital
 
             return valid;
 
+        }
+
+        internal void Save()
+        {
+            throw new NotImplementedException();
         }
     }
 }

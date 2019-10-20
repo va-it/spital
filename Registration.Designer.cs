@@ -139,6 +139,7 @@
             this.button_Register.TabIndex = 9;
             this.button_Register.Text = "Register";
             this.button_Register.UseVisualStyleBackColor = false;
+            this.button_Register.Click += new System.EventHandler(this.Button_Register_Click);
             // 
             // panel_line_username
             // 

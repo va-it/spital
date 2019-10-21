@@ -19,10 +19,8 @@ namespace spital
 
         public string Password
         {
-            get
-            {
-                return password;
-            }
+            get => password;
+
             set
             {
                 // encreypt password before stroting into the file or database 
@@ -30,41 +28,44 @@ namespace spital
             }
         }
 
-        public bool ValidateCredential()
+        public bool ValidateCredential
         {
-            bool valid = false;
-            try
+            get
             {
-                //open user.txt storage file
-                StreamReader reader = new StreamReader(storage);
-
-                //while theree aree lines to read 
-                while (!reader.EndOfStream)
+                bool valid = false;
+                try
                 {
-                    //**replace this with database connection
-                    //seperator used to break apart each file line
-                    char[] separators = { ',' };
-                    //break the line - the result is an array containing each part of the lines that was seperated by the above seperator
-                    string[] line = reader.ReadLine().Split(separators);
-                    //**
+                    //open user.txt storage file
+                    StreamReader reader = new StreamReader(storage);
 
-                    string usernameToCheck = line[0];
-                    string passwordToCheck = line[1];
-
-                    if (Username == usernameToCheck && password == passwordToCheck)
+                    //while theree aree lines to read 
+                    while (!reader.EndOfStream)
                     {
-                        valid = true;
-                        break;
+                        //**replace this with database connection
+                        //seperator used to break apart each file line
+                        char[] separators = { ',' };
+                        //break the line - the result is an array containing each part of the lines that was seperated by the above seperator
+                        string[] line = reader.ReadLine().Split(separators);
+                        //**
+
+                        string usernameToCheck = line[0];
+                        string passwordToCheck = line[1];
+
+                        if (Username == usernameToCheck && password == passwordToCheck)
+                        {
+                            valid = true;
+                            break;
+                        }
                     }
                 }
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show(ex.FileName + "Please contact System Administrator");
-            }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show(ex.FileName + "Please contact System Administrator");
+                }
 
-            return valid;
+                return valid;
 
+            }
         }
 
         internal void Save()

@@ -114,6 +114,7 @@
             this.button_Login.TabIndex = 25;
             this.button_Login.Text = "Login";
             this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Login.Click += new System.EventHandler(this.Button_Login_Click);
             // 
             // textBox_password
             // 

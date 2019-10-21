@@ -34,14 +34,14 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.copyright = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection1 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection2 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection3 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection4 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection5 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection6 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection7 = new System.Windows.Forms.CheckBox();
+            this.moduleSelection8 = new System.Windows.Forms.CheckBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelFooter.SuspendLayout();
@@ -53,10 +53,9 @@
             this.modulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modulesButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesButton.ForeColor = System.Drawing.Color.White;
-            this.modulesButton.Location = new System.Drawing.Point(750, 563);
-            this.modulesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modulesButton.Location = new System.Drawing.Point(325, 514);
             this.modulesButton.Name = "modulesButton";
-            this.modulesButton.Size = new System.Drawing.Size(200, 71);
+            this.modulesButton.Size = new System.Drawing.Size(160, 57);
             this.modulesButton.TabIndex = 7;
             this.modulesButton.Text = "Next";
             this.modulesButton.UseVisualStyleBackColor = false;
@@ -66,10 +65,9 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelHeader.Controls.Add(this.logo);
-            this.panelHeader.Location = new System.Drawing.Point(0, -3);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1727, 164);
+            this.panelHeader.Size = new System.Drawing.Size(808, 133);
             this.panelHeader.TabIndex = 10;
             // 
             // logo
@@ -77,10 +75,9 @@
             this.logo.AccessibleDescription = "";
             this.logo.BackColor = System.Drawing.Color.Transparent;
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(16, 4);
-            this.logo.Margin = new System.Windows.Forms.Padding(4);
+            this.logo.Location = new System.Drawing.Point(6, 3);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(340, 156);
+            this.logo.Size = new System.Drawing.Size(255, 125);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 5;
             this.logo.TabStop = false;
@@ -89,131 +86,136 @@
             // 
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
-            this.panelFooter.Location = new System.Drawing.Point(0, 662);
-            this.panelFooter.Margin = new System.Windows.Forms.Padding(4);
+            this.panelFooter.Location = new System.Drawing.Point(0, 592);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1727, 64);
+            this.panelFooter.Size = new System.Drawing.Size(808, 51);
             this.panelFooter.TabIndex = 11;
             // 
             // copyright
             // 
             this.copyright.AutoSize = true;
             this.copyright.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyright.Location = new System.Drawing.Point(677, 21);
-            this.copyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.copyright.Location = new System.Drawing.Point(251, 17);
             this.copyright.Name = "copyright";
-            this.copyright.Size = new System.Drawing.Size(380, 33);
+            this.copyright.Size = new System.Drawing.Size(297, 26);
             this.copyright.TabIndex = 0;
             this.copyright.Text = "© 2019 East Anglia Hospital trust";
             this.copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
+            // moduleSelection1
             // 
-            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox1.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(357, 182);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(312, 86);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.moduleSelection1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection1.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection1.Location = new System.Drawing.Point(108, 162);
+            this.moduleSelection1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection1.Name = "moduleSelection1";
+            this.moduleSelection1.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection1.TabIndex = 12;
+            this.moduleSelection1.Text = "checkBox1";
+            this.moduleSelection1.UseVisualStyleBackColor = false;
             // 
-            // checkBox2
+            // moduleSelection2
             // 
-            this.checkBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox2.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(357, 274);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(312, 86);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.moduleSelection2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection2.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection2.Location = new System.Drawing.Point(108, 235);
+            this.moduleSelection2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection2.Name = "moduleSelection2";
+            this.moduleSelection2.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection2.TabIndex = 13;
+            this.moduleSelection2.Text = "checkBox2";
+            this.moduleSelection2.UseVisualStyleBackColor = false;
             // 
-            // checkBox3
+            // moduleSelection3
             // 
-            this.checkBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox3.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(357, 366);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(312, 86);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = false;
+            this.moduleSelection3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection3.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection3.Location = new System.Drawing.Point(108, 309);
+            this.moduleSelection3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection3.Name = "moduleSelection3";
+            this.moduleSelection3.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection3.TabIndex = 14;
+            this.moduleSelection3.Text = "checkBox3";
+            this.moduleSelection3.UseVisualStyleBackColor = false;
             // 
-            // checkBox4
+            // moduleSelection4
             // 
-            this.checkBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox4.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(357, 458);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(312, 86);
-            this.checkBox4.TabIndex = 15;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = false;
+            this.moduleSelection4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection4.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection4.Location = new System.Drawing.Point(108, 382);
+            this.moduleSelection4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection4.Name = "moduleSelection4";
+            this.moduleSelection4.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection4.TabIndex = 15;
+            this.moduleSelection4.Text = "checkBox4";
+            this.moduleSelection4.UseVisualStyleBackColor = false;
             // 
-            // checkBox5
+            // moduleSelection5
             // 
-            this.checkBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox5.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(1028, 182);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(312, 86);
-            this.checkBox5.TabIndex = 16;
-            this.checkBox5.Text = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = false;
+            this.moduleSelection5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection5.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection5.Location = new System.Drawing.Point(464, 162);
+            this.moduleSelection5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection5.Name = "moduleSelection5";
+            this.moduleSelection5.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection5.TabIndex = 16;
+            this.moduleSelection5.Text = "checkBox5";
+            this.moduleSelection5.UseVisualStyleBackColor = false;
             // 
-            // checkBox6
+            // moduleSelection6
             // 
-            this.checkBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox6.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(1028, 274);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(312, 86);
-            this.checkBox6.TabIndex = 17;
-            this.checkBox6.Text = "checkBox6";
-            this.checkBox6.UseVisualStyleBackColor = false;
+            this.moduleSelection6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection6.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection6.Location = new System.Drawing.Point(464, 235);
+            this.moduleSelection6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection6.Name = "moduleSelection6";
+            this.moduleSelection6.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection6.TabIndex = 17;
+            this.moduleSelection6.Text = "checkBox6";
+            this.moduleSelection6.UseVisualStyleBackColor = false;
             // 
-            // checkBox7
+            // moduleSelection7
             // 
-            this.checkBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox7.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(1028, 366);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(312, 86);
-            this.checkBox7.TabIndex = 18;
-            this.checkBox7.Text = "checkBox7";
-            this.checkBox7.UseVisualStyleBackColor = false;
+            this.moduleSelection7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection7.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection7.Location = new System.Drawing.Point(464, 309);
+            this.moduleSelection7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection7.Name = "moduleSelection7";
+            this.moduleSelection7.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection7.TabIndex = 18;
+            this.moduleSelection7.Text = "checkBox7";
+            this.moduleSelection7.UseVisualStyleBackColor = false;
             // 
-            // checkBox8
+            // moduleSelection8
             // 
-            this.checkBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.checkBox8.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.Location = new System.Drawing.Point(1028, 458);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(312, 86);
-            this.checkBox8.TabIndex = 19;
-            this.checkBox8.Text = "checkBox8";
-            this.checkBox8.UseVisualStyleBackColor = false;
+            this.moduleSelection8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.moduleSelection8.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moduleSelection8.Location = new System.Drawing.Point(464, 382);
+            this.moduleSelection8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.moduleSelection8.Name = "moduleSelection8";
+            this.moduleSelection8.Size = new System.Drawing.Size(234, 69);
+            this.moduleSelection8.TabIndex = 19;
+            this.moduleSelection8.Text = "checkBox8";
+            this.moduleSelection8.UseVisualStyleBackColor = false;
             // 
             // Modules
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1729, 723);
-            this.Controls.Add(this.checkBox8);
-            this.Controls.Add(this.checkBox7);
-            this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(808, 644);
+            this.Controls.Add(this.moduleSelection8);
+            this.Controls.Add(this.moduleSelection7);
+            this.Controls.Add(this.moduleSelection6);
+            this.Controls.Add(this.moduleSelection5);
+            this.Controls.Add(this.moduleSelection4);
+            this.Controls.Add(this.moduleSelection3);
+            this.Controls.Add(this.moduleSelection2);
+            this.Controls.Add(this.moduleSelection1);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.modulesButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Modules";
@@ -233,13 +235,13 @@
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Label copyright;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox moduleSelection1;
+        private System.Windows.Forms.CheckBox moduleSelection2;
+        private System.Windows.Forms.CheckBox moduleSelection3;
+        private System.Windows.Forms.CheckBox moduleSelection4;
+        private System.Windows.Forms.CheckBox moduleSelection5;
+        private System.Windows.Forms.CheckBox moduleSelection6;
+        private System.Windows.Forms.CheckBox moduleSelection7;
+        private System.Windows.Forms.CheckBox moduleSelection8;
     }
 }

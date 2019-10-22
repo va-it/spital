@@ -20,5 +20,21 @@ namespace spital
             Id = 1;
             Active = true;            
         }
+
+        /// <summary>
+        /// Stops previously triggered alarm.
+        /// </summary>
+        public void StopAlarm()
+        {
+            // Stop alarm
+        }
+
+        /// <summary>
+        /// Displays the readings from associated modules.
+        /// </summary>
+        public void DisplayPatientData()
+        {
+            // Display readings from modules
+        }
     }
 }

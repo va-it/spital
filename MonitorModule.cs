@@ -24,5 +24,13 @@ namespace spital
             Monitor = monitor;
             Module = module;
         }
+
+        /// <summary>
+        /// Triggers an alarm for this monitor and module pair.
+        /// </summary>
+        public void TriggerAlarm()
+        {
+            Alarm alarm = new Alarm(this);
+        }
     }
 }

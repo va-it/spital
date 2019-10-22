@@ -26,5 +26,16 @@ namespace spital
             Min = 80;
             Max = 180;
         }
+
+        /// <summary>
+        /// Assigns parameters to module limits.
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        public void AssignLimit(int min, int max)
+        {
+            Min = min;
+            Max = max;
+        }
     }
 }

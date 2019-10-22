@@ -12,8 +12,12 @@ namespace spital
 {
     public partial class Registration : Form
     {
-        public Registration()
+        private Form prevForm;
+
+        public Registration(Form previousForm)
         {
+            // record the form instance that opened this form
+            prevForm = previousForm;
             InitializeComponent();
         }
 

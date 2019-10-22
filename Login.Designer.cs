@@ -66,7 +66,7 @@
             this.label_copyRight.AutoSize = true;
             this.label_copyRight.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_copyRight.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_copyRight.Location = new System.Drawing.Point(233, 12);
+            this.label_copyRight.Location = new System.Drawing.Point(231, 16);
             this.label_copyRight.Name = "label_copyRight";
             this.label_copyRight.Size = new System.Drawing.Size(193, 15);
             this.label_copyRight.TabIndex = 18;

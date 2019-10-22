@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Form1 : Form
+    public partial class CentralDisplay : Form
     {
-        public Form1()
+        public CentralDisplay()
         {
             InitializeComponent();
         }

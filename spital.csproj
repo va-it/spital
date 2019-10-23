@@ -87,9 +87,6 @@
     <None Include="Resources\Logo_EAHT.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mute icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\inpatient-icon-7507.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

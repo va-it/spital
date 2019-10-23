@@ -215,9 +215,8 @@
             this.label_bed4msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label_bed4msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed4msg.Name = "label_bed4msg";
-            this.label_bed4msg.Size = new System.Drawing.Size(25, 15);
+            this.label_bed4msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed4msg.TabIndex = 8;
-            this.label_bed4msg.Text = "___";
             // 
             // button_mutebed4
             // 
@@ -269,9 +268,8 @@
             this.label_bed3msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label_bed3msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed3msg.Name = "label_bed3msg";
-            this.label_bed3msg.Size = new System.Drawing.Size(25, 15);
+            this.label_bed3msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed3msg.TabIndex = 7;
-            this.label_bed3msg.Text = "___";
             // 
             // button_mutebed3
             // 
@@ -323,9 +321,8 @@
             this.label_bed6msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label_bed6msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed6msg.Name = "label_bed6msg";
-            this.label_bed6msg.Size = new System.Drawing.Size(25, 15);
+            this.label_bed6msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed6msg.TabIndex = 10;
-            this.label_bed6msg.Text = "___";
             // 
             // button_mutebed6
             // 
@@ -377,9 +374,8 @@
             this.label_bed5msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label_bed5msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed5msg.Name = "label_bed5msg";
-            this.label_bed5msg.Size = new System.Drawing.Size(25, 15);
+            this.label_bed5msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed5msg.TabIndex = 9;
-            this.label_bed5msg.Text = "___";
             // 
             // button_mutebed5
             // 
@@ -432,9 +428,8 @@
             this.label_bed2msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label_bed2msg.Location = new System.Drawing.Point(17, 89);
             this.label_bed2msg.Name = "label_bed2msg";
-            this.label_bed2msg.Size = new System.Drawing.Size(25, 15);
+            this.label_bed2msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed2msg.TabIndex = 6;
-            this.label_bed2msg.Text = "___";
             // 
             // button_mutebed2
             // 
@@ -486,9 +481,8 @@
             this.label_bed7msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label_bed7msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed7msg.Name = "label_bed7msg";
-            this.label_bed7msg.Size = new System.Drawing.Size(25, 15);
+            this.label_bed7msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed7msg.TabIndex = 11;
-            this.label_bed7msg.Text = "___";
             // 
             // button_mutebed7
             // 

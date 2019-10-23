@@ -16,5 +16,7 @@ namespace spital
         {
             InitializeComponent();
         }
+
+       
     }
 }

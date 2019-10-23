@@ -37,37 +37,30 @@
             this.label_bed8msg = new System.Windows.Forms.Label();
             this.button_mutebed8 = new System.Windows.Forms.Button();
             this.label_bed8 = new System.Windows.Forms.Label();
-            this.pictureBox_bed8 = new System.Windows.Forms.PictureBox();
             this.bed4_panel = new System.Windows.Forms.Panel();
             this.label_bed4msg = new System.Windows.Forms.Label();
             this.button_mutebed4 = new System.Windows.Forms.Button();
             this.label_bed4 = new System.Windows.Forms.Label();
-            this.pictureBox_bed4 = new System.Windows.Forms.PictureBox();
             this.bed3_panel = new System.Windows.Forms.Panel();
             this.label_bed3msg = new System.Windows.Forms.Label();
             this.button_mutebed3 = new System.Windows.Forms.Button();
             this.label_bed3 = new System.Windows.Forms.Label();
-            this.pictureBox_bed3 = new System.Windows.Forms.PictureBox();
             this.bed6_panel = new System.Windows.Forms.Panel();
             this.label_bed6msg = new System.Windows.Forms.Label();
             this.button_mutebed6 = new System.Windows.Forms.Button();
             this.label_bed6 = new System.Windows.Forms.Label();
-            this.pictureBox_bed6 = new System.Windows.Forms.PictureBox();
             this.bed5_panel = new System.Windows.Forms.Panel();
             this.label_bed5msg = new System.Windows.Forms.Label();
             this.button_mutebed5 = new System.Windows.Forms.Button();
             this.label_bed5 = new System.Windows.Forms.Label();
-            this.pictureBox_bed5 = new System.Windows.Forms.PictureBox();
             this.bed2_panel = new System.Windows.Forms.Panel();
             this.label_bed2msg = new System.Windows.Forms.Label();
             this.button_mutebed2 = new System.Windows.Forms.Button();
             this.label_bed2 = new System.Windows.Forms.Label();
-            this.pictureBox_bed2 = new System.Windows.Forms.PictureBox();
             this.bed7_panel = new System.Windows.Forms.Panel();
             this.label_bed7msg = new System.Windows.Forms.Label();
             this.button_mutebed7 = new System.Windows.Forms.Button();
             this.label_bed7 = new System.Windows.Forms.Label();
-            this.pictureBox_bed7 = new System.Windows.Forms.PictureBox();
             this.bed1_panel = new System.Windows.Forms.Panel();
             this.label_bed1msg = new System.Windows.Forms.Label();
             this.button_mutebed1 = new System.Windows.Forms.Button();
@@ -75,25 +68,50 @@
             this.pictureBox_bed1 = new System.Windows.Forms.PictureBox();
             this.button_startshift = new System.Windows.Forms.Button();
             this.button_endshift = new System.Windows.Forms.Button();
+            this.pictureBox_bed2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed6 = new System.Windows.Forms.PictureBox();
+            this.labelcopyright = new System.Windows.Forms.Label();
+            this.alertsignpicturebox_bed1 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed2 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed3 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed4 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed8 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed7 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed6 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed5 = new System.Windows.Forms.PictureBox();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
+            this.panel_footer.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.bed8_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).BeginInit();
             this.bed4_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).BeginInit();
             this.bed3_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).BeginInit();
             this.bed6_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).BeginInit();
             this.bed5_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).BeginInit();
             this.bed2_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).BeginInit();
             this.bed7_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).BeginInit();
             this.bed1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_header
@@ -119,6 +137,7 @@
             // panel_footer
             // 
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel_footer.Controls.Add(this.labelcopyright);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_footer.Location = new System.Drawing.Point(0, 411);
             this.panel_footer.Name = "panel_footer";
@@ -144,10 +163,12 @@
             // 
             // bed8_panel
             // 
+            this.bed8_panel.BackColor = System.Drawing.Color.White;
+            this.bed8_panel.Controls.Add(this.alertsignpicturebox_bed8);
+            this.bed8_panel.Controls.Add(this.pictureBox_bed8);
             this.bed8_panel.Controls.Add(this.label_bed8msg);
             this.bed8_panel.Controls.Add(this.button_mutebed8);
             this.bed8_panel.Controls.Add(this.label_bed8);
-            this.bed8_panel.Controls.Add(this.pictureBox_bed8);
             this.bed8_panel.Location = new System.Drawing.Point(432, 143);
             this.bed8_panel.Name = "bed8_panel";
             this.bed8_panel.Size = new System.Drawing.Size(129, 118);
@@ -189,20 +210,14 @@
             this.label_bed8.TabIndex = 5;
             this.label_bed8.Text = "Bed 8";
             // 
-            // pictureBox_bed8
-            // 
-            this.pictureBox_bed8.Location = new System.Drawing.Point(56, 0);
-            this.pictureBox_bed8.Name = "pictureBox_bed8";
-            this.pictureBox_bed8.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed8.TabIndex = 4;
-            this.pictureBox_bed8.TabStop = false;
-            // 
             // bed4_panel
             // 
+            this.bed4_panel.BackColor = System.Drawing.Color.White;
+            this.bed4_panel.Controls.Add(this.alertsignpicturebox_bed4);
+            this.bed4_panel.Controls.Add(this.pictureBox_bed4);
             this.bed4_panel.Controls.Add(this.label_bed4msg);
             this.bed4_panel.Controls.Add(this.button_mutebed4);
             this.bed4_panel.Controls.Add(this.label_bed4);
-            this.bed4_panel.Controls.Add(this.pictureBox_bed4);
             this.bed4_panel.Location = new System.Drawing.Point(432, 19);
             this.bed4_panel.Name = "bed4_panel";
             this.bed4_panel.Size = new System.Drawing.Size(129, 118);
@@ -242,20 +257,14 @@
             this.label_bed4.TabIndex = 5;
             this.label_bed4.Text = "Bed 4";
             // 
-            // pictureBox_bed4
-            // 
-            this.pictureBox_bed4.Location = new System.Drawing.Point(56, 0);
-            this.pictureBox_bed4.Name = "pictureBox_bed4";
-            this.pictureBox_bed4.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed4.TabIndex = 5;
-            this.pictureBox_bed4.TabStop = false;
-            // 
             // bed3_panel
             // 
+            this.bed3_panel.BackColor = System.Drawing.Color.White;
+            this.bed3_panel.Controls.Add(this.alertsignpicturebox_bed3);
+            this.bed3_panel.Controls.Add(this.pictureBox_bed3);
             this.bed3_panel.Controls.Add(this.label_bed3msg);
             this.bed3_panel.Controls.Add(this.button_mutebed3);
             this.bed3_panel.Controls.Add(this.label_bed3);
-            this.bed3_panel.Controls.Add(this.pictureBox_bed3);
             this.bed3_panel.Location = new System.Drawing.Point(299, 19);
             this.bed3_panel.Name = "bed3_panel";
             this.bed3_panel.Size = new System.Drawing.Size(127, 118);
@@ -295,20 +304,14 @@
             this.label_bed3.TabIndex = 4;
             this.label_bed3.Text = "Bed 3";
             // 
-            // pictureBox_bed3
-            // 
-            this.pictureBox_bed3.Location = new System.Drawing.Point(54, 0);
-            this.pictureBox_bed3.Name = "pictureBox_bed3";
-            this.pictureBox_bed3.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed3.TabIndex = 1;
-            this.pictureBox_bed3.TabStop = false;
-            // 
             // bed6_panel
             // 
+            this.bed6_panel.BackColor = System.Drawing.Color.White;
+            this.bed6_panel.Controls.Add(this.alertsignpicturebox_bed6);
+            this.bed6_panel.Controls.Add(this.pictureBox_bed6);
             this.bed6_panel.Controls.Add(this.label_bed6msg);
             this.bed6_panel.Controls.Add(this.button_mutebed6);
             this.bed6_panel.Controls.Add(this.label_bed6);
-            this.bed6_panel.Controls.Add(this.pictureBox_bed6);
             this.bed6_panel.Location = new System.Drawing.Point(161, 143);
             this.bed6_panel.Name = "bed6_panel";
             this.bed6_panel.Size = new System.Drawing.Size(129, 118);
@@ -348,20 +351,14 @@
             this.label_bed6.TabIndex = 8;
             this.label_bed6.Text = "Bed 6";
             // 
-            // pictureBox_bed6
-            // 
-            this.pictureBox_bed6.Location = new System.Drawing.Point(56, 0);
-            this.pictureBox_bed6.Name = "pictureBox_bed6";
-            this.pictureBox_bed6.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed6.TabIndex = 2;
-            this.pictureBox_bed6.TabStop = false;
-            // 
             // bed5_panel
             // 
+            this.bed5_panel.BackColor = System.Drawing.Color.White;
+            this.bed5_panel.Controls.Add(this.alertsignpicturebox_bed5);
+            this.bed5_panel.Controls.Add(this.pictureBox_bed5);
             this.bed5_panel.Controls.Add(this.label_bed5msg);
             this.bed5_panel.Controls.Add(this.button_mutebed5);
             this.bed5_panel.Controls.Add(this.label_bed5);
-            this.bed5_panel.Controls.Add(this.pictureBox_bed5);
             this.bed5_panel.Location = new System.Drawing.Point(26, 143);
             this.bed5_panel.Name = "bed5_panel";
             this.bed5_panel.Size = new System.Drawing.Size(129, 118);
@@ -401,20 +398,14 @@
             this.label_bed5.TabIndex = 6;
             this.label_bed5.Text = "Bed 5";
             // 
-            // pictureBox_bed5
-            // 
-            this.pictureBox_bed5.Location = new System.Drawing.Point(56, 0);
-            this.pictureBox_bed5.Name = "pictureBox_bed5";
-            this.pictureBox_bed5.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed5.TabIndex = 6;
-            this.pictureBox_bed5.TabStop = false;
-            // 
             // bed2_panel
             // 
+            this.bed2_panel.BackColor = System.Drawing.Color.White;
+            this.bed2_panel.Controls.Add(this.alertsignpicturebox_bed2);
+            this.bed2_panel.Controls.Add(this.pictureBox_bed2);
             this.bed2_panel.Controls.Add(this.label_bed2msg);
             this.bed2_panel.Controls.Add(this.button_mutebed2);
             this.bed2_panel.Controls.Add(this.label_bed2);
-            this.bed2_panel.Controls.Add(this.pictureBox_bed2);
             this.bed2_panel.Location = new System.Drawing.Point(161, 19);
             this.bed2_panel.Name = "bed2_panel";
             this.bed2_panel.Size = new System.Drawing.Size(129, 118);
@@ -455,20 +446,14 @@
             this.label_bed2.TabIndex = 5;
             this.label_bed2.Text = "Bed 2";
             // 
-            // pictureBox_bed2
-            // 
-            this.pictureBox_bed2.Location = new System.Drawing.Point(56, 0);
-            this.pictureBox_bed2.Name = "pictureBox_bed2";
-            this.pictureBox_bed2.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed2.TabIndex = 2;
-            this.pictureBox_bed2.TabStop = false;
-            // 
             // bed7_panel
             // 
+            this.bed7_panel.BackColor = System.Drawing.Color.White;
+            this.bed7_panel.Controls.Add(this.alertsignpicturebox_bed7);
+            this.bed7_panel.Controls.Add(this.pictureBox_bed7);
             this.bed7_panel.Controls.Add(this.label_bed7msg);
             this.bed7_panel.Controls.Add(this.button_mutebed7);
             this.bed7_panel.Controls.Add(this.label_bed7);
-            this.bed7_panel.Controls.Add(this.pictureBox_bed7);
             this.bed7_panel.Location = new System.Drawing.Point(299, 143);
             this.bed7_panel.Name = "bed7_panel";
             this.bed7_panel.Size = new System.Drawing.Size(127, 118);
@@ -508,23 +493,17 @@
             this.label_bed7.TabIndex = 7;
             this.label_bed7.Text = "Bed 7";
             // 
-            // pictureBox_bed7
-            // 
-            this.pictureBox_bed7.Location = new System.Drawing.Point(54, 0);
-            this.pictureBox_bed7.Name = "pictureBox_bed7";
-            this.pictureBox_bed7.Size = new System.Drawing.Size(73, 86);
-            this.pictureBox_bed7.TabIndex = 3;
-            this.pictureBox_bed7.TabStop = false;
-            // 
             // bed1_panel
             // 
+            this.bed1_panel.BackColor = System.Drawing.Color.White;
+            this.bed1_panel.Controls.Add(this.alertsignpicturebox_bed1);
             this.bed1_panel.Controls.Add(this.label_bed1msg);
             this.bed1_panel.Controls.Add(this.button_mutebed1);
             this.bed1_panel.Controls.Add(this.label_bed1);
             this.bed1_panel.Controls.Add(this.pictureBox_bed1);
             this.bed1_panel.Location = new System.Drawing.Point(26, 19);
             this.bed1_panel.Name = "bed1_panel";
-            this.bed1_panel.Size = new System.Drawing.Size(129, 121);
+            this.bed1_panel.Size = new System.Drawing.Size(129, 118);
             this.bed1_panel.TabIndex = 0;
             // 
             // label_bed1msg
@@ -565,9 +544,12 @@
             // 
             // pictureBox_bed1
             // 
-            this.pictureBox_bed1.Location = new System.Drawing.Point(56, 0);
+            this.pictureBox_bed1.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed1.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed1.Location = new System.Drawing.Point(63, 13);
             this.pictureBox_bed1.Name = "pictureBox_bed1";
-            this.pictureBox_bed1.Size = new System.Drawing.Size(73, 86);
+            this.pictureBox_bed1.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_bed1.TabIndex = 0;
             this.pictureBox_bed1.TabStop = false;
             // 
@@ -597,6 +579,164 @@
             this.button_endshift.Text = "End Shift";
             this.button_endshift.UseVisualStyleBackColor = false;
             // 
+            // pictureBox_bed2
+            // 
+            this.pictureBox_bed2.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed2.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed2.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed2.Name = "pictureBox_bed2";
+            this.pictureBox_bed2.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed2.TabIndex = 6;
+            this.pictureBox_bed2.TabStop = false;
+            // 
+            // pictureBox_bed3
+            // 
+            this.pictureBox_bed3.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed3.Location = new System.Drawing.Point(63, 15);
+            this.pictureBox_bed3.Name = "pictureBox_bed3";
+            this.pictureBox_bed3.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed3.TabIndex = 12;
+            this.pictureBox_bed3.TabStop = false;
+            // 
+            // pictureBox_bed4
+            // 
+            this.pictureBox_bed4.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed4.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed4.Location = new System.Drawing.Point(63, 15);
+            this.pictureBox_bed4.Name = "pictureBox_bed4";
+            this.pictureBox_bed4.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed4.TabIndex = 12;
+            this.pictureBox_bed4.TabStop = false;
+            // 
+            // pictureBox_bed5
+            // 
+            this.pictureBox_bed5.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed5.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed5.Location = new System.Drawing.Point(64, 14);
+            this.pictureBox_bed5.Name = "pictureBox_bed5";
+            this.pictureBox_bed5.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed5.TabIndex = 13;
+            this.pictureBox_bed5.TabStop = false;
+            // 
+            // pictureBox_bed8
+            // 
+            this.pictureBox_bed8.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed8.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed8.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed8.Name = "pictureBox_bed8";
+            this.pictureBox_bed8.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed8.TabIndex = 14;
+            this.pictureBox_bed8.TabStop = false;
+            // 
+            // pictureBox_bed7
+            // 
+            this.pictureBox_bed7.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed7.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed7.Name = "pictureBox_bed7";
+            this.pictureBox_bed7.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed7.TabIndex = 15;
+            this.pictureBox_bed7.TabStop = false;
+            // 
+            // pictureBox_bed6
+            // 
+            this.pictureBox_bed6.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed6.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed6.Name = "pictureBox_bed6";
+            this.pictureBox_bed6.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed6.TabIndex = 16;
+            this.pictureBox_bed6.TabStop = false;
+            // 
+            // labelcopyright
+            // 
+            this.labelcopyright.AutoSize = true;
+            this.labelcopyright.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelcopyright.Location = new System.Drawing.Point(302, 15);
+            this.labelcopyright.Name = "labelcopyright";
+            this.labelcopyright.Size = new System.Drawing.Size(192, 15);
+            this.labelcopyright.TabIndex = 0;
+            this.labelcopyright.Text = "© 2019 East Anglia Hospital trust";
+            // 
+            // alertsignpicturebox_bed1
+            // 
+            this.alertsignpicturebox_bed1.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed1.Image")));
+            this.alertsignpicturebox_bed1.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed1.Name = "alertsignpicturebox_bed1";
+            this.alertsignpicturebox_bed1.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed1.TabIndex = 5;
+            this.alertsignpicturebox_bed1.TabStop = false;
+            // 
+            // alertsignpicturebox_bed2
+            // 
+            this.alertsignpicturebox_bed2.Location = new System.Drawing.Point(13, 21);
+            this.alertsignpicturebox_bed2.Name = "alertsignpicturebox_bed2";
+            this.alertsignpicturebox_bed2.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed2.TabIndex = 12;
+            this.alertsignpicturebox_bed2.TabStop = false;
+            // 
+            // alertsignpicturebox_bed3
+            // 
+            this.alertsignpicturebox_bed3.Location = new System.Drawing.Point(13, 21);
+            this.alertsignpicturebox_bed3.Name = "alertsignpicturebox_bed3";
+            this.alertsignpicturebox_bed3.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed3.TabIndex = 13;
+            this.alertsignpicturebox_bed3.TabStop = false;
+            // 
+            // alertsignpicturebox_bed4
+            // 
+            this.alertsignpicturebox_bed4.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed4.Name = "alertsignpicturebox_bed4";
+            this.alertsignpicturebox_bed4.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed4.TabIndex = 13;
+            this.alertsignpicturebox_bed4.TabStop = false;
+            // 
+            // alertsignpicturebox_bed8
+            // 
+            this.alertsignpicturebox_bed8.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed8.Image")));
+            this.alertsignpicturebox_bed8.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed8.Name = "alertsignpicturebox_bed8";
+            this.alertsignpicturebox_bed8.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed8.TabIndex = 14;
+            this.alertsignpicturebox_bed8.TabStop = false;
+            // 
+            // alertsignpicturebox_bed7
+            // 
+            this.alertsignpicturebox_bed7.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed7.Name = "alertsignpicturebox_bed7";
+            this.alertsignpicturebox_bed7.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed7.TabIndex = 15;
+            this.alertsignpicturebox_bed7.TabStop = false;
+            // 
+            // alertsignpicturebox_bed6
+            // 
+            this.alertsignpicturebox_bed6.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed6.Name = "alertsignpicturebox_bed6";
+            this.alertsignpicturebox_bed6.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed6.TabIndex = 16;
+            this.alertsignpicturebox_bed6.TabStop = false;
+            // 
+            // alertsignpicturebox_bed5
+            // 
+            this.alertsignpicturebox_bed5.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed5.Name = "alertsignpicturebox_bed5";
+            this.alertsignpicturebox_bed5.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed5.TabIndex = 17;
+            this.alertsignpicturebox_bed5.TabStop = false;
+            // 
             // CentralDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,31 +753,41 @@
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
+            this.panel_footer.ResumeLayout(false);
+            this.panel_footer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.bed8_panel.ResumeLayout(false);
             this.bed8_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).EndInit();
             this.bed4_panel.ResumeLayout(false);
             this.bed4_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).EndInit();
             this.bed3_panel.ResumeLayout(false);
             this.bed3_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).EndInit();
             this.bed6_panel.ResumeLayout(false);
             this.bed6_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).EndInit();
             this.bed5_panel.ResumeLayout(false);
             this.bed5_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).EndInit();
             this.bed2_panel.ResumeLayout(false);
             this.bed2_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).EndInit();
             this.bed7_panel.ResumeLayout(false);
             this.bed7_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).EndInit();
             this.bed1_panel.ResumeLayout(false);
             this.bed1_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -650,25 +800,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel bed8_panel;
         private System.Windows.Forms.Label label_bed8;
-        private System.Windows.Forms.PictureBox pictureBox_bed8;
         private System.Windows.Forms.Panel bed4_panel;
         private System.Windows.Forms.Label label_bed4;
-        private System.Windows.Forms.PictureBox pictureBox_bed4;
         private System.Windows.Forms.Panel bed3_panel;
         private System.Windows.Forms.Label label_bed3;
-        private System.Windows.Forms.PictureBox pictureBox_bed3;
         private System.Windows.Forms.Panel bed6_panel;
         private System.Windows.Forms.Label label_bed6;
-        private System.Windows.Forms.PictureBox pictureBox_bed6;
         private System.Windows.Forms.Panel bed5_panel;
         private System.Windows.Forms.Label label_bed5;
-        private System.Windows.Forms.PictureBox pictureBox_bed5;
         private System.Windows.Forms.Panel bed2_panel;
         private System.Windows.Forms.Label label_bed2;
-        private System.Windows.Forms.PictureBox pictureBox_bed2;
         private System.Windows.Forms.Panel bed7_panel;
         private System.Windows.Forms.Label label_bed7;
-        private System.Windows.Forms.PictureBox pictureBox_bed7;
         private System.Windows.Forms.Panel bed1_panel;
         private System.Windows.Forms.Label label_bed1;
         private System.Windows.Forms.PictureBox pictureBox_bed1;
@@ -690,5 +833,21 @@
         private System.Windows.Forms.Label label_bed2msg;
         private System.Windows.Forms.Label label_bed7msg;
         private System.Windows.Forms.Label label_bed1msg;
+        private System.Windows.Forms.PictureBox pictureBox_bed8;
+        private System.Windows.Forms.PictureBox pictureBox_bed4;
+        private System.Windows.Forms.PictureBox pictureBox_bed3;
+        private System.Windows.Forms.PictureBox pictureBox_bed6;
+        private System.Windows.Forms.PictureBox pictureBox_bed5;
+        private System.Windows.Forms.PictureBox pictureBox_bed2;
+        private System.Windows.Forms.PictureBox pictureBox_bed7;
+        private System.Windows.Forms.Label labelcopyright;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed1;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed8;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed4;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed3;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed6;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed5;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed2;
+        private System.Windows.Forms.PictureBox alertsignpicturebox_bed7;
     }
 }

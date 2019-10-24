@@ -53,6 +53,10 @@
             this.copyright = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.ModuleIcon4 = new System.Windows.Forms.PictureBox();
+            this.ModuleIcon3 = new System.Windows.Forms.PictureBox();
+            this.ModuleIcon2 = new System.Windows.Forms.PictureBox();
+            this.ModuleIcon1 = new System.Windows.Forms.PictureBox();
             this.ModulesBox.SuspendLayout();
             this.panelModule4.SuspendLayout();
             this.panelModule3.SuspendLayout();
@@ -71,6 +75,10 @@
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon1)).BeginInit();
             this.SuspendLayout();
             // 
             // modulesButton
@@ -79,7 +87,7 @@
             this.modulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modulesButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesButton.ForeColor = System.Drawing.Color.White;
-            this.modulesButton.Location = new System.Drawing.Point(392, 521);
+            this.modulesButton.Location = new System.Drawing.Point(523, 537);
             this.modulesButton.Name = "modulesButton";
             this.modulesButton.Size = new System.Drawing.Size(160, 57);
             this.modulesButton.TabIndex = 8;
@@ -95,9 +103,9 @@
             this.ModulesBox.Controls.Add(this.panelModule2);
             this.ModulesBox.Controls.Add(this.panelModule1);
             this.ModulesBox.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModulesBox.Location = new System.Drawing.Point(12, 155);
+            this.ModulesBox.Location = new System.Drawing.Point(193, 147);
             this.ModulesBox.Name = "ModulesBox";
-            this.ModulesBox.Size = new System.Drawing.Size(540, 345);
+            this.ModulesBox.Size = new System.Drawing.Size(540, 376);
             this.ModulesBox.TabIndex = 9;
             this.ModulesBox.TabStop = false;
             this.ModulesBox.Text = "Modules";
@@ -107,7 +115,7 @@
             this.panelModule4.BackColor = System.Drawing.Color.White;
             this.panelModule4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule4.Controls.Add(this.labelModule4);
-            this.panelModule4.Location = new System.Drawing.Point(21, 267);
+            this.panelModule4.Location = new System.Drawing.Point(21, 289);
             this.panelModule4.Name = "panelModule4";
             this.panelModule4.Size = new System.Drawing.Size(500, 53);
             this.panelModule4.TabIndex = 1;
@@ -126,7 +134,7 @@
             this.panelModule3.BackColor = System.Drawing.Color.White;
             this.panelModule3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule3.Controls.Add(this.labelModule3);
-            this.panelModule3.Location = new System.Drawing.Point(22, 189);
+            this.panelModule3.Location = new System.Drawing.Point(22, 202);
             this.panelModule3.Name = "panelModule3";
             this.panelModule3.Size = new System.Drawing.Size(499, 53);
             this.panelModule3.TabIndex = 1;
@@ -145,7 +153,7 @@
             this.panelModule2.BackColor = System.Drawing.Color.White;
             this.panelModule2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule2.Controls.Add(this.labelModule2);
-            this.panelModule2.Location = new System.Drawing.Point(22, 110);
+            this.panelModule2.Location = new System.Drawing.Point(22, 118);
             this.panelModule2.Name = "panelModule2";
             this.panelModule2.Size = new System.Drawing.Size(499, 53);
             this.panelModule2.TabIndex = 1;
@@ -165,7 +173,7 @@
             this.panelModule1.BackColor = System.Drawing.Color.White;
             this.panelModule1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelModule1.Controls.Add(this.labelModule1);
-            this.panelModule1.Location = new System.Drawing.Point(22, 30);
+            this.panelModule1.Location = new System.Drawing.Point(22, 34);
             this.panelModule1.Name = "panelModule1";
             this.panelModule1.Size = new System.Drawing.Size(499, 53);
             this.panelModule1.TabIndex = 0;
@@ -187,9 +195,9 @@
             this.minBox.Controls.Add(this.minLimit2);
             this.minBox.Controls.Add(this.minLimit1);
             this.minBox.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minBox.Location = new System.Drawing.Point(558, 155);
+            this.minBox.Location = new System.Drawing.Point(751, 147);
             this.minBox.Name = "minBox";
-            this.minBox.Size = new System.Drawing.Size(170, 345);
+            this.minBox.Size = new System.Drawing.Size(171, 376);
             this.minBox.TabIndex = 10;
             this.minBox.TabStop = false;
             this.minBox.Text = "MIN";
@@ -197,7 +205,7 @@
             // minLimit4
             // 
             this.minLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit4.Location = new System.Drawing.Point(17, 267);
+            this.minLimit4.Location = new System.Drawing.Point(15, 289);
             this.minLimit4.Name = "minLimit4";
             this.minLimit4.Size = new System.Drawing.Size(138, 53);
             this.minLimit4.TabIndex = 6;
@@ -205,7 +213,7 @@
             // minLimit3
             // 
             this.minLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit3.Location = new System.Drawing.Point(17, 189);
+            this.minLimit3.Location = new System.Drawing.Point(15, 202);
             this.minLimit3.Name = "minLimit3";
             this.minLimit3.Size = new System.Drawing.Size(136, 53);
             this.minLimit3.TabIndex = 5;
@@ -213,7 +221,7 @@
             // minLimit2
             // 
             this.minLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit2.Location = new System.Drawing.Point(17, 110);
+            this.minLimit2.Location = new System.Drawing.Point(15, 118);
             this.minLimit2.Name = "minLimit2";
             this.minLimit2.Size = new System.Drawing.Size(138, 53);
             this.minLimit2.TabIndex = 2;
@@ -221,7 +229,7 @@
             // minLimit1
             // 
             this.minLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minLimit1.Location = new System.Drawing.Point(17, 30);
+            this.minLimit1.Location = new System.Drawing.Point(15, 34);
             this.minLimit1.Name = "minLimit1";
             this.minLimit1.Size = new System.Drawing.Size(138, 53);
             this.minLimit1.TabIndex = 0;
@@ -234,9 +242,9 @@
             this.maxBox.Controls.Add(this.maxLimit1);
             this.maxBox.Controls.Add(this.maxLimit2);
             this.maxBox.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxBox.Location = new System.Drawing.Point(734, 155);
+            this.maxBox.Location = new System.Drawing.Point(928, 147);
             this.maxBox.Name = "maxBox";
-            this.maxBox.Size = new System.Drawing.Size(170, 345);
+            this.maxBox.Size = new System.Drawing.Size(169, 376);
             this.maxBox.TabIndex = 11;
             this.maxBox.TabStop = false;
             this.maxBox.Text = "MAX";
@@ -244,7 +252,7 @@
             // maxLimit4
             // 
             this.maxLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit4.Location = new System.Drawing.Point(18, 267);
+            this.maxLimit4.Location = new System.Drawing.Point(18, 289);
             this.maxLimit4.Name = "maxLimit4";
             this.maxLimit4.Size = new System.Drawing.Size(138, 53);
             this.maxLimit4.TabIndex = 7;
@@ -252,7 +260,7 @@
             // maxLimit3
             // 
             this.maxLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit3.Location = new System.Drawing.Point(18, 189);
+            this.maxLimit3.Location = new System.Drawing.Point(18, 202);
             this.maxLimit3.Name = "maxLimit3";
             this.maxLimit3.Size = new System.Drawing.Size(138, 53);
             this.maxLimit3.TabIndex = 4;
@@ -260,7 +268,7 @@
             // maxLimit1
             // 
             this.maxLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit1.Location = new System.Drawing.Point(18, 30);
+            this.maxLimit1.Location = new System.Drawing.Point(18, 34);
             this.maxLimit1.Name = "maxLimit1";
             this.maxLimit1.Size = new System.Drawing.Size(138, 53);
             this.maxLimit1.TabIndex = 3;
@@ -268,7 +276,7 @@
             // maxLimit2
             // 
             this.maxLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLimit2.Location = new System.Drawing.Point(18, 110);
+            this.maxLimit2.Location = new System.Drawing.Point(18, 118);
             this.maxLimit2.Name = "maxLimit2";
             this.maxLimit2.Size = new System.Drawing.Size(138, 53);
             this.maxLimit2.TabIndex = 1;
@@ -277,16 +285,17 @@
             // 
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
-            this.panelFooter.Location = new System.Drawing.Point(-6, 599);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 600);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(945, 51);
+            this.panelFooter.Size = new System.Drawing.Size(1163, 51);
             this.panelFooter.TabIndex = 13;
             // 
             // copyright
             // 
             this.copyright.AutoSize = true;
             this.copyright.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyright.Location = new System.Drawing.Point(329, 17);
+            this.copyright.Location = new System.Drawing.Point(454, 16);
             this.copyright.Name = "copyright";
             this.copyright.Size = new System.Drawing.Size(297, 26);
             this.copyright.TabIndex = 0;
@@ -297,9 +306,10 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelHeader.Controls.Add(this.logo);
-            this.panelHeader.Location = new System.Drawing.Point(-6, 0);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(945, 133);
+            this.panelHeader.Size = new System.Drawing.Size(1163, 133);
             this.panelHeader.TabIndex = 12;
             // 
             // logo
@@ -314,12 +324,48 @@
             this.logo.TabIndex = 5;
             this.logo.TabStop = false;
             // 
+            // ModuleIcon4
+            // 
+            this.ModuleIcon4.Location = new System.Drawing.Point(64, 421);
+            this.ModuleIcon4.Name = "ModuleIcon4";
+            this.ModuleIcon4.Size = new System.Drawing.Size(122, 80);
+            this.ModuleIcon4.TabIndex = 27;
+            this.ModuleIcon4.TabStop = false;
+            // 
+            // ModuleIcon3
+            // 
+            this.ModuleIcon3.Location = new System.Drawing.Point(64, 335);
+            this.ModuleIcon3.Name = "ModuleIcon3";
+            this.ModuleIcon3.Size = new System.Drawing.Size(122, 80);
+            this.ModuleIcon3.TabIndex = 26;
+            this.ModuleIcon3.TabStop = false;
+            // 
+            // ModuleIcon2
+            // 
+            this.ModuleIcon2.Location = new System.Drawing.Point(64, 249);
+            this.ModuleIcon2.Name = "ModuleIcon2";
+            this.ModuleIcon2.Size = new System.Drawing.Size(122, 80);
+            this.ModuleIcon2.TabIndex = 25;
+            this.ModuleIcon2.TabStop = false;
+            // 
+            // ModuleIcon1
+            // 
+            this.ModuleIcon1.Location = new System.Drawing.Point(64, 163);
+            this.ModuleIcon1.Name = "ModuleIcon1";
+            this.ModuleIcon1.Size = new System.Drawing.Size(122, 80);
+            this.ModuleIcon1.TabIndex = 24;
+            this.ModuleIcon1.TabStop = false;
+            // 
             // Limits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(939, 651);
+            this.ClientSize = new System.Drawing.Size(1163, 651);
+            this.Controls.Add(this.ModuleIcon4);
+            this.Controls.Add(this.ModuleIcon3);
+            this.Controls.Add(this.ModuleIcon2);
+            this.Controls.Add(this.ModuleIcon1);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.maxBox);
@@ -352,6 +398,10 @@
             this.panelFooter.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModuleIcon1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,5 +432,9 @@
         private System.Windows.Forms.Label copyright;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.PictureBox ModuleIcon4;
+        private System.Windows.Forms.PictureBox ModuleIcon3;
+        private System.Windows.Forms.PictureBox ModuleIcon2;
+        private System.Windows.Forms.PictureBox ModuleIcon1;
     }
 }

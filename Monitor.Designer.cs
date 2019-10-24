@@ -346,7 +346,7 @@
             this.panelMonitorNumberContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMonitorNumberContainer.Location = new System.Drawing.Point(275, 41);
             this.panelMonitorNumberContainer.Name = "panelMonitorNumberContainer";
-            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(2);
             this.panelMonitorNumberContainer.Size = new System.Drawing.Size(72, 57);
             this.panelMonitorNumberContainer.TabIndex = 7;
             // 
@@ -376,7 +376,7 @@
             this.panelAlertMessageContainer.ForeColor = System.Drawing.Color.Red;
             this.panelAlertMessageContainer.Location = new System.Drawing.Point(353, 41);
             this.panelAlertMessageContainer.Name = "panelAlertMessageContainer";
-            this.panelAlertMessageContainer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelAlertMessageContainer.Padding = new System.Windows.Forms.Padding(2);
             this.panelAlertMessageContainer.Size = new System.Drawing.Size(692, 57);
             this.panelAlertMessageContainer.TabIndex = 8;
             // 

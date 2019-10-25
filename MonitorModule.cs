@@ -12,6 +12,8 @@ namespace spital
         private int Id { get; }
         public Monitor Monitor { get; set; }
         public Module Module { get; set; }
+        public int AssignedMin { get; set; }
+        public int AssignedMax { get; set; }
 
         /// <summary>
         /// Constructor. Sets value of Id and defines monitor and module from parameters

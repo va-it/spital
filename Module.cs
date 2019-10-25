@@ -12,8 +12,8 @@ namespace spital
         private int Id { get; }
         public string Name { get; set; }
         public string Icon { get; set; }
-        public int Min { get; set; }
-        public int Max { get; set; }
+        public int DefaultMin { get; set; }
+        public int DefaultMax { get; set; }
 
         /// <summary>
         /// Constructor. Sets Id, name, icon, min and max values based on values from database
@@ -23,8 +23,8 @@ namespace spital
             Id = 1;
             Name = "Heart Rate";
             Icon = "heart_rate.png";
-            Min = 80;
-            Max = 180;
+            DefaultMin = 80;
+            DefaultMax = 180;
         }
 
         /// <summary>
@@ -34,8 +34,8 @@ namespace spital
         /// <param name="max"></param>
         public void AssignLimit(int min, int max)
         {
-            Min = min;
-            Max = max;
+            DefaultMin = min;
+            DefaultMax = max;
         }
     }
 }

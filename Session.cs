@@ -10,7 +10,7 @@ namespace spital
     {
         // Auto-implemented properties for trivial get and set
         private int Id { get; set; }
-        public int StaffMemberId { get; set; }
+        public int StaffId { get; set; }
         private DateTime DateTimeStart { get; set; }
         private DateTime DateTimeEnd { get; set; }
 

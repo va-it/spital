@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace spital
 {
-    class Staff
+    abstract class Staff
     {
         // Auto-implemented properties for trivial get and set
         public int Id { get; set; }
@@ -16,8 +16,6 @@ namespace spital
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string MobileNumber { get; set; }
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
@@ -26,12 +24,9 @@ namespace spital
         /// <param name="firstName"></param>
         /// <param name="middleName"></param>
         /// <param name="lastName"></param>
-        /// <param name="email"></param>
-        /// <param name="mobileNumber"></param>
         public Staff(
             int staffType, string username, string password, 
-            string firstName, string middleName, string lastName,
-            string email = "", string mobileNumber = ""
+            string firstName, string middleName, string lastName
             )
         {
             Id = 1;
@@ -39,8 +34,6 @@ namespace spital
             FirstName = firstName;
             MiddleName = middleName;
             LastName = lastName;
-            Email = email;
-            MobileNumber = mobileNumber;
 
         }
 
@@ -91,6 +84,22 @@ namespace spital
             // Authentication trigger
         }
 
+        public void Notify()
+        {
+            switch (StaffTypeId)
+            {
+                case 1:
+                    // Nurse, notify via SMS/Pager
+                    break;
+                case 2:
+                    // Consultant, notify via email
+                    break;
+                default:
+                    // No type matched.
+                    break;
+            }
+
+        }
 
 
     }

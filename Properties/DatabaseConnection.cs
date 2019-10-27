@@ -83,7 +83,7 @@ namespace spital.Properties
         public DataSet GetDataSet(string sqlStatement)
         {
             //initialize a new instance of the DataSet Class
-            DataSet dsUser = new DataSet();
+            DataSet dataSet = new DataSet();
 
             //open connection
             OpenConnection();
@@ -92,11 +92,11 @@ namespace spital.Properties
             sqlAdapter = new SqlDataAdapter(sqlStatement, spitalDbConnectionString);
 
             //fills in the data set
-            sqlAdapter.Fill(dsUser);
+            sqlAdapter.Fill(dataSet);
 
             //close the connection
             CloseConnection();
-            return dsUser;
+            return dataSet;
         }
     }
 }

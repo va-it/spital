@@ -1,5 +1,7 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -35,6 +37,30 @@ namespace spital
                 bool valid = false;
                 try
                 {
+                    DataSet user = DatabaseConnection.Instance.GetDataSet("SELECT username, password FROM user");
+
+                    foreach (DataTable table in user.Tables)
+                    {
+                        foreach (DataRow row in table.Rows)
+                        {
+                            if (Username == row['username'].ToString)
+                            {
+                                if (Password == row['password'].ToString)
+                                {
+                                    // Credentials match
+                                }
+                                else
+                                {
+                                    // Wrong password
+                                }
+                            }
+                            else
+                            {
+                                // Wrong username
+                            }
+                        }
+                    }
+
                     //open user.txt storage file
                     StreamReader reader = new StreamReader(storage);
 

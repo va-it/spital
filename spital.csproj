@@ -64,6 +64,17 @@
     <Compile Include="MonitorForm.Designer.cs">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alarm.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Monitor.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LimitsForm.resx">
@@ -75,6 +86,7 @@
     <EmbeddedResource Include="MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Session.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,9 +94,23 @@
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,7 +125,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eaht_logo.png" />
+    <None Include="Resources\icon_Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_EAHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftDock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

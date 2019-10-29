@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Limits : Form
+    public partial class LimitsForm : Form
     {
-        public Limits()
+        public LimitsForm()
         {
             InitializeComponent();
         }

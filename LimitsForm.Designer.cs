@@ -1,6 +1,6 @@
 ﻿namespace spital
 {
-    partial class Limits
+    partial class LimitsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Limits));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LimitsForm));
             this.modulesButton = new System.Windows.Forms.Button();
             this.ModulesBox = new System.Windows.Forms.GroupBox();
             this.panelModule4 = new System.Windows.Forms.Panel();

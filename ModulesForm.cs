@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Modules : Form
+    public partial class ModulesForm : Form
     {
-        public Modules()
+        public ModulesForm()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace spital
         private void modulesButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form limits = new Limits();
+            Form limits = new LimitsForm();
             limits.Show();
         }
     }

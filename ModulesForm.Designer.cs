@@ -1,6 +1,6 @@
 ﻿namespace spital
 {
-    partial class Modules
+    partial class ModulesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modules));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModulesForm));
             this.modulesButton = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();

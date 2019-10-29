@@ -1,6 +1,6 @@
 ﻿namespace spital
 {
-    partial class Monitor
+    partial class MonitorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monitor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorForm));
             this.groupBoxReadings = new System.Windows.Forms.GroupBox();
             this.readingsTable = new System.Windows.Forms.TableLayoutPanel();
             this.moduleReading4 = new System.Windows.Forms.Label();

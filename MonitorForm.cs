@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Monitor : Form
+    public partial class MonitorForm : Form
     {
-        public Monitor()
+        public MonitorForm()
         {
             InitializeComponent();
         }
@@ -26,14 +26,14 @@ namespace spital
         private void modulesButton_Click(object sender, EventArgs e)
         {
             // Code to select the modules
-            Form modules = new Modules();
+            Form modules = new ModulesForm();
             modules.Show();
         }
 
         private void limitsButton_Click(object sender, EventArgs e)
         {
             // Code to edit the modules limits
-            Form limits = new Limits();
+            Form limits = new LimitsForm();
             limits.Show();
         }
     }

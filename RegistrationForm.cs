@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Registration : Form
+    public partial class RegistrationForm : Form
     {
-        public Registration()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace spital
                 // close this form window
                 Close();
                 // open login page 
-                Login login = new Login();
+                LoginForm login = new LoginForm();
                 login.ShowDialog();
             }
             catch (Exception error)

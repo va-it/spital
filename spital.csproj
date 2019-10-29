@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LimitsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LimitsForm.Designer.cs">
+      <DependentUpon>LimitsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulesForm.Designer.cs">
+      <DependentUpon>ModulesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorForm.Designer.cs">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alarm.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Monitor.cs" />
@@ -59,6 +77,15 @@
     <Compile Include="MonitorModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LimitsForm.resx">
+      <DependentUpon>LimitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulesForm.resx">
+      <DependentUpon>ModulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorForm.resx">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Session.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +96,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>

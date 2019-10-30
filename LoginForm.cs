@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
         User user;
 
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }

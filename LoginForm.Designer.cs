@@ -1,6 +1,6 @@
 ﻿namespace spital
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel_loginUnderline = new System.Windows.Forms.Panel();
             this.label_copyRight = new System.Windows.Forms.Label();
             this.label_login = new System.Windows.Forms.Label();

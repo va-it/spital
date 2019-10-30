@@ -1,5 +1,7 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,6 @@ namespace spital
     {
         // encryption key 
         private string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
-        private string storage = "users.txt";
         private string password;
 
         public string Username { get; set; }
@@ -23,7 +24,7 @@ namespace spital
 
             set
             {
-                // encreypt password before stroting into the file or database 
+                // encreypt password before stroting into the database 
                 password = Encryption.EncryptText(value, encryptionPassword);
             }
         }
@@ -33,38 +34,36 @@ namespace spital
             get
             {
                 bool valid = false;
-                try
-                {
-                    //open user.txt storage file
-                    StreamReader reader = new StreamReader(storage);
 
-                    //while theree aree lines to read 
-                    while (!reader.EndOfStream)
+                DataSet user = DatabaseConnection.Instance.GetDataSet("SELECT username, password FROM user");
+
+                foreach (DataTable table in user.Tables)
                     {
-                        //**replace this with database connection
-                        //seperator used to break apart each file line
-                        char[] separators = { ',' };
-                        //break the line - the result is an array containing each part of the lines that was seperated by the above seperator
-                        string[] line = reader.ReadLine().Split(separators);
-                        //**
-
-                        string usernameToCheck = line[0];
-                        string passwordToCheck = line[1];
-
-                        if (Username == usernameToCheck && password == passwordToCheck)
+                        foreach (DataRow row in table.Rows)
                         {
-                            valid = true;
-                            break;
+                            if (String.Equals(Username,row["username"].ToString()))
+                            {
+                                
+                                string comparePassword = Encryption.DecryptText(row["password"].ToString(), encryptionPassword);
+
+                                if (String.Equals(Username, comparePassword))
+                                {
+                                    // Credentials match
+                                    valid = true;
+                                }
+                                else
+                                {
+                                    // Wrong password
+                                }
+                            }
+                            else
+                            {
+                                // Wrong username
+                            }
                         }
                     }
-                }
-                catch (FileNotFoundException ex)
-                {
-                    MessageBox.Show(ex.FileName + "Please contact System Administrator");
-                }
 
                 return valid;
-
             }
         }
 

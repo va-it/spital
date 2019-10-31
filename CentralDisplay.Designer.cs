@@ -30,88 +30,88 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CentralDisplay));
             this.panel_header = new System.Windows.Forms.Panel();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_footer = new System.Windows.Forms.Panel();
             this.labelcopyright = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bed8_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed8 = new System.Windows.Forms.PictureBox();
             this.label_bed8msg = new System.Windows.Forms.Label();
             this.button_mutebed8 = new System.Windows.Forms.Button();
             this.label_bed8 = new System.Windows.Forms.Label();
             this.bed4_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed4 = new System.Windows.Forms.PictureBox();
             this.label_bed4msg = new System.Windows.Forms.Label();
             this.button_mutebed4 = new System.Windows.Forms.Button();
             this.label_bed4 = new System.Windows.Forms.Label();
             this.bed3_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed3 = new System.Windows.Forms.PictureBox();
             this.label_bed3msg = new System.Windows.Forms.Label();
             this.button_mutebed3 = new System.Windows.Forms.Button();
             this.label_bed3 = new System.Windows.Forms.Label();
             this.bed6_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed6 = new System.Windows.Forms.PictureBox();
             this.label_bed6msg = new System.Windows.Forms.Label();
             this.button_mutebed6 = new System.Windows.Forms.Button();
             this.label_bed6 = new System.Windows.Forms.Label();
             this.bed5_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed5 = new System.Windows.Forms.PictureBox();
             this.label_bed5msg = new System.Windows.Forms.Label();
             this.button_mutebed5 = new System.Windows.Forms.Button();
             this.label_bed5 = new System.Windows.Forms.Label();
             this.bed2_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed2 = new System.Windows.Forms.PictureBox();
             this.label_bed2msg = new System.Windows.Forms.Label();
             this.button_mutebed2 = new System.Windows.Forms.Button();
             this.label_bed2 = new System.Windows.Forms.Label();
             this.bed7_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_bed7 = new System.Windows.Forms.PictureBox();
             this.label_bed7msg = new System.Windows.Forms.Label();
             this.button_mutebed7 = new System.Windows.Forms.Button();
             this.label_bed7 = new System.Windows.Forms.Label();
             this.bed1_panel = new System.Windows.Forms.Panel();
-            this.alertsignpicturebox_bed1 = new System.Windows.Forms.PictureBox();
             this.label_bed1msg = new System.Windows.Forms.Label();
             this.button_mutebed1 = new System.Windows.Forms.Button();
             this.label_bed1 = new System.Windows.Forms.Label();
-            this.pictureBox_bed1 = new System.Windows.Forms.PictureBox();
             this.button_startshift = new System.Windows.Forms.Button();
             this.button_endshift = new System.Windows.Forms.Button();
+            this.alertsignpicturebox_bed8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed8 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed4 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed3 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed6 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed5 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed2 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed7 = new System.Windows.Forms.PictureBox();
+            this.alertsignpicturebox_bed1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_bed1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel_footer.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.bed8_panel.SuspendLayout();
+            this.bed4_panel.SuspendLayout();
+            this.bed3_panel.SuspendLayout();
+            this.bed6_panel.SuspendLayout();
+            this.bed5_panel.SuspendLayout();
+            this.bed2_panel.SuspendLayout();
+            this.bed7_panel.SuspendLayout();
+            this.bed1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).BeginInit();
-            this.bed4_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).BeginInit();
-            this.bed3_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).BeginInit();
-            this.bed6_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).BeginInit();
-            this.bed5_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).BeginInit();
-            this.bed2_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).BeginInit();
-            this.bed7_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).BeginInit();
-            this.bed1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_header
@@ -123,16 +123,6 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(800, 81);
             this.panel_header.TabIndex = 0;
-            // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_logo.Image")));
-            this.pictureBox_logo.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(215, 60);
-            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_logo.TabIndex = 0;
-            this.pictureBox_logo.TabStop = false;
             // 
             // panel_footer
             // 
@@ -184,27 +174,6 @@
             this.bed8_panel.Size = new System.Drawing.Size(129, 118);
             this.bed8_panel.TabIndex = 1;
             // 
-            // alertsignpicturebox_bed8
-            // 
-            this.alertsignpicturebox_bed8.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed8.Image")));
-            this.alertsignpicturebox_bed8.Location = new System.Drawing.Point(13, 22);
-            this.alertsignpicturebox_bed8.Name = "alertsignpicturebox_bed8";
-            this.alertsignpicturebox_bed8.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed8.TabIndex = 14;
-            this.alertsignpicturebox_bed8.TabStop = false;
-            // 
-            // pictureBox_bed8
-            // 
-            this.pictureBox_bed8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pictureBox_bed8.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed8.Location = new System.Drawing.Point(63, 14);
-            this.pictureBox_bed8.Name = "pictureBox_bed8";
-            this.pictureBox_bed8.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed8.TabIndex = 14;
-            this.pictureBox_bed8.TabStop = false;
-            // 
             // label_bed8msg
             // 
             this.label_bed8msg.AutoSize = true;
@@ -254,26 +223,6 @@
             this.bed4_panel.Size = new System.Drawing.Size(129, 118);
             this.bed4_panel.TabIndex = 1;
             // 
-            // alertsignpicturebox_bed4
-            // 
-            this.alertsignpicturebox_bed4.Location = new System.Drawing.Point(13, 22);
-            this.alertsignpicturebox_bed4.Name = "alertsignpicturebox_bed4";
-            this.alertsignpicturebox_bed4.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed4.TabIndex = 13;
-            this.alertsignpicturebox_bed4.TabStop = false;
-            // 
-            // pictureBox_bed4
-            // 
-            this.pictureBox_bed4.BackColor = System.Drawing.Color.White;
-            this.pictureBox_bed4.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed4.Location = new System.Drawing.Point(63, 15);
-            this.pictureBox_bed4.Name = "pictureBox_bed4";
-            this.pictureBox_bed4.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed4.TabIndex = 12;
-            this.pictureBox_bed4.TabStop = false;
-            // 
             // label_bed4msg
             // 
             this.label_bed4msg.AutoSize = true;
@@ -316,30 +265,10 @@
             this.bed3_panel.Controls.Add(this.label_bed3msg);
             this.bed3_panel.Controls.Add(this.button_mutebed3);
             this.bed3_panel.Controls.Add(this.label_bed3);
-            this.bed3_panel.Location = new System.Drawing.Point(299, 19);
+            this.bed3_panel.Location = new System.Drawing.Point(297, 19);
             this.bed3_panel.Name = "bed3_panel";
-            this.bed3_panel.Size = new System.Drawing.Size(127, 118);
+            this.bed3_panel.Size = new System.Drawing.Size(129, 118);
             this.bed3_panel.TabIndex = 1;
-            // 
-            // alertsignpicturebox_bed3
-            // 
-            this.alertsignpicturebox_bed3.Location = new System.Drawing.Point(13, 21);
-            this.alertsignpicturebox_bed3.Name = "alertsignpicturebox_bed3";
-            this.alertsignpicturebox_bed3.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed3.TabIndex = 13;
-            this.alertsignpicturebox_bed3.TabStop = false;
-            // 
-            // pictureBox_bed3
-            // 
-            this.pictureBox_bed3.BackColor = System.Drawing.Color.Chartreuse;
-            this.pictureBox_bed3.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed3.Location = new System.Drawing.Point(63, 15);
-            this.pictureBox_bed3.Name = "pictureBox_bed3";
-            this.pictureBox_bed3.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed3.TabIndex = 12;
-            this.pictureBox_bed3.TabStop = false;
             // 
             // label_bed3msg
             // 
@@ -388,25 +317,6 @@
             this.bed6_panel.Size = new System.Drawing.Size(129, 118);
             this.bed6_panel.TabIndex = 1;
             // 
-            // alertsignpicturebox_bed6
-            // 
-            this.alertsignpicturebox_bed6.Location = new System.Drawing.Point(13, 22);
-            this.alertsignpicturebox_bed6.Name = "alertsignpicturebox_bed6";
-            this.alertsignpicturebox_bed6.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed6.TabIndex = 16;
-            this.alertsignpicturebox_bed6.TabStop = false;
-            // 
-            // pictureBox_bed6
-            // 
-            this.pictureBox_bed6.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed6.Location = new System.Drawing.Point(63, 14);
-            this.pictureBox_bed6.Name = "pictureBox_bed6";
-            this.pictureBox_bed6.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed6.TabIndex = 16;
-            this.pictureBox_bed6.TabStop = false;
-            // 
             // label_bed6msg
             // 
             this.label_bed6msg.AutoSize = true;
@@ -453,26 +363,6 @@
             this.bed5_panel.Name = "bed5_panel";
             this.bed5_panel.Size = new System.Drawing.Size(129, 118);
             this.bed5_panel.TabIndex = 1;
-            // 
-            // alertsignpicturebox_bed5
-            // 
-            this.alertsignpicturebox_bed5.Location = new System.Drawing.Point(13, 22);
-            this.alertsignpicturebox_bed5.Name = "alertsignpicturebox_bed5";
-            this.alertsignpicturebox_bed5.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed5.TabIndex = 17;
-            this.alertsignpicturebox_bed5.TabStop = false;
-            // 
-            // pictureBox_bed5
-            // 
-            this.pictureBox_bed5.BackColor = System.Drawing.Color.Chartreuse;
-            this.pictureBox_bed5.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed5.Location = new System.Drawing.Point(64, 14);
-            this.pictureBox_bed5.Name = "pictureBox_bed5";
-            this.pictureBox_bed5.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed5.TabIndex = 13;
-            this.pictureBox_bed5.TabStop = false;
             // 
             // label_bed5msg
             // 
@@ -521,26 +411,6 @@
             this.bed2_panel.Size = new System.Drawing.Size(129, 118);
             this.bed2_panel.TabIndex = 1;
             // 
-            // alertsignpicturebox_bed2
-            // 
-            this.alertsignpicturebox_bed2.Location = new System.Drawing.Point(13, 21);
-            this.alertsignpicturebox_bed2.Name = "alertsignpicturebox_bed2";
-            this.alertsignpicturebox_bed2.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed2.TabIndex = 12;
-            this.alertsignpicturebox_bed2.TabStop = false;
-            // 
-            // pictureBox_bed2
-            // 
-            this.pictureBox_bed2.BackColor = System.Drawing.Color.Chartreuse;
-            this.pictureBox_bed2.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed2.Location = new System.Drawing.Point(63, 14);
-            this.pictureBox_bed2.Name = "pictureBox_bed2";
-            this.pictureBox_bed2.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed2.TabIndex = 6;
-            this.pictureBox_bed2.TabStop = false;
-            // 
             // label_bed2msg
             // 
             this.label_bed2msg.AutoSize = true;
@@ -584,29 +454,10 @@
             this.bed7_panel.Controls.Add(this.label_bed7msg);
             this.bed7_panel.Controls.Add(this.button_mutebed7);
             this.bed7_panel.Controls.Add(this.label_bed7);
-            this.bed7_panel.Location = new System.Drawing.Point(299, 143);
+            this.bed7_panel.Location = new System.Drawing.Point(297, 143);
             this.bed7_panel.Name = "bed7_panel";
-            this.bed7_panel.Size = new System.Drawing.Size(127, 118);
+            this.bed7_panel.Size = new System.Drawing.Size(129, 118);
             this.bed7_panel.TabIndex = 1;
-            // 
-            // alertsignpicturebox_bed7
-            // 
-            this.alertsignpicturebox_bed7.Location = new System.Drawing.Point(13, 22);
-            this.alertsignpicturebox_bed7.Name = "alertsignpicturebox_bed7";
-            this.alertsignpicturebox_bed7.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed7.TabIndex = 15;
-            this.alertsignpicturebox_bed7.TabStop = false;
-            // 
-            // pictureBox_bed7
-            // 
-            this.pictureBox_bed7.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed7.Location = new System.Drawing.Point(63, 14);
-            this.pictureBox_bed7.Name = "pictureBox_bed7";
-            this.pictureBox_bed7.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed7.TabIndex = 15;
-            this.pictureBox_bed7.TabStop = false;
             // 
             // label_bed7msg
             // 
@@ -655,16 +506,6 @@
             this.bed1_panel.Size = new System.Drawing.Size(129, 118);
             this.bed1_panel.TabIndex = 0;
             // 
-            // alertsignpicturebox_bed1
-            // 
-            this.alertsignpicturebox_bed1.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed1.Image")));
-            this.alertsignpicturebox_bed1.Location = new System.Drawing.Point(13, 22);
-            this.alertsignpicturebox_bed1.Name = "alertsignpicturebox_bed1";
-            this.alertsignpicturebox_bed1.Size = new System.Drawing.Size(37, 33);
-            this.alertsignpicturebox_bed1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.alertsignpicturebox_bed1.TabIndex = 5;
-            this.alertsignpicturebox_bed1.TabStop = false;
-            // 
             // label_bed1msg
             // 
             this.label_bed1msg.AutoSize = true;
@@ -701,17 +542,6 @@
             this.label_bed1.TabIndex = 3;
             this.label_bed1.Text = "Bed 1";
             // 
-            // pictureBox_bed1
-            // 
-            this.pictureBox_bed1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pictureBox_bed1.Image = global::spital.Properties.Resources.inpatient_icon_7507;
-            this.pictureBox_bed1.Location = new System.Drawing.Point(63, 13);
-            this.pictureBox_bed1.Name = "pictureBox_bed1";
-            this.pictureBox_bed1.Size = new System.Drawing.Size(61, 72);
-            this.pictureBox_bed1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_bed1.TabIndex = 0;
-            this.pictureBox_bed1.TabStop = false;
-            // 
             // button_startshift
             // 
             this.button_startshift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
@@ -738,6 +568,176 @@
             this.button_endshift.Text = "End Session";
             this.button_endshift.UseVisualStyleBackColor = false;
             // 
+            // alertsignpicturebox_bed8
+            // 
+            this.alertsignpicturebox_bed8.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed8.Image")));
+            this.alertsignpicturebox_bed8.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed8.Name = "alertsignpicturebox_bed8";
+            this.alertsignpicturebox_bed8.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed8.TabIndex = 14;
+            this.alertsignpicturebox_bed8.TabStop = false;
+            // 
+            // pictureBox_bed8
+            // 
+            this.pictureBox_bed8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox_bed8.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed8.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed8.Name = "pictureBox_bed8";
+            this.pictureBox_bed8.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed8.TabIndex = 14;
+            this.pictureBox_bed8.TabStop = false;
+            // 
+            // alertsignpicturebox_bed4
+            // 
+            this.alertsignpicturebox_bed4.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed4.Name = "alertsignpicturebox_bed4";
+            this.alertsignpicturebox_bed4.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed4.TabIndex = 13;
+            this.alertsignpicturebox_bed4.TabStop = false;
+            // 
+            // pictureBox_bed4
+            // 
+            this.pictureBox_bed4.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed4.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed4.Location = new System.Drawing.Point(63, 15);
+            this.pictureBox_bed4.Name = "pictureBox_bed4";
+            this.pictureBox_bed4.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed4.TabIndex = 12;
+            this.pictureBox_bed4.TabStop = false;
+            // 
+            // alertsignpicturebox_bed3
+            // 
+            this.alertsignpicturebox_bed3.Location = new System.Drawing.Point(13, 21);
+            this.alertsignpicturebox_bed3.Name = "alertsignpicturebox_bed3";
+            this.alertsignpicturebox_bed3.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed3.TabIndex = 13;
+            this.alertsignpicturebox_bed3.TabStop = false;
+            // 
+            // pictureBox_bed3
+            // 
+            this.pictureBox_bed3.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed3.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed3.Location = new System.Drawing.Point(63, 15);
+            this.pictureBox_bed3.Name = "pictureBox_bed3";
+            this.pictureBox_bed3.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed3.TabIndex = 12;
+            this.pictureBox_bed3.TabStop = false;
+            // 
+            // alertsignpicturebox_bed6
+            // 
+            this.alertsignpicturebox_bed6.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed6.Name = "alertsignpicturebox_bed6";
+            this.alertsignpicturebox_bed6.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed6.TabIndex = 16;
+            this.alertsignpicturebox_bed6.TabStop = false;
+            // 
+            // pictureBox_bed6
+            // 
+            this.pictureBox_bed6.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed6.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed6.Name = "pictureBox_bed6";
+            this.pictureBox_bed6.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed6.TabIndex = 16;
+            this.pictureBox_bed6.TabStop = false;
+            // 
+            // alertsignpicturebox_bed5
+            // 
+            this.alertsignpicturebox_bed5.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed5.Name = "alertsignpicturebox_bed5";
+            this.alertsignpicturebox_bed5.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed5.TabIndex = 17;
+            this.alertsignpicturebox_bed5.TabStop = false;
+            // 
+            // pictureBox_bed5
+            // 
+            this.pictureBox_bed5.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed5.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed5.Location = new System.Drawing.Point(64, 14);
+            this.pictureBox_bed5.Name = "pictureBox_bed5";
+            this.pictureBox_bed5.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed5.TabIndex = 13;
+            this.pictureBox_bed5.TabStop = false;
+            // 
+            // alertsignpicturebox_bed2
+            // 
+            this.alertsignpicturebox_bed2.Location = new System.Drawing.Point(13, 21);
+            this.alertsignpicturebox_bed2.Name = "alertsignpicturebox_bed2";
+            this.alertsignpicturebox_bed2.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed2.TabIndex = 12;
+            this.alertsignpicturebox_bed2.TabStop = false;
+            // 
+            // pictureBox_bed2
+            // 
+            this.pictureBox_bed2.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed2.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed2.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed2.Name = "pictureBox_bed2";
+            this.pictureBox_bed2.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed2.TabIndex = 6;
+            this.pictureBox_bed2.TabStop = false;
+            // 
+            // alertsignpicturebox_bed7
+            // 
+            this.alertsignpicturebox_bed7.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed7.Name = "alertsignpicturebox_bed7";
+            this.alertsignpicturebox_bed7.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed7.TabIndex = 15;
+            this.alertsignpicturebox_bed7.TabStop = false;
+            // 
+            // pictureBox_bed7
+            // 
+            this.pictureBox_bed7.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed7.Location = new System.Drawing.Point(63, 14);
+            this.pictureBox_bed7.Name = "pictureBox_bed7";
+            this.pictureBox_bed7.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed7.TabIndex = 15;
+            this.pictureBox_bed7.TabStop = false;
+            // 
+            // alertsignpicturebox_bed1
+            // 
+            this.alertsignpicturebox_bed1.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed1.Image")));
+            this.alertsignpicturebox_bed1.Location = new System.Drawing.Point(13, 22);
+            this.alertsignpicturebox_bed1.Name = "alertsignpicturebox_bed1";
+            this.alertsignpicturebox_bed1.Size = new System.Drawing.Size(37, 33);
+            this.alertsignpicturebox_bed1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alertsignpicturebox_bed1.TabIndex = 5;
+            this.alertsignpicturebox_bed1.TabStop = false;
+            // 
+            // pictureBox_bed1
+            // 
+            this.pictureBox_bed1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox_bed1.Image = global::spital.Properties.Resources.inpatient_icon_7507;
+            this.pictureBox_bed1.Location = new System.Drawing.Point(63, 13);
+            this.pictureBox_bed1.Name = "pictureBox_bed1";
+            this.pictureBox_bed1.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_bed1.TabIndex = 0;
+            this.pictureBox_bed1.TabStop = false;
+            // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_logo.Image")));
+            this.pictureBox_logo.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(215, 60);
+            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_logo.TabIndex = 0;
+            this.pictureBox_logo.TabStop = false;
+            // 
             // CentralDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -753,42 +753,42 @@
             this.Text = "Central Display";
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.panel_footer.ResumeLayout(false);
             this.panel_footer.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.bed8_panel.ResumeLayout(false);
             this.bed8_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).EndInit();
             this.bed4_panel.ResumeLayout(false);
             this.bed4_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).EndInit();
             this.bed3_panel.ResumeLayout(false);
             this.bed3_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).EndInit();
             this.bed6_panel.ResumeLayout(false);
             this.bed6_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).EndInit();
             this.bed5_panel.ResumeLayout(false);
             this.bed5_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).EndInit();
             this.bed2_panel.ResumeLayout(false);
             this.bed2_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).EndInit();
             this.bed7_panel.ResumeLayout(false);
             this.bed7_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).EndInit();
             this.bed1_panel.ResumeLayout(false);
             this.bed1_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alertsignpicturebox_bed1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.ResumeLayout(false);
 
         }

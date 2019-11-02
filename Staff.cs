@@ -118,7 +118,7 @@ namespace spital
             }
             catch (Exception error)
             {
-                // Error
+                // Error to be handled
             }
             
         }

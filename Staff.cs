@@ -109,12 +109,17 @@ namespace spital
         {
             try
             {
-                DataTable staff = new DataTable("staff");
+                DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT * FROM staff");
+
+                DataTable staff = dataSet.Tables[0];
                 DataRow newMember = staff.NewRow();
 
                 newMember["staffTypeID"] = StaffTypeId;
                 newMember["username"] = Username;
                 newMember["password"] = Password;
+
+                staff.Rows.Add(newMember);
+
             }
             catch (Exception error)
             {

@@ -23,6 +23,7 @@ namespace spital
             string username = textBox_username.Text;
             string password = textBox_password.Text;
             string passwordConfirm = textBox_ConfirmPassword.Text;
+            string contactDetails = textBox_ContactDetails.Text;
 
             //check input from password and confirm password match 
             if (password != passwordConfirm)
@@ -33,26 +34,32 @@ namespace spital
 
             string selectedStaff = staffType.SelectedValue.ToString();
 
-            switch (selectedStaff)
-            {
-                case "1":
-                    Nurse nurse = new Nurse(1,username,password);
-                    nurse.Save();
-                    break;
-                case "2":
-                    Consultant consultant = new Consultant(2,username,password);
-                    consultant.Save();
-                    break;
-            }
+            
 
             try
             {
+                switch (selectedStaff)
+                {
+                    case "1":
+                        Nurse nurse = new Nurse(1, username, password, "", "", "", contactDetails);
+                        nurse.Save();
+                        break;
+                    case "2":
+                        Consultant consultant = new Consultant(2, username, password, "", "", "", contactDetails);
+                        consultant.Save();
+                        break;
+                }
+
                 MessageBox.Show("Registration successful! Please Log in.", "Success");
-                // close this form window
-                Close();
+
                 // open login page 
                 LoginForm login = new LoginForm();
-                login.ShowDialog();
+                login.Show();
+
+                // close this form window
+                this.Hide();
+
+                
             }
             catch (Exception error)
             {
@@ -74,7 +81,22 @@ namespace spital
             staffType.DataSource = dataSet.Tables[0];
             
         }
-                    
-        
+
+        private void staffType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedStaff = staffType.SelectedValue.ToString();
+
+            switch (selectedStaff)
+            {
+                case "1":
+                    label_ContactDetails.Text = "Mobile number";
+                    pictureBox_ContactDetails.Image = Resources.icon_Mobile;
+                    break;
+                case "2":
+                    label_ContactDetails.Text = "Email";
+                    pictureBox_ContactDetails.Image = Resources.icon_Email;
+                    break;
+            }
+        }
     }
 }

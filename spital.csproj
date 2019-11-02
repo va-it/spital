@@ -158,6 +158,8 @@
     <None Include="Resources\leftDock.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_Mobile.png" />
+    <None Include="Resources\icon_Email.png" />
     <Content Include="Spital.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

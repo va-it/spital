@@ -1,4 +1,5 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,23 +25,46 @@ namespace spital
             string username = textBox_username.Text;
             string password = textBox_password.Text;
 
-            textBox_password.Text = "";
+            DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT * FROM staff");
 
-            user = new User
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                Username = username,
-                Password = password
-            };
+                string staffTypeId = row["staffTypeId"].ToString();
 
-            // are credentials OK?
-            if (user.ValidateCredential)
-            {
-                //code to open the next form goes here
+                switch (staffTypeId)
+                {
+                    case "1":
+                        Nurse nurse = new Nurse(Int32.Parse(staffTypeId), username, password);
+                        // are credentials OK?
+                        if (nurse.ValidateCredentials(username,password))
+                        {
+                            //code to open the next form goes here
+                            MessageBox.Show("Credentials are valid!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid credentials!", "Wrong Credentials");
+                        }
+                        break;
+                    case "2":
+                        Consultant consultant = new Consultant(Int32.Parse(staffTypeId), username, password);
+                        // are credentials OK?
+                        if (consultant.ValidateCredentials(username,password))
+                        {
+                            //code to open the next form goes here
+                            MessageBox.Show("Credentials are valid!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid credentials!", "Wrong Credentials");
+                        }
+                        break;
+                }
             }
-            else
-            {
-                MessageBox.Show("Invalid credentials!", "Wrong Credentials");
-            }
+
+            
+
+            
         }
     }
 }

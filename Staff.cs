@@ -20,6 +20,8 @@ namespace spital
         public string MiddleName { get; set; }
         public string LastName { get; set; }
 
+        private string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
+
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
         /// </summary>
@@ -54,16 +56,39 @@ namespace spital
             // Save to DB
         }
 
-        public void ValidateCredentials(string username, string password)
+        public bool ValidateCredentials(string username, string password)
         {
             // Retrieve values from DB and validate
             /* 
              * Note, need to compare encrypted version of password
              * so the passed password needs to be encrypted first
              */
-            
-        }
 
+            bool valid = false;
+
+            DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT username, password FROM staff");
+
+            foreach (DataTable table in dataSet.Tables)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    if (String.Equals(Username, row["username"].ToString()))
+                    {
+
+                        string comparePassword = Encryption.DecryptText(row["password"].ToString(), encryptionPassword);
+
+                        if (String.Equals(Password, comparePassword))
+                        {
+                            // Credentials match
+                            valid = true;
+                        }
+
+                    }
+                }
+            }
+
+            return valid;
+        }
         /// <summary>
         /// Triggers authentication and, upon success, starts session
         /// </summary>

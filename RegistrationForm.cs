@@ -34,8 +34,6 @@ namespace spital
 
             string selectedStaff = staffType.SelectedValue.ToString();
 
-            
-
             try
             {
                 switch (selectedStaff)

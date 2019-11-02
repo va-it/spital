@@ -144,7 +144,6 @@ namespace spital
                 newMember["password"] = Password;
 
                 staff.Rows.Add(newMember);
-
             }
             catch (Exception error)
             {

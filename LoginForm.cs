@@ -22,12 +22,15 @@ namespace spital
 
         private void Button_Login_Click(object sender, EventArgs e)
         {
+
+
             string username = textBox_username.Text;
             string password = textBox_password.Text;
 
             DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT * FROM staff");
+            DataTable staff = dataSet.Tables[0];
 
-            foreach (DataRow row in dataSet.Tables[0].Rows)
+            foreach (DataRow row in staff.Rows)
             {
                 string staffTypeId = row["staffTypeId"].ToString();
 

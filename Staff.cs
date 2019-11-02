@@ -111,10 +111,10 @@ namespace spital
             {
                 DataTable staff = new DataTable("staff");
                 DataRow newMember = staff.NewRow();
-                newMember["staffTypeID"] = this.StaffTypeId;
-                newMember["username"] = this.Username;
-                newMember["password"] = this.Password;
-                staff.Rows.Add(newMember);
+
+                newMember["staffTypeID"] = StaffTypeId;
+                newMember["username"] = Username;
+                newMember["password"] = Password;
             }
             catch (Exception error)
             {

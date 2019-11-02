@@ -35,9 +35,9 @@ namespace spital
             {
                 bool valid = false;
 
-                DataSet user = DatabaseConnection.Instance.GetDataSet("SELECT username, password FROM user");
+                DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT username, password FROM user");
 
-                foreach (DataTable table in user.Tables)
+                foreach (DataTable table in dataSet.Tables)
                     {
                         foreach (DataRow row in table.Rows)
                         {
@@ -69,7 +69,12 @@ namespace spital
 
         internal void Save()
         {
-            throw new NotImplementedException();
+
+            DataTable staff = new DataTable("staff");
+            DataRow newMember = staff.NewRow();
+            newMember["username"] = Username;
+            newMember["password"] = Password;
+            staff.Rows.Add(newMember);
         }
     }
 }

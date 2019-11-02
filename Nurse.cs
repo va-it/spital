@@ -11,10 +11,10 @@ namespace spital
         public string MobileNumber { get; set; }
 
         public Nurse(
-            int staffType, string username, string password,
-            string firstName, string middleName, string lastName,
-            string mobileNumber
-            ) : base(staffType, username, password, firstName, middleName, lastName)
+            int staffTypeId, string username, string password,
+            string firstName = null, string middleName = null, string lastName = null,
+            string mobileNumber = null
+            ) : base(staffTypeId, username, password, firstName, middleName, lastName)
         {
             MobileNumber = mobileNumber;
         }

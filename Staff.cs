@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using spital.Properties;
+using System.Data;
+using System.Windows.Forms;
 
 namespace spital
 {
@@ -26,15 +29,16 @@ namespace spital
         /// <param name="lastName"></param>
         public Staff(
             int staffType, string username, string password, 
-            string firstName, string middleName, string lastName
+            string firstName = null, string middleName = null, string lastName = null
             )
         {
             Id = 1;
             StaffTypeId = staffType;
+            Username = username;
+            Password = password;
             FirstName = firstName;
             MiddleName = middleName;
             LastName = lastName;
-
         }
 
         /// <summary>
@@ -99,6 +103,24 @@ namespace spital
                     break;
             }
 
+        }
+
+        public void Save()
+        {
+            try
+            {
+                DataTable staff = new DataTable("staff");
+                DataRow newMember = staff.NewRow();
+                newMember["staffTypeID"] = this.StaffTypeId;
+                newMember["username"] = this.Username;
+                newMember["password"] = this.Password;
+                staff.Rows.Add(newMember);
+            }
+            catch (Exception error)
+            {
+                // Error
+            }
+            
         }
 
 

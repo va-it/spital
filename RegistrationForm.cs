@@ -1,4 +1,5 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,6 @@ namespace spital
             InitializeComponent();
         }
 
-        //method to save user input to the .txt file for the time being until database is implemented
         private void Button_Register_Click(object sender, EventArgs e)
         {
             string username = textBox_username.Text;
@@ -31,15 +31,22 @@ namespace spital
                 return;
             }
 
-            User user = new User
+            string selectedStaff = staffType.SelectedValue.ToString();
+
+            switch (selectedStaff)
             {
-                Username = username,
-                Password = password
-            };
+                case "1":
+                    Nurse nurse = new Nurse(1,username,password);
+                    nurse.Save();
+                    break;
+                case "2":
+                    Consultant consultant = new Consultant(2,username,password);
+                    consultant.Save();
+                    break;
+            }
 
             try
             {
-                user.Save();
                 MessageBox.Show("Registration successful! Please Log in.", "Success");
                 // close this form window
                 Close();
@@ -52,5 +59,22 @@ namespace spital
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
         }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            FillStaffType();
+        }
+
+        public void FillStaffType()
+        {
+            DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT staffTypeID, typeName FROM staffType");
+
+            staffType.ValueMember = "staffTypeID";
+            staffType.DisplayMember = "typeName";
+            staffType.DataSource = dataSet.Tables[0];
+            
+        }
+                    
+        
     }
 }

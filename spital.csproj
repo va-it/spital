@@ -124,7 +124,6 @@
     </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="StaffType.cs" />
-    <Compile Include="User.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

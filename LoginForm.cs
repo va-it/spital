@@ -13,7 +13,6 @@ namespace spital
 {
     public partial class LoginForm : Form
     {
-        User user;
 
         public LoginForm()
         {

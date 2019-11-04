@@ -98,5 +98,18 @@ namespace spital.Properties
             CloseConnection();
             return dataSet;
         }
+
+        //Dr. Cristina Luca uploaded on canvas 
+        //insert record in database
+        public void RecordInDb()
+        {
+            //create the oblect sql command
+            SqlCommand sqlCommand = new SqlCommand();
+
+            //set its property
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = Constants.Insert; //set the sql query
+            sqlCommand.Parameters.Add(new SqlParameter()); //pass in the parameter
+        }
     }
 }

@@ -12,8 +12,8 @@ namespace spital
     abstract class Staff
     {
 
-        SpitalDataSet SpitalDataSet = new SpitalDataSet();
-        SpitalDataSetTableAdapters.staffTableAdapter StaffTableAdapter = new SpitalDataSetTableAdapters.staffTableAdapter();
+        private SpitalDataSet SpitalDataSet = new SpitalDataSet();
+        private readonly SpitalDataSetTableAdapters.staffTableAdapter StaffTableAdapter = new SpitalDataSetTableAdapters.staffTableAdapter();
 
         // Auto-implemented properties for trivial get and set
         public int Id { get; set; }

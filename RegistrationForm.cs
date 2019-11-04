@@ -74,7 +74,6 @@ namespace spital
         {
             // DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT staffTypeID, typeName FROM staffType");
 
-            SpitalDataSet spitalDataSet = new SpitalDataSet();
             SpitalDataSetTableAdapters.staffTypeTableAdapter staffTypeTableAdapter = new SpitalDataSetTableAdapters.staffTypeTableAdapter();
 
             staffType.ValueMember = "staffTypeID";

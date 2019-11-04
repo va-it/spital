@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="LimitsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,7 @@
     <Compile Include="MonitorModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <Compile Include="Properties\DatabaseConnection.cs" />
     <EmbeddedResource Include="LimitsForm.resx">
       <DependentUpon>LimitsForm.cs</DependentUpon>
@@ -102,7 +104,7 @@
     <EmbeddedResource Include="MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Session.cs" />
+    <Compile Include="Session.cs" 
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -113,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+
     </Compile>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
@@ -126,6 +129,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,15 +145,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\icon_Password.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_User.png" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo_EAHT.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\leftDock.png" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +179,7 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

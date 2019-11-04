@@ -13,7 +13,8 @@ namespace spital
 {
     public partial class ModulesForm : Form
     {
-        
+        private CheckBox[] _checkBoxes;
+
         public ModulesForm()
         {
             InitializeComponent();
@@ -62,12 +63,17 @@ namespace spital
 
             DataTable moduleTable = dataSet.Tables[0];
 
-            foreach(DataRow row in moduleTable.Rows)
-            {
-                moduleSelection1.Text = row["moduleName"].ToString();
-            }
+            Form moduleForm = new ModulesForm();
 
+            _checkBoxes = new CheckBox[] { moduleSelection1, moduleSelection2, moduleSelection3, moduleSelection4 };
+
+            foreach(CheckBox checkBox in _checkBoxes)
+            {
+                foreach (DataRow row in moduleTable.Rows)
+                {
+                   _checkBoxes.text = row["moduleName"].ToString();
+                }
+            }
         }
-   
     }
 }

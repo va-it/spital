@@ -50,7 +50,7 @@
             this.ModulePicture7 = new System.Windows.Forms.PictureBox();
             this.ModulePicture6 = new System.Windows.Forms.PictureBox();
             this.ModulePicture5 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Modules = new System.Windows.Forms.GroupBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelFooter.SuspendLayout();
@@ -62,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture5)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_Modules.SuspendLayout();
             this.SuspendLayout();
             // 
             // modulesButton
@@ -149,7 +149,6 @@
             this.moduleSelection2.Name = "moduleSelection2";
             this.moduleSelection2.Size = new System.Drawing.Size(164, 52);
             this.moduleSelection2.TabIndex = 13;
-            this.moduleSelection2.Text = "Breathing Rate";
             this.moduleSelection2.UseVisualStyleBackColor = false;
             // 
             // moduleSelection3
@@ -161,7 +160,6 @@
             this.moduleSelection3.Name = "moduleSelection3";
             this.moduleSelection3.Size = new System.Drawing.Size(164, 52);
             this.moduleSelection3.TabIndex = 14;
-            this.moduleSelection3.Text = "Blood Pressure";
             this.moduleSelection3.UseVisualStyleBackColor = false;
             // 
             // moduleSelection4
@@ -173,7 +171,6 @@
             this.moduleSelection4.Name = "moduleSelection4";
             this.moduleSelection4.Size = new System.Drawing.Size(164, 52);
             this.moduleSelection4.TabIndex = 15;
-            this.moduleSelection4.Text = "Body Temperature";
             this.moduleSelection4.UseVisualStyleBackColor = false;
             // 
             // moduleSelection5
@@ -296,30 +293,30 @@
             this.ModulePicture5.TabIndex = 24;
             this.ModulePicture5.TabStop = false;
             // 
-            // groupBox1
+            // groupBox_Modules
             // 
-            this.groupBox1.Controls.Add(this.ModulePicture8);
-            this.groupBox1.Controls.Add(this.ModulePicture6);
-            this.groupBox1.Controls.Add(this.ModulePicture7);
-            this.groupBox1.Controls.Add(this.moduleSelection1);
-            this.groupBox1.Controls.Add(this.moduleSelection2);
-            this.groupBox1.Controls.Add(this.ModulePicture5);
-            this.groupBox1.Controls.Add(this.moduleSelection3);
-            this.groupBox1.Controls.Add(this.ModulePicture4);
-            this.groupBox1.Controls.Add(this.moduleSelection4);
-            this.groupBox1.Controls.Add(this.ModulePicture3);
-            this.groupBox1.Controls.Add(this.moduleSelection5);
-            this.groupBox1.Controls.Add(this.ModulePicture2);
-            this.groupBox1.Controls.Add(this.moduleSelection6);
-            this.groupBox1.Controls.Add(this.moduleIcon1);
-            this.groupBox1.Controls.Add(this.moduleSelection7);
-            this.groupBox1.Controls.Add(this.moduleSelection8);
-            this.groupBox1.Location = new System.Drawing.Point(58, 100);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 258);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Module Selection";
+            this.groupBox_Modules.Controls.Add(this.ModulePicture8);
+            this.groupBox_Modules.Controls.Add(this.ModulePicture6);
+            this.groupBox_Modules.Controls.Add(this.ModulePicture7);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection1);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection2);
+            this.groupBox_Modules.Controls.Add(this.ModulePicture5);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection3);
+            this.groupBox_Modules.Controls.Add(this.ModulePicture4);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection4);
+            this.groupBox_Modules.Controls.Add(this.ModulePicture3);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection5);
+            this.groupBox_Modules.Controls.Add(this.ModulePicture2);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection6);
+            this.groupBox_Modules.Controls.Add(this.moduleIcon1);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection7);
+            this.groupBox_Modules.Controls.Add(this.moduleSelection8);
+            this.groupBox_Modules.Location = new System.Drawing.Point(58, 100);
+            this.groupBox_Modules.Name = "groupBox_Modules";
+            this.groupBox_Modules.Size = new System.Drawing.Size(658, 258);
+            this.groupBox_Modules.TabIndex = 28;
+            this.groupBox_Modules.TabStop = false;
+            this.groupBox_Modules.Text = "Module Selection";
             // 
             // ModulesForm
             // 
@@ -330,7 +327,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.modulesButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox_Modules);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -350,7 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture5)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBox_Modules.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -377,6 +374,6 @@
         private System.Windows.Forms.PictureBox ModulePicture6;
         private System.Windows.Forms.PictureBox ModulePicture5;
         public System.Windows.Forms.CheckBox moduleSelection1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox_Modules;
     }
 }

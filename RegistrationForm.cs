@@ -72,11 +72,16 @@ namespace spital
 
         public void FillStaffType()
         {
-            DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT staffTypeID, typeName FROM staffType");
+            // DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT staffTypeID, typeName FROM staffType");
+
+            SpitalDataSet spitalDataSet = new SpitalDataSet();
+            SpitalDataSetTableAdapters.staffTypeTableAdapter staffTypeTableAdapter = new SpitalDataSetTableAdapters.staffTypeTableAdapter();
 
             staffType.ValueMember = "staffTypeID";
             staffType.DisplayMember = "typeName";
-            staffType.DataSource = dataSet.Tables[0];
+            staffType.DataSource = staffTypeTableAdapter.GetData();
+
+            //staffType.DataSource = dataSet.Tables[0];
             
         }
 

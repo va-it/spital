@@ -11,6 +11,10 @@ namespace spital
 {
     abstract class Staff
     {
+
+        SpitalDataSet SpitalDataSet = new SpitalDataSet();
+        SpitalDataSetTableAdapters.staffTableAdapter StaffTableAdapter = new SpitalDataSetTableAdapters.staffTableAdapter();
+
         // Auto-implemented properties for trivial get and set
         public int Id { get; set; }
         public int StaffTypeId { get; set; }
@@ -134,16 +138,26 @@ namespace spital
         {
             try
             {
-                DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT * FROM staff");
+                // DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT * FROM staff");
 
-                DataTable staff = dataSet.Tables[0];
-                DataRow newMember = staff.NewRow();
+                // DataTable staff = dataSet.Tables[0];
+                // DataRow newMember = staff.NewRow();
 
-                newMember["staffTypeID"] = StaffTypeId;
-                newMember["username"] = Username;
-                newMember["password"] = Password;
+                SpitalDataSet.staffRow newStaffRow;
+                newStaffRow = SpitalDataSet.staff.NewstaffRow();
 
-                staff.Rows.Add(newMember);
+                newStaffRow.staffTypeID_ = StaffTypeId;
+                newStaffRow.username = Username;
+                newStaffRow.password = Password;
+
+                this.SpitalDataSet.staff.Rows.Add(newStaffRow);
+                this.StaffTableAdapter.Update(this.SpitalDataSet.staff);
+
+                //newMember["staffTypeID"] = StaffTypeId;
+                //newMember["username"] = Username;
+                //newMember["password"] = Password;
+
+                //staff.Rows.Add(newMember);
             }
             catch (Exception error)
             {

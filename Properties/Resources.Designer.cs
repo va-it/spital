@@ -63,9 +63,31 @@ namespace spital.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inpatient_icon_7507 {
+
+        internal static System.Drawing.Bitmap icon_Password {
             get {
-                object obj = ResourceManager.GetObject("inpatient_icon_7507", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_Password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_User {
+            get {
+                object obj = ResourceManager.GetObject("icon_User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftDock {
+            get {
+                object obj = ResourceManager.GetObject("leftDock", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

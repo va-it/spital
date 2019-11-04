@@ -19,7 +19,7 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

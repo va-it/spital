@@ -36,34 +36,10 @@
             this.copyright = new System.Windows.Forms.Label();
             this.groupBox_Modules = new System.Windows.Forms.GroupBox();
             this.checkedListBox_Modules = new System.Windows.Forms.CheckedListBox();
-            this.ModulePicture4 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection8 = new System.Windows.Forms.CheckBox();
-            this.ModulePicture3 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection3 = new System.Windows.Forms.CheckBox();
-            this.moduleSelection2 = new System.Windows.Forms.CheckBox();
-            this.ModulePicture2 = new System.Windows.Forms.PictureBox();
-            this.moduleIcon1 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection1 = new System.Windows.Forms.CheckBox();
-            this.ModulePicture5 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection5 = new System.Windows.Forms.CheckBox();
-            this.ModulePicture6 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection6 = new System.Windows.Forms.CheckBox();
-            this.ModulePicture7 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection7 = new System.Windows.Forms.CheckBox();
-            this.ModulePicture8 = new System.Windows.Forms.PictureBox();
-            this.moduleSelection4 = new System.Windows.Forms.CheckBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.groupBox_Modules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture8)).BeginInit();
             this.SuspendLayout();
             // 
             // modulesButton
@@ -72,7 +48,7 @@
             this.modulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modulesButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesButton.ForeColor = System.Drawing.Color.White;
-            this.modulesButton.Location = new System.Drawing.Point(609, 363);
+            this.modulesButton.Location = new System.Drawing.Point(366, 333);
             this.modulesButton.Margin = new System.Windows.Forms.Padding(2);
             this.modulesButton.Name = "modulesButton";
             this.modulesButton.Size = new System.Drawing.Size(107, 37);
@@ -89,7 +65,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1347, 86);
+            this.panelHeader.Size = new System.Drawing.Size(522, 86);
             this.panelHeader.TabIndex = 10;
             // 
             // logo
@@ -111,17 +87,17 @@
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 448);
+            this.panelFooter.Location = new System.Drawing.Point(0, 378);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1347, 33);
+            this.panelFooter.Size = new System.Drawing.Size(522, 33);
             this.panelFooter.TabIndex = 11;
             // 
             // copyright
             // 
             this.copyright.AutoSize = true;
             this.copyright.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyright.Location = new System.Drawing.Point(295, 10);
+            this.copyright.Location = new System.Drawing.Point(152, 7);
             this.copyright.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.copyright.Name = "copyright";
             this.copyright.Size = new System.Drawing.Size(195, 17);
@@ -131,209 +107,33 @@
             // 
             // groupBox_Modules
             // 
-            this.groupBox_Modules.Controls.Add(this.ModulePicture8);
-            this.groupBox_Modules.Controls.Add(this.ModulePicture6);
-            this.groupBox_Modules.Controls.Add(this.ModulePicture7);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection1);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection2);
-            this.groupBox_Modules.Controls.Add(this.ModulePicture5);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection3);
-            this.groupBox_Modules.Controls.Add(this.ModulePicture4);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection4);
-            this.groupBox_Modules.Controls.Add(this.ModulePicture3);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection5);
-            this.groupBox_Modules.Controls.Add(this.ModulePicture2);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection6);
-            this.groupBox_Modules.Controls.Add(this.moduleIcon1);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection7);
-            this.groupBox_Modules.Controls.Add(this.moduleSelection8);
+            this.groupBox_Modules.Controls.Add(this.checkedListBox_Modules);
             this.groupBox_Modules.Location = new System.Drawing.Point(58, 100);
             this.groupBox_Modules.Name = "groupBox_Modules";
-            this.groupBox_Modules.Size = new System.Drawing.Size(658, 258);
+            this.groupBox_Modules.Size = new System.Drawing.Size(414, 228);
             this.groupBox_Modules.TabIndex = 28;
             this.groupBox_Modules.TabStop = false;
             this.groupBox_Modules.Text = "Module Selection";
             // 
             // checkedListBox_Modules
             // 
+            this.checkedListBox_Modules.AllowDrop = true;
+            this.checkedListBox_Modules.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox_Modules.CheckOnClick = true;
+            this.checkedListBox_Modules.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.checkedListBox_Modules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkedListBox_Modules.FormattingEnabled = true;
-            this.checkedListBox_Modules.Location = new System.Drawing.Point(807, 100);
+            this.checkedListBox_Modules.Location = new System.Drawing.Point(6, 19);
             this.checkedListBox_Modules.Name = "checkedListBox_Modules";
-            this.checkedListBox_Modules.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox_Modules.Size = new System.Drawing.Size(402, 198);
             this.checkedListBox_Modules.TabIndex = 29;
-            // 
-            // ModulePicture4
-            // 
-            this.ModulePicture4.Location = new System.Drawing.Point(23, 188);
-            this.ModulePicture4.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture4.Name = "ModulePicture4";
-            this.ModulePicture4.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture4.TabIndex = 23;
-            this.ModulePicture4.TabStop = false;
-            // 
-            // moduleSelection8
-            // 
-            this.moduleSelection8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection8.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection8.Location = new System.Drawing.Point(464, 188);
-            this.moduleSelection8.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection8.Name = "moduleSelection8";
-            this.moduleSelection8.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection8.TabIndex = 19;
-            this.moduleSelection8.Text = "checkBox8";
-            this.moduleSelection8.UseVisualStyleBackColor = false;
-            // 
-            // ModulePicture3
-            // 
-            this.ModulePicture3.Location = new System.Drawing.Point(23, 132);
-            this.ModulePicture3.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture3.Name = "ModulePicture3";
-            this.ModulePicture3.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture3.TabIndex = 22;
-            this.ModulePicture3.TabStop = false;
-            // 
-            // moduleSelection3
-            // 
-            this.moduleSelection3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection3.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection3.Location = new System.Drawing.Point(107, 131);
-            this.moduleSelection3.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection3.Name = "moduleSelection3";
-            this.moduleSelection3.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection3.TabIndex = 14;
-            this.moduleSelection3.UseVisualStyleBackColor = false;
-            // 
-            // moduleSelection2
-            // 
-            this.moduleSelection2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection2.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection2.Location = new System.Drawing.Point(107, 76);
-            this.moduleSelection2.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection2.Name = "moduleSelection2";
-            this.moduleSelection2.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection2.TabIndex = 13;
-            this.moduleSelection2.UseVisualStyleBackColor = false;
-            // 
-            // ModulePicture2
-            // 
-            this.ModulePicture2.Location = new System.Drawing.Point(23, 76);
-            this.ModulePicture2.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture2.Name = "ModulePicture2";
-            this.ModulePicture2.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture2.TabIndex = 21;
-            this.ModulePicture2.TabStop = false;
-            // 
-            // moduleIcon1
-            // 
-            this.moduleIcon1.Location = new System.Drawing.Point(23, 20);
-            this.moduleIcon1.Margin = new System.Windows.Forms.Padding(2);
-            this.moduleIcon1.Name = "moduleIcon1";
-            this.moduleIcon1.Size = new System.Drawing.Size(81, 52);
-            this.moduleIcon1.TabIndex = 20;
-            this.moduleIcon1.TabStop = false;
-            // 
-            // moduleSelection1
-            // 
-            this.moduleSelection1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection1.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.moduleSelection1.Location = new System.Drawing.Point(107, 20);
-            this.moduleSelection1.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection1.Name = "moduleSelection1";
-            this.moduleSelection1.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection1.TabIndex = 12;
-            this.moduleSelection1.UseVisualStyleBackColor = false;
-            // 
-            // ModulePicture5
-            // 
-            this.ModulePicture5.Location = new System.Drawing.Point(379, 20);
-            this.ModulePicture5.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture5.Name = "ModulePicture5";
-            this.ModulePicture5.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture5.TabIndex = 24;
-            this.ModulePicture5.TabStop = false;
-            // 
-            // moduleSelection5
-            // 
-            this.moduleSelection5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection5.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection5.Location = new System.Drawing.Point(464, 20);
-            this.moduleSelection5.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection5.Name = "moduleSelection5";
-            this.moduleSelection5.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection5.TabIndex = 16;
-            this.moduleSelection5.Text = "checkBox5";
-            this.moduleSelection5.UseVisualStyleBackColor = false;
-            // 
-            // ModulePicture6
-            // 
-            this.ModulePicture6.Location = new System.Drawing.Point(379, 76);
-            this.ModulePicture6.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture6.Name = "ModulePicture6";
-            this.ModulePicture6.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture6.TabIndex = 25;
-            this.ModulePicture6.TabStop = false;
-            // 
-            // moduleSelection6
-            // 
-            this.moduleSelection6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection6.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection6.Location = new System.Drawing.Point(464, 76);
-            this.moduleSelection6.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection6.Name = "moduleSelection6";
-            this.moduleSelection6.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection6.TabIndex = 17;
-            this.moduleSelection6.Text = "checkBox6";
-            this.moduleSelection6.UseVisualStyleBackColor = false;
-            // 
-            // ModulePicture7
-            // 
-            this.ModulePicture7.Location = new System.Drawing.Point(379, 132);
-            this.ModulePicture7.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture7.Name = "ModulePicture7";
-            this.ModulePicture7.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture7.TabIndex = 26;
-            this.ModulePicture7.TabStop = false;
-            // 
-            // moduleSelection7
-            // 
-            this.moduleSelection7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection7.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection7.Location = new System.Drawing.Point(464, 132);
-            this.moduleSelection7.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection7.Name = "moduleSelection7";
-            this.moduleSelection7.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection7.TabIndex = 18;
-            this.moduleSelection7.Text = "checkBox7";
-            this.moduleSelection7.UseVisualStyleBackColor = false;
-            // 
-            // ModulePicture8
-            // 
-            this.ModulePicture8.Location = new System.Drawing.Point(379, 188);
-            this.ModulePicture8.Margin = new System.Windows.Forms.Padding(2);
-            this.ModulePicture8.Name = "ModulePicture8";
-            this.ModulePicture8.Size = new System.Drawing.Size(81, 52);
-            this.ModulePicture8.TabIndex = 27;
-            this.ModulePicture8.TabStop = false;
-            // 
-            // moduleSelection4
-            // 
-            this.moduleSelection4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.moduleSelection4.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moduleSelection4.Location = new System.Drawing.Point(107, 188);
-            this.moduleSelection4.Margin = new System.Windows.Forms.Padding(1);
-            this.moduleSelection4.Name = "moduleSelection4";
-            this.moduleSelection4.Size = new System.Drawing.Size(164, 52);
-            this.moduleSelection4.TabIndex = 15;
-            this.moduleSelection4.UseVisualStyleBackColor = false;
             // 
             // ModulesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1347, 481);
-            this.Controls.Add(this.checkedListBox_Modules);
+            this.ClientSize = new System.Drawing.Size(522, 411);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.modulesButton);
@@ -350,14 +150,6 @@
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.groupBox_Modules.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,21 +162,5 @@
         private System.Windows.Forms.Label copyright;
         private System.Windows.Forms.GroupBox groupBox_Modules;
         private System.Windows.Forms.CheckedListBox checkedListBox_Modules;
-        private System.Windows.Forms.PictureBox ModulePicture8;
-        private System.Windows.Forms.PictureBox ModulePicture6;
-        private System.Windows.Forms.PictureBox ModulePicture7;
-        public System.Windows.Forms.CheckBox moduleSelection1;
-        private System.Windows.Forms.CheckBox moduleSelection2;
-        private System.Windows.Forms.PictureBox ModulePicture5;
-        private System.Windows.Forms.CheckBox moduleSelection3;
-        private System.Windows.Forms.PictureBox ModulePicture4;
-        private System.Windows.Forms.CheckBox moduleSelection4;
-        private System.Windows.Forms.PictureBox ModulePicture3;
-        private System.Windows.Forms.CheckBox moduleSelection5;
-        private System.Windows.Forms.PictureBox ModulePicture2;
-        private System.Windows.Forms.CheckBox moduleSelection6;
-        private System.Windows.Forms.PictureBox moduleIcon1;
-        private System.Windows.Forms.CheckBox moduleSelection7;
-        private System.Windows.Forms.CheckBox moduleSelection8;
     }
 }

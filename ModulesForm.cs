@@ -18,34 +18,10 @@ namespace spital
             InitializeComponent();
             FillModuleType();
         }
- 
+
         private void modulesButton_Click(object sender, EventArgs e)
         {
             Form limits = new LimitsForm();
-
-            //if (!moduleSelection1.Checked)
-            //{
-            //    if (moduleSelection2.Checked)
-            //    {
-            //        //Assign to labelModule2 in LimitForm
-            //        string CheckboxText = moduleSelection2.Text;
-                    
-
-            //    }
-            //    else if (moduleSelection3.Checked)
-            //    {
-            //        //Assign to labelModule3 in LimitForm
-            //    }
-            //    else if (moduleSelection4.Checked)
-            //    {
-            //        //Assign to labelModule4 in LimitForm
-            //    }
-            //}
-            //else
-            //{
-            //    //Assign to labelModule1 in LimitForm
-            //}
-
             this.Close();
             limits.Show();
         }
@@ -65,7 +41,6 @@ namespace spital
             {
                 checkedListBox_Modules.Items.Add(row["moduleName"].ToString());
             }
-            
         }
     }
 }

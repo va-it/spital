@@ -122,11 +122,6 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpitalDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpitalDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="StaffType.cs" />
     <EmbeddedResource Include="LoginForm.resx">
@@ -144,17 +139,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SpitalDataSet.xsc">
-      <DependentUpon>SpitalDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SpitalDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SpitalDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SpitalDataSet.xss">
-      <DependentUpon>SpitalDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

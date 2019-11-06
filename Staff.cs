@@ -6,45 +6,37 @@ using System.Threading.Tasks;
 using spital.Properties;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace spital
 {
     abstract class Staff
     {
-
-        private SpitalDataSet SpitalDataSet = new SpitalDataSet();
-        private readonly SpitalDataSetTableAdapters.staffTableAdapter StaffTableAdapter = new SpitalDataSetTableAdapters.staffTableAdapter();
-
         // Auto-implemented properties for trivial get and set
         public int Id { get; set; }
         public int StaffTypeId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string MobileNumber { get; set; }
 
-        private string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
+        private static readonly string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
+
+        private static readonly string selectStatement = "SELECT * FROM staff";
+        private static readonly string insertStatement = 
+            "INSERT INTO staff (staffTypeID, username, password, email, mobileNumber) " +
+            "VALUES (@staffTypeID, @username, @password, @email, @mobileNumber)";
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
         /// </summary>
         /// <param name="staffType"></param>
-        /// <param name="firstName"></param>
-        /// <param name="middleName"></param>
-        /// <param name="lastName"></param>
-        public Staff(
-            int staffType, string username, string password, 
-            string firstName = null, string middleName = null, string lastName = null
-            )
+        public Staff(int staffType, string username, string password)
         {
             Id = 1;
             StaffTypeId = staffType;
             Username = username;
             Password = password;
-            FirstName = firstName;
-            MiddleName = middleName;
-            LastName = lastName;
         }
 
         /// <summary>
@@ -60,7 +52,7 @@ namespace spital
             // Save to DB
         }
 
-        public bool ValidateCredentials(string username, string password)
+        public static bool ValidateCredentials(string username, string password)
         {
             // Retrieve values from DB and validate
             /* 
@@ -70,23 +62,20 @@ namespace spital
 
             bool valid = false;
 
-            DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT username, password FROM staff");
+            DataSet staffDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
 
-            foreach (DataTable table in dataSet.Tables)
+            DataTable staffDataTable = staffDataSet.Tables[0];
+
+            foreach (DataRow row in staffDataTable.Rows)
             {
-                foreach (DataRow row in table.Rows)
+                if (String.Equals(username, row["username"].ToString()))
                 {
-                    if (String.Equals(Username, row["username"].ToString()))
+                    string comparePassword = Encryption.DecryptText(row["password"].ToString(), encryptionPassword);
+
+                    if (String.Equals(password, comparePassword))
                     {
-
-                        string comparePassword = Encryption.DecryptText(row["password"].ToString(), encryptionPassword);
-
-                        if (String.Equals(Password, comparePassword))
-                        {
-                            // Credentials match
-                            valid = true;
-                        }
-
+                        // Credentials match
+                        valid = true;
                     }
                 }
             }
@@ -138,30 +127,20 @@ namespace spital
         {
             try
             {
-                // DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT * FROM staff");
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
-                // DataTable staff = dataSet.Tables[0];
-                // DataRow newMember = staff.NewRow();
+                command.CommandText = insertStatement; //set the sql query
+                command.Parameters.Add(new SqlParameter("staffTypeID", StaffTypeId));
+                command.Parameters.Add(new SqlParameter("username", Username));
+                command.Parameters.Add(new SqlParameter("password", Password));
+                command.Parameters.Add(new SqlParameter("email", Email));
+                command.Parameters.Add(new SqlParameter("mobileNumber", MobileNumber));
 
-                SpitalDataSet.staffRow newStaffRow;
-                newStaffRow = SpitalDataSet.staff.NewstaffRow();
-
-                newStaffRow.staffTypeID_ = StaffTypeId;
-                newStaffRow.username = Username;
-                newStaffRow.password = Password;
-
-                this.SpitalDataSet.staff.Rows.Add(newStaffRow);
-                this.StaffTableAdapter.Update(this.SpitalDataSet.staff);
-
-                //newMember["staffTypeID"] = StaffTypeId;
-                //newMember["username"] = Username;
-                //newMember["password"] = Password;
-
-                //staff.Rows.Add(newMember);
+                DatabaseConnection.Instance.ExectuteInsert(command);
             }
             catch (Exception error)
             {
-                // Error to be handled
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
             
         }

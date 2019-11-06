@@ -10,11 +10,8 @@ namespace spital
     {
         public string Email { get; set; }
 
-        public Consultant(
-            int staffTypeId, string username, string password,
-            string firstName = null, string middleName = null, string lastName = null,
-            string email = null
-            ) : base(staffTypeId, username, password, firstName, middleName, lastName)
+        public Consultant(int staffTypeId, string username, string password, string email = null) 
+        : base(staffTypeId, username, password)
         {
             Email = email;
         }

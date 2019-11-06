@@ -32,18 +32,18 @@ namespace spital
                 return;
             }
 
-            string selectedStaff = staffType.SelectedValue.ToString();
+            StaffType selectedStaff = staffType.SelectedItem as StaffType;
 
             try
             {
-                switch (selectedStaff)
+                switch (selectedStaff.Id)
                 {
-                    case "1":
-                        Nurse nurse = new Nurse(1, username, password, "", "", "", contactDetails);
+                    case 1:
+                        Nurse nurse = new Nurse(1, username, password, contactDetails);
                         nurse.Save();
                         break;
-                    case "2":
-                        Consultant consultant = new Consultant(2, username, password, "", "", "", contactDetails);
+                    case 2:
+                        Consultant consultant = new Consultant(2, username, password, contactDetails);
                         consultant.Save();
                         break;
                 }
@@ -72,29 +72,27 @@ namespace spital
 
         public void FillStaffType()
         {
-            // DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT staffTypeID, typeName FROM staffType");
 
-            SpitalDataSetTableAdapters.staffTypeTableAdapter staffTypeTableAdapter = new SpitalDataSetTableAdapters.staffTypeTableAdapter();
+            List<StaffType> staffTypes = new List<StaffType>();
+            staffTypes = StaffType.GetAll();
 
             staffType.ValueMember = "staffTypeID";
-            staffType.DisplayMember = "typeName";
-            staffType.DataSource = staffTypeTableAdapter.GetData();
+            staffType.DisplayMember = "name";
+            staffType.DataSource = staffTypes;
 
-            //staffType.DataSource = dataSet.Tables[0];
-            
         }
 
         private void staffType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedStaff = staffType.SelectedValue.ToString();
+            StaffType selectedStaff = staffType.SelectedItem as StaffType;;
 
-            switch (selectedStaff)
+            switch (selectedStaff.Id)
             {
-                case "1":
+                case 1:
                     label_ContactDetails.Text = "Mobile number";
                     pictureBox_ContactDetails.Image = Resources.icon_Mobile;
                     break;
-                case "2":
+                case 2:
                     label_ContactDetails.Text = "Email";
                     pictureBox_ContactDetails.Image = Resources.icon_Email;
                     break;

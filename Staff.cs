@@ -34,21 +34,9 @@ namespace spital
             Id = 1;
             StaffTypeId = staffType;
             Username = username;
-            Password = password;
+            Password = Encryption.EncryptText(password, encryptionPassword);
         }
 
-        /// <summary>
-        /// Saves username and password values in database based on parameters
-        /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        public void SaveCredentials(string username, string password)
-        {
-            Username = username;
-            Password = password;
-
-            // Save to DB
-        }
 
         public static bool ValidateCredentials(string username, string password)
         {

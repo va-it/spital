@@ -31,6 +31,9 @@ namespace spital
             if (allowLogin)
             {
                 // Start session etc.
+                this.Hide();
+                RegistrationForm registration = new RegistrationForm();
+                registration.Show();
             }
             else
             {

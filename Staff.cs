@@ -17,15 +17,13 @@ namespace spital
         public int StaffTypeId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Email { get; set; }
-        public string MobileNumber { get; set; }
 
         private static readonly string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
 
         private static readonly string selectStatement = "SELECT * FROM staff";
         private static readonly string insertStatement = 
-            "INSERT INTO staff (staffTypeID, username, password, email, mobileNumber) " +
-            "VALUES (@staffTypeID, @username, @password, @email, @mobileNumber)";
+            "INSERT INTO staff (staffTypeID, username, password) " +
+            "VALUES (@staffTypeID, @username, @password)";
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
@@ -133,8 +131,6 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("staffTypeID", StaffTypeId));
                 command.Parameters.Add(new SqlParameter("username", Username));
                 command.Parameters.Add(new SqlParameter("password", Password));
-                command.Parameters.Add(new SqlParameter("email", Email));
-                command.Parameters.Add(new SqlParameter("mobileNumber", MobileNumber));
 
                 DatabaseConnection.Instance.ExectuteInsert(command);
             }

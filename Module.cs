@@ -1,5 +1,7 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,10 @@ namespace spital
         public string Icon { get; set; }
         public int DefaultMin { get; set; }
         public int DefaultMax { get; set; }
+
+        //Generic 
+        private static readonly string selectStatement = "SELECT * FROM module";
+        private static readonly string insertStatement = "INSERT INTO module (moduleID, name, defaultMin, defaultMax)" + "VALUES (@moduleID, @name, @defaultMin, @defaultMax)";
 
         /// <summary>
         /// Constructor. Sets Id, name, icon, min and max values based on values from database
@@ -36,6 +42,13 @@ namespace spital
         {
             DefaultMin = min;
             DefaultMax = max;
+        }
+
+        public static DataTable getAll()
+        {
+            DataSet dataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable moduleTable = dataSet.Tables[0];
+            return moduleTable;
         }
     }
 }

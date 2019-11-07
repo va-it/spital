@@ -32,12 +32,10 @@ namespace spital
 
         // to retrive module type from database
         public void FillModuleType()
-        { 
-            DataSet dataSet = DatabaseConnection.Instance.GetDataSet("SELECT name FROM module");
+        {
+            DataTable moduleTypeTable = Module.getAll();
 
-            DataTable moduleTable = dataSet.Tables[0];
-
-            foreach(DataRow row in moduleTable.Rows)
+            foreach (DataRow row in moduleTypeTable.Rows)
             {
                 checkedListBox_Modules.Items.Add(row["name"].ToString());
             }

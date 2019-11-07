@@ -13,7 +13,7 @@ namespace spital
     class Module
     {
         // Auto-implemented properties for trivial get and set
-        private int Id { get; }
+        public int ModuleID { get; }
         public string Name { get; set; }
         public string Icon { get; set; }
         public float DefaultMin { get; set; }
@@ -24,15 +24,29 @@ namespace spital
         private static readonly string insertStatement = "INSERT INTO module (moduleID, name, defaultMin, defaultMax)" + "VALUES (@moduleID, @name, @defaultMin, @defaultMax)";
 
         /// <summary>
-        /// Constructor. Sets Id, name, icon, min and max values based on values from database
+        /// Constructor. Sets name, icon, min and max values based on values from database
         /// </summary>
-        public Module()
+        public Module(int id)
         {
-            Id = 1;
-            Name = "Heart Rate";
-            Icon = "heart_rate.png";
-            DefaultMin = 80;
-            DefaultMax = 180;
+            /*
+             * WE MAY WANT TO CHANGE THIS SO THAT WE DON'T HAVE TO
+             * TO RETRIEVE ALL THE VALUES IN THE FUTURE BUT ADD A WHERE CLAUSE TO
+             * THE INSERT STATEMENT
+             */
+
+            DataSet dataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable moduleTable = dataSet.Tables[0];
+
+            foreach (DataRow row in moduleTable.Rows)
+            {
+                if (Int32.Parse(row["moduleID"].ToString()) == id)
+                {
+                    ModuleID = id;
+                    Name = row["name"].ToString();
+                    DefaultMin = float.Parse(row["defaultMax"].ToString());
+                    DefaultMax = float.Parse(row["defaultMax"].ToString());
+                }
+            }
         }
 
         /// <summary>

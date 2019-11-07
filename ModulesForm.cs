@@ -22,9 +22,9 @@ namespace spital
         private void modulesButton_Click(object sender, EventArgs e)
         {
             SelectedModule();
-            Form limits = new LimitsForm();
-            this.Close();
-            limits.Show();
+            // Form limits = new LimitsForm();
+            // this.Close();
+            // limits.Show();
         }
 
         /*
@@ -36,18 +36,25 @@ namespace spital
         {
             DataTable moduleTypeTable = Module.GetAll();
 
-            foreach (DataRow row in moduleTypeTable.Rows)
-            {
-                checkedListBox_Modules.Items.Add(row["name"].ToString());
-            }
+            checkedListBox_Modules.DataSource = moduleTypeTable;
+            checkedListBox_Modules.ValueMember = "moduleID";
+            checkedListBox_Modules.DisplayMember = "name";
         }
 
         // to store selected module to database in table "monitorModule" based on the moduleID
         public void SelectedModule()
         {
-            //MonitorModule selectedModule = checkedListBox_Modules.SelectedItem as MonitorModule;
+            foreach (DataRowView row in checkedListBox_Modules.CheckedItems)
+            {
+                // THIS IS TO SHOW THAT WE HAVE THE MODULE ID
+                MessageBox.Show(row["moduleID"].ToString());
 
 
+                // THIS IS TO SHOW THAT THE CONSTRUCTOR CREATES THE MODULE FROM VALUES IN DATABASE
+                int moduleID = Int32.Parse(row["moduleID"].ToString());
+                Module module = new Module(moduleID);
+                MessageBox.Show(module.Name);
+            }
         }
     }
 }

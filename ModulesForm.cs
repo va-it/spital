@@ -21,6 +21,7 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
+            SelectedModule();
             Form limits = new LimitsForm();
             this.Close();
             limits.Show();
@@ -33,12 +34,20 @@ namespace spital
         // to retrive module type from database
         public void FillModuleType()
         {
-            DataTable moduleTypeTable = Module.getAll();
+            DataTable moduleTypeTable = Module.GetAll();
 
             foreach (DataRow row in moduleTypeTable.Rows)
             {
                 checkedListBox_Modules.Items.Add(row["name"].ToString());
             }
+        }
+
+        // to store selected module to database in table "monitorModule" based on the moduleID
+        public void SelectedModule()
+        {
+            //MonitorModule selectedModule = checkedListBox_Modules.SelectedItem as MonitorModule;
+
+
         }
     }
 }

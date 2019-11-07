@@ -43,6 +43,7 @@
             this.label_copyRight = new System.Windows.Forms.Label();
             this.panel_registrationUnderline = new System.Windows.Forms.Panel();
             this.panel_header = new System.Windows.Forms.Panel();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_footer = new System.Windows.Forms.Panel();
             this.staffType = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,15 +51,14 @@
             this.label_ContactDetails = new System.Windows.Forms.Label();
             this.pictureBox_ContactDetails = new System.Windows.Forms.PictureBox();
             this.pictureBox_leftDock = new System.Windows.Forms.PictureBox();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.pictureBox_confirmPassword = new System.Windows.Forms.PictureBox();
             this.pictureBox_password = new System.Windows.Forms.PictureBox();
             this.pictureBox_user = new System.Windows.Forms.PictureBox();
             this.panel_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel_footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ContactDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_leftDock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).BeginInit();
@@ -225,6 +225,16 @@
             this.panel_header.Size = new System.Drawing.Size(1026, 138);
             this.panel_header.TabIndex = 18;
             // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.Image = global::spital.Properties.Resources.Logo_EAHT;
+            this.pictureBox_logo.Location = new System.Drawing.Point(18, 17);
+            this.pictureBox_logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(350, 97);
+            this.pictureBox_logo.TabIndex = 1;
+            this.pictureBox_logo.TabStop = false;
+            // 
             // panel_footer
             // 
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
@@ -266,7 +276,6 @@
             this.textBox_ContactDetails.Name = "textBox_ContactDetails";
             this.textBox_ContactDetails.Size = new System.Drawing.Size(262, 24);
             this.textBox_ContactDetails.TabIndex = 23;
-            this.textBox_ContactDetails.UseSystemPasswordChar = true;
             this.textBox_ContactDetails.WordWrap = false;
             // 
             // label_ContactDetails
@@ -302,16 +311,6 @@
             this.pictureBox_leftDock.Size = new System.Drawing.Size(513, 502);
             this.pictureBox_leftDock.TabIndex = 20;
             this.pictureBox_leftDock.TabStop = false;
-            // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.Image = global::spital.Properties.Resources.Logo_EAHT;
-            this.pictureBox_logo.Location = new System.Drawing.Point(18, 17);
-            this.pictureBox_logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(350, 97);
-            this.pictureBox_logo.TabIndex = 1;
-            this.pictureBox_logo.TabStop = false;
             // 
             // pictureBox_confirmPassword
             // 
@@ -381,11 +380,11 @@
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
             this.panel_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.panel_footer.ResumeLayout(false);
             this.panel_footer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ContactDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_leftDock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_confirmPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_user)).EndInit();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,12 +18,12 @@ namespace spital
             InitializeComponent();
         }
 
-        //method to save user input to the .txt file for the time being until database is implemented
         private void Button_Register_Click(object sender, EventArgs e)
         {
             string username = textBox_username.Text;
             string password = textBox_password.Text;
             string passwordConfirm = textBox_ConfirmPassword.Text;
+            string contactDetails = textBox_ContactDetails.Text;
 
             //check input from password and confirm password match 
             if (password != passwordConfirm)
@@ -31,25 +32,70 @@ namespace spital
                 return;
             }
 
-            User user = new User
-            {
-                Username = username,
-                Password = password
-            };
+            StaffType selectedStaff = staffType.SelectedItem as StaffType;
 
             try
             {
-                user.Save();
+                switch (selectedStaff.Id)
+                {
+                    case 1:
+                        Nurse nurse = new Nurse(1, username, password, contactDetails);
+                        nurse.Save();
+                        break;
+                    case 2:
+                        Consultant consultant = new Consultant(2, username, password, contactDetails);
+                        consultant.Save();
+                        break;
+                }
+
                 MessageBox.Show("Registration successful! Please Log in.", "Success");
-                // close this form window
-                Close();
+
                 // open login page 
                 LoginForm login = new LoginForm();
-                login.ShowDialog();
+                login.Show();
+
+                // close this form window
+                this.Hide();
+
+                
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+        }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            FillStaffType();
+        }
+
+        public void FillStaffType()
+        {
+
+            List<StaffType> staffTypes = new List<StaffType>();
+            staffTypes = StaffType.GetAll();
+
+            staffType.ValueMember = "staffTypeID";
+            staffType.DisplayMember = "name";
+            staffType.DataSource = staffTypes;
+
+        }
+
+        private void staffType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StaffType selectedStaff = staffType.SelectedItem as StaffType;;
+
+            switch (selectedStaff.Id)
+            {
+                case 1:
+                    label_ContactDetails.Text = "Mobile number";
+                    pictureBox_ContactDetails.Image = Resources.icon_Mobile;
+                    break;
+                case 2:
+                    label_ContactDetails.Text = "Email";
+                    pictureBox_ContactDetails.Image = Resources.icon_Email;
+                    break;
             }
         }
     }

@@ -98,5 +98,28 @@ namespace spital.Properties
             CloseConnection();
             return dataSet;
         }
+
+        public SqlCommand GetSqlCommand()
+        {
+            //create the object SqlCommand
+            SqlCommand command = new SqlCommand();
+            //set its properties
+            command.CommandType = CommandType.Text;
+
+            return command;
+        }
+
+        public int ExectuteInsert(SqlCommand command)
+        {
+            OpenConnection();
+            command.Connection = sqlconn;
+
+            //execute the command
+            int noRows = command.ExecuteNonQuery();
+
+            CloseConnection();
+
+            return noRows;
+        }
     }
 }

@@ -1,22 +1,48 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace spital
 {
     class Nurse : Staff
     {
-        public string MobileNumber { get; set; }
+        public int Id { get; }
+        public string PhoneNumber { get; set; }
+        public int StaffID { get; set; }
 
-        public Nurse(
-            int staffType, string username, string password,
-            string firstName, string middleName, string lastName,
-            string mobileNumber
-            ) : base(staffType, username, password, firstName, middleName, lastName)
+        private static readonly string selectStatement = "SELECT * FROM nurse";
+        private static readonly string insertStatement = "INSERT INTO nurse (phoneNumber, staffID) VALUES (@phoneNumber, @staffID)";
+
+        public Nurse(int staffTypeId, string username, string password, string phoneNumber = null) 
+        : base(staffTypeId, username, password)
         {
-            MobileNumber = mobileNumber;
+            PhoneNumber = phoneNumber;
+            StaffID = base.Id;
+        }
+
+        public new void Save()
+        {
+            base.Save();
+
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = insertStatement; //set the sql query
+                command.Parameters.Add(new SqlParameter("phoneNumber", PhoneNumber));
+                command.Parameters.Add(new SqlParameter("staffID", base.Id));
+
+                DatabaseConnection.Instance.ExectuteInsert(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
         }
     }
 }

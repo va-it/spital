@@ -36,5 +36,47 @@ namespace spital
             Form limits = new LimitsForm();
             limits.Show();
         }
+
+        private DataTable RetrieveModules()
+        {
+            return MonitorModule.GetAll();
+        }
+
+        private void MonitorForm_Load(object sender, EventArgs e)
+        {
+            DataTable monitorModuleDataTable = RetrieveModules();
+
+            int index = 1;
+
+
+            foreach (DataRow row in monitorModuleDataTable.Rows)
+            {
+                if (index==1)
+                {
+                    moduleReading1.Text = row["name"].ToString();
+                }
+
+                if (index == 2)
+                {
+                    moduleReading2.Text = row["name"].ToString();
+                }
+
+                if (index == 3)
+                {
+                    moduleReading3.Text = row["name"].ToString();
+                }
+
+                if (index == 4)
+                {
+                    moduleReading4.Text = row["name"].ToString();
+                }
+
+                index++;
+
+            }
+
+
+            
+        }
     }
 }

@@ -15,6 +15,10 @@ namespace spital
         public int AssignedMin { get; set; }
         public int AssignedMax { get; set; }
 
+
+        private static readonly string selectStatement = "SELECT * FROM monitorModule";
+        private static readonly string insertStatement = 
+        "INSERT INTO monitorModule(monitorID,moduleID,assignedMax,assignedMin) VALUES (@monitorID,@moduleID,@assignedMax,@assignedMin)";
         /// <summary>
         /// Constructor. Sets value of Id and defines monitor and module from parameters
         /// </summary>

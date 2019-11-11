@@ -115,7 +115,6 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
-
         }
 
         /// <summary>
@@ -141,6 +140,5 @@ namespace spital
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
         }
-
     }
 }

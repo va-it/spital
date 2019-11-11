@@ -68,13 +68,11 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
-
         }
 
         /// <summary>
         /// Updates entry in database with values from this instance 
         /// </summary>
-        /// <param name="alarm"></param>
         public void Update()
         {
             try

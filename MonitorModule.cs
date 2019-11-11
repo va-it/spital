@@ -16,15 +16,15 @@ namespace spital
         private int Id { get; }
         public Monitor Monitor { get; set; }
         public Module Module { get; set; }
-        public int AssignedMin { get; set; }
-        public int AssignedMax { get; set; }
+        public float AssignedMin { get; set; }
+        public float AssignedMax { get; set; }
 
         private static readonly string selectStatement = 
             "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID";
 
-        //private static readonly string selectWhereStatement =
-        //    "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID" +
-        //    "WHERE monitorModuleID = @monitorModuleID";
+        private static readonly string selectWhereStatement =
+            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID" +
+            "WHERE monitorModuleID = @monitorModuleID";
 
         private static readonly string insertStatement =
             "INSERT INTO monitorModule (monitorID, moduleID, assignedMin, assignedMax) " +
@@ -39,7 +39,7 @@ namespace spital
         /// </summary>
         /// <param name="monitor"></param>
         /// <param name="module"></param>
-        public MonitorModule(Monitor monitor, Module module)
+        public MonitorModule(Monitor monitor = null, Module module = null)
         {
             Monitor = monitor;
             Module = module;
@@ -53,6 +53,10 @@ namespace spital
             Alarm alarm = new Alarm(this);
         }
 
+        /// <summary>
+        /// Returns a DataTable object of all MonitorModules
+        /// </summary>
+        /// <returns></returns>
         public DataTable GetAll()
         {
             DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
@@ -62,31 +66,33 @@ namespace spital
         }
 
         // WIP CODE
-        //public MonitorModule GetOne(int id)
-        //{
-        //    MonitorModule monitorModule = new MonitorModule(null,null);
+        public MonitorModule GetOne(int id)
+        {
+            MonitorModule monitorModule = new MonitorModule();
 
-        //    SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
-        //    command.CommandText = selectWhereStatement;
-        //    command.Parameters.Add(new SqlParameter("monitorModuleID", id));
+            SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+            command.CommandText = selectWhereStatement;
+            command.Parameters.Add(new SqlParameter("monitorModuleID", id));
 
-        //    DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
-        //    DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
+            DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
+            DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
 
-        //    if (monitorModuleDataTable.Rows.Count == 1)
-        //    {
-        //        DataRow row = monitorModuleDataTable.Rows[0];
+            if (monitorModuleDataTable.Rows.Count == 1)
+            {
+                DataRow row = monitorModuleDataTable.Rows[0];
 
-        //        Monitor monitor = new Monitor(Int32.Parse(row["monitorID"].ToString()));
-        //        Module module = new Module(Int32.Parse(row["moduleID"].ToString()));
+                Monitor monitor = new Monitor(Int32.Parse(row["monitorID"].ToString()));
+                Module module = new Module(Int32.Parse(row["moduleID"].ToString()));
 
-        //        // Only one record has been retrieved
-        //        monitorModule = new MonitorModule(monitor,module);
+                monitorModule = new MonitorModule(monitor, module)
+                {
+                    AssignedMin = float.Parse(row["assignedMin"].ToString()),
+                    AssignedMax = float.Parse(row["assignedMax"].ToString())
+                };
+            }
 
-        //    }
-
-        //    return monitorModule;
-        //}
+            return monitorModule;
+        }
 
         /// <summary>
         /// Inserts this instance as row into monitorModule table
@@ -115,7 +121,6 @@ namespace spital
         /// <summary>
         /// Updates entry in database with values from this instance 
         /// </summary>
-        /// <param name="alarm"></param>
         public void Update()
         {
             try

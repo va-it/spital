@@ -109,7 +109,7 @@ namespace spital.Properties
             return command;
         }
 
-        public int ExectuteInsert(SqlCommand command)
+        public int ExecuteCommand(SqlCommand command)
         {
             OpenConnection();
             command.Connection = sqlconn;

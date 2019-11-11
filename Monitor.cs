@@ -9,7 +9,7 @@ namespace spital
     class Monitor
     {
         // Auto-implemented properties for trivial get and set
-        private int Id { get; }
+        public int Id { get; }
         public bool Active { get; set; }
 
         /// <summary>

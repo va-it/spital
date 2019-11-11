@@ -13,7 +13,7 @@ namespace spital
     abstract class Staff
     {
         // Auto-implemented properties for trivial get and set
-        public int Id { get; set; }
+        public int Id { get; }
         public int StaffTypeId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -21,9 +21,12 @@ namespace spital
         private static readonly string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
 
         private static readonly string selectStatement = "SELECT * FROM staff";
+
         private static readonly string insertStatement = 
-            "INSERT INTO staff (staffTypeID, username, password) " +
-            "VALUES (@staffTypeID, @username, @password)";
+            "INSERT INTO staff (staffTypeID, username, password) VALUES (@staffTypeID, @username, @password)";
+
+        private static readonly string updateStatement =
+            "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password WHERE staffID = @staffID";
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
@@ -31,7 +34,6 @@ namespace spital
         /// <param name="staffType"></param>
         public Staff(int staffType, string username, string password)
         {
-            Id = 1;
             StaffTypeId = staffType;
             Username = username;
             Password = Encryption.EncryptText(password, encryptionPassword);
@@ -109,24 +111,51 @@ namespace spital
 
         }
 
+        /// <summary>
+        /// Inserts this instance as row into staff table
+        /// </summary>
         public void Save()
         {
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
-                command.CommandText = insertStatement; //set the sql query
+                command.CommandText = insertStatement;
                 command.Parameters.Add(new SqlParameter("staffTypeID", StaffTypeId));
                 command.Parameters.Add(new SqlParameter("username", Username));
                 command.Parameters.Add(new SqlParameter("password", Password));
 
-                DatabaseConnection.Instance.ExectuteInsert(command);
+                DatabaseConnection.Instance.ExecuteCommand(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
             
+        }
+
+        /// <summary>
+        /// Updates entry in database with values from this instance
+        /// </summary>
+        public void Update()
+        {
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = updateStatement;
+                command.Parameters.AddWithValue("@staffTypeID", StaffTypeId);
+                command.Parameters.AddWithValue("@username", Username);
+                command.Parameters.AddWithValue("@password", Password);
+                command.Parameters.AddWithValue("@staffID", Id);
+
+                DatabaseConnection.Instance.ExecuteCommand(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+
         }
 
 

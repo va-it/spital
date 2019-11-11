@@ -1,8 +1,12 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace spital
 {
@@ -15,6 +19,21 @@ namespace spital
         public int AssignedMin { get; set; }
         public int AssignedMax { get; set; }
 
+        private static readonly string selectStatement = 
+            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID";
+
+        //private static readonly string selectWhereStatement =
+        //    "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID" +
+        //    "WHERE monitorModuleID = @monitorModuleID";
+
+        private static readonly string insertStatement =
+            "INSERT INTO monitorModule (monitorID, moduleID, assignedMin, assignedMax) " +
+            "VALUES (@monitorID, @moduleID, @assignedMin, @assignedMax)";
+
+        private static readonly string updateStatement =
+            "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin " +
+            "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID";
+
         /// <summary>
         /// Constructor. Sets value of Id and defines monitor and module from parameters
         /// </summary>
@@ -22,7 +41,6 @@ namespace spital
         /// <param name="module"></param>
         public MonitorModule(Monitor monitor, Module module)
         {
-            Id = 1;
             Monitor = monitor;
             Module = module;
         }
@@ -34,5 +52,90 @@ namespace spital
         {
             Alarm alarm = new Alarm(this);
         }
+
+        public DataTable GetAll()
+        {
+            DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
+
+            return monitorModuleDataTable;
+        }
+
+        // WIP CODE
+        //public MonitorModule GetOne(int id)
+        //{
+        //    MonitorModule monitorModule = new MonitorModule(null,null);
+
+        //    SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+        //    command.CommandText = selectWhereStatement;
+        //    command.Parameters.Add(new SqlParameter("monitorModuleID", id));
+
+        //    DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
+        //    DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
+
+        //    if (monitorModuleDataTable.Rows.Count == 1)
+        //    {
+        //        DataRow row = monitorModuleDataTable.Rows[0];
+
+        //        Monitor monitor = new Monitor(Int32.Parse(row["monitorID"].ToString()));
+        //        Module module = new Module(Int32.Parse(row["moduleID"].ToString()));
+
+        //        // Only one record has been retrieved
+        //        monitorModule = new MonitorModule(monitor,module);
+
+        //    }
+
+        //    return monitorModule;
+        //}
+
+        /// <summary>
+        /// Inserts this instance as row into monitorModule table
+        /// </summary>
+        public void Save()
+        {
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = insertStatement;
+                command.Parameters.Add(new SqlParameter("monitorID", Monitor.Id));
+                command.Parameters.Add(new SqlParameter("moduleID", Module.Id));
+                command.Parameters.Add(new SqlParameter("assignedMin", AssignedMin));
+                command.Parameters.Add(new SqlParameter("assignedMax", AssignedMax));
+
+                DatabaseConnection.Instance.ExecuteCommand(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+
+        }
+
+        /// <summary>
+        /// Updates entry in database with values from this instance 
+        /// </summary>
+        /// <param name="alarm"></param>
+        public void Update()
+        {
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = updateStatement;
+                command.Parameters.AddWithValue("@monitorID", Monitor.Id);
+                command.Parameters.AddWithValue("@moduleID", Module.Id);
+                command.Parameters.AddWithValue("@assignedMin", AssignedMin);
+                command.Parameters.AddWithValue("@assignedMax", AssignedMax);
+                command.Parameters.AddWithValue("@monitorModuleID", Id);
+
+                DatabaseConnection.Instance.ExecuteCommand(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+        }
+
     }
 }

@@ -9,7 +9,7 @@ namespace spital
     class Module
     {
         // Auto-implemented properties for trivial get and set
-        private int Id { get; }
+        public int Id { get; }
         public string Name { get; set; }
         public string Icon { get; set; }
         public int DefaultMin { get; set; }

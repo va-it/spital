@@ -1,5 +1,7 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace spital
         private static readonly string selectStatement = "SELECT * FROM monitorModule";
         private static readonly string insertStatement = 
         "INSERT INTO monitorModule(monitorID,moduleID,assignedMax,assignedMin) VALUES (@monitorID,@moduleID,@assignedMax,@assignedMin)";
+        
         /// <summary>
         /// Constructor. Sets value of Id and defines monitor and module from parameters
         /// </summary>
@@ -37,6 +40,13 @@ namespace spital
         public void TriggerAlarm()
         {
             Alarm alarm = new Alarm(this);
+        }
+
+        public static DataTable GetAll()
+        {
+            DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
+            return monitorModuleDataTable;
         }
     }
 }

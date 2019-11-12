@@ -23,7 +23,7 @@ namespace spital
         private static readonly string selectStatement = "SELECT * FROM module";
 
         private static readonly string insertStatement = 
-            "INSERT INTO module (moduleID, name, defaultMin, defaultMax)" + 
+            "INSERT INTO module (moduleID, name, defaultMin, defaultMax) " + 
             "VALUES (@moduleID, @name, @defaultMin, @defaultMax)";
 
         private static readonly string updateStatement = 
@@ -77,11 +77,11 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("moduleID", Id));
-                command.Parameters.Add(new SqlParameter("name", Name));
-                command.Parameters.Add(new SqlParameter("icon", Icon));
-                command.Parameters.Add(new SqlParameter("defautMin", DefaultMin));
-                command.Parameters.Add(new SqlParameter("defaultMax", DefaultMax));
+                command.Parameters.Add(new SqlParameter("@moduleID", Id));
+                command.Parameters.Add(new SqlParameter("@name", Name));
+                command.Parameters.Add(new SqlParameter("@icon", Icon));
+                command.Parameters.Add(new SqlParameter("@defautMin", DefaultMin));
+                command.Parameters.Add(new SqlParameter("@defaultMax", DefaultMax));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -102,11 +102,11 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@name", Name);
-                command.Parameters.AddWithValue("@icon", Icon);
-                command.Parameters.AddWithValue("@defaultMin", DefaultMin);
-                command.Parameters.AddWithValue("@defaultMax", DefaultMax);
-                command.Parameters.AddWithValue("@moduleID", Id);
+                command.Parameters.Add(new SqlParameter("@name", Name));
+                command.Parameters.Add(new SqlParameter("@icon", Icon));
+                command.Parameters.Add(new SqlParameter("@defaultMin", DefaultMin));
+                command.Parameters.Add(new SqlParameter("@defaultMax", DefaultMax));
+                command.Parameters.Add(new SqlParameter("@moduleID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

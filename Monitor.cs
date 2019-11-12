@@ -60,8 +60,8 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("monitorID", Id));
-                command.Parameters.Add(new SqlParameter("active", Active));
+                command.Parameters.Add(new SqlParameter("@monitorID", Id));
+                command.Parameters.Add(new SqlParameter("@active", Active));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -81,8 +81,8 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@active", Active);
-                command.Parameters.AddWithValue("@monitorID", Id);
+                command.Parameters.Add(new SqlParameter("@active", Active));
+                command.Parameters.Add(new SqlParameter("@monitorID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

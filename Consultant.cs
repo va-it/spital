@@ -48,8 +48,8 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("email", Email));
-                command.Parameters.Add(new SqlParameter("staffID", base.Id));
+                command.Parameters.Add(new SqlParameter("@email", Email));
+                command.Parameters.Add(new SqlParameter("@staffID", base.Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -71,9 +71,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@email", Email);
-                command.Parameters.AddWithValue("@staffID", StaffID);
-                command.Parameters.AddWithValue("@consultantID", Id);
+                command.Parameters.Add(new SqlParameter("@email", Email));
+                command.Parameters.Add(new SqlParameter("@staffID", StaffID));
+                command.Parameters.Add(new SqlParameter("@consultantID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

@@ -23,7 +23,7 @@ namespace spital
             "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID";
 
         private static readonly string selectWhereStatement =
-            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID" +
+            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID " +
             "WHERE monitorModuleID = @monitorModuleID";
 
         private static readonly string insertStatement =
@@ -57,7 +57,7 @@ namespace spital
         /// Returns a DataTable object of all MonitorModules
         /// </summary>
         /// <returns></returns>
-        public DataTable GetAll()
+        public static DataTable GetAll()
         {
             DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
             DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
@@ -66,13 +66,15 @@ namespace spital
         }
 
         // WIP CODE
-        public MonitorModule GetOne(int id)
+        public static MonitorModule GetOne(int id)
         {
             MonitorModule monitorModule = new MonitorModule();
 
             SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
             command.CommandText = selectWhereStatement;
-            command.Parameters.Add(new SqlParameter("monitorModuleID", id));
+            //command.Parameters.AddWithValue("@monitorModuleID", id);
+
+            command.Parameters.Add(new SqlParameter("@monitorModuleID", id));
 
             DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
             DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
@@ -104,10 +106,10 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("monitorID", Monitor.Id));
-                command.Parameters.Add(new SqlParameter("moduleID", Module.Id));
-                command.Parameters.Add(new SqlParameter("assignedMin", AssignedMin));
-                command.Parameters.Add(new SqlParameter("assignedMax", AssignedMax));
+                command.Parameters.Add(new SqlParameter("@monitorID", Monitor.Id));
+                command.Parameters.Add(new SqlParameter("@moduleID", Module.Id));
+                command.Parameters.Add(new SqlParameter("@assignedMin", AssignedMin));
+                command.Parameters.Add(new SqlParameter("@assignedMax", AssignedMax));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -127,11 +129,11 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@monitorID", Monitor.Id);
-                command.Parameters.AddWithValue("@moduleID", Module.Id);
-                command.Parameters.AddWithValue("@assignedMin", AssignedMin);
-                command.Parameters.AddWithValue("@assignedMax", AssignedMax);
-                command.Parameters.AddWithValue("@monitorModuleID", Id);
+                command.Parameters.Add(new SqlParameter("@monitorID", Monitor.Id));
+                command.Parameters.Add(new SqlParameter("@moduleID", Module.Id));
+                command.Parameters.Add(new SqlParameter("@assignedMin", AssignedMin));
+                command.Parameters.Add(new SqlParameter("@assignedMax", AssignedMax));
+                command.Parameters.Add(new SqlParameter("@monitorModuleID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

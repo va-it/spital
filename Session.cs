@@ -27,11 +27,11 @@ namespace spital
             "WHERE sessionID = @sessionID";
 
         private static readonly string insertStatement =
-            "INSERT INTO session (staffID, dateTimeStart, dateTimeEnd)" +
+            "INSERT INTO session (staffID, dateTimeStart, dateTimeEnd) " +
             "VALUES (@staffID, @dateTimeStart, @dateTimeEnd)";
 
         private static readonly string updateStatement =
-            "UPDATE session SET staffID = @staffID, dateTimeStart = @dateTimeStart," +
+            "UPDATE session SET staffID = @staffID, dateTimeStart = @dateTimeStart, " +
             "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID";
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace spital
 
             SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
             command.CommandText = selectWhereStatement;
-            command.Parameters.Add(new SqlParameter("sessionID", id));
+            command.Parameters.Add(new SqlParameter("@sessionID", id));
 
             DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
             DataTable sessionDataTable = sessionDataSet.Tables[0];
@@ -107,9 +107,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("staffID", Id));
-                command.Parameters.Add(new SqlParameter("dateTimeStart", DateTimeStart));
-                command.Parameters.Add(new SqlParameter("dateTimeEnd", DateTimeEnd));
+                command.Parameters.Add(new SqlParameter("@staffID", Id));
+                command.Parameters.Add(new SqlParameter("@dateTimeStart", DateTimeStart));
+                command.Parameters.Add(new SqlParameter("@dateTimeEnd", DateTimeEnd));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -129,10 +129,10 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@staffID", StaffId);
-                command.Parameters.AddWithValue("@dateTimeStart", DateTimeStart);
-                command.Parameters.AddWithValue("@dateTimeEnd", DateTimeEnd);
-                command.Parameters.AddWithValue("@sessionID", Id);
+                command.Parameters.Add(new SqlParameter("@staffID", StaffId));
+                command.Parameters.Add(new SqlParameter("@dateTimeStart", DateTimeStart));
+                command.Parameters.Add(new SqlParameter("@dateTimeEnd", DateTimeEnd));
+                command.Parameters.Add(new SqlParameter("@sessionID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

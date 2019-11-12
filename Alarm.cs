@@ -57,10 +57,10 @@ namespace spital
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
-                command.CommandText = insertStatement; //set the sql query
-                command.Parameters.Add(new SqlParameter("monitorModule", MonitorModule));
-                command.Parameters.Add(new SqlParameter("startDateTime", StartDateTime));
-                command.Parameters.Add(new SqlParameter("endDateTime", EndDateTime));
+                command.CommandText = insertStatement;
+                command.Parameters.Add(new SqlParameter("@monitorModule", MonitorModule));
+                command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
+                command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -80,10 +80,10 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@monitorModule", MonitorModule);
-                command.Parameters.AddWithValue("@startDateTime", StartDateTime);
-                command.Parameters.AddWithValue("@endDateTime", EndDateTime);
-                command.Parameters.AddWithValue("@alarmID", Id);
+                command.Parameters.Add(new SqlParameter("@monitorModule", MonitorModule));
+                command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
+                command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
+                command.Parameters.Add(new SqlParameter("@alarmID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

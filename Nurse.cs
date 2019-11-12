@@ -50,8 +50,8 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement; //set the sql query
-                command.Parameters.Add(new SqlParameter("phoneNumber", PhoneNumber));
-                command.Parameters.Add(new SqlParameter("staffID", base.Id));
+                command.Parameters.Add(new SqlParameter("@phoneNumber", PhoneNumber));
+                command.Parameters.Add(new SqlParameter("@staffID", base.Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -73,9 +73,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@phoneNumber", PhoneNumber);
-                command.Parameters.AddWithValue("@staffID", StaffID);
-                command.Parameters.AddWithValue("@nurseID", Id);
+                command.Parameters.Add(new SqlParameter("@phoneNumber", PhoneNumber));
+                command.Parameters.Add(new SqlParameter("@staffID", StaffID));
+                command.Parameters.Add(new SqlParameter("@nurseID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

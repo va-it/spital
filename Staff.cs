@@ -121,9 +121,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("staffTypeID", StaffTypeId));
-                command.Parameters.Add(new SqlParameter("username", Username));
-                command.Parameters.Add(new SqlParameter("password", Password));
+                command.Parameters.Add(new SqlParameter("@staffTypeID", StaffTypeId));
+                command.Parameters.Add(new SqlParameter("@username", Username));
+                command.Parameters.Add(new SqlParameter("@password", Password));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }
@@ -144,10 +144,10 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.AddWithValue("@staffTypeID", StaffTypeId);
-                command.Parameters.AddWithValue("@username", Username);
-                command.Parameters.AddWithValue("@password", Password);
-                command.Parameters.AddWithValue("@staffID", Id);
+                command.Parameters.Add(new SqlParameter("@staffTypeID", StaffTypeId));
+                command.Parameters.Add(new SqlParameter("@username", Username));
+                command.Parameters.Add(new SqlParameter("@password", Password));
+                command.Parameters.Add(new SqlParameter("@staffID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);
             }

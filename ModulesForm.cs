@@ -19,9 +19,21 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form limits = new LimitsForm();
-            limits.Show();
+            //this.Close();
+            //Form limits = new LimitsForm();
+            //limits.Show();
+        }
+
+        /*
+         * METHODS
+         */
+         
+        //to retrive module type form database 
+        public void FillModuleType()
+        {
+            DataTable moduleTypeTable = Module.GetAll();
+
+            
         }
     }
 }

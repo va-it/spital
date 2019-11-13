@@ -80,6 +80,16 @@ namespace spital
         }
 
         /// <summary>
+        /// Get all the data from module table 
+        /// </summary>
+        public static DataTable GetAll()
+        {
+            DataSet dataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable moduleTable = dataSet.Tables[0];
+            return moduleTable;
+        }
+
+        /// <summary>
         /// Inserts this instance as row into module table
         /// </summary>
         public void Save()

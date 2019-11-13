@@ -65,7 +65,11 @@ namespace spital
             return monitorModuleDataTable;
         }
 
-        // WIP CODE
+        /// <summary>
+        /// Retrieve one MonitorModule from the database based on its ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>MonitorModule</returns>
         public static MonitorModule GetOne(int id)
         {
             MonitorModule monitorModule = new MonitorModule();

@@ -25,13 +25,24 @@ namespace spital
         private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID";
 
         /// <summary>
-        /// Constructor. Sets Id and active flag
+        /// Constructor. Sets Id and Active based on values from database
         /// </summary>
         public Monitor(int id)
         {
-            // should this values be retrieved from database?
-            Id = id;
-            Active = true;
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@monitorID", id));
+
+            DataSet monitorDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
+
+            DataTable monitorDataTable = monitorDataSet.Tables[0];
+
+            if (monitorDataTable.Rows.Count == 1)
+            {
+                DataRow row = monitorDataTable.Rows[0];
+
+                Id = Int32.Parse(row["monitorID"].ToString());
+                Active = Convert.ToBoolean(row["active"].ToString());
+            }
         }
 
         /// <summary>
@@ -48,6 +59,18 @@ namespace spital
         public void DisplayPatientData()
         {
             // Display readings from modules
+        }
+
+        /// <summary>
+        /// Retrieve one Monitor from the database based on its ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Monitor</returns>
+        public static Monitor GetOne(int id)
+        {
+            Monitor monitor = new Monitor(id);
+
+            return monitor;
         }
 
         /// <summary>

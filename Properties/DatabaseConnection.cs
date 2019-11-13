@@ -99,6 +99,52 @@ namespace spital.Properties
             return dataSet;
         }
 
+        /// <summary>
+        /// Create an sqlDataAdapter based on sql statement parameter
+        /// </summary>
+        /// <param name="sqlStatement"></param>
+        /// <returns>sqlDataAdapter</returns>
+        public SqlDataAdapter GetSqlAdapter(string sqlStatement)
+        {
+            //initialize a new instance of the DataSet Class
+            DataSet dataSet = new DataSet();
+
+            //open connection
+            OpenConnection();
+
+            //create table adapter using the connection string and the sql statement
+            sqlAdapter = new SqlDataAdapter(sqlStatement, spitalDbConnectionString);
+
+            //close the connection
+            CloseConnection();
+
+            return sqlAdapter;
+        }
+
+        /// <summary>
+        /// Create and return a dataset filled with values based on statement in sqlDataAdapter parameter
+        /// </summary>
+        /// <param name="sqlDataAdapter"></param>
+        /// <returns>DataSet</returns>
+        public DataSet ExecuteSelect(SqlDataAdapter sqlDataAdapter)
+        {
+            //initialize a new instance of the DataSet Class
+            DataSet dataSet = new DataSet();
+
+            OpenConnection();
+
+            sqlDataAdapter.Fill(dataSet);
+
+            CloseConnection();
+
+            return dataSet;
+        }
+
+
+        /// <summary>
+        /// Returns on object of type sqlCommand
+        /// </summary>
+        /// <returns>SqlCommand</returns>
         public SqlCommand GetSqlCommand()
         {
             //create the object SqlCommand
@@ -109,7 +155,7 @@ namespace spital.Properties
             return command;
         }
 
-        public int ExectuteInsert(SqlCommand command)
+        public int ExecuteCommand(SqlCommand command)
         {
             OpenConnection();
             command.Connection = sqlconn;

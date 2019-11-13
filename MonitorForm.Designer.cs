@@ -462,6 +462,7 @@
             this.Name = "MonitorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monitor";
+            this.Load += new System.EventHandler(this.MonitorForm_Load);
             this.groupBoxReadings.ResumeLayout(false);
             this.readingsTable.ResumeLayout(false);
             this.readingsTable.PerformLayout();

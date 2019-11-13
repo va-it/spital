@@ -24,15 +24,12 @@ namespace spital
         private static readonly string insertStatement = "INSERT INTO monitorModule (monitorModuleID, monitorID, moduleID, assignedMax, assignedMin)" + "VALUES (@monitorModuleID, @monitorID, @moduleID, @assignedMax, @assignedMin)";
 
         /// <summary>
-        /// Constructor. Sets value of Id and defines monitor and module from parameters
+        /// Constructor. Sets value of moduleID
         /// </summary>
-        /// <param name="monitor"></param>
-        /// <param name="module"></param>
-        public MonitorModule(Monitor monitor, Module module)
+
+        public MonitorModule(int moduleID)
         {
-            Id = 1;
-            Monitor = monitor;
-            Module = module;
+            ModuleID = moduleID;
         }
 
         /// <summary>

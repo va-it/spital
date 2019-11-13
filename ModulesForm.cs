@@ -47,13 +47,15 @@ namespace spital
             foreach (DataRowView row in checkedListBox_Modules.CheckedItems)
             {
                 // THIS IS TO SHOW THAT WE HAVE THE MODULE ID
-                MessageBox.Show(row["moduleID"].ToString());
+                //MessageBox.Show(row["moduleID"].ToString());
 
 
                 // THIS IS TO SHOW THAT THE CONSTRUCTOR CREATES THE MODULE FROM VALUES IN DATABASE
-                int moduleID = Int32.Parse(row["moduleID"].ToString());
-                Module module = new Module(moduleID);
-                MessageBox.Show(module.Name);
+                int moduleID = int.Parse(row["moduleID"].ToString());
+                MonitorModule monitorModule = new MonitorModule(moduleID);
+                monitorModule.Save();
+
+                //MessageBox.Show(module.Name);
             }
         }
     }

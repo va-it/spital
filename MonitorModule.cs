@@ -13,7 +13,6 @@ namespace spital
     {
         // Auto-implemented properties for trivial get and set
         private int Id { get; }
-        public int ModuleID { get; set; }
         public Monitor Monitor { get; set; }
         public Module Module { get; set; }
         public float AssignedMin { get; set; }
@@ -21,15 +20,16 @@ namespace spital
 
         //Generic SELECT and INSERT Statement for MonitorModule Table
         private static readonly string selectStatement = "SELECT * FROM monitorModule";
-        private static readonly string insertStatement = "INSERT INTO monitorModule (monitorModuleID, monitorID, moduleID, assignedMax, assignedMin)" + "VALUES (@monitorModuleID, @monitorID, @moduleID, @assignedMax, @assignedMin)";
+        private static readonly string insertStatement = "INSERT INTO monitorModule (monitorID, moduleID, assignedMax, assignedMin)" + "VALUES (@monitorID, @moduleID, @assignedMax, @assignedMin)";
 
         /// <summary>
         /// Constructor. Sets value of moduleID
         /// </summary>
 
-        public MonitorModule(int moduleID)
+        public MonitorModule(Monitor monitor, Module module)
         {
-            ModuleID = moduleID;
+            Monitor = monitor;
+            Module = module;
         }
 
         /// <summary>
@@ -47,7 +47,11 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement; //set the sql query
-                command.Parameters.Add(new SqlParameter("moduleID", ModuleID));
+                command.Parameters.Add(new SqlParameter("monitorID", Monitor.Id));
+                command.Parameters.Add(new SqlParameter("moduleID", Module.ModuleID));
+                command.Parameters.Add(new SqlParameter("assignedMax", AssignedMax));
+                command.Parameters.Add(new SqlParameter("assignedMin", AssignedMin));
+
 
                 DatabaseConnection.Instance.ExectuteInsert(command);
 

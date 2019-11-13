@@ -13,6 +13,7 @@ namespace spital
 {
     public partial class ModulesForm : Form
     {
+
         public ModulesForm()
         {
             InitializeComponent();
@@ -52,10 +53,13 @@ namespace spital
 
                 // THIS IS TO SHOW THAT THE CONSTRUCTOR CREATES THE MODULE FROM VALUES IN DATABASE
                 int moduleID = int.Parse(row["moduleID"].ToString());
-                MonitorModule monitorModule = new MonitorModule(moduleID);
-                monitorModule.Save();
 
-                //MessageBox.Show(module.Name);
+                //create monitor and module objects
+                Monitor monitor = new Monitor();
+                Module module = new Module(moduleID);
+
+                MonitorModule monitorModule = new MonitorModule(monitor, module);
+                monitorModule.Save();
             }
         }
     }

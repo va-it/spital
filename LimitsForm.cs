@@ -12,12 +12,15 @@ namespace spital
 {
     public partial class LimitsForm : Form
     {
+        private MonitorForm Monitor { get; set; }
+
         List<MonitorModule> monitorModules = new List<MonitorModule>();
         List<Label> modules = new List<Label>();
 
-        public LimitsForm()
+        public LimitsForm(MonitorForm monitorForm)
         {
             InitializeComponent();
+            Monitor = monitorForm;
         }
 
         private void modulesButton_Click(object sender, EventArgs e)

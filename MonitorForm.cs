@@ -15,6 +15,8 @@ namespace spital
         List<PictureBox> modulesIcons = new List<PictureBox>();
         List<Label> modulesReadings = new List<Label>();
 
+        public int MonitorID { get; }
+
         public MonitorForm()
         {
             InitializeComponent();
@@ -29,25 +31,29 @@ namespace spital
         private void modulesButton_Click(object sender, EventArgs e)
         {
             // Code to select the modules
-            Form modules = new ModulesForm();
+            Form modules = new ModulesForm(this);
             modules.Show();
         }
 
         private void limitsButton_Click(object sender, EventArgs e)
         {
             // Code to edit the modules limits
-            Form limits = new LimitsForm();
+            Form limits = new LimitsForm(this);
             limits.Show();
         }
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
-            Monitor monitor = new Monitor();
+            Monitor monitor = new Monitor
+            {
+                Active = true
+            };
 
-            monitor.Active = true;
+            monitor.Save();
 
             // the save function should return the row ID
-            monitor.Save();
+            // MonitorID = monitor.Save();
+            // this could then be used in the modules Form and limits form to retrieve data
         }
 
         private void GenerateListsOfControls()
@@ -63,6 +69,9 @@ namespace spital
             modulesIcons.Add(moduleIcon4);
         }
 
-
+        public void TestFunction()
+        {
+            MessageBox.Show("Test successfull");
+        }
     }
 }

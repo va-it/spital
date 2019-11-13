@@ -12,9 +12,12 @@ namespace spital
 {
     public partial class ModulesForm : Form
     {
-        public ModulesForm()
+        private MonitorForm Monitor { get; set; }
+
+        public ModulesForm(MonitorForm monitorForm)
         {
             InitializeComponent();
+            Monitor = monitorForm;
         }
 
         private void modulesButton_Click(object sender, EventArgs e)
@@ -22,7 +25,7 @@ namespace spital
             SaveSelectedModules();
 
             this.Close();
-            Form limits = new LimitsForm();
+            Form limits = new LimitsForm(Monitor);
             limits.Show();
         }
 

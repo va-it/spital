@@ -12,9 +12,6 @@ namespace spital
 {
     public partial class ModulesForm : Form
     {
-        List<PictureBox> modulesIcons = new List<PictureBox>();
-        List<CheckBox> modules = new List<CheckBox>();
-
         public ModulesForm()
         {
             InitializeComponent();
@@ -29,61 +26,35 @@ namespace spital
             limits.Show();
         }
 
-        private void GenerateListsOfControls()
-        {
-            modules.Add(moduleSelection1);
-            modules.Add(moduleSelection2);
-            modules.Add(moduleSelection3);
-            modules.Add(moduleSelection4);
-            modules.Add(moduleSelection5);
-            modules.Add(moduleSelection6);
-            modules.Add(moduleSelection7);
-            modules.Add(moduleSelection8);
-
-            modulesIcons.Add(ModulePicture1);
-            modulesIcons.Add(ModulePicture2);
-            modulesIcons.Add(ModulePicture3);
-            modulesIcons.Add(ModulePicture4);
-            modulesIcons.Add(ModulePicture5);
-            modulesIcons.Add(ModulePicture6);
-            modulesIcons.Add(ModulePicture7);
-            modulesIcons.Add(ModulePicture8);
-        }
-
         private void ModulesForm_Load(object sender, EventArgs e)
         {
-            GenerateListsOfControls();
-
-            DataTable moduleDataTable = Module.GetAll();
-
-            int index = 0;
-
-            foreach (DataRow row in moduleDataTable.Rows)
-            {
-                modules.ElementAt(index).Text = row["name"].ToString();
-                modulesIcons.ElementAt(index).Text = row["icon"].ToString();
-
-                index++;
-            }
+            FillModuleType();
         }
 
+        // to retrive module type from database
+        public void FillModuleType()
+        {
+            DataTable modulesTable = Module.GetAll();
+
+            checkedListBox_Modules.DataSource = modulesTable;
+            checkedListBox_Modules.ValueMember = "moduleID";
+            checkedListBox_Modules.DisplayMember = "name";
+        }
+
+        // Store selected modules into database in table "monitorModule" based on the monitor and module id
         private void SaveSelectedModules()
         {
-            int index = 0;
-
-            foreach (CheckBox checkBox in modules)
+            foreach (DataRowView row in checkedListBox_Modules.CheckedItems)
             {
-                if (modules.ElementAt(index).Checked)
-                {
-                    // Save this module into the monitorModule table
-                    Monitor monitor = new Monitor(1);
-                    
-                    // Instantiate module from ID in checkbox
-                    // MonitorModule monitorModule = new MonitorModule(monitor, module);
-                    // monitorModule.Save();
-                }
+                // THIS IS TO SHOW THAT THE CONSTRUCTOR CREATES THE MODULE FROM VALUES IN DATABASE
+                int moduleID = int.Parse(row["moduleID"].ToString());
 
-                index++;
+                //create monitor and module objects
+                Monitor monitor = new Monitor(1);
+                Module module = new Module(moduleID);
+
+                MonitorModule monitorModule = new MonitorModule(monitor, module);
+                monitorModule.Save();
             }
         }
     }

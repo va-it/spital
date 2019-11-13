@@ -49,7 +49,7 @@ namespace spital
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
-                command.CommandText = insertStatement; //set the sql query
+                command.CommandText = insertStatement;
                 command.Parameters.Add(new SqlParameter("@phoneNumber", PhoneNumber));
                 command.Parameters.Add(new SqlParameter("@staffID", base.Id));
 

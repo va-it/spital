@@ -70,13 +70,11 @@ namespace spital
         {
             MonitorModule monitorModule = new MonitorModule();
 
-            SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
-            command.CommandText = selectWhereStatement;
-            //command.Parameters.AddWithValue("@monitorModuleID", id);
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@monitorModuleID", id));
 
-            command.Parameters.Add(new SqlParameter("@monitorModuleID", id));
+            DataSet monitorModuleDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
 
-            DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
             DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
 
             if (monitorModuleDataTable.Rows.Count == 1)

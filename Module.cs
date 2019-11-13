@@ -61,7 +61,7 @@ namespace spital
         /// </summary>
         /// <param name="min"></param>
         /// <param name="max"></param>
-        public void AssignLimit(int min, int max)
+        public void AssignLimits(int min, int max)
         {
             DefaultMin = min;
             DefaultMax = max;

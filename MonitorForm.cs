@@ -54,16 +54,10 @@ namespace spital
 
                 index++;
             }
-
-            MonitorModule monitorModule = new MonitorModule();
-            monitorModule = MonitorModule.GetOne(6);
-
-            modulesReadings.ElementAt(4).Text = monitorModule.Module.Name;
         }
 
         private void GenerateListsOfControls()
         {
-
             modulesReadings.Add(moduleReading1);
             modulesReadings.Add(moduleReading2);
             modulesReadings.Add(moduleReading3);

@@ -51,7 +51,7 @@ namespace spital
                 DataRow row = moduleDataTable.Rows[0];
 
                 Id = Int32.Parse(row["moduleID"].ToString());
-                Name = row["moduleID"].ToString();
+                Name = row["name"].ToString();
                 Icon = row["icon"].ToString();
                 DefaultMin = float.Parse(row["defaultMin"].ToString());
                 DefaultMax = float.Parse(row["defaultMax"].ToString());

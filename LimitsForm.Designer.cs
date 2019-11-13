@@ -375,7 +375,7 @@
             this.Name = "LimitsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Limits";
-            this.Load += new System.EventHandler(this.LimitsForm_Load);
+            this.Shown += new System.EventHandler(this.LimitsForm_Shown);
             this.ModulesBox.ResumeLayout(false);
             this.panelModule4.ResumeLayout(false);
             this.panelModule4.PerformLayout();

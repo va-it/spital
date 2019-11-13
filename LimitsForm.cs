@@ -25,37 +25,38 @@ namespace spital
             this.Close();
         }
 
-        private void LimitsForm_Load(object sender, EventArgs e)
-        {
-            FillLimits();
-        }
-
         private void FillLimits()
         {
             GenerateControlsLists();
 
-            GetAllFromMonitor();
-
-
+            GetMonitorModules();
         }
 
         private void GenerateControlsLists()
         {
             modules.Add(labelModule1);
-            modules.Add(labelModule1);
-            modules.Add(labelModule1);
-            modules.Add(labelModule1);
+            modules.Add(labelModule2);
+            modules.Add(labelModule3);
+            modules.Add(labelModule4);
         }
 
 
-        private void GetAllFromMonitor()
+        private void GetMonitorModules()
         {
             monitorModules = MonitorModule.GetAllFromMonitor(1);
 
-            for (int i = 0; i < monitorModules.Count; ++i)
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
             {
-                modules.ElementAt(i).Text = monitorModules.ElementAt(i).Module.Name;
-            }           
+                modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
+                ++index;
+            }
+        }
+
+        private void LimitsForm_Shown(object sender, EventArgs e)
+        {
+            FillLimits();
         }
     }
 }

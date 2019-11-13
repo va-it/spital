@@ -35,7 +35,7 @@ namespace spital
             "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID";
 
         /// <summary>
-        /// Constructor. Sets value of Id and defines monitor and module from parameters
+        /// Constructor. Sets value of monitor and module from parameters
         /// </summary>
         /// <param name="monitor"></param>
         /// <param name="module"></param>

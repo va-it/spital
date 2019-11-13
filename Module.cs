@@ -22,6 +22,8 @@ namespace spital
         //Generic SELECT and INSERT Statement for module table 
         private static readonly string selectStatement = "SELECT * FROM module";
 
+        private static readonly string selectWhereStatement = "SELECT * FROM module WHERE moduleID = @moduleID";
+
         private static readonly string insertStatement = 
             "INSERT INTO module (moduleID, name, defaultMin, defaultMax) " + 
             "VALUES (@moduleID, @name, @defaultMin, @defaultMax)";
@@ -35,24 +37,22 @@ namespace spital
         /// </summary>
         public Module(int id)
         {
-            /*
-             * WE MAY WANT TO CHANGE THIS SO THAT WE DON'T HAVE TO
-             * TO RETRIEVE ALL THE VALUES IN THE FUTURE BUT ADD A WHERE CLAUSE TO
-             * THE INSERT STATEMENT
-             */
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@moduleID", id));
 
-            DataSet dataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
-            DataTable moduleTable = dataSet.Tables[0];
+            DataSet moduleDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
 
-            foreach (DataRow row in moduleTable.Rows)
+            DataTable moduleDataTable = moduleDataSet.Tables[0];
+
+            if (moduleDataTable.Rows.Count == 1)
             {
-                if (Int32.Parse(row["moduleID"].ToString()) == id)
-                {
-                    Id = id;
-                    Name = row["name"].ToString();
-                    DefaultMin = float.Parse(row["defaultMax"].ToString());
-                    DefaultMax = float.Parse(row["defaultMax"].ToString());
-                }
+                DataRow row = moduleDataTable.Rows[0];
+
+                Id = Int32.Parse(row["monitorID"].ToString());
+                Name = row["monitorID"].ToString();
+                Icon = row["icon"].ToString();
+                DefaultMin = float.Parse(row["defaultMin"].ToString());
+                DefaultMax = float.Parse(row["defaultMax"].ToString());
             }
         }
 
@@ -65,6 +65,18 @@ namespace spital
         {
             DefaultMin = min;
             DefaultMax = max;
+        }
+
+        /// <summary>
+        /// Retrieve one Module from the database based on its ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Module</returns>
+        public static Module GetOne(int id)
+        {
+            Module module = new Module(id);
+
+            return module;
         }
 
         /// <summary>

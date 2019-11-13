@@ -94,7 +94,6 @@
     <Compile Include="Nurse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Properties\DatabaseConnection.cs" />
     <EmbeddedResource Include="LimitsForm.resx">
       <DependentUpon>LimitsForm.cs</DependentUpon>
@@ -116,7 +115,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
-
     </Compile>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
@@ -131,7 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
-
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -151,13 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_User.png" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo_EAHT.png" />
   </ItemGroup>
   <ItemGroup>
-
     <None Include="Resources\leftDock.png" />
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +177,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

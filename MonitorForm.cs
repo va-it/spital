@@ -58,7 +58,7 @@ namespace spital
             MonitorModule monitorModule = new MonitorModule();
             monitorModule = MonitorModule.GetOne(6);
 
-            modulesReadings.ElementAt(5).Text = monitorModule.Module.Name;
+            modulesReadings.ElementAt(4).Text = monitorModule.Module.Name;
         }
 
         private void GenerateListsOfControls()

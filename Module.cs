@@ -13,7 +13,7 @@ namespace spital
     class Module
     {
         // Auto-implemented properties for trivial get and set
-        public int Id { get; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Icon { get; set; }
         public float DefaultMin { get; set; }
@@ -32,6 +32,8 @@ namespace spital
             "UPDATE module SET name = @name, icon = @icon, defaultMin = @defaultMin, " +
             "defaultMax = @defaultMax WHERE moduleID = @moduleID";
 
+        public Module() { }
+
         /// <summary>
         /// Constructor. Sets name, icon, min and max values based on values from database
         /// </summary>
@@ -48,8 +50,8 @@ namespace spital
             {
                 DataRow row = moduleDataTable.Rows[0];
 
-                Id = Int32.Parse(row["monitorID"].ToString());
-                Name = row["monitorID"].ToString();
+                Id = Int32.Parse(row["moduleID"].ToString());
+                Name = row["moduleID"].ToString();
                 Icon = row["icon"].ToString();
                 DefaultMin = float.Parse(row["defaultMin"].ToString());
                 DefaultMax = float.Parse(row["defaultMax"].ToString());

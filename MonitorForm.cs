@@ -46,7 +46,7 @@ namespace spital
 
             monitor.Active = true;
 
-            // the save function shoudl return the row ID
+            // the save function should return the row ID
             monitor.Save();
         }
 

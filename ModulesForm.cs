@@ -26,11 +26,6 @@ namespace spital
             limits.Show();
         }
 
-        private void ModulesForm_Load(object sender, EventArgs e)
-        {
-            FillModuleType();
-        }
-
         // to retrive module type from database
         public void FillModuleType()
         {
@@ -46,7 +41,6 @@ namespace spital
         {
             foreach (DataRowView row in checkedListBox_Modules.CheckedItems)
             {
-                // THIS IS TO SHOW THAT THE CONSTRUCTOR CREATES THE MODULE FROM VALUES IN DATABASE
                 int moduleID = int.Parse(row["moduleID"].ToString());
 
                 //create monitor and module objects
@@ -56,6 +50,11 @@ namespace spital
                 MonitorModule monitorModule = new MonitorModule(monitor, module);
                 monitorModule.Save();
             }
+        }
+
+        private void ModulesForm_Load(object sender, EventArgs e)
+        {
+            FillModuleType();
         }
     }
 }

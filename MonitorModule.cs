@@ -65,6 +65,27 @@ namespace spital
             return monitorModuleDataTable;
         }
 
+        public static List<MonitorModule> GetAllFromMonitor(int monitorID)
+        {
+            DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
+
+            List<MonitorModule> monitorModulesList = new List<MonitorModule>();
+
+            foreach (DataRow monitorModuleRow in monitorModuleDataTable.Rows)
+            {
+                if (Int32.Parse(monitorModuleRow["monitorID"].ToString()) == monitorID)
+                {
+                    Monitor monitor = new Monitor(Int32.Parse(monitorModuleRow["monitorID"].ToString()));
+                    Module module = new Module(Int32.Parse(monitorModuleRow["moduleID"].ToString()));
+                    MonitorModule monitorModule = new MonitorModule(monitor, module);
+                    monitorModulesList.Add(monitorModule);
+                }
+            }
+
+            return monitorModulesList;
+        }
+
         /// <summary>
         /// Retrieve one MonitorModule from the database based on its ID
         /// </summary>

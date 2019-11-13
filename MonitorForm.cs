@@ -42,18 +42,12 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
-            GenerateListsOfControls();
-            DataTable monitorModuleDataTable = MonitorModule.GetAll();
+            Monitor monitor = new Monitor();
 
-            int index = 0;
+            monitor.Active = true;
 
-            foreach (DataRow row in monitorModuleDataTable.Rows)
-            {
-                modulesReadings.ElementAt(index).Text = row["name"].ToString();
-                modulesIcons.ElementAt(index).Text = row["icon"].ToString();
-
-                index++;
-            }
+            // the save function shoudl return the row ID
+            monitor.Save();
         }
 
         private void GenerateListsOfControls()

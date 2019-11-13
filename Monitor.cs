@@ -20,9 +20,14 @@ namespace spital
 
         private static readonly string selectWhereStatement = "SELECT * FROM monitor WHERE monitorID = @monitorID";
 
-        private static readonly string insertStatement = "INSERT INTO monitor (monitorID, active) VALUES (@monitorID, @active)";
+        private static readonly string insertStatement = "INSERT INTO monitor (active) VALUES (@active)";
 
         private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID";
+
+        /// <summary>
+        /// Constructor. Instantiate object without values
+        /// </summary>
+        public Monitor() { }
 
         /// <summary>
         /// Constructor. Sets Id and Active based on values from database
@@ -83,7 +88,6 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@monitorID", Id));
                 command.Parameters.Add(new SqlParameter("@active", Active));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);

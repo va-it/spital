@@ -68,6 +68,18 @@ namespace spital
         }
 
         /// <summary>
+        /// Returns a DataTable object of all Modules
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetAll()
+        {
+            DataSet moduleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable moduleDataTable = moduleDataSet.Tables[0];
+
+            return moduleDataTable;
+        }
+
+        /// <summary>
         /// Retrieve one Module from the database based on its ID
         /// </summary>
         /// <param name="id"></param>

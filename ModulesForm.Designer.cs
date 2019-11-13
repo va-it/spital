@@ -42,7 +42,7 @@
             this.moduleSelection6 = new System.Windows.Forms.CheckBox();
             this.moduleSelection7 = new System.Windows.Forms.CheckBox();
             this.moduleSelection8 = new System.Windows.Forms.CheckBox();
-            this.moduleIcon1 = new System.Windows.Forms.PictureBox();
+            this.ModulePicture1 = new System.Windows.Forms.PictureBox();
             this.ModulePicture2 = new System.Windows.Forms.PictureBox();
             this.ModulePicture3 = new System.Windows.Forms.PictureBox();
             this.ModulePicture4 = new System.Windows.Forms.PictureBox();
@@ -53,7 +53,7 @@
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture4)).BeginInit();
@@ -217,13 +217,13 @@
             this.moduleSelection8.Text = "checkBox8";
             this.moduleSelection8.UseVisualStyleBackColor = false;
             // 
-            // moduleIcon1
+            // ModulePicture1
             // 
-            this.moduleIcon1.Location = new System.Drawing.Point(112, 151);
-            this.moduleIcon1.Name = "moduleIcon1";
-            this.moduleIcon1.Size = new System.Drawing.Size(122, 80);
-            this.moduleIcon1.TabIndex = 20;
-            this.moduleIcon1.TabStop = false;
+            this.ModulePicture1.Location = new System.Drawing.Point(112, 151);
+            this.ModulePicture1.Name = "ModulePicture1";
+            this.ModulePicture1.Size = new System.Drawing.Size(122, 80);
+            this.ModulePicture1.TabIndex = 20;
+            this.ModulePicture1.TabStop = false;
             // 
             // ModulePicture2
             // 
@@ -281,7 +281,7 @@
             this.ModulePicture5.TabIndex = 24;
             this.ModulePicture5.TabStop = false;
             // 
-            // Modules
+            // ModulesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -294,7 +294,7 @@
             this.Controls.Add(this.ModulePicture4);
             this.Controls.Add(this.ModulePicture3);
             this.Controls.Add(this.ModulePicture2);
-            this.Controls.Add(this.moduleIcon1);
+            this.Controls.Add(this.ModulePicture1);
             this.Controls.Add(this.moduleSelection8);
             this.Controls.Add(this.moduleSelection7);
             this.Controls.Add(this.moduleSelection6);
@@ -309,14 +309,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Modules";
+            this.Name = "ModulesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modules";
+            this.Load += new System.EventHandler(this.ModulesForm_Load);
             this.panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModulePicture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModulePicture4)).EndInit();
@@ -342,7 +343,7 @@
         private System.Windows.Forms.CheckBox moduleSelection6;
         private System.Windows.Forms.CheckBox moduleSelection7;
         private System.Windows.Forms.CheckBox moduleSelection8;
-        private System.Windows.Forms.PictureBox moduleIcon1;
+        private System.Windows.Forms.PictureBox ModulePicture1;
         private System.Windows.Forms.PictureBox ModulePicture2;
         private System.Windows.Forms.PictureBox ModulePicture3;
         private System.Windows.Forms.PictureBox ModulePicture4;

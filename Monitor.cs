@@ -24,6 +24,8 @@ namespace spital
 
         private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID";
 
+        //private static readonly string lastInsertID = "SELECT SCOPE_IDENTITY()"; 
+
         /// <summary>
         /// Constructor. Instantiate object without values
         /// </summary>
@@ -83,6 +85,8 @@ namespace spital
         /// </summary>
         public void Save()
         {
+            //int lastID = 0;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -90,12 +94,23 @@ namespace spital
                 command.CommandText = insertStatement;
                 command.Parameters.Add(new SqlParameter("@active", Active));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                int rowsInserted = DatabaseConnection.Instance.ExecuteCommand(command);
+
+                //if (rowsInserted == 1)
+                //{
+                //    // record inserted
+                //    command.Parameters.Clear();
+                //    command.CommandText = lastInsertID;
+                //    lastID = DatabaseConnection.Instance.ExecuteCommand(command);
+                //    return lastID;
+                //}
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            //return lastID;
         }
 
         /// <summary>

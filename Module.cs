@@ -32,7 +32,7 @@ namespace spital
             "UPDATE module SET name = @name, icon = @icon, defaultMin = @defaultMin, " +
             "defaultMax = @defaultMax WHERE moduleID = @moduleID";
 
-        public Module() { }
+        public Module(float assignedMin) { }
 
         /// <summary>
         /// Constructor. Sets name, icon, min and max values based on values from database

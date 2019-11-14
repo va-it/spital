@@ -20,6 +20,7 @@ namespace spital
         List<NumericUpDown> limitMin = new List<NumericUpDown>();
         List<NumericUpDown> limitMax = new List<NumericUpDown>();
 
+
         public LimitsForm(MonitorForm monitorForm)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
+            //SaveMinAssignedLimits();
             this.Close();
         }
 
@@ -35,7 +37,6 @@ namespace spital
         {
             GenerateControlsLists();
             GetMonitorModules();
-            //GetDefaultLimit();
         }
 
         private void GenerateControlsLists()
@@ -52,7 +53,6 @@ namespace spital
             limitMax.Add(maxLimit2);
             limitMax.Add(maxLimit3);
             limitMax.Add(maxLimit4);
-
         }
 
 
@@ -68,21 +68,34 @@ namespace spital
                 limitMin.ElementAt(index).Value = Convert.ToDecimal(monitorModules.ElementAt(index).Module.DefaultMin);
                 limitMax.ElementAt(index).Value = Convert.ToDecimal(monitorModules.ElementAt(index).Module.DefaultMax);
                 ++index;
+                
             }
         }
 
-        //private void GetDefaultLimit()
-        //{
-        //    monitorModules = MonitorModule.GetAllFromMonitor(1);
+        /*
+         * Method to save assigned limit to the monitorModule table in database
+         * Below code not working, unable to assign the value to the variable assignMin
+         
 
-        //    int index = 0;
+        private void SaveMinAssignedLimits()
+        {
 
-        //    foreach (MonitorModule monitorModule in monitorModules)
-        //    {
-        //        limit.ElementAt(index).Value = Convert.ToDecimal(monitorModules.ElementAt(index).Module.DefaultMin);
-        //        ++index;
-        //    } 
-        //}
+            foreach(Control control in minBox.Controls)
+            {
+                NumericUpDown numericUpDown = control as NumericUpDown;
+
+                MonitorModule monitorModule = new MonitorModule();
+                var assignedMin = monitorModule.AssignedMin;
+
+                Module module = new Module(assignedMin);
+
+                MonitorModule moduleMinAssignedLimit = new MonitorModule(module);
+                moduleMinAssignedLimit.Save();
+            }
+        }
+
+        */
+
 
 
         private void LimitsForm_Shown(object sender, EventArgs e)

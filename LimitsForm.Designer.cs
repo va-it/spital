@@ -356,7 +356,7 @@
             this.ModuleIcon1.TabIndex = 24;
             this.ModuleIcon1.TabStop = false;
             // 
-            // Limits
+            // LimitsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,9 +372,10 @@
             this.Controls.Add(this.minBox);
             this.Controls.Add(this.ModulesBox);
             this.Controls.Add(this.modulesButton);
-            this.Name = "Limits";
+            this.Name = "LimitsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Limits";
+            this.Shown += new System.EventHandler(this.LimitsForm_Shown);
             this.ModulesBox.ResumeLayout(false);
             this.panelModule4.ResumeLayout(false);
             this.panelModule4.PerformLayout();

@@ -12,16 +12,52 @@ namespace spital
 {
     public partial class ModulesForm : Form
     {
-        public ModulesForm()
+        private MonitorForm Monitor { get; set; }
+
+        public ModulesForm(MonitorForm monitorForm)
         {
             InitializeComponent();
+            Monitor = monitorForm;
         }
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
+            SaveSelectedModules();
+
             this.Close();
-            Form limits = new LimitsForm();
+            Form limits = new LimitsForm(Monitor);
             limits.Show();
+        }
+
+        // to retrive module type from database
+        public void FillModuleType()
+        {
+            DataTable modulesTable = Module.GetAll();
+
+            checkedListBox_Modules.DataSource = modulesTable;
+            checkedListBox_Modules.ValueMember = "moduleID";
+            checkedListBox_Modules.DisplayMember = "name";
+        }
+
+        // Store selected modules into database in table "monitorModule" based on the monitor and module id
+        private void SaveSelectedModules()
+        {
+            foreach (DataRowView row in checkedListBox_Modules.CheckedItems)
+            {
+                int moduleID = int.Parse(row["moduleID"].ToString());
+
+                //create monitor and module objects
+                Monitor monitor = new Monitor(1);
+                Module module = new Module(moduleID);
+
+                MonitorModule monitorModule = new MonitorModule(monitor, module);
+                monitorModule.Save();
+            }
+        }
+
+        private void ModulesForm_Load(object sender, EventArgs e)
+        {
+            FillModuleType();
         }
     }
 }

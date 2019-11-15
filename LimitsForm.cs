@@ -29,7 +29,7 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
-            //SaveMinAssignedLimits();
+            SaveMinAssignedLimitsVincenzo();
             this.Close();
         }
 
@@ -75,7 +75,7 @@ namespace spital
         /*
          * Method to save assigned limit to the monitorModule table in database
          * Below code not working, unable to assign the value to the variable assignMin
-         
+         */
 
         private void SaveMinAssignedLimits()
         {
@@ -94,8 +94,55 @@ namespace spital
             }
         }
 
-        */
+        private void SaveMinAssignedLimitsVincenzo()
+        {
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            // You could do like the commented code below or look at the uncommented FOR loop.
+            // I think that's better since we assign Min and Max in one go.
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+            //int i = 0;
+
+            //// loop over all the MIN numericUpAndDown
+            //foreach (NumericUpDown min in limitMin)
+            //{
+            //    // assign value to AssignedMin property of monitorModule object
+            //    monitorModules.ElementAt(i).AssignedMin = (float)min.Value;
+
+            //    // save monitorModule object at the index position
+            //    monitorModules.ElementAt(i).Save();
+
+            //    ++i;
+            //}
+
+            //int j = 0;
+            //// loop over all the MAX numericUpAndDown
+            //foreach (NumericUpDown max in limitMax)
+            //{
+            //    // assign value to AssignedMin property of monitorModule object
+            //    monitorModules.ElementAt(j).AssignedMin = (float)max.Value;
+
+            //    // save monitorModule object at the index position
+            //    monitorModules.ElementAt(j).Save();
+
+            //    ++j;
+            //}
+
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            // Loop for as many times as the number of monitorModules and get relative min and max
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            for (int i = 0; i < monitorModules.Count; ++i)
+            {
+                // there is no need to create instance of monitorModule or numericUpAndDown
+                // because we already have the objects in the List<XXX> variable
+
+                monitorModules.ElementAt(i).AssignedMin = (float)limitMin.ElementAt(i).Value;
+                monitorModules.ElementAt(i).AssignedMax = (float)limitMax.ElementAt(i).Value;
+                monitorModules.ElementAt(i).Update();
+            }
+
+        }
 
 
         private void LimitsForm_Shown(object sender, EventArgs e)

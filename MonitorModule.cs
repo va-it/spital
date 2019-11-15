@@ -31,7 +31,7 @@ namespace spital
             "VALUES (@monitorID, @moduleID, @assignedMin, @assignedMax)";
 
         private static readonly string updateStatement =
-            "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin " +
+            "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin, " +
             "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID";
 
         /// <summary>

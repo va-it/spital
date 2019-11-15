@@ -50,10 +50,6 @@ namespace spital
             };
 
             MonitorId = monitor.Save();
-
-            // the save function should return the row ID
-            // MonitorID = monitor.Save();
-            // this could then be used in the modules Form and limits form to retrieve data
         }
 
         private void GenerateListsOfControls()

@@ -20,19 +20,19 @@ namespace spital
 
         //Generic SELECT and INSERT Statement for module table 
         private static readonly string selectStatement = 
-            "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID";
+            "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID;";
 
         private static readonly string selectWhereStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID " +
-            "WHERE sessionID = @sessionID";
+            "WHERE sessionID = @sessionID;";
 
         private static readonly string insertStatement =
             "INSERT INTO session (staffID, dateTimeStart, dateTimeEnd) " +
-            "VALUES (@staffID, @dateTimeStart, @dateTimeEnd)";
+            "VALUES (@staffID, @dateTimeStart, @dateTimeEnd);";
 
         private static readonly string updateStatement =
             "UPDATE session SET staffID = @staffID, dateTimeStart = @dateTimeStart, " +
-            "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID";
+            "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID;";
 
         /// <summary>
         /// Constructor. Sets Id value;
@@ -100,8 +100,10 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into session table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -111,12 +113,14 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@dateTimeStart", DateTimeStart));
                 command.Parameters.Add(new SqlParameter("@dateTimeEnd", DateTimeEnd));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

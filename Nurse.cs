@@ -15,13 +15,13 @@ namespace spital
         public string PhoneNumber { get; set; }
         public int StaffID { get; set; }
 
-        private static readonly string selectStatement = "SELECT * FROM nurse";
+        private static readonly string selectStatement = "SELECT * FROM nurse;";
 
         private static readonly string insertStatement = 
-            "INSERT INTO nurse (phoneNumber, staffID) VALUES (@phoneNumber, @staffID)";
+            "INSERT INTO nurse (phoneNumber, staffID) VALUES (@phoneNumber, @staffID);";
 
         private new static readonly string updateStatement =
-            "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID";
+            "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID;";
 
 
         /// <summary>
@@ -41,9 +41,11 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into nurse table
         /// </summary>
-        public new void Save()
+        public new Nullable<int> Save()
         {
             base.Save();
+
+            Nullable<int> lastInsertedID = null;
 
             try
             {
@@ -53,12 +55,14 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@phoneNumber", PhoneNumber));
                 command.Parameters.Add(new SqlParameter("@staffID", base.Id));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

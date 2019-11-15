@@ -167,5 +167,20 @@ namespace spital.Properties
 
             return noRows;
         }
+
+        public int ExecuteInsert(SqlCommand command)
+        {
+            // return last inserted id
+            command.CommandText += " SELECT SCOPE_IDENTITY();";
+
+            OpenConnection();
+            command.Connection = sqlconn;
+
+            int lastInsertedID = Convert.ToInt32(command.ExecuteScalar());
+
+            CloseConnection();
+
+            return lastInsertedID;
+        }
     }
 }

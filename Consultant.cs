@@ -15,12 +15,12 @@ namespace spital
         public string Email { get; set; }
         public int StaffID { get; set; }
 
-        private static readonly string selectStatement = "SELECT * FROM consultant";
+        private static readonly string selectStatement = "SELECT * FROM consultant;";
 
-        private static readonly string insertStatement = "INSERT INTO nurse (email, staffID) VALUES (@email, @staffID)";
+        private static readonly string insertStatement = "INSERT INTO nurse (email, staffID) VALUES (@email, @staffID);";
 
         private new static readonly string updateStatement =
-            "UPDATE consultant SET email = @email, staffID = @staffID WHERE consultantID = @consultantID";
+            "UPDATE consultant SET email = @email, staffID = @staffID WHERE consultantID = @consultantID;";
 
         /// <summary>
         /// Constructor. Instantiates staff class with values from parameters and sets email and staffId of consultant instance
@@ -39,9 +39,11 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into consultant table
         /// </summary>
-        public new void Save()
+        public new Nullable<int> Save()
         {
             base.Save();
+
+            Nullable<int> lastInsertedID = null;
 
             try
             {
@@ -51,12 +53,14 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@email", Email));
                 command.Parameters.Add(new SqlParameter("@staffID", base.Id));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

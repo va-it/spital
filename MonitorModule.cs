@@ -20,19 +20,19 @@ namespace spital
         public float AssignedMax { get; set; }
 
         private static readonly string selectStatement = 
-            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID";
+            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID;";
 
         private static readonly string selectWhereStatement =
             "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID " +
-            "WHERE monitorModuleID = @monitorModuleID";
+            "WHERE monitorModuleID = @monitorModuleID;";
 
         private static readonly string insertStatement =
             "INSERT INTO monitorModule (monitorID, moduleID, assignedMin, assignedMax) " +
-            "VALUES (@monitorID, @moduleID, @assignedMin, @assignedMax)";
+            "VALUES (@monitorID, @moduleID, @assignedMin, @assignedMax);";
 
         private static readonly string updateStatement =
             "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin " +
-            "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID";
+            "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID;";
 
         /// <summary>
         /// Constructor. Sets value of monitor and module from parameters
@@ -65,21 +65,24 @@ namespace spital
             return monitorModuleDataTable;
         }
 
-        public static List<MonitorModule> GetAllFromMonitor(int monitorID)
+        public static List<MonitorModule> GetAllFromMonitor(Nullable<int> monitorID)
         {
-            DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
-            DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
-
             List<MonitorModule> monitorModulesList = new List<MonitorModule>();
 
-            foreach (DataRow monitorModuleRow in monitorModuleDataTable.Rows)
+            if (monitorID.HasValue)
             {
-                if (Int32.Parse(monitorModuleRow["monitorID"].ToString()) == monitorID)
+                DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+                DataTable monitorModuleDataTable = monitorModuleDataSet.Tables[0];
+
+                foreach (DataRow monitorModuleRow in monitorModuleDataTable.Rows)
                 {
-                    Monitor monitor = new Monitor(Int32.Parse(monitorModuleRow["monitorID"].ToString()));
-                    Module module = new Module(Int32.Parse(monitorModuleRow["moduleID"].ToString()));
-                    MonitorModule monitorModule = new MonitorModule(monitor, module);
-                    monitorModulesList.Add(monitorModule);
+                    if (Int32.Parse(monitorModuleRow["monitorID"].ToString()) == monitorID)
+                    {
+                        Monitor monitor = new Monitor(Int32.Parse(monitorModuleRow["monitorID"].ToString()));
+                        Module module = new Module(Int32.Parse(monitorModuleRow["moduleID"].ToString()));
+                        MonitorModule monitorModule = new MonitorModule(monitor, module);
+                        monitorModulesList.Add(monitorModule);
+                    }
                 }
             }
 
@@ -122,8 +125,10 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into monitorModule table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -134,12 +139,14 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@assignedMin", AssignedMin));
                 command.Parameters.Add(new SqlParameter("@assignedMax", AssignedMax));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

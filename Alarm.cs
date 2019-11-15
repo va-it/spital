@@ -20,15 +20,15 @@ namespace spital
         public DateTime EndDateTime { get; set; }
 
         private static readonly string selectStatement = 
-            "SELECT * FROM alarm INNER JOIN monitorModule ON monitorModule.monitorModuleID = alarm.monitorModuleID";
+            "SELECT * FROM alarm INNER JOIN monitorModule ON monitorModule.monitorModuleID = alarm.monitorModuleID;";
 
         private static readonly string insertStatement =
             "INSERT INTO alarm (staffID,monitorModuleID,startDateTime,endDateTime) " +
-            "VALUES (@staffID,@monitorModuleID,@startDateTime,@endDateTime)";
+            "VALUES (@staffID,@monitorModuleID,@startDateTime,@endDateTime);";
 
         private static readonly string updateStatement =
             "UPDATE alarm SET staffID = @staffID, monitorModule = @monitorModule, " +
-            "startDateTime = @startDateTime, endDateTime = @endDateTime WHERE alarmID = @alarmID";
+            "startDateTime = @startDateTime, endDateTime = @endDateTime WHERE alarmID = @alarmID;";
         
         /// <summary>
         /// Constructor. Sets MonitorModule from parameter and defines Id and DateTimeStart 
@@ -51,8 +51,10 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into alarm table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -62,12 +64,14 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
                 command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

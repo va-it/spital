@@ -20,17 +20,17 @@ namespace spital
         public float DefaultMax { get; set; }
 
         //Generic SELECT and INSERT Statement for module table 
-        private static readonly string selectStatement = "SELECT * FROM module";
+        private static readonly string selectStatement = "SELECT * FROM module;";
 
-        private static readonly string selectWhereStatement = "SELECT * FROM module WHERE moduleID = @moduleID";
+        private static readonly string selectWhereStatement = "SELECT * FROM module WHERE moduleID = @moduleID;";
 
         private static readonly string insertStatement = 
             "INSERT INTO module (moduleID, name, defaultMin, defaultMax) " + 
-            "VALUES (@moduleID, @name, @defaultMin, @defaultMax)";
+            "VALUES (@moduleID, @name, @defaultMin, @defaultMax);";
 
         private static readonly string updateStatement = 
             "UPDATE module SET name = @name, icon = @icon, defaultMin = @defaultMin, " +
-            "defaultMax = @defaultMax WHERE moduleID = @moduleID";
+            "defaultMax = @defaultMax WHERE moduleID = @moduleID;";
 
         public Module() { }
 
@@ -96,8 +96,10 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into module table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -109,13 +111,14 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@defautMin", DefaultMin));
                 command.Parameters.Add(new SqlParameter("@defaultMax", DefaultMax));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
 
+            return lastInsertedID;
         }
 
         /// <summary>

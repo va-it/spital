@@ -15,7 +15,7 @@ namespace spital
         List<PictureBox> modulesIcons = new List<PictureBox>();
         List<Label> modulesReadings = new List<Label>();
 
-        public int MonitorID { get; }
+        public Nullable<int> MonitorId { get; set; }
 
         public MonitorForm()
         {
@@ -49,7 +49,7 @@ namespace spital
                 Active = true
             };
 
-            monitor.Save();
+            MonitorId = monitor.Save();
 
             // the save function should return the row ID
             // MonitorID = monitor.Save();

@@ -47,7 +47,7 @@ namespace spital
                 int moduleID = int.Parse(row["moduleID"].ToString());
 
                 //create monitor and module objects
-                Monitor monitor = new Monitor(1);
+                Monitor monitor = new Monitor(Monitor.MonitorId);
                 Module module = new Module(moduleID);
 
                 MonitorModule monitorModule = new MonitorModule(monitor, module);

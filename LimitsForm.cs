@@ -46,7 +46,7 @@ namespace spital
 
         private void GetMonitorModules()
         {
-            monitorModules = MonitorModule.GetAllFromMonitor(1);
+            monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
 
             int index = 0;
 

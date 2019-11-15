@@ -16,13 +16,13 @@ namespace spital
         public int Id { get; set; }
         public bool Active { get; set; }
 
-        private static readonly string selectStatement = "SELECT * FROM monitor";
+        private static readonly string selectStatement = "SELECT * FROM monitor;";
 
-        private static readonly string selectWhereStatement = "SELECT * FROM monitor WHERE monitorID = @monitorID";
+        private static readonly string selectWhereStatement = "SELECT * FROM monitor WHERE monitorID = @monitorID;";
 
-        private static readonly string insertStatement = "INSERT INTO monitor (active) VALUES (@active)";
+        private static readonly string insertStatement = "INSERT INTO monitor (active) VALUES (@active);";
 
-        private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID";
+        private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID;";
 
         /// <summary>
         /// Constructor. Instantiate object without values
@@ -32,22 +32,25 @@ namespace spital
         /// <summary>
         /// Constructor. Sets Id and Active based on values from database
         /// </summary>
-        public Monitor(int id)
+        public Monitor(Nullable<int> id)
         {
-            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
-            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@monitorID", id));
-
-            DataSet monitorDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
-
-            DataTable monitorDataTable = monitorDataSet.Tables[0];
-
-            if (monitorDataTable.Rows.Count == 1)
+            if (id.HasValue)
             {
-                DataRow row = monitorDataTable.Rows[0];
+                SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
+                sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@monitorID", id));
 
-                Id = Int32.Parse(row["monitorID"].ToString());
-                Active = Convert.ToBoolean(row["active"].ToString());
-            }
+                DataSet monitorDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
+
+                DataTable monitorDataTable = monitorDataSet.Tables[0];
+
+                if (monitorDataTable.Rows.Count == 1)
+                {
+                    DataRow row = monitorDataTable.Rows[0];
+
+                    Id = Int32.Parse(row["monitorID"].ToString());
+                    Active = Convert.ToBoolean(row["active"].ToString());
+                }
+            }           
         }
 
         /// <summary>
@@ -81,8 +84,10 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into monitor table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -90,12 +95,14 @@ namespace spital
                 command.CommandText = insertStatement;
                 command.Parameters.Add(new SqlParameter("@active", Active));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

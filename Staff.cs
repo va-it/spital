@@ -20,13 +20,14 @@ namespace spital
 
         private static readonly string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
 
-        private static readonly string selectStatement = "SELECT * FROM staff";
+        private static readonly string selectStatement = "SELECT * FROM staff;";
 
         private static readonly string insertStatement = 
-            "INSERT INTO staff (staffTypeID, username, password) VALUES (@staffTypeID, @username, @password)";
+            "INSERT INTO staff (staffTypeID, username, password) VALUES (@staffTypeID, @username, @password);";
 
         private static readonly string updateStatement =
-            "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password WHERE staffID = @staffID";
+            "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password " +
+            "WHERE staffID = @staffID;";
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
@@ -114,8 +115,10 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into staff table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -131,6 +134,8 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
             
         }
 

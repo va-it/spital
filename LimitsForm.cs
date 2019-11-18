@@ -30,7 +30,7 @@ namespace spital
         private void modulesButton_Click(object sender, EventArgs e)
         {
             SaveAssignedLimits();
-            this.Close();
+            Close();
         }
 
         private void FillLimits()

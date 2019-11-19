@@ -1,7 +1,9 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,10 @@ namespace spital
         List<MonitorModule> monitorModules = new List<MonitorModule>();
         List<Label> modules = new List<Label>();
 
+        List<NumericUpDown> limitMin = new List<NumericUpDown>();
+        List<NumericUpDown> limitMax = new List<NumericUpDown>();
+
+
         public LimitsForm(MonitorForm monitorForm)
         {
             InitializeComponent();
@@ -25,6 +31,7 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
+            SaveAssignedLimits();
             this.Close();
         }
 
@@ -41,6 +48,14 @@ namespace spital
             modules.Add(labelModule2);
             modules.Add(labelModule3);
             modules.Add(labelModule4);
+            limitMin.Add(minLimit1);
+            limitMin.Add(minLimit2);
+            limitMin.Add(minLimit3);
+            limitMin.Add(minLimit4);
+            limitMax.Add(maxLimit1);
+            limitMax.Add(maxLimit2);
+            limitMax.Add(maxLimit3);
+            limitMax.Add(maxLimit4);
         }
 
 
@@ -53,7 +68,20 @@ namespace spital
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
+                limitMin.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMin;
+                limitMax.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMax;
                 ++index;
+            }
+        }
+
+        private void SaveAssignedLimits()
+        {
+            for (int i = 0; i < monitorModules.Count; ++i)
+            {
+                monitorModules.ElementAt(i).AssignedMin = (float)limitMin.ElementAt(i).Value;
+                monitorModules.ElementAt(i).AssignedMax = (float)limitMax.ElementAt(i).Value;
+
+                monitorModules.ElementAt(i).Update();
             }
         }
 

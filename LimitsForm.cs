@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data;
+using System.Data.SqlClient;
 namespace spital
 {
     public partial class LimitsForm : Form
     {
+        //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        //Temp variable to connect to database to check update is working 
+        //private SqlConnection _con;
+        //private SqlCommand _cmd;
+        //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
         private MonitorForm Monitor { get; set; }
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
@@ -74,14 +76,25 @@ namespace spital
 
         private void SaveAssignedLimits()
         {
-
             for (int i = 0; i < monitorModules.Count; ++i)
             {
-                // there is no need to create instance of monitorModule or numericUpAndDown
-                // because we already have the objects in the List<XXX> variable
-
                 monitorModules.ElementAt(i).AssignedMin = (float)limitMin.ElementAt(i).Value;
                 monitorModules.ElementAt(i).AssignedMax = (float)limitMax.ElementAt(i).Value;
+
+                //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                //Temp code to connect directly to database and check if the update is working 
+                //This code is giving scalar variable error for monitorModuleID
+
+                //_con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\git\spital\Spital.mdf; Integrated Security = True; Connect Timeout = 30");
+                //_con.Open();
+                //_cmd = new SqlCommand("UPDATE monitorModule SET assignedMax=@assignedMax, assignedMin=@assignedMin WHERE monitorModuleID=@monitorModuleID", _con);
+                //_cmd.Parameters.AddWithValue("@assignedMax", maxLimit1.Value);
+                //_cmd.Parameters.AddWithValue("@assignedMin", minLimit1.Value);
+                //_cmd.ExecuteNonQuery();
+
+                //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
                 monitorModules.ElementAt(i).Update();
             }
 

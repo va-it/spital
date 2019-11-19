@@ -206,6 +206,11 @@
             // 
             this.minLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minLimit4.Location = new System.Drawing.Point(15, 289);
+            this.minLimit4.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.minLimit4.Name = "minLimit4";
             this.minLimit4.Size = new System.Drawing.Size(138, 53);
             this.minLimit4.TabIndex = 6;
@@ -214,6 +219,11 @@
             // 
             this.minLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minLimit3.Location = new System.Drawing.Point(15, 202);
+            this.minLimit3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.minLimit3.Name = "minLimit3";
             this.minLimit3.Size = new System.Drawing.Size(136, 53);
             this.minLimit3.TabIndex = 5;
@@ -222,6 +232,11 @@
             // 
             this.minLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minLimit2.Location = new System.Drawing.Point(15, 118);
+            this.minLimit2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.minLimit2.Name = "minLimit2";
             this.minLimit2.Size = new System.Drawing.Size(138, 53);
             this.minLimit2.TabIndex = 2;
@@ -230,6 +245,11 @@
             // 
             this.minLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minLimit1.Location = new System.Drawing.Point(15, 34);
+            this.minLimit1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.minLimit1.Name = "minLimit1";
             this.minLimit1.Size = new System.Drawing.Size(138, 53);
             this.minLimit1.TabIndex = 0;
@@ -253,6 +273,11 @@
             // 
             this.maxLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxLimit4.Location = new System.Drawing.Point(18, 289);
+            this.maxLimit4.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.maxLimit4.Name = "maxLimit4";
             this.maxLimit4.Size = new System.Drawing.Size(138, 53);
             this.maxLimit4.TabIndex = 7;
@@ -261,6 +286,11 @@
             // 
             this.maxLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxLimit3.Location = new System.Drawing.Point(18, 202);
+            this.maxLimit3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.maxLimit3.Name = "maxLimit3";
             this.maxLimit3.Size = new System.Drawing.Size(138, 53);
             this.maxLimit3.TabIndex = 4;
@@ -269,6 +299,11 @@
             // 
             this.maxLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxLimit1.Location = new System.Drawing.Point(18, 34);
+            this.maxLimit1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.maxLimit1.Name = "maxLimit1";
             this.maxLimit1.Size = new System.Drawing.Size(138, 53);
             this.maxLimit1.TabIndex = 3;
@@ -277,6 +312,11 @@
             // 
             this.maxLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxLimit2.Location = new System.Drawing.Point(18, 118);
+            this.maxLimit2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.maxLimit2.Name = "maxLimit2";
             this.maxLimit2.Size = new System.Drawing.Size(138, 53);
             this.maxLimit2.TabIndex = 1;

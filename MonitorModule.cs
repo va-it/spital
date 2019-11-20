@@ -53,15 +53,33 @@ namespace spital
             Alarm alarm = new Alarm(this);
 
             // notify monitor to display message in the top bar
+            // monitor.ShowAlarm(monitorId, message)
 
             // notify staff (SMS or email) (check active sessions)
-            //      List<Session> activeSessions = Session.GetActive();
-            //      foreach (Session activeSession in activeSessions)
-            //      {
-            //          activeSession.StaffID            
-            //      }
+            List<Session> activeSessions = Session.GetActive();
+            foreach (Session activeSession in activeSessions)
+            {
+                int staffId = activeSession.StaffId;
+                int staffTypeId = Staff.GetStaffType(staffId);
+
+                switch (staffTypeId)
+                {
+                    case 1:
+                        //nurse
+                        Nurse nurse = new Nurse(staffId);
+                        nurse.Notify();
+                        break;
+                    case 2:
+                        //consultant
+                        Consultant consultant = new Consultant(staffId);
+                        consultant.Notify();
+                        break;
+                }
+            }
 
             // notify central screen to display notification for specific monitor
+            // Central screen instance (singleton)
+            // centralScreen.Instance.ShowAlarm(monitorId, message)
 
         }
 

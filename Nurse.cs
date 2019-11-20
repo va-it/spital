@@ -26,8 +26,32 @@ namespace spital
         private new static readonly string updateStatement =
             "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID;";
 
+        /// <summary>
+        /// Basic constructor. Does not set any value.
+        /// </summary>
         private Nurse() { }
 
+        /// <summary>
+        /// Constructor. Creates instance of Nurse based on StaffID and assign Id and phoneNumber from database
+        /// </summary>
+        /// <param name="staffId"></param>
+        public Nurse(int staffId)
+        {
+            DataSet nurseDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable nurseDataTable = nurseDataSet.Tables[0];
+
+            foreach (DataRow nurseDataRow in nurseDataTable.Rows)
+            {
+                if (Int32.Parse(nurseDataRow["staffID"].ToString()) == staffId)
+                {
+                    Nurse nurse = new Nurse
+                    {
+                        Id = Int32.Parse(nurseDataRow["nurseID"].ToString()),
+                        PhoneNumber = nurseDataRow["phoneNumber"].ToString()
+                    };
+                }
+            }
+        }
 
         /// <summary>
         /// Constructor. Instantiates staff class with values from parameters and sets phoneNumber and staffId of nurse instance
@@ -44,7 +68,6 @@ namespace spital
         }
 
         
-
         // WIP CODE
         public static Nurse GetOne(int id)
         {
@@ -118,6 +141,10 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public void Notify()
+        {
         }
     }
 }

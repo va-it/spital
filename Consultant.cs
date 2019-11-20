@@ -1,6 +1,7 @@
 ﻿using spital.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace spital
 {
     class Consultant : Staff
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public string Email { get; set; }
         public int StaffID { get; set; }
 
@@ -21,6 +22,33 @@ namespace spital
 
         private new static readonly string updateStatement =
             "UPDATE consultant SET email = @email, staffID = @staffID WHERE consultantID = @consultantID;";
+
+        /// <summary>
+        /// Basic constructor. Does not set any value.
+        /// </summary>
+        private Consultant() { }
+
+        /// <summary>
+        /// Constructor. Creates instance of Consultant based on StaffID and assign Id and phoneNumber from database
+        /// </summary>
+        /// <param name="staffId"></param>
+        public Consultant(int staffId)
+        {
+            DataSet nurseDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable nurseDataTable = nurseDataSet.Tables[0];
+
+            foreach (DataRow nurseDataRow in nurseDataTable.Rows)
+            {
+                if (Int32.Parse(nurseDataRow["staffID"].ToString()) == staffId)
+                {
+                    Consultant nurse = new Consultant
+                    {
+                        Id = Int32.Parse(nurseDataRow["nurseID"].ToString()),
+                        Email = nurseDataRow["email"].ToString()
+                    };
+                }
+            }
+        }
 
         /// <summary>
         /// Constructor. Instantiates staff class with values from parameters and sets email and staffId of consultant instance
@@ -85,6 +113,10 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public void Notify()
+        {
         }
     }
 }

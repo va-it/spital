@@ -22,6 +22,8 @@ namespace spital
 
         private static readonly string selectStatement = "SELECT * FROM staff;";
 
+        private static readonly string selectWhereStatement = "SELECT * FROM staff WHERE staffID = @staffID;";
+
         private static readonly string insertStatement = 
             "INSERT INTO staff (staffTypeID, username, password) VALUES (@staffTypeID, @username, @password);";
 
@@ -97,22 +99,30 @@ namespace spital
             // Authentication trigger
         }
 
-        public void Notify()
+
+        public static int GetStaffType(int id)
         {
-            switch (StaffTypeId)
+            int staffTypeID = 0;
+
+            SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+            command.CommandText = selectWhereStatement;
+            command.Parameters.Add(new SqlParameter("@staffID", id));
+
+            DataSet staffDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
+            DataTable staffDataTable = staffDataSet.Tables[0];
+
+            if (staffDataTable.Rows.Count == 1)
             {
-                case 1:
-                    // Nurse, notify via SMS/Pager
-                    break;
-                case 2:
-                    // Consultant, notify via email
-                    break;
-                default:
-                    // No type matched.
-                    break;
+                DataRow row = staffDataTable.Rows[0];
+
+                // Only one record has been retrieved
+                staffTypeID = Int32.Parse(row["staffTypeID"].ToString());
+                
             }
 
+            return staffTypeID;
         }
+
 
         /// <summary>
         /// Inserts this instance as row into staff table

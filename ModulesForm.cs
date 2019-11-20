@@ -51,6 +51,8 @@ namespace spital
                 Module module = new Module(moduleID);
 
                 MonitorModule monitorModule = new MonitorModule(monitor, module);
+                monitorModule.AssignedMin = module.DefaultMin;
+                monitorModule.AssignedMax = module.DefaultMax;
                 monitorModule.Save();
             }
         }

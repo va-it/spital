@@ -13,7 +13,7 @@ namespace spital
     class MonitorModule
     {
         // Auto-implemented properties for trivial get and set
-        private int Id { get; }
+        public int Id { get; set; }
         public Monitor Monitor { get; set; }
         public Module Module { get; set; }
         public float AssignedMin { get; set; }
@@ -31,7 +31,7 @@ namespace spital
             "VALUES (@monitorID, @moduleID, @assignedMin, @assignedMax);";
 
         private static readonly string updateStatement =
-            "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin " +
+            "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin, " +
             "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID;";
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace spital
         public MonitorModule(Monitor monitor = null, Module module = null)
         {
             Monitor = monitor;
-            Module = module;
+            Module = module;           
         }
 
         /// <summary>
@@ -81,6 +81,9 @@ namespace spital
                         Monitor monitor = new Monitor(Int32.Parse(monitorModuleRow["monitorID"].ToString()));
                         Module module = new Module(Int32.Parse(monitorModuleRow["moduleID"].ToString()));
                         MonitorModule monitorModule = new MonitorModule(monitor, module);
+                        monitorModule.Id = Int32.Parse(monitorModuleRow["monitorModuleID"].ToString());
+                        monitorModule.AssignedMin = float.Parse(monitorModuleRow["assignedMin"].ToString());
+                        monitorModule.AssignedMax = float.Parse(monitorModuleRow["assignedMax"].ToString());
                         monitorModulesList.Add(monitorModule);
                     }
                 }
@@ -154,6 +157,8 @@ namespace spital
         /// </summary>
         public void Update()
         {
+            int rowsAffected = 0;
+
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -165,7 +170,7 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@assignedMax", AssignedMax));
                 command.Parameters.Add(new SqlParameter("@monitorModuleID", Id));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                rowsAffected = DatabaseConnection.Instance.ExecuteCommand(command);
             }
             catch (Exception error)
             {

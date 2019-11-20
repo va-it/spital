@@ -12,14 +12,18 @@ namespace spital
 {
     public partial class MonitorForm : Form
     {
+        private MonitorForm Monitor { get; set; }
+
+        List<MonitorModule> monitorModules = new List<MonitorModule>();
         List<PictureBox> modulesIcons = new List<PictureBox>();
-        List<Label> modulesReadings = new List<Label>();
+        List<Label> moduleName = new List<Label>();
 
         public Nullable<int> MonitorId { get; set; }
 
-        public MonitorForm()
+        public MonitorForm(MonitorForm monitorForm)
         {
             InitializeComponent();
+            Monitor = monitorForm;
         }
 
         private void alarmButton_Click(object sender, EventArgs e)
@@ -44,6 +48,7 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
+            FillMonitor();
             Monitor monitor = new Monitor
             {
                 Active = true
@@ -52,12 +57,18 @@ namespace spital
             MonitorId = monitor.Save();
         }
 
+        private void FillMonitor()
+        {
+            GenerateListsOfControls();
+            GetLimitForm();
+        }
+
         private void GenerateListsOfControls()
         {
-            modulesReadings.Add(moduleReading1);
-            modulesReadings.Add(moduleReading2);
-            modulesReadings.Add(moduleReading3);
-            modulesReadings.Add(moduleReading4);
+            moduleName.Add(moduleName1);
+            moduleName.Add(moduleName2);
+            moduleName.Add(moduleName3);
+            moduleName.Add(moduleName4);
 
             modulesIcons.Add(moduleIcon1);
             modulesIcons.Add(moduleIcon2);
@@ -65,9 +76,22 @@ namespace spital
             modulesIcons.Add(moduleIcon4);
         }
 
-        public void TestFunction()
+        private void GetLimitForm()
         {
-            MessageBox.Show("Test successfull");
+            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
+
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
+            {
+                moduleName.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
+                ++index;
+            }
         }
+
+        //private void MonitorForm_Shown(object sender, EventArgs e)
+        //{
+        //    FillMonitor();
+        //}
     }
 }

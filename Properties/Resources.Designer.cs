@@ -63,6 +63,26 @@ namespace spital.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_BloodPressure {
+            get {
+                object obj = ResourceManager.GetObject("icon_BloodPressure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_BreathingRate {
+            get {
+                object obj = ResourceManager.GetObject("icon_BreathingRate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Email {
             get {
                 object obj = ResourceManager.GetObject("icon_Email", resourceCulture);
@@ -86,6 +106,26 @@ namespace spital.Properties {
         internal static System.Drawing.Bitmap icon_Password {
             get {
                 object obj = ResourceManager.GetObject("icon_Password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Pulse {
+            get {
+                object obj = ResourceManager.GetObject("icon_Pulse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Temperature {
+            get {
+                object obj = ResourceManager.GetObject("icon_Temperature", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

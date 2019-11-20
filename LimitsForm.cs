@@ -74,10 +74,9 @@ namespace spital
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
-
+                vitalIcon.ElementAt(index).ImageLocation = monitorModules.ElementAt(index).Module.Icon;
                 limitMin.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMin;
                 limitMax.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMax;
-                vitalIcon.ElementAt(index).ImageLocation = monitorModules.ElementAt(index).Module.Icon;
                 ++index;
             }
         }

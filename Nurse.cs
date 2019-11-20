@@ -1,6 +1,7 @@
 ﻿using spital.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,17 +12,21 @@ namespace spital
 {
     class Nurse : Staff
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public string PhoneNumber { get; set; }
         public int StaffID { get; set; }
 
         private static readonly string selectStatement = "SELECT * FROM nurse;";
+
+        private static readonly string selectWhereStatement = "SELECT * FROM nurse WHERE nurseID = @nurseID;";
 
         private static readonly string insertStatement = 
             "INSERT INTO nurse (phoneNumber, staffID) VALUES (@phoneNumber, @staffID);";
 
         private new static readonly string updateStatement =
             "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID;";
+
+        private Nurse() { }
 
 
         /// <summary>
@@ -36,6 +41,32 @@ namespace spital
         {
             PhoneNumber = phoneNumber;
             StaffID = base.Id;
+        }
+
+        
+
+        // WIP CODE
+        public static Nurse GetOne(int id)
+        {
+            Nurse nurse = new Nurse();
+
+            SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+            command.CommandText = selectWhereStatement;
+            command.Parameters.Add(new SqlParameter("@nurseID", id));
+
+            DataSet nurseDataSet = DatabaseConnection.Instance.GetDataSet(selectWhereStatement);
+            DataTable nurseDataTable = nurseDataSet.Tables[0];
+
+            if (nurseDataTable.Rows.Count == 1)
+            {
+                DataRow row = nurseDataTable.Rows[0];
+
+                // Only one record has been retrieved
+                nurse.Id = Int32.Parse(row["nurseID"].ToString());
+                nurse.PhoneNumber = row["phoneNumber"].ToString();
+            }
+
+            return nurse;
         }
 
         /// <summary>

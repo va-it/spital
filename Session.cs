@@ -71,6 +71,28 @@ namespace spital
             return sessionDataTable;
         }
 
+        public static List<Session> GetActive()
+        {
+            List<Session> activeSessions = new List<Session>();
+
+            DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable sessionDataTable = sessionDataSet.Tables[0];
+
+            foreach (DataRow sessionRow in sessionDataTable.Rows)
+            {
+                DateTime endDateTime = Convert.ToDateTime(sessionRow["endDateTime"].ToString());
+
+                if (endDateTime == null || endDateTime > DateTime.Now)
+                {
+                    // There is no endDateTime set or it's in the future
+                    Session session = new Session(Int32.Parse(sessionRow["sessionID"].ToString()));
+                    activeSessions.Add(session);
+                }
+            }
+
+            return activeSessions;
+        }
+
         // WIP CODE
         public Session GetOne(int id)
         {

@@ -29,6 +29,8 @@ namespace spital
             "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password " +
             "WHERE staffID = @staffID;";
 
+        protected Staff() { }
+
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
         /// </summary>

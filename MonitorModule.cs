@@ -51,6 +51,18 @@ namespace spital
         public void TriggerAlarm()
         {
             Alarm alarm = new Alarm(this);
+
+            // notify monitor to display message in the top bar
+
+            // notify staff (SMS or email) (check active sessions)
+            //      List<Session> activeSessions = Session.GetActive();
+            //      foreach (Session activeSession in activeSessions)
+            //      {
+            //          activeSession.StaffID            
+            //      }
+
+            // notify central screen to display notification for specific monitor
+
         }
 
         /// <summary>

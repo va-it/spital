@@ -81,7 +81,7 @@ namespace spital
                         Monitor monitor = new Monitor(Int32.Parse(monitorModuleRow["monitorID"].ToString()));
                         Module module = new Module(Int32.Parse(monitorModuleRow["moduleID"].ToString()));
                         MonitorModule monitorModule = new MonitorModule(monitor, module);
-                        monitorModule.Id = Int32.Parse(monitorModuleRow["moduleID"].ToString());
+                        monitorModule.Id = Int32.Parse(monitorModuleRow["monitorModuleID"].ToString());
                         monitorModule.AssignedMin = float.Parse(monitorModuleRow["assignedMin"].ToString());
                         monitorModule.AssignedMax = float.Parse(monitorModuleRow["assignedMax"].ToString());
                         monitorModulesList.Add(monitorModule);

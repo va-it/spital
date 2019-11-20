@@ -17,8 +17,9 @@ namespace spital
         private MonitorForm Monitor { get; set; }
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
-        List<Label> modules = new List<Label>();
 
+        List<PictureBox> vitalIcon = new List<PictureBox>();
+        List<Label> modules = new List<Label>();
         List<NumericUpDown> limitMin = new List<NumericUpDown>();
         List<NumericUpDown> limitMax = new List<NumericUpDown>();
 
@@ -56,6 +57,11 @@ namespace spital
             limitMax.Add(maxLimit2);
             limitMax.Add(maxLimit3);
             limitMax.Add(maxLimit4);
+            vitalIcon.Add(ModuleIcon1);
+            vitalIcon.Add(ModuleIcon2);
+            vitalIcon.Add(ModuleIcon3);
+            vitalIcon.Add(ModuleIcon4);
+
         }
 
 
@@ -68,8 +74,10 @@ namespace spital
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
+
                 limitMin.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMin;
                 limitMax.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMax;
+                vitalIcon.ElementAt(index).ImageLocation = monitorModules.ElementAt(index).Module.Icon;
                 ++index;
             }
         }

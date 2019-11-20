@@ -104,18 +104,17 @@
     <EmbeddedResource Include="MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Session.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Session.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +157,10 @@
   <ItemGroup>
     <None Include="Resources\icon_Mobile.png" />
     <None Include="Resources\icon_Email.png" />
+    <None Include="Resources\icon_BloodPressure.png" />
+    <None Include="Resources\icon_BreathingRate.png" />
+    <None Include="Resources\icon_Pulse.png" />
+    <None Include="Resources\icon_Temperature.png" />
     <Content Include="Spital.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -12,18 +12,15 @@ namespace spital
 {
     public partial class MonitorForm : Form
     {
-        private MonitorForm Monitor { get; set; }
-
         List<MonitorModule> monitorModules = new List<MonitorModule>();
         List<PictureBox> modulesIcons = new List<PictureBox>();
         List<Label> moduleName = new List<Label>();
 
         public Nullable<int> MonitorId { get; set; }
 
-        public MonitorForm(MonitorForm monitorForm)
+        public MonitorForm()
         {
             InitializeComponent();
-            Monitor = monitorForm;
         }
 
         private void alarmButton_Click(object sender, EventArgs e)

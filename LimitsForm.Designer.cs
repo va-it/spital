@@ -204,7 +204,13 @@
             // 
             // minLimit4
             // 
+            this.minLimit4.DecimalPlaces = 1;
             this.minLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minLimit4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.minLimit4.Location = new System.Drawing.Point(15, 289);
             this.minLimit4.Maximum = new decimal(new int[] {
             1000,
@@ -217,7 +223,13 @@
             // 
             // minLimit3
             // 
+            this.minLimit3.DecimalPlaces = 1;
             this.minLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minLimit3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.minLimit3.Location = new System.Drawing.Point(15, 202);
             this.minLimit3.Maximum = new decimal(new int[] {
             1000,
@@ -230,7 +242,13 @@
             // 
             // minLimit2
             // 
+            this.minLimit2.DecimalPlaces = 1;
             this.minLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minLimit2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.minLimit2.Location = new System.Drawing.Point(15, 118);
             this.minLimit2.Maximum = new decimal(new int[] {
             1000,
@@ -243,7 +261,13 @@
             // 
             // minLimit1
             // 
+            this.minLimit1.DecimalPlaces = 1;
             this.minLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minLimit1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.minLimit1.Location = new System.Drawing.Point(15, 34);
             this.minLimit1.Maximum = new decimal(new int[] {
             1000,
@@ -271,7 +295,13 @@
             // 
             // maxLimit4
             // 
+            this.maxLimit4.DecimalPlaces = 1;
             this.maxLimit4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxLimit4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.maxLimit4.Location = new System.Drawing.Point(18, 289);
             this.maxLimit4.Maximum = new decimal(new int[] {
             1000,
@@ -284,7 +314,13 @@
             // 
             // maxLimit3
             // 
+            this.maxLimit3.DecimalPlaces = 1;
             this.maxLimit3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxLimit3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.maxLimit3.Location = new System.Drawing.Point(18, 202);
             this.maxLimit3.Maximum = new decimal(new int[] {
             1000,
@@ -297,7 +333,13 @@
             // 
             // maxLimit1
             // 
+            this.maxLimit1.DecimalPlaces = 1;
             this.maxLimit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxLimit1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.maxLimit1.Location = new System.Drawing.Point(18, 34);
             this.maxLimit1.Maximum = new decimal(new int[] {
             1000,
@@ -310,7 +352,13 @@
             // 
             // maxLimit2
             // 
+            this.maxLimit2.DecimalPlaces = 1;
             this.maxLimit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxLimit2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.maxLimit2.Location = new System.Drawing.Point(18, 118);
             this.maxLimit2.Maximum = new decimal(new int[] {
             1000,

@@ -19,7 +19,7 @@ namespace spital
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
         List<PictureBox> vitalIcon = new List<PictureBox>();
-        List<Label> modules = new List<Label>();
+        public List<Label> modules = new List<Label>();
         List<NumericUpDown> limitMin = new List<NumericUpDown>();
         List<NumericUpDown> limitMax = new List<NumericUpDown>();
 
@@ -34,6 +34,9 @@ namespace spital
         {
             SaveAssignedLimits();
             this.Close();
+
+            Form monitorForm = new MonitorForm();
+            monitorForm.Show();
         }
 
         private void FillLimits()

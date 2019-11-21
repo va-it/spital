@@ -45,19 +45,19 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
-            FillMonitor();
+            
             Monitor monitor = new Monitor
             {
                 Active = true
             };
 
             MonitorId = monitor.Save();
+            
         }
 
         private void FillMonitor()
         {
             GenerateListsOfControls();
-            GetLimitForm();
         }
 
         private void GenerateListsOfControls()
@@ -72,23 +72,5 @@ namespace spital
             modulesIcons.Add(moduleIcon3);
             modulesIcons.Add(moduleIcon4);
         }
-
-        private void GetLimitForm()
-        {
-            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
-
-            int index = 0;
-
-            foreach (MonitorModule monitorModule in monitorModules)
-            {
-                moduleName.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
-                ++index;
-            }
-        }
-
-        //private void MonitorForm_Shown(object sender, EventArgs e)
-        //{
-        //    FillMonitor();
-        //}
     }
 }

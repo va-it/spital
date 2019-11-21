@@ -561,10 +561,6 @@
         private System.Windows.Forms.Panel panelModule3;
         private System.Windows.Forms.Panel panelModule4;
         private System.Windows.Forms.Panel panelModule1;
-        private System.Windows.Forms.Label labelModule2;
-        private System.Windows.Forms.Label labelModule3;
-        private System.Windows.Forms.Label labelModule4;
-        private System.Windows.Forms.Label labelModule1;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Label copyright;
         private System.Windows.Forms.Panel panelHeader;
@@ -573,5 +569,9 @@
         private System.Windows.Forms.PictureBox ModuleIcon3;
         private System.Windows.Forms.PictureBox ModuleIcon2;
         private System.Windows.Forms.PictureBox ModuleIcon1;
+        public System.Windows.Forms.Label labelModule2;
+        public System.Windows.Forms.Label labelModule3;
+        public System.Windows.Forms.Label labelModule4;
+        public System.Windows.Forms.Label labelModule1;
     }
 }

@@ -12,8 +12,9 @@ namespace spital
 {
     public partial class MonitorForm : Form
     {
+        List<MonitorModule> monitorModules = new List<MonitorModule>();
         List<PictureBox> modulesIcons = new List<PictureBox>();
-        List<Label> modulesReadings = new List<Label>();
+        List<Label> moduleName = new List<Label>();
 
         public Nullable<int> MonitorId { get; set; }
 
@@ -44,30 +45,32 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
+            
             Monitor monitor = new Monitor
             {
                 Active = true
             };
 
             MonitorId = monitor.Save();
+            
+        }
+
+        private void FillMonitor()
+        {
+            GenerateListsOfControls();
         }
 
         private void GenerateListsOfControls()
         {
-            modulesReadings.Add(moduleReading1);
-            modulesReadings.Add(moduleReading2);
-            modulesReadings.Add(moduleReading3);
-            modulesReadings.Add(moduleReading4);
+            moduleName.Add(moduleName1);
+            moduleName.Add(moduleName2);
+            moduleName.Add(moduleName3);
+            moduleName.Add(moduleName4);
 
             modulesIcons.Add(moduleIcon1);
             modulesIcons.Add(moduleIcon2);
             modulesIcons.Add(moduleIcon3);
             modulesIcons.Add(moduleIcon4);
-        }
-
-        public void TestFunction()
-        {
-            MessageBox.Show("Test successfull");
         }
     }
 }

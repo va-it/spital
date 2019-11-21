@@ -34,9 +34,6 @@ namespace spital
         {
             SaveAssignedLimits();
             this.Close();
-
-            Form monitorForm = new MonitorForm();
-            monitorForm.Show();
         }
 
         private void FillLimits()

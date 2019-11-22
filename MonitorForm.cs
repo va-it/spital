@@ -108,6 +108,11 @@ namespace spital
 
         private void MonitorForm_Shown(object sender, EventArgs e)
         {
+            RefreshModules();
+        }
+
+        public void RefreshModules()
+        {
             FillMonitor();
         }
     }

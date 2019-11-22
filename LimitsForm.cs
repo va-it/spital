@@ -39,11 +39,13 @@ namespace spital
              * I tried using .Update it did not work 
              * below code closes the application as Monitor is used as the first form to load the application
              */
-             
+
             //Monitor.Close();
 
             //Form monitor = new MonitorForm();
             //monitor.Show();
+
+            Monitor.RefreshModules();
          
         }
 

@@ -116,6 +116,7 @@ namespace spital.Properties {
         internal static System.Drawing.Bitmap icon_Patient {
             get {
                 object obj = ResourceManager.GetObject("icon_Patient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

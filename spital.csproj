@@ -113,7 +113,6 @@
     <EmbeddedResource Include="MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Session.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,11 +125,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Session.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_Patient.png" />
-    <Content Include="Resources\inpatient-icon-7507.png" />
     <None Include="Resources\icon_Mobile.png" />
     <None Include="Resources\icon_Email.png" />
     <None Include="Resources\icon_BloodPressure.png" />

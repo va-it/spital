@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorForm));
-            this.groupBoxReadings = new System.Windows.Forms.GroupBox();
+            this.groupBoxModule = new System.Windows.Forms.GroupBox();
             this.readingsTable = new System.Windows.Forms.TableLayoutPanel();
             this.moduleName4 = new System.Windows.Forms.Label();
             this.moduleName3 = new System.Windows.Forms.Label();
@@ -41,6 +41,14 @@
             this.moduleName1 = new System.Windows.Forms.Label();
             this.groupBoxLimits = new System.Windows.Forms.GroupBox();
             this.limitsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.label_Module1Min = new System.Windows.Forms.Label();
+            this.label_Module1Max = new System.Windows.Forms.Label();
+            this.label_Module2Min = new System.Windows.Forms.Label();
+            this.label_Module2Max = new System.Windows.Forms.Label();
+            this.label_Module3Min = new System.Windows.Forms.Label();
+            this.label_Module3Max = new System.Windows.Forms.Label();
+            this.label_Module4Min = new System.Windows.Forms.Label();
+            this.label_Module4Max = new System.Windows.Forms.Label();
             this.alarmButton = new System.Windows.Forms.Button();
             this.limitsButton = new System.Windows.Forms.Button();
             this.modulesButton = new System.Windows.Forms.Button();
@@ -56,13 +64,14 @@
             this.copyright = new System.Windows.Forms.Label();
             this.groupBoxReading = new System.Windows.Forms.GroupBox();
             this.tableReading = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxReadings.SuspendLayout();
+            this.groupBoxModule.SuspendLayout();
             this.readingsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon4)).BeginInit();
             this.groupBoxLimits.SuspendLayout();
+            this.limitsTable.SuspendLayout();
             this.panelMonitorNumberContainer.SuspendLayout();
             this.panelMonitorNumber.SuspendLayout();
             this.panelAlertMessageContainer.SuspendLayout();
@@ -73,20 +82,20 @@
             this.groupBoxReading.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxReadings
+            // groupBoxModule
             // 
-            this.groupBoxReadings.Controls.Add(this.readingsTable);
-            this.groupBoxReadings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBoxReadings.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxReadings.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.groupBoxReadings.Location = new System.Drawing.Point(8, 86);
-            this.groupBoxReadings.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBoxReadings.Name = "groupBoxReadings";
-            this.groupBoxReadings.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxReadings.Size = new System.Drawing.Size(446, 255);
-            this.groupBoxReadings.TabIndex = 0;
-            this.groupBoxReadings.TabStop = false;
-            this.groupBoxReadings.Text = "Selected Modules";
+            this.groupBoxModule.Controls.Add(this.readingsTable);
+            this.groupBoxModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxModule.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxModule.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.groupBoxModule.Location = new System.Drawing.Point(8, 86);
+            this.groupBoxModule.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxModule.Name = "groupBoxModule";
+            this.groupBoxModule.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxModule.Size = new System.Drawing.Size(446, 255);
+            this.groupBoxModule.TabIndex = 0;
+            this.groupBoxModule.TabStop = false;
+            this.groupBoxModule.Text = "Selected Modules";
             // 
             // readingsTable
             // 
@@ -214,6 +223,14 @@
             this.limitsTable.ColumnCount = 2;
             this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.limitsTable.Controls.Add(this.label_Module1Min, 0, 0);
+            this.limitsTable.Controls.Add(this.label_Module1Max, 1, 0);
+            this.limitsTable.Controls.Add(this.label_Module2Min, 0, 1);
+            this.limitsTable.Controls.Add(this.label_Module2Max, 1, 1);
+            this.limitsTable.Controls.Add(this.label_Module3Min, 0, 2);
+            this.limitsTable.Controls.Add(this.label_Module3Max, 1, 2);
+            this.limitsTable.Controls.Add(this.label_Module4Min, 0, 3);
+            this.limitsTable.Controls.Add(this.label_Module4Max, 1, 3);
             this.limitsTable.Location = new System.Drawing.Point(4, 20);
             this.limitsTable.Margin = new System.Windows.Forms.Padding(2);
             this.limitsTable.Name = "limitsTable";
@@ -224,6 +241,70 @@
             this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.limitsTable.Size = new System.Drawing.Size(196, 227);
             this.limitsTable.TabIndex = 0;
+            // 
+            // label_Module1Min
+            // 
+            this.label_Module1Min.AutoSize = true;
+            this.label_Module1Min.Location = new System.Drawing.Point(4, 1);
+            this.label_Module1Min.Name = "label_Module1Min";
+            this.label_Module1Min.Size = new System.Drawing.Size(0, 17);
+            this.label_Module1Min.TabIndex = 0;
+            // 
+            // label_Module1Max
+            // 
+            this.label_Module1Max.AutoSize = true;
+            this.label_Module1Max.Location = new System.Drawing.Point(101, 1);
+            this.label_Module1Max.Name = "label_Module1Max";
+            this.label_Module1Max.Size = new System.Drawing.Size(0, 17);
+            this.label_Module1Max.TabIndex = 1;
+            // 
+            // label_Module2Min
+            // 
+            this.label_Module2Min.AutoSize = true;
+            this.label_Module2Min.Location = new System.Drawing.Point(4, 57);
+            this.label_Module2Min.Name = "label_Module2Min";
+            this.label_Module2Min.Size = new System.Drawing.Size(0, 17);
+            this.label_Module2Min.TabIndex = 2;
+            // 
+            // label_Module2Max
+            // 
+            this.label_Module2Max.AutoSize = true;
+            this.label_Module2Max.Location = new System.Drawing.Point(101, 57);
+            this.label_Module2Max.Name = "label_Module2Max";
+            this.label_Module2Max.Size = new System.Drawing.Size(0, 17);
+            this.label_Module2Max.TabIndex = 3;
+            // 
+            // label_Module3Min
+            // 
+            this.label_Module3Min.AutoSize = true;
+            this.label_Module3Min.Location = new System.Drawing.Point(4, 113);
+            this.label_Module3Min.Name = "label_Module3Min";
+            this.label_Module3Min.Size = new System.Drawing.Size(0, 17);
+            this.label_Module3Min.TabIndex = 4;
+            // 
+            // label_Module3Max
+            // 
+            this.label_Module3Max.AutoSize = true;
+            this.label_Module3Max.Location = new System.Drawing.Point(101, 113);
+            this.label_Module3Max.Name = "label_Module3Max";
+            this.label_Module3Max.Size = new System.Drawing.Size(0, 17);
+            this.label_Module3Max.TabIndex = 5;
+            // 
+            // label_Module4Min
+            // 
+            this.label_Module4Min.AutoSize = true;
+            this.label_Module4Min.Location = new System.Drawing.Point(4, 169);
+            this.label_Module4Min.Name = "label_Module4Min";
+            this.label_Module4Min.Size = new System.Drawing.Size(0, 17);
+            this.label_Module4Min.TabIndex = 6;
+            // 
+            // label_Module4Max
+            // 
+            this.label_Module4Max.AutoSize = true;
+            this.label_Module4Max.Location = new System.Drawing.Point(101, 169);
+            this.label_Module4Max.Name = "label_Module4Max";
+            this.label_Module4Max.Size = new System.Drawing.Size(0, 17);
+            this.label_Module4Max.TabIndex = 7;
             // 
             // alarmButton
             // 
@@ -429,7 +510,7 @@
             this.Controls.Add(this.modulesButton);
             this.Controls.Add(this.limitsButton);
             this.Controls.Add(this.groupBoxLimits);
-            this.Controls.Add(this.groupBoxReadings);
+            this.Controls.Add(this.groupBoxModule);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -438,7 +519,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monitor";
             this.Load += new System.EventHandler(this.MonitorForm_Load);
-            this.groupBoxReadings.ResumeLayout(false);
+            this.groupBoxModule.ResumeLayout(false);
             this.readingsTable.ResumeLayout(false);
             this.readingsTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).EndInit();
@@ -446,6 +527,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon4)).EndInit();
             this.groupBoxLimits.ResumeLayout(false);
+            this.limitsTable.ResumeLayout(false);
+            this.limitsTable.PerformLayout();
             this.panelMonitorNumberContainer.ResumeLayout(false);
             this.panelMonitorNumber.ResumeLayout(false);
             this.panelMonitorNumber.PerformLayout();
@@ -463,13 +546,12 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxReadings;
+        private System.Windows.Forms.GroupBox groupBoxModule;
         private System.Windows.Forms.GroupBox groupBoxLimits;
         private System.Windows.Forms.Button alarmButton;
         private System.Windows.Forms.Button limitsButton;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.TableLayoutPanel readingsTable;
-        private System.Windows.Forms.TableLayoutPanel limitsTable;
         private System.Windows.Forms.PictureBox moduleIcon1;
         private System.Windows.Forms.PictureBox moduleIcon2;
         private System.Windows.Forms.PictureBox moduleIcon3;
@@ -490,6 +572,15 @@
         private System.Windows.Forms.Label copyright;
         private System.Windows.Forms.GroupBox groupBoxReading;
         private System.Windows.Forms.TableLayoutPanel tableReading;
+        private System.Windows.Forms.TableLayoutPanel limitsTable;
+        private System.Windows.Forms.Label label_Module1Min;
+        private System.Windows.Forms.Label label_Module1Max;
+        private System.Windows.Forms.Label label_Module2Min;
+        private System.Windows.Forms.Label label_Module2Max;
+        private System.Windows.Forms.Label label_Module3Min;
+        private System.Windows.Forms.Label label_Module3Max;
+        private System.Windows.Forms.Label label_Module4Min;
+        private System.Windows.Forms.Label label_Module4Max;
     }
 }
 

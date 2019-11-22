@@ -18,7 +18,7 @@ namespace spital
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
-        List<PictureBox> vitalIcon = new List<PictureBox>();
+        List<PictureBox> moduleIcon = new List<PictureBox>();
         public List<Label> modules = new List<Label>();
         List<NumericUpDown> limitMin = new List<NumericUpDown>();
         List<NumericUpDown> limitMax = new List<NumericUpDown>();
@@ -34,12 +34,22 @@ namespace spital
         {
             SaveAssignedLimits();
             this.Close();
+
+            /* I think there should be something else in place of closing the form
+             * I tried using .Update it did not work 
+             * below code closes the application as Monitor is used as the first form to load the application
+             */
+             
+            //Monitor.Close();
+
+            //Form monitor = new MonitorForm();
+            //monitor.Show();
+         
         }
 
         private void FillLimits()
         {
             GenerateControlsLists();
-
             GetMonitorModules();
         }
 
@@ -49,19 +59,21 @@ namespace spital
             modules.Add(labelModule2);
             modules.Add(labelModule3);
             modules.Add(labelModule4);
+
+            moduleIcon.Add(ModuleIcon1);
+            moduleIcon.Add(ModuleIcon2);
+            moduleIcon.Add(ModuleIcon3);
+            moduleIcon.Add(ModuleIcon4);
+
             limitMin.Add(minLimit1);
             limitMin.Add(minLimit2);
             limitMin.Add(minLimit3);
             limitMin.Add(minLimit4);
+
             limitMax.Add(maxLimit1);
             limitMax.Add(maxLimit2);
             limitMax.Add(maxLimit3);
             limitMax.Add(maxLimit4);
-            vitalIcon.Add(ModuleIcon1);
-            vitalIcon.Add(ModuleIcon2);
-            vitalIcon.Add(ModuleIcon3);
-            vitalIcon.Add(ModuleIcon4);
-
         }
 
 
@@ -74,7 +86,7 @@ namespace spital
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
-                vitalIcon.ElementAt(index).ImageLocation = monitorModules.ElementAt(index).Module.Icon;
+                moduleIcon.ElementAt(index).ImageLocation = monitorModules.ElementAt(index).Module.Icon;
                 limitMin.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMin;
                 limitMax.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMax;
                 ++index;

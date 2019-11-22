@@ -3,63 +3,74 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using spital.Properties;
+using System.Data;
+using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace spital
 {
     abstract class Staff
     {
         // Auto-implemented properties for trivial get and set
-        public int Id { get; set; }
+        public int Id { get; }
         public int StaffTypeId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
+
+        private static readonly string encryptionPassword = "7689iknh7564fbg6ghjgbt6";
+
+        private static readonly string selectStatement = "SELECT * FROM staff;";
+
+        private static readonly string insertStatement = 
+            "INSERT INTO staff (staffTypeID, username, password) VALUES (@staffTypeID, @username, @password);";
+
+        private static readonly string updateStatement =
+            "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password " +
+            "WHERE staffID = @staffID;";
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
         /// </summary>
         /// <param name="staffType"></param>
-        /// <param name="firstName"></param>
-        /// <param name="middleName"></param>
-        /// <param name="lastName"></param>
-        public Staff(
-            int staffType, string username, string password, 
-            string firstName, string middleName, string lastName
-            )
+        public Staff(int staffType, string username, string password)
         {
-            Id = 1;
             StaffTypeId = staffType;
-            FirstName = firstName;
-            MiddleName = middleName;
-            LastName = lastName;
-
-        }
-
-        /// <summary>
-        /// Saves username and password values in database based on parameters
-        /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        public void SaveCredentials(string username, string password)
-        {
             Username = username;
-            Password = password;
-
-            // Save to DB
+            Password = Encryption.EncryptText(password, encryptionPassword);
         }
 
-        public void ValidateCredentials(string username, string password)
+
+        public static bool ValidateCredentials(string username, string password)
         {
             // Retrieve values from DB and validate
             /* 
              * Note, need to compare encrypted version of password
              * so the passed password needs to be encrypted first
              */
-            
-        }
 
+            bool valid = false;
+
+            DataSet staffDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+
+            DataTable staffDataTable = staffDataSet.Tables[0];
+
+            foreach (DataRow row in staffDataTable.Rows)
+            {
+                if (String.Equals(username, row["username"].ToString()))
+                {
+                    string comparePassword = Encryption.DecryptText(row["password"].ToString(), encryptionPassword);
+
+                    if (String.Equals(password, comparePassword))
+                    {
+                        // Credentials match
+                        valid = true;
+                    }
+                }
+            }
+
+            return valid;
+        }
         /// <summary>
         /// Triggers authentication and, upon success, starts session
         /// </summary>
@@ -101,6 +112,55 @@ namespace spital
 
         }
 
+        /// <summary>
+        /// Inserts this instance as row into staff table
+        /// </summary>
+        public Nullable<int> Save()
+        {
+            Nullable<int> lastInsertedID = null;
 
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = insertStatement;
+                command.Parameters.Add(new SqlParameter("@staffTypeID", StaffTypeId));
+                command.Parameters.Add(new SqlParameter("@username", Username));
+                command.Parameters.Add(new SqlParameter("@password", Password));
+
+                DatabaseConnection.Instance.ExecuteCommand(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+
+            return lastInsertedID;
+            
+        }
+
+        /// <summary>
+        /// Updates entry in database with values from this instance
+        /// </summary>
+        public void Update()
+        {
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = updateStatement;
+                command.Parameters.Add(new SqlParameter("@staffTypeID", StaffTypeId));
+                command.Parameters.Add(new SqlParameter("@username", Username));
+                command.Parameters.Add(new SqlParameter("@password", Password));
+                command.Parameters.Add(new SqlParameter("@staffID", Id));
+
+                DatabaseConnection.Instance.ExecuteCommand(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+
+        }
     }
 }

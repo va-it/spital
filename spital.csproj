@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -67,6 +67,7 @@
     <Compile Include="CentralDisplay.Designer.cs">
       <DependentUpon>CentralDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultant.cs" />
     <Compile Include="LimitsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +97,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MonitorModule.cs" />
+    <Compile Include="Nurse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\DatabaseConnection.cs" />
@@ -123,13 +125,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Session.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Staff.cs" />
+    <Compile Include="StaffType.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,12 @@
   <ItemGroup>
     <None Include="Resources\icon_Patient.png" />
     <Content Include="Resources\inpatient-icon-7507.png" />
+    <None Include="Resources\icon_Mobile.png" />
+    <None Include="Resources\icon_Email.png" />
+    <None Include="Resources\icon_BloodPressure.png" />
+    <None Include="Resources\icon_BreathingRate.png" />
+    <None Include="Resources\icon_Pulse.png" />
+    <None Include="Resources\icon_Temperature.png" />
     <Content Include="Spital.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

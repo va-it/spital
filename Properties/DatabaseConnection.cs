@@ -98,5 +98,89 @@ namespace spital.Properties
             CloseConnection();
             return dataSet;
         }
+
+        /// <summary>
+        /// Create an sqlDataAdapter based on sql statement parameter
+        /// </summary>
+        /// <param name="sqlStatement"></param>
+        /// <returns>sqlDataAdapter</returns>
+        public SqlDataAdapter GetSqlAdapter(string sqlStatement)
+        {
+            //initialize a new instance of the DataSet Class
+            DataSet dataSet = new DataSet();
+
+            //open connection
+            OpenConnection();
+
+            //create table adapter using the connection string and the sql statement
+            sqlAdapter = new SqlDataAdapter(sqlStatement, spitalDbConnectionString);
+
+            //close the connection
+            CloseConnection();
+
+            return sqlAdapter;
+        }
+
+        /// <summary>
+        /// Create and return a dataset filled with values based on statement in sqlDataAdapter parameter
+        /// </summary>
+        /// <param name="sqlDataAdapter"></param>
+        /// <returns>DataSet</returns>
+        public DataSet ExecuteSelect(SqlDataAdapter sqlDataAdapter)
+        {
+            //initialize a new instance of the DataSet Class
+            DataSet dataSet = new DataSet();
+
+            OpenConnection();
+
+            sqlDataAdapter.Fill(dataSet);
+
+            CloseConnection();
+
+            return dataSet;
+        }
+
+
+        /// <summary>
+        /// Returns on object of type sqlCommand
+        /// </summary>
+        /// <returns>SqlCommand</returns>
+        public SqlCommand GetSqlCommand()
+        {
+            //create the object SqlCommand
+            SqlCommand command = new SqlCommand();
+            //set its properties
+            command.CommandType = CommandType.Text;
+
+            return command;
+        }
+
+        public int ExecuteCommand(SqlCommand command)
+        {
+            OpenConnection();
+            command.Connection = sqlconn;
+
+            //execute the command
+            int noRows = command.ExecuteNonQuery();
+
+            CloseConnection();
+
+            return noRows;
+        }
+
+        public int ExecuteInsert(SqlCommand command)
+        {
+            // return last inserted id
+            command.CommandText += " SELECT SCOPE_IDENTITY();";
+
+            OpenConnection();
+            command.Connection = sqlconn;
+
+            int lastInsertedID = Convert.ToInt32(command.ExecuteScalar());
+
+            CloseConnection();
+
+            return lastInsertedID;
+        }
     }
 }

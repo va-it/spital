@@ -1,4 +1,5 @@
-﻿using System;
+﻿using spital.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,6 @@ namespace spital
 {
     public partial class LoginForm : Form
     {
-        User user;
 
         public LoginForm()
         {
@@ -21,26 +21,26 @@ namespace spital
 
         private void Button_Login_Click(object sender, EventArgs e)
         {
+
+
             string username = textBox_username.Text;
             string password = textBox_password.Text;
 
-            textBox_password.Text = "";
+            bool allowLogin = Staff.ValidateCredentials(username, password);
 
-            user = new User
+            if (allowLogin)
             {
-                Username = username,
-                Password = password
-            };
-
-            // are credentials OK?
-            if (user.ValidateCredential)
-            {
-                //code to open the next form goes here
+                // Start session etc.
+                this.Hide();
+                RegistrationForm registration = new RegistrationForm();
+                registration.Show();
             }
             else
             {
-                MessageBox.Show("Invalid credentials!", "Wrong Credentials");
+                MessageBox.Show("Username or password incorrect. Please try again");
+                textBox_password.Text = "";
             }
+
         }
     }
 }

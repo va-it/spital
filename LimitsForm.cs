@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -74,7 +75,7 @@ namespace spital
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
-                vitalIcon.ElementAt(index).ImageLocation = monitorModules.ElementAt(index).Module.Icon;
+                vitalIcon.ElementAt(index).ImageLocation = @"../../" + monitorModules.ElementAt(index).Module.Icon;
                 limitMin.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMin;
                 limitMax.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMax;
                 ++index;

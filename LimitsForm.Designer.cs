@@ -87,7 +87,7 @@
             this.modulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modulesButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesButton.ForeColor = System.Drawing.Color.White;
-            this.modulesButton.Location = new System.Drawing.Point(349, 349);
+            this.modulesButton.Location = new System.Drawing.Point(353, 350);
             this.modulesButton.Margin = new System.Windows.Forms.Padding(2);
             this.modulesButton.Name = "modulesButton";
             this.modulesButton.Size = new System.Drawing.Size(107, 37);
@@ -103,7 +103,7 @@
             this.ModulesBox.Controls.Add(this.panelModule3);
             this.ModulesBox.Controls.Add(this.panelModule2);
             this.ModulesBox.Controls.Add(this.panelModule1);
-            this.ModulesBox.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModulesBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModulesBox.Location = new System.Drawing.Point(129, 96);
             this.ModulesBox.Margin = new System.Windows.Forms.Padding(2);
             this.ModulesBox.Name = "ModulesBox";
@@ -209,7 +209,7 @@
             this.minBox.Controls.Add(this.minLimit3);
             this.minBox.Controls.Add(this.minLimit2);
             this.minBox.Controls.Add(this.minLimit1);
-            this.minBox.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minBox.Location = new System.Drawing.Point(501, 96);
             this.minBox.Margin = new System.Windows.Forms.Padding(2);
             this.minBox.Name = "minBox";
@@ -217,7 +217,7 @@
             this.minBox.Size = new System.Drawing.Size(114, 244);
             this.minBox.TabIndex = 10;
             this.minBox.TabStop = false;
-            this.minBox.Text = "MIN";
+            this.minBox.Text = "Min";
             // 
             // minLimit4
             // 
@@ -310,7 +310,7 @@
             this.maxBox.Controls.Add(this.maxLimit3);
             this.maxBox.Controls.Add(this.maxLimit1);
             this.maxBox.Controls.Add(this.maxLimit2);
-            this.maxBox.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maxBox.Location = new System.Drawing.Point(619, 96);
             this.maxBox.Margin = new System.Windows.Forms.Padding(2);
             this.maxBox.Name = "maxBox";
@@ -318,7 +318,7 @@
             this.maxBox.Size = new System.Drawing.Size(113, 244);
             this.maxBox.TabIndex = 11;
             this.maxBox.TabStop = false;
-            this.maxBox.Text = "MAX";
+            this.maxBox.Text = "Max";
             // 
             // maxLimit4
             // 
@@ -409,7 +409,7 @@
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 390);
+            this.panelFooter.Location = new System.Drawing.Point(0, 405);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(775, 33);
@@ -496,7 +496,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(775, 423);
+            this.ClientSize = new System.Drawing.Size(775, 438);
             this.Controls.Add(this.ModuleIcon4);
             this.Controls.Add(this.ModuleIcon3);
             this.Controls.Add(this.ModuleIcon2);

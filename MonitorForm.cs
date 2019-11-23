@@ -13,8 +13,11 @@ namespace spital
     public partial class MonitorForm : Form
     {
         List<MonitorModule> monitorModules = new List<MonitorModule>();
-        List<PictureBox> modulesIcons = new List<PictureBox>();
+
         List<Label> moduleName = new List<Label>();
+        List<PictureBox> modulesIcon = new List<PictureBox>();
+        List<Label> limitMin = new List<Label>();
+        List<Label> limitMax = new List<Label>();
 
         public Nullable<int> MonitorId { get; set; }
 
@@ -58,6 +61,7 @@ namespace spital
         private void FillMonitor()
         {
             GenerateListsOfControls();
+            GetMonitorModules();
         }
 
         private void GenerateListsOfControls()
@@ -67,10 +71,49 @@ namespace spital
             moduleName.Add(moduleName3);
             moduleName.Add(moduleName4);
 
-            modulesIcons.Add(moduleIcon1);
-            modulesIcons.Add(moduleIcon2);
-            modulesIcons.Add(moduleIcon3);
-            modulesIcons.Add(moduleIcon4);
+            modulesIcon.Add(moduleIcon1);
+            modulesIcon.Add(moduleIcon2);
+            modulesIcon.Add(moduleIcon3);
+            modulesIcon.Add(moduleIcon4);
+
+            limitMin.Add(label_Module1Min);
+            limitMin.Add(label_Module2Min);
+            limitMin.Add(label_Module3Min);
+            limitMin.Add(label_Module4Min);
+
+            limitMax.Add(label_Module1Max);
+            limitMax.Add(label_Module2Max);
+            limitMax.Add(label_Module3Max);
+            limitMax.Add(label_Module4Max);
+
+        }
+
+
+        private void GetMonitorModules()
+        {
+            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
+
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
+            {
+                moduleName.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
+                modulesIcon.ElementAt(index).ImageLocation = @"../../Resources/" + monitorModules.ElementAt(index).Module.Icon;
+                limitMin.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMin);
+                limitMax.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMax);
+                ++index;
+            }
+            
+        }
+
+        private void MonitorForm_Shown(object sender, EventArgs e)
+        {
+            RefreshModules();
+        }
+
+        public void RefreshModules()
+        {
+            FillMonitor();
         }
     }
 }

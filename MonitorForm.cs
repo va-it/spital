@@ -89,6 +89,33 @@ namespace spital
         }
 
 
+        public void GetReadings()
+        {
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
+            {
+                float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
+                moduleReading.ElementAt(index).Text = Convert.ToString(random);
+
+                ++index;
+            }
+        }
+
+        public void CheckReadings()
+        {
+            GetReadings();
+
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
+            {
+                monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
+
+                ++index;
+            }
+        }
+
         public void GetMonitorModules()
         {
             monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
@@ -101,16 +128,9 @@ namespace spital
                 modulesIcon.ElementAt(index).ImageLocation = @"../../Resources/" + monitorModules.ElementAt(index).Module.Icon;
                 limitMin.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMin);
                 limitMax.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMax);
-                float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin-5, monitorModule.AssignedMax+5);
-                moduleReading.ElementAt(index).Text = Convert.ToString(random);
-                {
-
-
-                    monitorModule.CheckReading(random);
-                }
-
 
                 ++index;
+            }
                 
         }
 
@@ -122,6 +142,7 @@ namespace spital
         public void RefreshModules()
         {
             FillMonitor();
+            CheckReadings();
         }
     }
 }

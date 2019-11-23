@@ -34,7 +34,8 @@ namespace spital
         internal float Generate(float v1, float v2)
         {
             Random r = new Random();
-            float generate = (r.NextDouble() * (v2 - v1)) + v1;
+            float generate = (float)(r.NextDouble() * (v2 - v1)) + v1;
+            return generate;
         }
     }
 }

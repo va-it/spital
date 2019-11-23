@@ -51,6 +51,7 @@ namespace spital
         public void TriggerAlarm()
         {
             Alarm alarm = new Alarm(this);
+            MessageBox.Show("ALARM");
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace spital
         public void CheckReading(float random)
         {
             float value = random;
-            if (value > monitorModule.AssignedMax && value < monitorModule.AssignedMin)
+            if (value < AssignedMin || value > AssignedMax)
             {
                 TriggerAlarm();
             }

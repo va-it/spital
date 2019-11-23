@@ -79,8 +79,8 @@ namespace spital
             {
                 modules.ElementAt(index).Text = monitorModules.ElementAt(index).Module.Name;
                 moduleIcon.ElementAt(index).ImageLocation = @"../../Resources/" + monitorModules.ElementAt(index).Module.Icon;
-                limitMin.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMin;
-                limitMax.ElementAt(index).Value = (int)monitorModules.ElementAt(index).AssignedMax;
+                limitMin.ElementAt(index).Value = Convert.ToDecimal(monitorModules.ElementAt(index).AssignedMin);
+                limitMax.ElementAt(index).Value = Convert.ToDecimal(monitorModules.ElementAt(index).AssignedMax);
                 ++index;
             }
         }

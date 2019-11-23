@@ -29,6 +29,7 @@ namespace spital
             limits.Show();
         }
 
+
         // to retrive module type from database
         public void FillModuleType()
         {
@@ -37,6 +38,7 @@ namespace spital
             checkedListBox_Modules.DataSource = modulesTable;
             checkedListBox_Modules.ValueMember = "moduleID";
             checkedListBox_Modules.DisplayMember = "name";
+            
         }
 
         // Store selected modules into database in table "monitorModule" based on the monitor and module id

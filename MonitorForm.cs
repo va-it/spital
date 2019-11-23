@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace spital
 {
     public partial class MonitorForm : Form
     {
+        static Timer myTimer = new System.Windows.Forms.Timer();
+
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
+        List<Label> moduleReading = new List<Label>();
         List<Label> limitMin = new List<Label>();
         List<Label> limitMax = new List<Label>();
 
@@ -48,6 +47,9 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
+
+
+
             Monitor monitor = new Monitor
             {
                 Active = true
@@ -55,9 +57,11 @@ namespace spital
 
             MonitorId = monitor.Save();
 
+
             monitorNumber.Text = MonitorId.ToString();
 
             GenerateListsOfControls();
+
 
         }
 
@@ -88,10 +92,63 @@ namespace spital
             limitMax.Add(label_Module3Max);
             limitMax.Add(label_Module4Max);
 
+            moduleReading.Add(label1reading);
+            moduleReading.Add(label2reading);
+            moduleReading.Add(label3reading);
+            moduleReading.Add(label4reading);
         }
 
 
-        private void GetMonitorModules()
+
+
+        public void GetReadings()
+        {
+            
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
+            {
+                float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
+                {//logic to get the readings one place after the decimal
+                    string s = Convert.ToString(random);
+                    for (int i = 0; i <= s.Length - 1; i++)
+                    {
+                        if (s[i] == '.')
+                        moduleReading.ElementAt(index).Text = s.Substring(0, i + 2);
+                    }
+                }
+                ++index;
+            }
+        }
+
+
+
+
+        public void CheckReadings()
+        {
+            GetReadings();
+            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
+
+            int index = 0;
+
+            foreach (MonitorModule monitorModule in monitorModules)
+            {
+                monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
+
+                ++index;
+            }
+        }
+
+        private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
+        {
+            
+            CheckReadings();
+            myTimer.Enabled = true;
+
+        }
+
+
+        public void GetMonitorModules()
         {
             monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
 
@@ -103,9 +160,10 @@ namespace spital
                 modulesIcon.ElementAt(index).ImageLocation = @"../../Resources/" + monitorModules.ElementAt(index).Module.Icon;
                 limitMin.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMin);
                 limitMax.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMax);
+
                 ++index;
             }
-            
+
         }
 
         private void MonitorForm_Shown(object sender, EventArgs e)
@@ -119,6 +177,19 @@ namespace spital
             ClearControls();
 
             FillMonitor();
+            CheckReadings();
+            Timer();// calls the timer function
+        }
+
+        public void Timer()
+        {
+            //Calls the event at the end of the elapsed time interval
+            myTimer.Tick += new EventHandler(TimerEventProcessor);
+            //Sets the timer interval to 5 seconds.
+            myTimer.Interval = 5000;
+            myTimer.Start();
+
+
         }
 
 
@@ -146,3 +217,5 @@ namespace spital
         }
     }
 }
+
+   

@@ -95,7 +95,7 @@ namespace spital
         public void CheckReading(float random)
         {
             float value = random;
-            if (value > monitorModule.AssignedMax && value < monitorModule.AssignedMin)
+            if (value < AssignedMin && value < AssignedMin)
             {
                 TriggerAlarm();
             }

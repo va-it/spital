@@ -104,11 +104,8 @@ namespace spital
                 float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin-5, monitorModule.AssignedMax+5);
                 moduleReading.ElementAt(index).Text = Convert.ToString(random);
                 {
-
-
                     monitorModule.CheckReading(random);
                 }
-
 
                 ++index;
                 

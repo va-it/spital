@@ -17,19 +17,16 @@ namespace spital
         {
             get
             {
-
                 if (instance == null)
                 {
                     
                     instance = new RandomGenerator();
                   
                 }
-               
+
                 return instance;
             }
         }
-
-        
 
         internal float Generate(float v1, float v2)
         {

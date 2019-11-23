@@ -95,9 +95,8 @@ namespace spital
 
         public void CheckReading(float random)
         {
-            float value = random;
-            if (value < AssignedMin || value > AssignedMax)
-            {
+            if (random < AssignedMin || random > AssignedMax)
+            { 
                 TriggerAlarm();
             }
         }

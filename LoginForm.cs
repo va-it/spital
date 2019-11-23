@@ -32,8 +32,13 @@ namespace spital
             {
                 // Start session etc.
                 this.Hide();
-                RegistrationForm registration = new RegistrationForm();
-                registration.Show();
+
+                //We should navigate back to CentralDisplay but it should be a singleton
+                CentralDisplay centralDisplay = new CentralDisplay();
+                centralDisplay.Show();
+
+                //RegistrationForm registration = new RegistrationForm();
+                //registration.Show();
             }
             else
             {

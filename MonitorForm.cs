@@ -48,6 +48,8 @@ namespace spital
         private void MonitorForm_Load(object sender, EventArgs e)
         {
 
+
+
             Monitor monitor = new Monitor
             {
                 Active = true
@@ -55,11 +57,16 @@ namespace spital
 
             MonitorId = monitor.Save();
 
+
+            monitorNumber.Text = MonitorId.ToString();
+
+            GenerateListsOfControls();
+
+
         }
 
         private void FillMonitor()
         {
-            GenerateListsOfControls();
             GetMonitorModules();
         }
 
@@ -166,6 +173,9 @@ namespace spital
 
         public void RefreshModules()
         {
+            // Empty all the module names and limits before retrieving new values from database
+            ClearControls();
+
             FillMonitor();
             CheckReadings();
             Timer();// calls the timer function
@@ -180,6 +190,30 @@ namespace spital
             myTimer.Start();
 
 
+        }
+
+
+        public void ClearControls()
+        {
+            foreach (Label label in moduleName)
+            {
+                label.Text = null;
+            }
+
+            foreach (PictureBox pictureBox in modulesIcon)
+            {
+                pictureBox.Image = null;
+            }
+
+            foreach (Label label in limitMin)
+            {
+                label.Text = null;
+            }
+
+            foreach (Label label in limitMax)
+            {
+                label.Text = null;
+            }
         }
     }
 }

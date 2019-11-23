@@ -124,6 +124,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="RandomGenerator.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>

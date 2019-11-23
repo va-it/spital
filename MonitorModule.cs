@@ -92,6 +92,15 @@ namespace spital
             return monitorModulesList;
         }
 
+        public void CheckReading(float random)
+        {
+            float value = random;
+            if (value > monitorModule.AssignedMax && value < monitorModule.AssignedMin)
+            {
+                TriggerAlarm();
+            }
+        }
+
         /// <summary>
         /// Retrieve one MonitorModule from the database based on its ID
         /// </summary>

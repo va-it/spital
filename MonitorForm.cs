@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace spital
@@ -16,6 +11,7 @@ namespace spital
 
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
+        List<Label> moduleReading = new List<Label>();
         List<Label> limitMin = new List<Label>();
         List<Label> limitMax = new List<Label>();
 
@@ -86,10 +82,14 @@ namespace spital
             limitMax.Add(label_Module3Max);
             limitMax.Add(label_Module4Max);
 
+            moduleReading.Add(label1reading);
+            moduleReading.Add(label2reading);
+            moduleReading.Add(label3reading);
+            moduleReading.Add(label4reading);
         }
 
 
-        private void GetMonitorModules()
+        public void GetMonitorModules()
         {
             monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
 
@@ -101,9 +101,17 @@ namespace spital
                 modulesIcon.ElementAt(index).ImageLocation = @"../../Resources/" + monitorModules.ElementAt(index).Module.Icon;
                 limitMin.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMin);
                 limitMax.ElementAt(index).Text = Convert.ToString(monitorModules.ElementAt(index).AssignedMax);
+                float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin-5, monitorModule.AssignedMax+5);
+                moduleReading.ElementAt(index).Text = Convert.ToString(random);
+                {
+
+
+                    monitorModule.CheckReading(random);
+                }
+
+
                 ++index;
-            }
-            
+                
         }
 
         private void MonitorForm_Shown(object sender, EventArgs e)
@@ -117,3 +125,5 @@ namespace spital
         }
     }
 }
+
+   

@@ -17,7 +17,7 @@ namespace spital
 
         private static readonly string selectStatement = "SELECT * FROM consultant;";
 
-        private static readonly string insertStatement = "INSERT INTO nurse (email, staffID) VALUES (@email, @staffID);";
+        private static readonly string insertStatement = "INSERT INTO consultant (email, staffID) VALUES (@email, @staffID);";
 
         private new static readonly string updateStatement =
             "UPDATE consultant SET email = @email, staffID = @staffID WHERE consultantID = @consultantID;";
@@ -41,7 +41,7 @@ namespace spital
         /// </summary>
         public new Nullable<int> Save()
         {
-            base.Save();
+            Nullable<int> savedStaffID = base.Save();
 
             Nullable<int> lastInsertedID = null;
 
@@ -51,7 +51,7 @@ namespace spital
 
                 command.CommandText = insertStatement;
                 command.Parameters.Add(new SqlParameter("@email", Email));
-                command.Parameters.Add(new SqlParameter("@staffID", base.Id));
+                command.Parameters.Add(new SqlParameter("@staffID", savedStaffID));
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }

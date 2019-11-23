@@ -43,7 +43,7 @@ namespace spital
         /// </summary>
         public new Nullable<int> Save()
         {
-            base.Save();
+            Nullable<int> savedStaffID = base.Save();
 
             Nullable<int> lastInsertedID = null;
 
@@ -53,7 +53,7 @@ namespace spital
 
                 command.CommandText = insertStatement;
                 command.Parameters.Add(new SqlParameter("@phoneNumber", PhoneNumber));
-                command.Parameters.Add(new SqlParameter("@staffID", base.Id));
+                command.Parameters.Add(new SqlParameter("@staffID", savedStaffID));
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }

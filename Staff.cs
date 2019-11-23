@@ -128,7 +128,7 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@username", Username));
                 command.Parameters.Add(new SqlParameter("@password", Password));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {

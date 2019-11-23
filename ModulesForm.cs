@@ -44,24 +44,91 @@ namespace spital
         // Store selected modules into database in table "monitorModule" based on the monitor and module id
         private void SaveSelectedModules()
         {
-            foreach (DataRowView row in checkedListBox_Modules.CheckedItems)
+            // retrieve list of monitorModules for current monitor
+            List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
+
+            //List to store all monitorModules that need to be saved
+            List<MonitorModule> modulesToSave = new List<MonitorModule>();
+
+            //List to store all monitorModules that need to be deleted
+            List<MonitorModule> modulesToDelete = new List<MonitorModule>();
+
+            // loop over every checkbox
+            for (int i = 0; i < checkedListBox_Modules.Items.Count; ++i)
             {
-                int moduleID = int.Parse(row["moduleID"].ToString());
+                DataRowView moduleCheckBox = checkedListBox_Modules.Items[i] as DataRowView;
+                int moduleID = Int32.Parse(moduleCheckBox["ModuleID"].ToString());
 
-                //create monitor and module objects
-                Monitor monitor = new Monitor(Monitor.MonitorId);
-                Module module = new Module(moduleID);
+                // if module is checked
+                if (checkedListBox_Modules.GetItemCheckState(i) == CheckState.Checked)
+                {
+                    // and it is not found in the monitorModule table
+                    if (!monitorModules.Exists(x => x.Module.Id == moduleID))
+                    {
+                        // then we will need to save it
+                        //create monitor and module objects
+                        Monitor monitor = new Monitor(Monitor.MonitorId);
+                        Module module = new Module(moduleID);
 
-                MonitorModule monitorModule = new MonitorModule(monitor, module);
-                monitorModule.AssignedMin = module.DefaultMin;
-                monitorModule.AssignedMax = module.DefaultMax;
-                monitorModule.Save();
+                        MonitorModule monitorModule = new MonitorModule(monitor, module);
+                        monitorModule.AssignedMin = module.DefaultMin;
+                        monitorModule.AssignedMax = module.DefaultMax;
+
+                        modulesToSave.Add(monitorModule);
+                    }
+                }
+                else
+                {
+                    // if the module is unchecked
+                    if (checkedListBox_Modules.GetItemCheckState(i) == CheckState.Unchecked)
+                    {
+                        // we need to check if it was previously checked and saved
+                        int indexOfMonitorModuleToDelete = monitorModules.FindIndex(x => x.Module.Id == moduleID);
+
+                        // monitorModule is saved in monitorModule table
+                        if (indexOfMonitorModuleToDelete != -1)
+                        {
+                            // In which case it will need to be deleted
+                            modulesToDelete.Add(monitorModules.ElementAt(indexOfMonitorModuleToDelete));
+                        }
+                    }
+                }
+            }
+
+            foreach (MonitorModule monitorModuleToSave in modulesToSave)
+            {
+                monitorModuleToSave.Save();
+            }
+
+            foreach (MonitorModule monitorModuleToDelete in modulesToDelete)
+            {
+                monitorModuleToDelete.Delete();
+            }
+        }
+
+        private void SelectExistingModules()
+        {
+            List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
+
+            for (int i = 0; i < checkedListBox_Modules.Items.Count; ++i)
+            {
+                DataRowView module = checkedListBox_Modules.Items[i] as DataRowView;
+                int moduleId = Int32.Parse(module["ModuleID"].ToString());
+
+                foreach (MonitorModule monitorModule in monitorModules)
+                {
+                    if (moduleId == monitorModule.Module.Id)
+                    {
+                        checkedListBox_Modules.SetItemChecked(i, true);
+                    }
+                }
             }
         }
 
         private void ModulesForm_Load(object sender, EventArgs e)
         {
             FillModuleType();
+            SelectExistingModules();
         }
     }
 }

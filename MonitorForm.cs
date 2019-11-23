@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace spital
 {
     public partial class MonitorForm : Form
     {
+        static Timer myTimer = new System.Windows.Forms.Timer();
+
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
         List<Label> moduleName = new List<Label>();
@@ -44,14 +47,14 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
-            
+
             Monitor monitor = new Monitor
             {
                 Active = true
             };
 
             MonitorId = monitor.Save();
-            
+
         }
 
         private void FillMonitor()
@@ -89,22 +92,35 @@ namespace spital
         }
 
 
+
+
         public void GetReadings()
         {
+            
             int index = 0;
 
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
-                moduleReading.ElementAt(index).Text = Convert.ToString(random);
-
+                {//logic to get the readings one place after the decimal
+                    string s = Convert.ToString(random);
+                    for (int i = 0; i <= s.Length - 1; i++)
+                    {
+                        if (s[i] == '.')
+                        moduleReading.ElementAt(index).Text = s.Substring(0, i + 2);
+                    }
+                }
                 ++index;
             }
         }
 
+
+
+
         public void CheckReadings()
         {
             GetReadings();
+            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
 
             int index = 0;
 
@@ -115,6 +131,15 @@ namespace spital
                 ++index;
             }
         }
+
+        private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
+        {
+            
+            CheckReadings();
+            myTimer.Enabled = true;
+
+        }
+
 
         public void GetMonitorModules()
         {
@@ -131,7 +156,7 @@ namespace spital
 
                 ++index;
             }
-                
+
         }
 
         private void MonitorForm_Shown(object sender, EventArgs e)
@@ -143,6 +168,18 @@ namespace spital
         {
             FillMonitor();
             CheckReadings();
+            Timer();// calls the timer function
+        }
+
+        public void Timer()
+        {
+            //Calls the event at the end of the elapsed time interval
+            myTimer.Tick += new EventHandler(TimerEventProcessor);
+            //Sets the timer interval to 5 seconds.
+            myTimer.Interval = 5000;
+            myTimer.Start();
+
+
         }
     }
 }

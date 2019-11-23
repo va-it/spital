@@ -506,7 +506,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(880, 86);
+            this.panelHeader.Size = new System.Drawing.Size(883, 86);
             this.panelHeader.TabIndex = 9;
             // 
             // logo
@@ -530,7 +530,7 @@
             this.panelFooter.Location = new System.Drawing.Point(0, 479);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(880, 33);
+            this.panelFooter.Size = new System.Drawing.Size(883, 33);
             this.panelFooter.TabIndex = 10;
             // 
             // copyright
@@ -585,48 +585,56 @@
             // 
             this.label1reading.AutoSize = true;
             this.label1reading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label1reading.Location = new System.Drawing.Point(3, 1);
             this.label1reading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1reading.Name = "label1reading";
             this.label1reading.Size = new System.Drawing.Size(136, 66);
             this.label1reading.TabIndex = 0;
+            this.label1reading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2reading
             // 
             this.label2reading.AutoSize = true;
             this.label2reading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label2reading.Location = new System.Drawing.Point(3, 68);
             this.label2reading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2reading.Name = "label2reading";
             this.label2reading.Size = new System.Drawing.Size(136, 66);
             this.label2reading.TabIndex = 1;
+            this.label2reading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3reading
             // 
             this.label3reading.AutoSize = true;
             this.label3reading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label3reading.Location = new System.Drawing.Point(3, 135);
             this.label3reading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3reading.Name = "label3reading";
             this.label3reading.Size = new System.Drawing.Size(136, 66);
             this.label3reading.TabIndex = 2;
+            this.label3reading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4reading
             // 
             this.label4reading.AutoSize = true;
             this.label4reading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label4reading.Location = new System.Drawing.Point(3, 202);
             this.label4reading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4reading.Name = "label4reading";
             this.label4reading.Size = new System.Drawing.Size(136, 68);
             this.label4reading.TabIndex = 3;
+            this.label4reading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MonitorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(880, 512);
+            this.ClientSize = new System.Drawing.Size(883, 512);
             this.Controls.Add(this.groupBoxReading);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);

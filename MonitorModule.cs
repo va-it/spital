@@ -34,6 +34,9 @@ namespace spital
             "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin, " +
             "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID;";
 
+        private static readonly string deleteStatement = 
+            "DELETE FROM monitorModule WHERE monitorModuleID = @monitorModuleID;";
+
         /// <summary>
         /// Constructor. Sets value of monitor and module from parameters
         /// </summary>
@@ -176,6 +179,27 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public int Delete()
+        {
+            int rowsAffected = 0;
+
+            try
+            {
+                SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
+
+                command.CommandText = deleteStatement;
+                command.Parameters.Add(new SqlParameter("@monitorModuleID", Id));
+
+                rowsAffected = DatabaseConnection.Instance.ExecuteCommand(command);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
+            }
+
+            return rowsAffected;
         }
     }
 }

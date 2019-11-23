@@ -91,9 +91,9 @@
             this.groupBoxModule.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxModule.ForeColor = System.Drawing.SystemColors.InfoText;
             this.groupBoxModule.Location = new System.Drawing.Point(8, 90);
-            this.groupBoxModule.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxModule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxModule.Name = "groupBoxModule";
-            this.groupBoxModule.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxModule.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxModule.Size = new System.Drawing.Size(441, 325);
             this.groupBoxModule.TabIndex = 0;
             this.groupBoxModule.TabStop = false;
@@ -114,7 +114,7 @@
             this.readingsTable.Controls.Add(this.moduleIcon4, 0, 3);
             this.readingsTable.Controls.Add(this.moduleName1, 1, 0);
             this.readingsTable.Location = new System.Drawing.Point(9, 44);
-            this.readingsTable.Margin = new System.Windows.Forms.Padding(2);
+            this.readingsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.readingsTable.Name = "readingsTable";
             this.readingsTable.RowCount = 4;
             this.readingsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -167,7 +167,7 @@
             // 
             this.moduleIcon1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon1.Location = new System.Drawing.Point(3, 3);
-            this.moduleIcon1.Margin = new System.Windows.Forms.Padding(2);
+            this.moduleIcon1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moduleIcon1.Name = "moduleIcon1";
             this.moduleIcon1.Size = new System.Drawing.Size(81, 62);
             this.moduleIcon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +178,7 @@
             // 
             this.moduleIcon2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon2.Location = new System.Drawing.Point(3, 70);
-            this.moduleIcon2.Margin = new System.Windows.Forms.Padding(2);
+            this.moduleIcon2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moduleIcon2.Name = "moduleIcon2";
             this.moduleIcon2.Size = new System.Drawing.Size(81, 62);
             this.moduleIcon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +189,7 @@
             // 
             this.moduleIcon3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon3.Location = new System.Drawing.Point(3, 137);
-            this.moduleIcon3.Margin = new System.Windows.Forms.Padding(2);
+            this.moduleIcon3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moduleIcon3.Name = "moduleIcon3";
             this.moduleIcon3.Size = new System.Drawing.Size(81, 62);
             this.moduleIcon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -200,7 +200,7 @@
             // 
             this.moduleIcon4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon4.Location = new System.Drawing.Point(3, 204);
-            this.moduleIcon4.Margin = new System.Windows.Forms.Padding(2);
+            this.moduleIcon4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moduleIcon4.Name = "moduleIcon4";
             this.moduleIcon4.Size = new System.Drawing.Size(81, 63);
             this.moduleIcon4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -229,9 +229,9 @@
             this.groupBoxLimits.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxLimits.ForeColor = System.Drawing.SystemColors.InfoText;
             this.groupBoxLimits.Location = new System.Drawing.Point(611, 90);
-            this.groupBoxLimits.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxLimits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxLimits.Name = "groupBoxLimits";
-            this.groupBoxLimits.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxLimits.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxLimits.Size = new System.Drawing.Size(256, 325);
             this.groupBoxLimits.TabIndex = 1;
             this.groupBoxLimits.TabStop = false;
@@ -271,8 +271,8 @@
             this.limitsTable.Controls.Add(this.label_Module4Min, 0, 3);
             this.limitsTable.Controls.Add(this.label_Module4Max, 1, 3);
             this.limitsTable.Controls.Add(this.label_Module1Min, 0, 0);
-            this.limitsTable.Location = new System.Drawing.Point(14, 41);
-            this.limitsTable.Margin = new System.Windows.Forms.Padding(2);
+            this.limitsTable.Location = new System.Drawing.Point(14, 44);
+            this.limitsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.limitsTable.Name = "limitsTable";
             this.limitsTable.RowCount = 4;
             this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -385,7 +385,7 @@
             this.alarmButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alarmButton.ForeColor = System.Drawing.Color.White;
             this.alarmButton.Location = new System.Drawing.Point(746, 26);
-            this.alarmButton.Margin = new System.Windows.Forms.Padding(2);
+            this.alarmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.alarmButton.Name = "alarmButton";
             this.alarmButton.Size = new System.Drawing.Size(107, 37);
             this.alarmButton.TabIndex = 3;
@@ -400,7 +400,7 @@
             this.limitsButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.limitsButton.ForeColor = System.Drawing.Color.White;
             this.limitsButton.Location = new System.Drawing.Point(461, 430);
-            this.limitsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.limitsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.limitsButton.Name = "limitsButton";
             this.limitsButton.Size = new System.Drawing.Size(107, 37);
             this.limitsButton.TabIndex = 4;
@@ -415,7 +415,7 @@
             this.modulesButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesButton.ForeColor = System.Drawing.Color.White;
             this.modulesButton.Location = new System.Drawing.Point(303, 430);
-            this.modulesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.modulesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modulesButton.Name = "modulesButton";
             this.modulesButton.Size = new System.Drawing.Size(107, 37);
             this.modulesButton.TabIndex = 6;
@@ -429,9 +429,9 @@
             this.panelMonitorNumberContainer.Controls.Add(this.panelMonitorNumber);
             this.panelMonitorNumberContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMonitorNumberContainer.Location = new System.Drawing.Point(205, 26);
-            this.panelMonitorNumberContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMonitorNumberContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMonitorNumberContainer.Name = "panelMonitorNumberContainer";
-            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(1);
+            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.panelMonitorNumberContainer.Size = new System.Drawing.Size(48, 37);
             this.panelMonitorNumberContainer.TabIndex = 7;
             // 
@@ -441,7 +441,7 @@
             this.panelMonitorNumber.Controls.Add(this.monitorNumber);
             this.panelMonitorNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonitorNumber.Location = new System.Drawing.Point(1, 1);
-            this.panelMonitorNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMonitorNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMonitorNumber.Name = "panelMonitorNumber";
             this.panelMonitorNumber.Size = new System.Drawing.Size(46, 35);
             this.panelMonitorNumber.TabIndex = 0;
@@ -462,9 +462,9 @@
             this.panelAlertMessageContainer.Controls.Add(this.panelAlertMessage);
             this.panelAlertMessageContainer.ForeColor = System.Drawing.Color.Red;
             this.panelAlertMessageContainer.Location = new System.Drawing.Point(257, 26);
-            this.panelAlertMessageContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAlertMessageContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelAlertMessageContainer.Name = "panelAlertMessageContainer";
-            this.panelAlertMessageContainer.Padding = new System.Windows.Forms.Padding(1);
+            this.panelAlertMessageContainer.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.panelAlertMessageContainer.Size = new System.Drawing.Size(461, 37);
             this.panelAlertMessageContainer.TabIndex = 8;
             // 
@@ -474,7 +474,7 @@
             this.panelAlertMessage.Controls.Add(this.alertMessage);
             this.panelAlertMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAlertMessage.Location = new System.Drawing.Point(1, 1);
-            this.panelAlertMessage.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAlertMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelAlertMessage.Name = "panelAlertMessage";
             this.panelAlertMessage.Size = new System.Drawing.Size(459, 35);
             this.panelAlertMessage.TabIndex = 2;
@@ -499,9 +499,9 @@
             this.panelHeader.Controls.Add(this.alarmButton);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(879, 86);
+            this.panelHeader.Size = new System.Drawing.Size(875, 86);
             this.panelHeader.TabIndex = 9;
             // 
             // logo
@@ -510,7 +510,7 @@
             this.logo.BackColor = System.Drawing.Color.Transparent;
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
             this.logo.Location = new System.Drawing.Point(8, 2);
-            this.logo.Margin = new System.Windows.Forms.Padding(2);
+            this.logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(170, 81);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -522,10 +522,10 @@
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 487);
-            this.panelFooter.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFooter.Location = new System.Drawing.Point(0, 481);
+            this.panelFooter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(879, 33);
+            this.panelFooter.Size = new System.Drawing.Size(875, 33);
             this.panelFooter.TabIndex = 10;
             // 
             // copyright
@@ -547,9 +547,9 @@
             this.groupBoxReading.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxReading.ForeColor = System.Drawing.SystemColors.InfoText;
             this.groupBoxReading.Location = new System.Drawing.Point(457, 90);
-            this.groupBoxReading.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxReading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxReading.Name = "groupBoxReading";
-            this.groupBoxReading.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxReading.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxReading.Size = new System.Drawing.Size(150, 325);
             this.groupBoxReading.TabIndex = 11;
             this.groupBoxReading.TabStop = false;
@@ -561,15 +561,15 @@
             this.tableReading.ColumnCount = 1;
             this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableReading.Location = new System.Drawing.Point(4, 40);
-            this.tableReading.Margin = new System.Windows.Forms.Padding(2);
+            this.tableReading.Location = new System.Drawing.Point(4, 44);
+            this.tableReading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableReading.Name = "tableReading";
             this.tableReading.RowCount = 4;
             this.tableReading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableReading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableReading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableReading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableReading.Size = new System.Drawing.Size(142, 271);
+            this.tableReading.Size = new System.Drawing.Size(142, 270);
             this.tableReading.TabIndex = 0;
             // 
             // MonitorForm
@@ -577,7 +577,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(879, 520);
+            this.ClientSize = new System.Drawing.Size(875, 514);
             this.Controls.Add(this.groupBoxReading);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
@@ -586,7 +586,7 @@
             this.Controls.Add(this.groupBoxLimits);
             this.Controls.Add(this.groupBoxModule);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MonitorForm";

@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CentralDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CentralDisplay.Designer.cs">
+      <DependentUpon>CentralDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultant.cs" />
     <Compile Include="LimitsForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +101,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\DatabaseConnection.cs" />
+    <EmbeddedResource Include="CentralDisplay.resx">
+      <DependentUpon>CentralDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LimitsForm.resx">
       <DependentUpon>LimitsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,17 +113,18 @@
     <EmbeddedResource Include="MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Session.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +165,7 @@
     <None Include="Resources\leftDock.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_Patient.png" />
     <None Include="Resources\icon_Mobile.png" />
     <None Include="Resources\icon_Email.png" />
     <None Include="Resources\icon_BloodPressure.png" />

@@ -40,6 +40,17 @@
             this.moduleIcon4 = new System.Windows.Forms.PictureBox();
             this.moduleName1 = new System.Windows.Forms.Label();
             this.groupBoxLimits = new System.Windows.Forms.GroupBox();
+            this.label_MaximumLimit = new System.Windows.Forms.Label();
+            this.label_MinimumLimit = new System.Windows.Forms.Label();
+            this.limitsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.label_Module1Max = new System.Windows.Forms.Label();
+            this.label_Module2Min = new System.Windows.Forms.Label();
+            this.label_Module2Max = new System.Windows.Forms.Label();
+            this.label_Module3Min = new System.Windows.Forms.Label();
+            this.label_Module3Max = new System.Windows.Forms.Label();
+            this.label_Module4Min = new System.Windows.Forms.Label();
+            this.label_Module4Max = new System.Windows.Forms.Label();
+            this.label_Module1Min = new System.Windows.Forms.Label();
             this.alarmButton = new System.Windows.Forms.Button();
             this.limitsButton = new System.Windows.Forms.Button();
             this.modulesButton = new System.Windows.Forms.Button();
@@ -55,17 +66,6 @@
             this.copyright = new System.Windows.Forms.Label();
             this.groupBoxReading = new System.Windows.Forms.GroupBox();
             this.tableReading = new System.Windows.Forms.TableLayoutPanel();
-            this.limitsTable = new System.Windows.Forms.TableLayoutPanel();
-            this.label_Module1Min = new System.Windows.Forms.Label();
-            this.label_Module4Max = new System.Windows.Forms.Label();
-            this.label_Module4Min = new System.Windows.Forms.Label();
-            this.label_Module3Max = new System.Windows.Forms.Label();
-            this.label_Module3Min = new System.Windows.Forms.Label();
-            this.label_Module2Max = new System.Windows.Forms.Label();
-            this.label_Module2Min = new System.Windows.Forms.Label();
-            this.label_Module1Max = new System.Windows.Forms.Label();
-            this.label_MinimumLimit = new System.Windows.Forms.Label();
-            this.label_MaximumLimit = new System.Windows.Forms.Label();
             this.groupBoxModule.SuspendLayout();
             this.readingsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon1)).BeginInit();
@@ -73,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon4)).BeginInit();
             this.groupBoxLimits.SuspendLayout();
+            this.limitsTable.SuspendLayout();
             this.panelMonitorNumberContainer.SuspendLayout();
             this.panelMonitorNumber.SuspendLayout();
             this.panelAlertMessageContainer.SuspendLayout();
@@ -81,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.groupBoxReading.SuspendLayout();
-            this.limitsTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxModule
@@ -236,6 +236,147 @@
             this.groupBoxLimits.TabIndex = 1;
             this.groupBoxLimits.TabStop = false;
             this.groupBoxLimits.Text = "Limits";
+            // 
+            // label_MaximumLimit
+            // 
+            this.label_MaximumLimit.AutoSize = true;
+            this.label_MaximumLimit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MaximumLimit.Location = new System.Drawing.Point(127, 26);
+            this.label_MaximumLimit.Name = "label_MaximumLimit";
+            this.label_MaximumLimit.Size = new System.Drawing.Size(89, 15);
+            this.label_MaximumLimit.TabIndex = 2;
+            this.label_MaximumLimit.Text = "Maximum Limit";
+            // 
+            // label_MinimumLimit
+            // 
+            this.label_MinimumLimit.AutoSize = true;
+            this.label_MinimumLimit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MinimumLimit.Location = new System.Drawing.Point(13, 26);
+            this.label_MinimumLimit.Name = "label_MinimumLimit";
+            this.label_MinimumLimit.Size = new System.Drawing.Size(86, 15);
+            this.label_MinimumLimit.TabIndex = 1;
+            this.label_MinimumLimit.Text = "Minimum Limit";
+            // 
+            // limitsTable
+            // 
+            this.limitsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.limitsTable.ColumnCount = 2;
+            this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.limitsTable.Controls.Add(this.label_Module1Max, 1, 0);
+            this.limitsTable.Controls.Add(this.label_Module2Min, 0, 1);
+            this.limitsTable.Controls.Add(this.label_Module2Max, 1, 1);
+            this.limitsTable.Controls.Add(this.label_Module3Min, 0, 2);
+            this.limitsTable.Controls.Add(this.label_Module3Max, 1, 2);
+            this.limitsTable.Controls.Add(this.label_Module4Min, 0, 3);
+            this.limitsTable.Controls.Add(this.label_Module4Max, 1, 3);
+            this.limitsTable.Controls.Add(this.label_Module1Min, 0, 0);
+            this.limitsTable.Location = new System.Drawing.Point(14, 41);
+            this.limitsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.limitsTable.Name = "limitsTable";
+            this.limitsTable.RowCount = 4;
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.limitsTable.Size = new System.Drawing.Size(226, 270);
+            this.limitsTable.TabIndex = 0;
+            // 
+            // label_Module1Max
+            // 
+            this.label_Module1Max.AutoSize = true;
+            this.label_Module1Max.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module1Max.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module1Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module1Max.Location = new System.Drawing.Point(116, 1);
+            this.label_Module1Max.Name = "label_Module1Max";
+            this.label_Module1Max.Size = new System.Drawing.Size(106, 66);
+            this.label_Module1Max.TabIndex = 1;
+            this.label_Module1Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module2Min
+            // 
+            this.label_Module2Min.AutoSize = true;
+            this.label_Module2Min.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module2Min.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module2Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module2Min.Location = new System.Drawing.Point(4, 68);
+            this.label_Module2Min.Name = "label_Module2Min";
+            this.label_Module2Min.Size = new System.Drawing.Size(105, 66);
+            this.label_Module2Min.TabIndex = 2;
+            this.label_Module2Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module2Max
+            // 
+            this.label_Module2Max.AutoSize = true;
+            this.label_Module2Max.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module2Max.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module2Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module2Max.Location = new System.Drawing.Point(116, 68);
+            this.label_Module2Max.Name = "label_Module2Max";
+            this.label_Module2Max.Size = new System.Drawing.Size(106, 66);
+            this.label_Module2Max.TabIndex = 3;
+            this.label_Module2Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module3Min
+            // 
+            this.label_Module3Min.AutoSize = true;
+            this.label_Module3Min.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module3Min.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module3Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module3Min.Location = new System.Drawing.Point(4, 135);
+            this.label_Module3Min.Name = "label_Module3Min";
+            this.label_Module3Min.Size = new System.Drawing.Size(105, 66);
+            this.label_Module3Min.TabIndex = 4;
+            this.label_Module3Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module3Max
+            // 
+            this.label_Module3Max.AutoSize = true;
+            this.label_Module3Max.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module3Max.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module3Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module3Max.Location = new System.Drawing.Point(116, 135);
+            this.label_Module3Max.Name = "label_Module3Max";
+            this.label_Module3Max.Size = new System.Drawing.Size(106, 66);
+            this.label_Module3Max.TabIndex = 5;
+            this.label_Module3Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module4Min
+            // 
+            this.label_Module4Min.AutoSize = true;
+            this.label_Module4Min.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module4Min.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module4Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module4Min.Location = new System.Drawing.Point(4, 202);
+            this.label_Module4Min.Name = "label_Module4Min";
+            this.label_Module4Min.Size = new System.Drawing.Size(105, 67);
+            this.label_Module4Min.TabIndex = 6;
+            this.label_Module4Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module4Max
+            // 
+            this.label_Module4Max.AutoSize = true;
+            this.label_Module4Max.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module4Max.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module4Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module4Max.Location = new System.Drawing.Point(116, 202);
+            this.label_Module4Max.Name = "label_Module4Max";
+            this.label_Module4Max.Size = new System.Drawing.Size(106, 67);
+            this.label_Module4Max.TabIndex = 7;
+            this.label_Module4Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_Module1Min
+            // 
+            this.label_Module1Min.AutoSize = true;
+            this.label_Module1Min.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Module1Min.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.label_Module1Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_Module1Min.Location = new System.Drawing.Point(4, 1);
+            this.label_Module1Min.Name = "label_Module1Min";
+            this.label_Module1Min.Size = new System.Drawing.Size(105, 66);
+            this.label_Module1Min.TabIndex = 0;
+            this.label_Module1Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // alarmButton
             // 
@@ -431,147 +572,6 @@
             this.tableReading.Size = new System.Drawing.Size(142, 271);
             this.tableReading.TabIndex = 0;
             // 
-            // limitsTable
-            // 
-            this.limitsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.limitsTable.ColumnCount = 2;
-            this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.limitsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.limitsTable.Controls.Add(this.label_Module1Max, 1, 0);
-            this.limitsTable.Controls.Add(this.label_Module2Min, 0, 1);
-            this.limitsTable.Controls.Add(this.label_Module2Max, 1, 1);
-            this.limitsTable.Controls.Add(this.label_Module3Min, 0, 2);
-            this.limitsTable.Controls.Add(this.label_Module3Max, 1, 2);
-            this.limitsTable.Controls.Add(this.label_Module4Min, 0, 3);
-            this.limitsTable.Controls.Add(this.label_Module4Max, 1, 3);
-            this.limitsTable.Controls.Add(this.label_Module1Min, 0, 0);
-            this.limitsTable.Location = new System.Drawing.Point(14, 41);
-            this.limitsTable.Margin = new System.Windows.Forms.Padding(2);
-            this.limitsTable.Name = "limitsTable";
-            this.limitsTable.RowCount = 4;
-            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.limitsTable.Size = new System.Drawing.Size(226, 270);
-            this.limitsTable.TabIndex = 0;
-            // 
-            // label_Module1Min
-            // 
-            this.label_Module1Min.AutoSize = true;
-            this.label_Module1Min.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module1Min.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module1Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module1Min.Location = new System.Drawing.Point(4, 1);
-            this.label_Module1Min.Name = "label_Module1Min";
-            this.label_Module1Min.Size = new System.Drawing.Size(105, 66);
-            this.label_Module1Min.TabIndex = 0;
-            this.label_Module1Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module4Max
-            // 
-            this.label_Module4Max.AutoSize = true;
-            this.label_Module4Max.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module4Max.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module4Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module4Max.Location = new System.Drawing.Point(116, 202);
-            this.label_Module4Max.Name = "label_Module4Max";
-            this.label_Module4Max.Size = new System.Drawing.Size(106, 67);
-            this.label_Module4Max.TabIndex = 7;
-            this.label_Module4Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module4Min
-            // 
-            this.label_Module4Min.AutoSize = true;
-            this.label_Module4Min.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module4Min.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module4Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module4Min.Location = new System.Drawing.Point(4, 202);
-            this.label_Module4Min.Name = "label_Module4Min";
-            this.label_Module4Min.Size = new System.Drawing.Size(105, 67);
-            this.label_Module4Min.TabIndex = 6;
-            this.label_Module4Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module3Max
-            // 
-            this.label_Module3Max.AutoSize = true;
-            this.label_Module3Max.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module3Max.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module3Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module3Max.Location = new System.Drawing.Point(116, 135);
-            this.label_Module3Max.Name = "label_Module3Max";
-            this.label_Module3Max.Size = new System.Drawing.Size(106, 66);
-            this.label_Module3Max.TabIndex = 5;
-            this.label_Module3Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module3Min
-            // 
-            this.label_Module3Min.AutoSize = true;
-            this.label_Module3Min.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module3Min.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module3Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module3Min.Location = new System.Drawing.Point(4, 135);
-            this.label_Module3Min.Name = "label_Module3Min";
-            this.label_Module3Min.Size = new System.Drawing.Size(105, 66);
-            this.label_Module3Min.TabIndex = 4;
-            this.label_Module3Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module2Max
-            // 
-            this.label_Module2Max.AutoSize = true;
-            this.label_Module2Max.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module2Max.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module2Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module2Max.Location = new System.Drawing.Point(116, 68);
-            this.label_Module2Max.Name = "label_Module2Max";
-            this.label_Module2Max.Size = new System.Drawing.Size(106, 66);
-            this.label_Module2Max.TabIndex = 3;
-            this.label_Module2Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module2Min
-            // 
-            this.label_Module2Min.AutoSize = true;
-            this.label_Module2Min.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module2Min.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module2Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module2Min.Location = new System.Drawing.Point(4, 68);
-            this.label_Module2Min.Name = "label_Module2Min";
-            this.label_Module2Min.Size = new System.Drawing.Size(105, 66);
-            this.label_Module2Min.TabIndex = 2;
-            this.label_Module2Min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_Module1Max
-            // 
-            this.label_Module1Max.AutoSize = true;
-            this.label_Module1Max.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Module1Max.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.label_Module1Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label_Module1Max.Location = new System.Drawing.Point(116, 1);
-            this.label_Module1Max.Name = "label_Module1Max";
-            this.label_Module1Max.Size = new System.Drawing.Size(106, 66);
-            this.label_Module1Max.TabIndex = 1;
-            this.label_Module1Max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_MinimumLimit
-            // 
-            this.label_MinimumLimit.AutoSize = true;
-            this.label_MinimumLimit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MinimumLimit.Location = new System.Drawing.Point(13, 26);
-            this.label_MinimumLimit.Name = "label_MinimumLimit";
-            this.label_MinimumLimit.Size = new System.Drawing.Size(86, 15);
-            this.label_MinimumLimit.TabIndex = 1;
-            this.label_MinimumLimit.Text = "Minimum Limit";
-            // 
-            // label_MaximumLimit
-            // 
-            this.label_MaximumLimit.AutoSize = true;
-            this.label_MaximumLimit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MaximumLimit.Location = new System.Drawing.Point(127, 26);
-            this.label_MaximumLimit.Name = "label_MaximumLimit";
-            this.label_MaximumLimit.Size = new System.Drawing.Size(89, 15);
-            this.label_MaximumLimit.TabIndex = 2;
-            this.label_MaximumLimit.Text = "Maximum Limit";
-            // 
             // MonitorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,6 +602,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.moduleIcon4)).EndInit();
             this.groupBoxLimits.ResumeLayout(false);
             this.groupBoxLimits.PerformLayout();
+            this.limitsTable.ResumeLayout(false);
+            this.limitsTable.PerformLayout();
             this.panelMonitorNumberContainer.ResumeLayout(false);
             this.panelMonitorNumber.ResumeLayout(false);
             this.panelMonitorNumber.PerformLayout();
@@ -613,8 +615,6 @@
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.groupBoxReading.ResumeLayout(false);
-            this.limitsTable.ResumeLayout(false);
-            this.limitsTable.PerformLayout();
             this.ResumeLayout(false);
 
         }

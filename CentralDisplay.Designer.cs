@@ -190,7 +190,6 @@
             // 
             // alertsignpicturebox_bed8
             // 
-            this.alertsignpicturebox_bed8.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed8.Image")));
             this.alertsignpicturebox_bed8.Location = new System.Drawing.Point(13, 22);
             this.alertsignpicturebox_bed8.Name = "alertsignpicturebox_bed8";
             this.alertsignpicturebox_bed8.Size = new System.Drawing.Size(37, 33);
@@ -212,14 +211,12 @@
             // label_bed8msg
             // 
             this.label_bed8msg.AutoSize = true;
-            this.label_bed8msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label_bed8msg.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bed8msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed8msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed8msg.Name = "label_bed8msg";
-            this.label_bed8msg.Size = new System.Drawing.Size(99, 15);
+            this.label_bed8msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed8msg.TabIndex = 12;
-            this.label_bed8msg.Text = "See how it looks.";
             // 
             // button_mutebed8
             // 
@@ -284,7 +281,7 @@
             // 
             this.label_bed4msg.AutoSize = true;
             this.label_bed4msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed4msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed4msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed4msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed4msg.Name = "label_bed4msg";
             this.label_bed4msg.Size = new System.Drawing.Size(0, 15);
@@ -353,7 +350,7 @@
             // 
             this.label_bed3msg.AutoSize = true;
             this.label_bed3msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed3msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed3msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed3msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed3msg.Name = "label_bed3msg";
             this.label_bed3msg.Size = new System.Drawing.Size(0, 15);
@@ -422,7 +419,7 @@
             // 
             this.label_bed6msg.AutoSize = true;
             this.label_bed6msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed6msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed6msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed6msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed6msg.Name = "label_bed6msg";
             this.label_bed6msg.Size = new System.Drawing.Size(0, 15);
@@ -491,7 +488,7 @@
             // 
             this.label_bed5msg.AutoSize = true;
             this.label_bed5msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed5msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed5msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed5msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed5msg.Name = "label_bed5msg";
             this.label_bed5msg.Size = new System.Drawing.Size(0, 15);
@@ -561,7 +558,7 @@
             this.label_bed2msg.AutoSize = true;
             this.label_bed2msg.BackColor = System.Drawing.SystemColors.Control;
             this.label_bed2msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed2msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed2msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed2msg.Location = new System.Drawing.Point(17, 89);
             this.label_bed2msg.Name = "label_bed2msg";
             this.label_bed2msg.Size = new System.Drawing.Size(0, 15);
@@ -630,7 +627,7 @@
             // 
             this.label_bed7msg.AutoSize = true;
             this.label_bed7msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed7msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed7msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed7msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed7msg.Name = "label_bed7msg";
             this.label_bed7msg.Size = new System.Drawing.Size(0, 15);
@@ -677,7 +674,6 @@
             // 
             // alertsignpicturebox_bed1
             // 
-            this.alertsignpicturebox_bed1.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed1.Image")));
             this.alertsignpicturebox_bed1.Location = new System.Drawing.Point(13, 22);
             this.alertsignpicturebox_bed1.Name = "alertsignpicturebox_bed1";
             this.alertsignpicturebox_bed1.Size = new System.Drawing.Size(37, 33);
@@ -688,14 +684,12 @@
             // label_bed1msg
             // 
             this.label_bed1msg.AutoSize = true;
-            this.label_bed1msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label_bed1msg.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bed1msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed1msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed1msg.Name = "label_bed1msg";
-            this.label_bed1msg.Size = new System.Drawing.Size(64, 15);
+            this.label_bed1msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed1msg.TabIndex = 5;
-            this.label_bed1msg.Text = "Test Alert!";
             // 
             // button_mutebed1
             // 

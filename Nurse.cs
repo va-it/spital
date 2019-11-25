@@ -11,7 +11,7 @@ namespace spital
 {
     class Nurse : Staff
     {
-        public int Id { get; }
+        public new int Id { get; }
         public string PhoneNumber { get; set; }
         public int StaffID { get; set; }
 
@@ -20,7 +20,7 @@ namespace spital
         private static readonly string insertStatement = 
             "INSERT INTO nurse (phoneNumber, staffID) VALUES (@phoneNumber, @staffID);";
 
-        private new static readonly string updateStatement =
+        private static readonly string updateStatement =
             "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID;";
 
 

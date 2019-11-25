@@ -54,7 +54,7 @@ namespace spital
         public void TriggerAlarm()
         {
             Alarm alarm = new Alarm(this);
-            MessageBox.Show("ALARM");
+            alarm.Save();
         }
 
         /// <summary>

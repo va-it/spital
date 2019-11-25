@@ -104,6 +104,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\DatabaseConnection.cs" />
+    <Compile Include="UserControl_bed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_bed.Designer.cs">
+      <DependentUpon>UserControl_bed.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CentralDisplay.resx">
       <DependentUpon>CentralDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_bed.resx">
+      <DependentUpon>UserControl_bed.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

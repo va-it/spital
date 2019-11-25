@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,6 +12,9 @@ namespace spital
         static Timer myTimer = new System.Windows.Forms.Timer();
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
+        //List<MonitorModule> monitorModulesWithoutAlarm = new List<MonitorModule>();
+
+        List<Alarm> alarms = new List<Alarm>();
 
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
@@ -18,7 +22,12 @@ namespace spital
         List<Label> limitMin = new List<Label>();
         List<Label> limitMax = new List<Label>();
 
-        public Nullable<int> MonitorId { get; set; }
+        List<String> alarmMessage = new List<string>();
+
+        Monitor monitor = new Monitor();
+
+        public int MonitorId { get; set; }
+        public bool Active { get; set; }
 
         public MonitorForm()
         {
@@ -29,6 +38,7 @@ namespace spital
         {
             // Code to stop the alarm
             MessageBox.Show("Alarm has been stopped", "Alarm stopped");
+            StopAlarms();
         }
 
         private void modulesButton_Click(object sender, EventArgs e)
@@ -48,21 +58,22 @@ namespace spital
         private void MonitorForm_Load(object sender, EventArgs e)
         {
 
+            monitor.Id = MonitorId;
+            monitor.Active = true;
 
+            // Check if we already a monitor with this ID
+            Monitor newMonitor = Monitor.GetOne(MonitorId);
 
-            Monitor monitor = new Monitor
+            if (newMonitor.Id == 0)
             {
-                Active = true
-            };
-
-            MonitorId = monitor.Save();
-
+                monitor.Save();
+            }
+            
+            Active = true;
 
             monitorNumber.Text = MonitorId.ToString();
 
             GenerateListsOfControls();
-
-
         }
 
         private void FillMonitor()
@@ -99,41 +110,42 @@ namespace spital
         }
 
 
-
-
-        public void GetReadings()
+        public bool CheckIfMonitorModuleHasAlarm(int monitorModuleId)
         {
-            
+            foreach (Alarm alarm in alarms)
+            {
+                if (alarm.MonitorModule.Id == monitorModuleId)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void CheckReadings()
+        {
             int index = 0;
+            bool hasAlarm = false;
 
             foreach (MonitorModule monitorModule in monitorModules)
             {
-                float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
-                {//logic to get the readings one place after the decimal
+                hasAlarm = CheckIfMonitorModuleHasAlarm(monitorModule.Id);
+
+                if (!hasAlarm)
+                {
+                    float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
+
+                    //logic to get the readings one place after the decimal
                     string s = Convert.ToString(random);
                     for (int i = 0; i <= s.Length - 1; i++)
                     {
                         if (s[i] == '.')
-                        moduleReading.ElementAt(index).Text = s.Substring(0, i + 2);
+                            moduleReading.ElementAt(index).Text = s.Substring(0, i + 2);
                     }
+
+                    monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
                 }
-                ++index;
-            }
-        }
-
-
-
-
-        public void CheckReadings()
-        {
-            GetReadings();
-            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
-
-            int index = 0;
-
-            foreach (MonitorModule monitorModule in monitorModules)
-            {
-                monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
 
                 ++index;
             }
@@ -141,8 +153,12 @@ namespace spital
 
         private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
-            
             CheckReadings();
+
+            alarms = monitor.GetActiveAlarms();
+
+            ShowAlarms();
+
             myTimer.Enabled = true;
 
         }
@@ -163,7 +179,6 @@ namespace spital
 
                 ++index;
             }
-
         }
 
         private void MonitorForm_Shown(object sender, EventArgs e)
@@ -171,11 +186,20 @@ namespace spital
             RefreshModules();
         }
 
+        public void ResetAlarms()
+        {
+            foreach (Label reading in moduleReading)
+            {
+                reading.BackColor = Color.White;
+            }
+
+            AlarmTextBox.Text = "";
+        }
+
         public void RefreshModules()
         {
             // Empty all the module names and limits before retrieving new values from database
             ClearControls();
-
             FillMonitor();
             CheckReadings();
             Timer();// calls the timer function
@@ -188,8 +212,6 @@ namespace spital
             //Sets the timer interval to 5 seconds.
             myTimer.Interval = 5000;
             myTimer.Start();
-
-
         }
 
 
@@ -214,6 +236,36 @@ namespace spital
             {
                 label.Text = null;
             }
+        }
+
+        public void ShowAlarms()
+        {
+            alarmMessage.Clear();
+
+            foreach (Alarm alarm in alarms)
+            {
+                alarmMessage.Add(alarm.MonitorModule.Module.Name + " out of range");
+
+                AlarmTextBox.Text = string.Join(Environment.NewLine, alarmMessage.ToArray());
+
+                for ( int i = 0; i < moduleName.Count; ++i)
+                {
+                    if (moduleName.ElementAt(i).Text == alarm.MonitorModule.Module.Name)
+                    {
+                        moduleReading.ElementAt(i).BackColor = Color.Red;
+                    }
+                }   
+            }
+        }
+
+        public void StopAlarms()
+        {
+            foreach (Alarm alarm in alarms)
+            {
+                alarm.Stop();
+            }
+
+            ResetAlarms();
         }
     }
 }

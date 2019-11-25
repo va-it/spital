@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,13 +13,18 @@ namespace spital
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
+        List<Alarm> alarms = new List<Alarm>();
+
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
         List<Label> moduleReading = new List<Label>();
         List<Label> limitMin = new List<Label>();
         List<Label> limitMax = new List<Label>();
 
-        public Nullable<int> MonitorId { get; set; }
+        Monitor monitor = new Monitor();
+
+        public int MonitorId { get; set; }
+        public bool Active { get; set; }
 
         public MonitorForm()
         {
@@ -48,15 +54,12 @@ namespace spital
         private void MonitorForm_Load(object sender, EventArgs e)
         {
 
+            monitor.Id = MonitorId;
+            monitor.Active = true;
 
+            monitor.Save();
 
-            Monitor monitor = new Monitor
-            {
-                Active = true
-            };
-
-            MonitorId = monitor.Save();
-
+            Active = true;
 
             monitorNumber.Text = MonitorId.ToString();
 
@@ -141,8 +144,10 @@ namespace spital
 
         private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
-            
+            ResetLabels();
             CheckReadings();
+            alarms = monitor.GetAlarms();
+            ShowAlarms();
             myTimer.Enabled = true;
 
         }
@@ -213,6 +218,34 @@ namespace spital
             foreach (Label label in limitMax)
             {
                 label.Text = null;
+            }
+        }
+
+
+        public void ShowAlarms()
+        {
+            foreach (Alarm alarm in alarms)
+            {
+                alertMessage.Text = alarm.MonitorModule.Module.Name;
+
+                for ( int i = 0; i < moduleName.Count; ++i)
+                {
+                    if (moduleName.ElementAt(i).Text == alarm.MonitorModule.Module.Name)
+                    {
+                        moduleReading.ElementAt(i).BackColor = Color.Red;
+                    }
+                }
+
+            }
+        }
+
+        public void ResetLabels()
+        {
+            alertMessage.Text = "";
+            int index = 0;
+            foreach (Label module in moduleName)
+            {
+                moduleReading.ElementAt(index).BackColor = Color.White;
             }
         }
     }

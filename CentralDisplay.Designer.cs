@@ -122,7 +122,7 @@
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(800, 81);
+            this.panel_header.Size = new System.Drawing.Size(803, 81);
             this.panel_header.TabIndex = 0;
             // 
             // pictureBox_logo
@@ -140,9 +140,9 @@
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel_footer.Controls.Add(this.labelcopyright);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_footer.Location = new System.Drawing.Point(0, 443);
+            this.panel_footer.Location = new System.Drawing.Point(0, 439);
             this.panel_footer.Name = "panel_footer";
-            this.panel_footer.Size = new System.Drawing.Size(800, 39);
+            this.panel_footer.Size = new System.Drawing.Size(803, 39);
             this.panel_footer.TabIndex = 1;
             // 
             // labelcopyright
@@ -184,6 +184,7 @@
             this.bed8_panel.Name = "bed8_panel";
             this.bed8_panel.Size = new System.Drawing.Size(129, 118);
             this.bed8_panel.TabIndex = 1;
+            this.bed8_panel.Click += new System.EventHandler(this.bed8_panel_Click);
             // 
             // alertsignpicturebox_bed8
             // 
@@ -197,7 +198,7 @@
             // 
             // pictureBox_bed8
             // 
-            this.pictureBox_bed8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox_bed8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed8.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed8.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed8.Name = "pictureBox_bed8";
@@ -254,6 +255,7 @@
             this.bed4_panel.Name = "bed4_panel";
             this.bed4_panel.Size = new System.Drawing.Size(129, 118);
             this.bed4_panel.TabIndex = 1;
+            this.bed4_panel.Click += new System.EventHandler(this.bed4_panel_Click);
             // 
             // alertsignpicturebox_bed4
             // 
@@ -266,7 +268,7 @@
             // 
             // pictureBox_bed4
             // 
-            this.pictureBox_bed4.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed4.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed4.Location = new System.Drawing.Point(63, 15);
             this.pictureBox_bed4.Name = "pictureBox_bed4";
@@ -321,6 +323,7 @@
             this.bed3_panel.Name = "bed3_panel";
             this.bed3_panel.Size = new System.Drawing.Size(129, 118);
             this.bed3_panel.TabIndex = 1;
+            this.bed3_panel.Click += new System.EventHandler(this.bed3_panel_Click);
             // 
             // alertsignpicturebox_bed3
             // 
@@ -333,7 +336,7 @@
             // 
             // pictureBox_bed3
             // 
-            this.pictureBox_bed3.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed3.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed3.Location = new System.Drawing.Point(63, 15);
             this.pictureBox_bed3.Name = "pictureBox_bed3";
@@ -388,6 +391,7 @@
             this.bed6_panel.Name = "bed6_panel";
             this.bed6_panel.Size = new System.Drawing.Size(129, 118);
             this.bed6_panel.TabIndex = 1;
+            this.bed6_panel.Click += new System.EventHandler(this.bed6_panel_Click);
             // 
             // alertsignpicturebox_bed6
             // 
@@ -400,6 +404,7 @@
             // 
             // pictureBox_bed6
             // 
+            this.pictureBox_bed6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed6.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed6.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed6.Name = "pictureBox_bed6";
@@ -454,6 +459,7 @@
             this.bed5_panel.Name = "bed5_panel";
             this.bed5_panel.Size = new System.Drawing.Size(129, 118);
             this.bed5_panel.TabIndex = 1;
+            this.bed5_panel.Click += new System.EventHandler(this.bed5_panel_Click);
             // 
             // alertsignpicturebox_bed5
             // 
@@ -466,7 +472,7 @@
             // 
             // pictureBox_bed5
             // 
-            this.pictureBox_bed5.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed5.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed5.Location = new System.Drawing.Point(64, 14);
             this.pictureBox_bed5.Name = "pictureBox_bed5";
@@ -521,6 +527,7 @@
             this.bed2_panel.Name = "bed2_panel";
             this.bed2_panel.Size = new System.Drawing.Size(129, 118);
             this.bed2_panel.TabIndex = 1;
+            this.bed2_panel.Click += new System.EventHandler(this.bed2_panel_Click);
             // 
             // alertsignpicturebox_bed2
             // 
@@ -533,7 +540,7 @@
             // 
             // pictureBox_bed2
             // 
-            this.pictureBox_bed2.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed2.BackColor = System.Drawing.Color.White;
             this.pictureBox_bed2.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed2.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed2.Name = "pictureBox_bed2";
@@ -589,6 +596,7 @@
             this.bed7_panel.Name = "bed7_panel";
             this.bed7_panel.Size = new System.Drawing.Size(129, 118);
             this.bed7_panel.TabIndex = 1;
+            this.bed7_panel.Click += new System.EventHandler(this.bed7_panel_Click);
             // 
             // alertsignpicturebox_bed7
             // 
@@ -601,6 +609,7 @@
             // 
             // pictureBox_bed7
             // 
+            this.pictureBox_bed7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed7.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed7.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed7.Name = "pictureBox_bed7";
@@ -655,6 +664,7 @@
             this.bed1_panel.Name = "bed1_panel";
             this.bed1_panel.Size = new System.Drawing.Size(129, 118);
             this.bed1_panel.TabIndex = 0;
+            this.bed1_panel.Click += new System.EventHandler(this.bed1_panel_Click);
             // 
             // alertsignpicturebox_bed1
             // 
@@ -704,7 +714,7 @@
             // 
             // pictureBox_bed1
             // 
-            this.pictureBox_bed1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox_bed1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed1.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed1.Location = new System.Drawing.Point(63, 13);
             this.pictureBox_bed1.Name = "pictureBox_bed1";
@@ -757,7 +767,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.ClientSize = new System.Drawing.Size(803, 478);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.button_endshift);
             this.Controls.Add(this.button_startshift);

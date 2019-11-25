@@ -1,6 +1,7 @@
 ﻿using spital.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,10 @@ namespace spital
         // Auto-implemented properties for trivial get and set
         private int Id { get; }
         // Why do we have staffID in the alarm table?
-        public Staff Staff { get; set; }
+        public Nullable<int> StaffID { get; set; }
         public MonitorModule MonitorModule { get; set; }
         public DateTime StartDateTime { get; set; }
-        public DateTime EndDateTime { get; set; }
+        public Nullable<DateTime> EndDateTime { get; set; }
 
         private static readonly string selectStatement = 
             "SELECT * FROM alarm INNER JOIN monitorModule ON monitorModule.monitorModuleID = alarm.monitorModuleID;";
@@ -29,7 +30,9 @@ namespace spital
         private static readonly string updateStatement =
             "UPDATE alarm SET staffID = @staffID, monitorModule = @monitorModule, " +
             "startDateTime = @startDateTime, endDateTime = @endDateTime WHERE alarmID = @alarmID;";
-        
+
+        public Alarm() { }
+
         /// <summary>
         /// Constructor. Sets MonitorModule from parameter and defines Id and DateTimeStart 
         /// </summary>
@@ -46,6 +49,8 @@ namespace spital
         public void Stop()
         {
             EndDateTime = DateTime.Now;
+            // set staffID (used to record who stopped the alarm)
+            // for notification use session values.
         }
 
         /// <summary>
@@ -60,9 +65,10 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@monitorModule", MonitorModule));
+                command.Parameters.Add(new SqlParameter("@staffID", DBNull.Value));
+                command.Parameters.Add(new SqlParameter("@monitorModuleID", MonitorModule.Id));
                 command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
-                command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
+                command.Parameters.Add(new SqlParameter("@endDateTime", DBNull.Value));
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
@@ -95,6 +101,31 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public static List<Alarm> GetAllForMonitor(int monitorID)
+        {
+            List<Alarm> alarms = new List<Alarm>();
+
+            DataSet alarmDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable alarmDataTable = alarmDataSet.Tables[0];
+
+            foreach (DataRow alarmRow in alarmDataTable.Rows)
+            {
+
+                MonitorModule monitorModule = MonitorModule.GetOne(Int32.Parse(alarmRow["monitorModuleID"].ToString()));
+
+                if (monitorModule.Monitor.Id == monitorID)
+                {
+                    Alarm alarm = new Alarm();
+
+                    alarm.MonitorModule = monitorModule;
+
+                    alarms.Add(alarm);
+                }
+            }
+
+            return alarms;
         }
 
     }

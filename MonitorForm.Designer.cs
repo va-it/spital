@@ -276,9 +276,7 @@
             this.limitsTable.Controls.Add(this.label_Module4Min, 0, 3);
             this.limitsTable.Controls.Add(this.label_Module4Max, 1, 3);
             this.limitsTable.Controls.Add(this.label_Module1Min, 0, 0);
-
             this.limitsTable.Location = new System.Drawing.Point(14, 41);
-
             this.limitsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.limitsTable.Name = "limitsTable";
             this.limitsTable.RowCount = 4;
@@ -508,9 +506,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
-
-            this.panelHeader.Size = new System.Drawing.Size(883, 86);
-
+            this.panelHeader.Size = new System.Drawing.Size(876, 86);
             this.panelHeader.TabIndex = 9;
             // 
             // logo
@@ -531,12 +527,10 @@
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            this.panelFooter.Location = new System.Drawing.Point(0, 479);
+            this.panelFooter.Location = new System.Drawing.Point(0, 477);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(883, 33);
-
+            this.panelFooter.Size = new System.Drawing.Size(876, 33);
             this.panelFooter.TabIndex = 10;
             // 
             // copyright
@@ -572,13 +566,11 @@
             this.tableReading.ColumnCount = 1;
             this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-
             this.tableReading.Controls.Add(this.label1reading, 0, 0);
             this.tableReading.Controls.Add(this.label2reading, 0, 1);
             this.tableReading.Controls.Add(this.label3reading, 0, 2);
             this.tableReading.Controls.Add(this.label4reading, 0, 3);
             this.tableReading.Location = new System.Drawing.Point(4, 40);
-
             this.tableReading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableReading.Name = "tableReading";
             this.tableReading.RowCount = 4;
@@ -633,7 +625,7 @@
             this.label4reading.Location = new System.Drawing.Point(3, 202);
             this.label4reading.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4reading.Name = "label4reading";
-            this.label4reading.Size = new System.Drawing.Size(136, 68);
+            this.label4reading.Size = new System.Drawing.Size(136, 67);
             this.label4reading.TabIndex = 3;
             this.label4reading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -642,9 +634,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-
-            this.ClientSize = new System.Drawing.Size(883, 512);
-
+            this.ClientSize = new System.Drawing.Size(876, 510);
             this.Controls.Add(this.groupBoxReading);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);

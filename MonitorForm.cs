@@ -234,11 +234,13 @@ namespace spital
 
         public void ShowAlarms()
         {
+            alarmMessage.Clear();
+
             foreach (Alarm alarm in alarms)
             {
                 alarmMessage.Add(alarm.MonitorModule.Module.Name + " out of range");
 
-                AlarmTextBox.Text = string.Join(" - ", alarmMessage.ToArray());
+                AlarmTextBox.Text = string.Join(Environment.NewLine, alarmMessage.ToArray());
 
                 for ( int i = 0; i < moduleName.Count; ++i)
                 {

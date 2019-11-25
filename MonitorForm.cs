@@ -61,8 +61,14 @@ namespace spital
             monitor.Id = MonitorId;
             monitor.Active = true;
 
-            monitor.Save();
+            // Check if we already a monitor with this ID
+            Monitor newMonitor = Monitor.GetOne(MonitorId);
 
+            if (newMonitor.Id == 0)
+            {
+                monitor.Save();
+            }
+            
             Active = true;
 
             monitorNumber.Text = MonitorId.ToString();

@@ -157,6 +157,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Controls.Add(this.bed8_panel);
             this.groupBox1.Controls.Add(this.bed4_panel);
             this.groupBox1.Controls.Add(this.bed3_panel);
@@ -180,6 +181,7 @@
             this.bed8_panel.Controls.Add(this.label_bed8msg);
             this.bed8_panel.Controls.Add(this.button_mutebed8);
             this.bed8_panel.Controls.Add(this.label_bed8);
+            this.bed8_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed8_panel.Location = new System.Drawing.Point(633, 171);
             this.bed8_panel.Name = "bed8_panel";
             this.bed8_panel.Size = new System.Drawing.Size(129, 118);
@@ -251,6 +253,7 @@
             this.bed4_panel.Controls.Add(this.label_bed4msg);
             this.bed4_panel.Controls.Add(this.button_mutebed4);
             this.bed4_panel.Controls.Add(this.label_bed4);
+            this.bed4_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed4_panel.Location = new System.Drawing.Point(633, 19);
             this.bed4_panel.Name = "bed4_panel";
             this.bed4_panel.Size = new System.Drawing.Size(129, 118);
@@ -319,6 +322,7 @@
             this.bed3_panel.Controls.Add(this.label_bed3msg);
             this.bed3_panel.Controls.Add(this.button_mutebed3);
             this.bed3_panel.Controls.Add(this.label_bed3);
+            this.bed3_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed3_panel.Location = new System.Drawing.Point(430, 19);
             this.bed3_panel.Name = "bed3_panel";
             this.bed3_panel.Size = new System.Drawing.Size(129, 118);
@@ -387,6 +391,7 @@
             this.bed6_panel.Controls.Add(this.label_bed6msg);
             this.bed6_panel.Controls.Add(this.button_mutebed6);
             this.bed6_panel.Controls.Add(this.label_bed6);
+            this.bed6_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed6_panel.Location = new System.Drawing.Point(223, 171);
             this.bed6_panel.Name = "bed6_panel";
             this.bed6_panel.Size = new System.Drawing.Size(129, 118);
@@ -455,6 +460,7 @@
             this.bed5_panel.Controls.Add(this.label_bed5msg);
             this.bed5_panel.Controls.Add(this.button_mutebed5);
             this.bed5_panel.Controls.Add(this.label_bed5);
+            this.bed5_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed5_panel.Location = new System.Drawing.Point(19, 171);
             this.bed5_panel.Name = "bed5_panel";
             this.bed5_panel.Size = new System.Drawing.Size(129, 118);
@@ -523,6 +529,7 @@
             this.bed2_panel.Controls.Add(this.label_bed2msg);
             this.bed2_panel.Controls.Add(this.button_mutebed2);
             this.bed2_panel.Controls.Add(this.label_bed2);
+            this.bed2_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed2_panel.Location = new System.Drawing.Point(223, 19);
             this.bed2_panel.Name = "bed2_panel";
             this.bed2_panel.Size = new System.Drawing.Size(129, 118);
@@ -592,6 +599,7 @@
             this.bed7_panel.Controls.Add(this.label_bed7msg);
             this.bed7_panel.Controls.Add(this.button_mutebed7);
             this.bed7_panel.Controls.Add(this.label_bed7);
+            this.bed7_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed7_panel.Location = new System.Drawing.Point(430, 171);
             this.bed7_panel.Name = "bed7_panel";
             this.bed7_panel.Size = new System.Drawing.Size(129, 118);
@@ -660,6 +668,7 @@
             this.bed1_panel.Controls.Add(this.button_mutebed1);
             this.bed1_panel.Controls.Add(this.label_bed1);
             this.bed1_panel.Controls.Add(this.pictureBox_bed1);
+            this.bed1_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed1_panel.Location = new System.Drawing.Point(19, 19);
             this.bed1_panel.Name = "bed1_panel";
             this.bed1_panel.Size = new System.Drawing.Size(129, 118);

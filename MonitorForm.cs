@@ -187,7 +187,7 @@ namespace spital
                 reading.BackColor = Color.White;
             }
 
-            alertMessage.Text = "";
+            AlarmTextBox.Text = "";
         }
 
         public void RefreshModules()
@@ -236,9 +236,9 @@ namespace spital
         {
             foreach (Alarm alarm in alarms)
             {
-                alarmMessage.Add(alarm.MonitorModule.Module.Name);
+                alarmMessage.Add(alarm.MonitorModule.Module.Name + " out of range");
 
-                alertMessage.Text = string.Join(" - ", alarmMessage.ToArray());
+                AlarmTextBox.Text = string.Join(" - ", alarmMessage.ToArray());
 
                 for ( int i = 0; i < moduleName.Count; ++i)
                 {

@@ -12,6 +12,7 @@ namespace spital
         static Timer myTimer = new System.Windows.Forms.Timer();
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
+        //List<MonitorModule> monitorModulesWithoutAlarm = new List<MonitorModule>();
 
         List<Alarm> alarms = new List<Alarm>();
 
@@ -20,6 +21,8 @@ namespace spital
         List<Label> moduleReading = new List<Label>();
         List<Label> limitMin = new List<Label>();
         List<Label> limitMax = new List<Label>();
+
+        List<String> alarmMessage = new List<string>();
 
         Monitor monitor = new Monitor();
 
@@ -35,6 +38,7 @@ namespace spital
         {
             // Code to stop the alarm
             MessageBox.Show("Alarm has been stopped", "Alarm stopped");
+            StopAlarms();
         }
 
         private void modulesButton_Click(object sender, EventArgs e)
@@ -64,8 +68,6 @@ namespace spital
             monitorNumber.Text = MonitorId.ToString();
 
             GenerateListsOfControls();
-
-
         }
 
         private void FillMonitor()
@@ -102,41 +104,42 @@ namespace spital
         }
 
 
-
-
-        public void GetReadings()
+        public bool CheckIfMonitorModuleHasAlarm(int monitorModuleId)
         {
-            
+            foreach (Alarm alarm in alarms)
+            {
+                if (alarm.MonitorModule.Id == monitorModuleId)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void CheckReadings()
+        {
             int index = 0;
+            bool hasAlarm = false;
 
             foreach (MonitorModule monitorModule in monitorModules)
             {
-                float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
-                {//logic to get the readings one place after the decimal
+                hasAlarm = CheckIfMonitorModuleHasAlarm(monitorModule.Id);
+
+                if (!hasAlarm)
+                {
+                    float random = RandomGenerator.Instance.Generate(monitorModule.AssignedMin - 1, monitorModule.AssignedMax + 1);
+
+                    //logic to get the readings one place after the decimal
                     string s = Convert.ToString(random);
                     for (int i = 0; i <= s.Length - 1; i++)
                     {
                         if (s[i] == '.')
-                        moduleReading.ElementAt(index).Text = s.Substring(0, i + 2);
+                            moduleReading.ElementAt(index).Text = s.Substring(0, i + 2);
                     }
+
+                    monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
                 }
-                ++index;
-            }
-        }
-
-
-
-
-        public void CheckReadings()
-        {
-            GetReadings();
-            monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
-
-            int index = 0;
-
-            foreach (MonitorModule monitorModule in monitorModules)
-            {
-                monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
 
                 ++index;
             }
@@ -144,10 +147,12 @@ namespace spital
 
         private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
-            ResetLabels();
             CheckReadings();
-            alarms = monitor.GetAlarms();
+
+            alarms = monitor.GetActiveAlarms();
+
             ShowAlarms();
+
             myTimer.Enabled = true;
 
         }
@@ -168,7 +173,6 @@ namespace spital
 
                 ++index;
             }
-
         }
 
         private void MonitorForm_Shown(object sender, EventArgs e)
@@ -176,11 +180,20 @@ namespace spital
             RefreshModules();
         }
 
+        public void ResetAlarms()
+        {
+            foreach (Label reading in moduleReading)
+            {
+                reading.BackColor = Color.White;
+            }
+
+            alertMessage.Text = "";
+        }
+
         public void RefreshModules()
         {
             // Empty all the module names and limits before retrieving new values from database
             ClearControls();
-
             FillMonitor();
             CheckReadings();
             Timer();// calls the timer function
@@ -193,8 +206,6 @@ namespace spital
             //Sets the timer interval to 5 seconds.
             myTimer.Interval = 5000;
             myTimer.Start();
-
-
         }
 
 
@@ -221,12 +232,13 @@ namespace spital
             }
         }
 
-
         public void ShowAlarms()
         {
             foreach (Alarm alarm in alarms)
             {
-                alertMessage.Text = alarm.MonitorModule.Module.Name;
+                alarmMessage.Add(alarm.MonitorModule.Module.Name);
+
+                alertMessage.Text = string.Join(" - ", alarmMessage.ToArray());
 
                 for ( int i = 0; i < moduleName.Count; ++i)
                 {
@@ -234,19 +246,18 @@ namespace spital
                     {
                         moduleReading.ElementAt(i).BackColor = Color.Red;
                     }
-                }
-
+                }   
             }
         }
 
-        public void ResetLabels()
+        public void StopAlarms()
         {
-            alertMessage.Text = "";
-            int index = 0;
-            foreach (Label module in moduleName)
+            foreach (Alarm alarm in alarms)
             {
-                moduleReading.ElementAt(index).BackColor = Color.White;
+                alarm.Stop();
             }
+
+            ResetAlarms();
         }
     }
 }

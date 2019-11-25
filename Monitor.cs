@@ -124,10 +124,21 @@ namespace spital
             }
         }
 
-        public List<Alarm> GetAlarms()
+        public List<Alarm> GetActiveAlarms()
         {
+            List<Alarm> activeAlarms = new List<Alarm>();
+
             // Get all alarms where monitorID is this.Id
-            return Alarm.GetAllForMonitor(Id);
+
+            foreach (Alarm alarm in Alarm.GetAllForMonitor(Id))
+            {
+                if (!alarm.EndDateTime.HasValue)
+                {
+                    activeAlarms.Add(alarm);
+                }
+            }
+
+            return activeAlarms;
         }
     }
 }

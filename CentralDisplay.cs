@@ -117,5 +117,10 @@ namespace spital
             }
 
         }
+
+        public static void ShowNotification(MonitorForm monitor)
+        {
+
+        }
     }
 }

@@ -12,9 +12,14 @@ namespace spital
 {
     public partial class ManagementForm : Form
     {
-        public ManagementForm()
+        public void FillAlarmReport()
         {
-            InitializeComponent();
+            DataTable alarmTable = ManagementForm.GetAll();
+
+            AlarmReport_DataGrid.DataSource = alarmTable;
+
+
         }
+
     }
 }

@@ -186,6 +186,7 @@
     <None Include="Resources\icon_Pulse.png" />
     <None Include="Resources\icon_Temperature.png" />
     <Content Include="AppLogo.ico" />
+    <None Include="Resources\icon_Alert.png" />
     <Content Include="Spital.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

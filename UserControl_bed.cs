@@ -18,5 +18,18 @@ namespace spital
         {
             InitializeComponent();
         }
+
+        public string BedNumber
+        {
+            get { return label_bednumber.Text; }
+            set { label_bednumber.Text = value; }
+        }
+
+        public string Alert
+        {
+            get { return label_alertmsg.Text; }
+            set { label_alertmsg.Text = value; }
+        } 
+
     }
 }

@@ -13,6 +13,7 @@ namespace spital
 {
     public partial class CentralDisplay : Form
     {
+        List<UserControl> beds = new List<UserControl>();
 
         List<MonitorForm> monitorForms = new List<MonitorForm>();
 
@@ -38,7 +39,33 @@ namespace spital
         public CentralDisplay()
         {
             InitializeComponent();
+            BedLabel();
             InitializeMonitorForms();
+
+        }
+
+        public void GenerateConstrolList()
+        {
+            beds.Add(userControl_bed1);
+            beds.Add(userControl_bed2);
+            beds.Add(userControl_bed3);
+            beds.Add(userControl_bed4);
+            beds.Add(userControl_bed5);
+            beds.Add(userControl_bed6);
+            beds.Add(userControl_bed7);
+            beds.Add(userControl_bed8);
+        }
+
+        public void BedLabel()
+        {
+            userControl_bed1.BedNumber = "Bed 1";
+            userControl_bed2.BedNumber = "Bed 2";
+            userControl_bed3.BedNumber = "Bed 3";
+            userControl_bed4.BedNumber = "Bed 4";
+            userControl_bed5.BedNumber = "Bed 5";
+            userControl_bed6.BedNumber = "Bed 6";
+            userControl_bed7.BedNumber = "Bed 7";
+            userControl_bed8.BedNumber = "Bed 8";
         }
 
         private void InitializeMonitorForms()

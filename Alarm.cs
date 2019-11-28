@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    class Alarm
+    public class Alarm
     {
         // Auto-implemented properties for trivial get and set
-        private int Id { get; }
-        // Why do we have staffID in the alarm table?
-        public Staff Staff { get; set; }
+        public int Id { get; set; }
         public MonitorModule MonitorModule { get; set; }
         public DateTime StartDateTime { get; set; }
-        public DateTime EndDateTime { get; set; }
+        public Nullable<DateTime> EndDateTime { get; set; }
 
         private static readonly string selectStatement = 
             "SELECT * FROM alarm INNER JOIN monitorModule ON monitorModule.monitorModuleID = alarm.monitorModuleID;";
@@ -26,13 +24,15 @@ namespace spital
             "SELECT * FROM alarm WHERE alarmID=@alarmID;";
 
         private static readonly string insertStatement =
-            "INSERT INTO alarm (staffID,monitorModuleID,startDateTime,endDateTime) " +
-            "VALUES (@staffID,@monitorModuleID,@startDateTime,@endDateTime);";
+            "INSERT INTO alarm (monitorModuleID,startDateTime,endDateTime) " +
+            "VALUES (@monitorModuleID,@startDateTime,@endDateTime);";
 
         private static readonly string updateStatement =
-            "UPDATE alarm SET staffID = @staffID, monitorModule = @monitorModule, " +
+            "UPDATE alarm SET monitorModuleID = @monitorModuleID, " +
             "startDateTime = @startDateTime, endDateTime = @endDateTime WHERE alarmID = @alarmID;";
-        
+
+        public Alarm() { }
+
         /// <summary>
         /// Constructor. Sets MonitorModule from parameter and defines Id and DateTimeStart 
         /// </summary>
@@ -49,6 +49,7 @@ namespace spital
         public void Stop()
         {
             EndDateTime = DateTime.Now;
+            this.Update();
         }
 
         /// <summary>
@@ -63,9 +64,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@monitorModule", MonitorModule));
+                command.Parameters.Add(new SqlParameter("@monitorModuleID", MonitorModule.Id));
                 command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
-                command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
+                command.Parameters.Add(new SqlParameter("@endDateTime", DBNull.Value));
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
@@ -87,7 +88,7 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = updateStatement;
-                command.Parameters.Add(new SqlParameter("@monitorModule", MonitorModule));
+                command.Parameters.Add(new SqlParameter("@monitorModuleID", MonitorModule.Id));
                 command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
                 command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
                 command.Parameters.Add(new SqlParameter("@alarmID", Id));
@@ -99,7 +100,6 @@ namespace spital
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
         }
-
         
         public string Name { get; set; }
         public string StaffID { get; set; }
@@ -134,7 +134,37 @@ namespace spital
             return alarmDataTable;
         }
 
+        public static List<Alarm> GetAllForMonitor(int monitorID)
+        {
+            List<Alarm> alarms = new List<Alarm>();
 
+            DataSet alarmDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable alarmDataTable = alarmDataSet.Tables[0];
+
+            foreach (DataRow alarmRow in alarmDataTable.Rows)
+            {
+
+                MonitorModule monitorModule = MonitorModule.GetOne(Int32.Parse(alarmRow["monitorModuleID"].ToString()));
+
+                if (monitorModule.Monitor.Id == monitorID)
+                {
+                    Alarm alarm = new Alarm();
+
+                    alarm.Id = Int32.Parse(alarmRow["alarmId"].ToString());
+                    alarm.MonitorModule = monitorModule;
+                    alarm.MonitorModule.Id = Int32.Parse(alarmRow["monitorModuleID"].ToString());
+                    alarm.StartDateTime = DateTime.Parse(alarmRow["startDateTime"].ToString());
+                    if (alarmRow["endDateTime"] != DBNull.Value)
+                    {
+                        alarm.EndDateTime = DateTime.Parse(alarmRow["endDateTime"].ToString());
+                    }
+                    alarms.Add(alarm);
+                }
+            }
+
+            return alarms;
+        }
+>>>>>>> master
 
     }
 }

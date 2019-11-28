@@ -122,7 +122,7 @@
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(800, 81);
+            this.panel_header.Size = new System.Drawing.Size(803, 81);
             this.panel_header.TabIndex = 0;
             // 
             // pictureBox_logo
@@ -140,9 +140,9 @@
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel_footer.Controls.Add(this.labelcopyright);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_footer.Location = new System.Drawing.Point(0, 443);
+            this.panel_footer.Location = new System.Drawing.Point(0, 439);
             this.panel_footer.Name = "panel_footer";
-            this.panel_footer.Size = new System.Drawing.Size(800, 39);
+            this.panel_footer.Size = new System.Drawing.Size(803, 39);
             this.panel_footer.TabIndex = 1;
             // 
             // labelcopyright
@@ -157,6 +157,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Controls.Add(this.bed8_panel);
             this.groupBox1.Controls.Add(this.bed4_panel);
             this.groupBox1.Controls.Add(this.bed3_panel);
@@ -180,14 +181,15 @@
             this.bed8_panel.Controls.Add(this.label_bed8msg);
             this.bed8_panel.Controls.Add(this.button_mutebed8);
             this.bed8_panel.Controls.Add(this.label_bed8);
+            this.bed8_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed8_panel.Location = new System.Drawing.Point(633, 171);
             this.bed8_panel.Name = "bed8_panel";
             this.bed8_panel.Size = new System.Drawing.Size(129, 118);
             this.bed8_panel.TabIndex = 1;
+            this.bed8_panel.Click += new System.EventHandler(this.bed8_panel_Click);
             // 
             // alertsignpicturebox_bed8
             // 
-            this.alertsignpicturebox_bed8.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed8.Image")));
             this.alertsignpicturebox_bed8.Location = new System.Drawing.Point(13, 22);
             this.alertsignpicturebox_bed8.Name = "alertsignpicturebox_bed8";
             this.alertsignpicturebox_bed8.Size = new System.Drawing.Size(37, 33);
@@ -197,7 +199,7 @@
             // 
             // pictureBox_bed8
             // 
-            this.pictureBox_bed8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox_bed8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed8.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed8.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed8.Name = "pictureBox_bed8";
@@ -209,14 +211,12 @@
             // label_bed8msg
             // 
             this.label_bed8msg.AutoSize = true;
-            this.label_bed8msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label_bed8msg.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bed8msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed8msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed8msg.Name = "label_bed8msg";
-            this.label_bed8msg.Size = new System.Drawing.Size(99, 15);
+            this.label_bed8msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed8msg.TabIndex = 12;
-            this.label_bed8msg.Text = "See how it looks.";
             // 
             // button_mutebed8
             // 
@@ -250,10 +250,12 @@
             this.bed4_panel.Controls.Add(this.label_bed4msg);
             this.bed4_panel.Controls.Add(this.button_mutebed4);
             this.bed4_panel.Controls.Add(this.label_bed4);
+            this.bed4_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed4_panel.Location = new System.Drawing.Point(633, 19);
             this.bed4_panel.Name = "bed4_panel";
             this.bed4_panel.Size = new System.Drawing.Size(129, 118);
             this.bed4_panel.TabIndex = 1;
+            this.bed4_panel.Click += new System.EventHandler(this.bed4_panel_Click);
             // 
             // alertsignpicturebox_bed4
             // 
@@ -266,7 +268,7 @@
             // 
             // pictureBox_bed4
             // 
-            this.pictureBox_bed4.BackColor = System.Drawing.Color.White;
+            this.pictureBox_bed4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed4.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed4.Location = new System.Drawing.Point(63, 15);
             this.pictureBox_bed4.Name = "pictureBox_bed4";
@@ -279,7 +281,7 @@
             // 
             this.label_bed4msg.AutoSize = true;
             this.label_bed4msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed4msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed4msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed4msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed4msg.Name = "label_bed4msg";
             this.label_bed4msg.Size = new System.Drawing.Size(0, 15);
@@ -317,10 +319,12 @@
             this.bed3_panel.Controls.Add(this.label_bed3msg);
             this.bed3_panel.Controls.Add(this.button_mutebed3);
             this.bed3_panel.Controls.Add(this.label_bed3);
+            this.bed3_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed3_panel.Location = new System.Drawing.Point(430, 19);
             this.bed3_panel.Name = "bed3_panel";
             this.bed3_panel.Size = new System.Drawing.Size(129, 118);
             this.bed3_panel.TabIndex = 1;
+            this.bed3_panel.Click += new System.EventHandler(this.bed3_panel_Click);
             // 
             // alertsignpicturebox_bed3
             // 
@@ -333,7 +337,7 @@
             // 
             // pictureBox_bed3
             // 
-            this.pictureBox_bed3.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed3.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed3.Location = new System.Drawing.Point(63, 15);
             this.pictureBox_bed3.Name = "pictureBox_bed3";
@@ -346,7 +350,7 @@
             // 
             this.label_bed3msg.AutoSize = true;
             this.label_bed3msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed3msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed3msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed3msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed3msg.Name = "label_bed3msg";
             this.label_bed3msg.Size = new System.Drawing.Size(0, 15);
@@ -384,10 +388,12 @@
             this.bed6_panel.Controls.Add(this.label_bed6msg);
             this.bed6_panel.Controls.Add(this.button_mutebed6);
             this.bed6_panel.Controls.Add(this.label_bed6);
+            this.bed6_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed6_panel.Location = new System.Drawing.Point(223, 171);
             this.bed6_panel.Name = "bed6_panel";
             this.bed6_panel.Size = new System.Drawing.Size(129, 118);
             this.bed6_panel.TabIndex = 1;
+            this.bed6_panel.Click += new System.EventHandler(this.bed6_panel_Click);
             // 
             // alertsignpicturebox_bed6
             // 
@@ -400,6 +406,7 @@
             // 
             // pictureBox_bed6
             // 
+            this.pictureBox_bed6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed6.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed6.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed6.Name = "pictureBox_bed6";
@@ -412,7 +419,7 @@
             // 
             this.label_bed6msg.AutoSize = true;
             this.label_bed6msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed6msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed6msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed6msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed6msg.Name = "label_bed6msg";
             this.label_bed6msg.Size = new System.Drawing.Size(0, 15);
@@ -450,10 +457,12 @@
             this.bed5_panel.Controls.Add(this.label_bed5msg);
             this.bed5_panel.Controls.Add(this.button_mutebed5);
             this.bed5_panel.Controls.Add(this.label_bed5);
+            this.bed5_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed5_panel.Location = new System.Drawing.Point(19, 171);
             this.bed5_panel.Name = "bed5_panel";
             this.bed5_panel.Size = new System.Drawing.Size(129, 118);
             this.bed5_panel.TabIndex = 1;
+            this.bed5_panel.Click += new System.EventHandler(this.bed5_panel_Click);
             // 
             // alertsignpicturebox_bed5
             // 
@@ -466,7 +475,7 @@
             // 
             // pictureBox_bed5
             // 
-            this.pictureBox_bed5.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed5.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed5.Location = new System.Drawing.Point(64, 14);
             this.pictureBox_bed5.Name = "pictureBox_bed5";
@@ -479,7 +488,7 @@
             // 
             this.label_bed5msg.AutoSize = true;
             this.label_bed5msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed5msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed5msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed5msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed5msg.Name = "label_bed5msg";
             this.label_bed5msg.Size = new System.Drawing.Size(0, 15);
@@ -517,10 +526,12 @@
             this.bed2_panel.Controls.Add(this.label_bed2msg);
             this.bed2_panel.Controls.Add(this.button_mutebed2);
             this.bed2_panel.Controls.Add(this.label_bed2);
+            this.bed2_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed2_panel.Location = new System.Drawing.Point(223, 19);
             this.bed2_panel.Name = "bed2_panel";
             this.bed2_panel.Size = new System.Drawing.Size(129, 118);
             this.bed2_panel.TabIndex = 1;
+            this.bed2_panel.Click += new System.EventHandler(this.bed2_panel_Click);
             // 
             // alertsignpicturebox_bed2
             // 
@@ -533,7 +544,7 @@
             // 
             // pictureBox_bed2
             // 
-            this.pictureBox_bed2.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox_bed2.BackColor = System.Drawing.Color.White;
             this.pictureBox_bed2.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed2.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed2.Name = "pictureBox_bed2";
@@ -547,7 +558,7 @@
             this.label_bed2msg.AutoSize = true;
             this.label_bed2msg.BackColor = System.Drawing.SystemColors.Control;
             this.label_bed2msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed2msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed2msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed2msg.Location = new System.Drawing.Point(17, 89);
             this.label_bed2msg.Name = "label_bed2msg";
             this.label_bed2msg.Size = new System.Drawing.Size(0, 15);
@@ -585,10 +596,12 @@
             this.bed7_panel.Controls.Add(this.label_bed7msg);
             this.bed7_panel.Controls.Add(this.button_mutebed7);
             this.bed7_panel.Controls.Add(this.label_bed7);
+            this.bed7_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed7_panel.Location = new System.Drawing.Point(430, 171);
             this.bed7_panel.Name = "bed7_panel";
             this.bed7_panel.Size = new System.Drawing.Size(129, 118);
             this.bed7_panel.TabIndex = 1;
+            this.bed7_panel.Click += new System.EventHandler(this.bed7_panel_Click);
             // 
             // alertsignpicturebox_bed7
             // 
@@ -601,6 +614,7 @@
             // 
             // pictureBox_bed7
             // 
+            this.pictureBox_bed7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed7.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed7.Location = new System.Drawing.Point(63, 14);
             this.pictureBox_bed7.Name = "pictureBox_bed7";
@@ -613,7 +627,7 @@
             // 
             this.label_bed7msg.AutoSize = true;
             this.label_bed7msg.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.label_bed7msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label_bed7msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed7msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed7msg.Name = "label_bed7msg";
             this.label_bed7msg.Size = new System.Drawing.Size(0, 15);
@@ -651,14 +665,15 @@
             this.bed1_panel.Controls.Add(this.button_mutebed1);
             this.bed1_panel.Controls.Add(this.label_bed1);
             this.bed1_panel.Controls.Add(this.pictureBox_bed1);
+            this.bed1_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bed1_panel.Location = new System.Drawing.Point(19, 19);
             this.bed1_panel.Name = "bed1_panel";
             this.bed1_panel.Size = new System.Drawing.Size(129, 118);
             this.bed1_panel.TabIndex = 0;
+            this.bed1_panel.Click += new System.EventHandler(this.bed1_panel_Click);
             // 
             // alertsignpicturebox_bed1
             // 
-            this.alertsignpicturebox_bed1.Image = ((System.Drawing.Image)(resources.GetObject("alertsignpicturebox_bed1.Image")));
             this.alertsignpicturebox_bed1.Location = new System.Drawing.Point(13, 22);
             this.alertsignpicturebox_bed1.Name = "alertsignpicturebox_bed1";
             this.alertsignpicturebox_bed1.Size = new System.Drawing.Size(37, 33);
@@ -669,14 +684,12 @@
             // label_bed1msg
             // 
             this.label_bed1msg.AutoSize = true;
-            this.label_bed1msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label_bed1msg.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bed1msg.ForeColor = System.Drawing.Color.Red;
             this.label_bed1msg.Location = new System.Drawing.Point(15, 89);
             this.label_bed1msg.Name = "label_bed1msg";
-            this.label_bed1msg.Size = new System.Drawing.Size(64, 15);
+            this.label_bed1msg.Size = new System.Drawing.Size(0, 15);
             this.label_bed1msg.TabIndex = 5;
-            this.label_bed1msg.Text = "Test Alert!";
             // 
             // button_mutebed1
             // 
@@ -704,7 +717,7 @@
             // 
             // pictureBox_bed1
             // 
-            this.pictureBox_bed1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox_bed1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_bed1.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed1.Location = new System.Drawing.Point(63, 13);
             this.pictureBox_bed1.Name = "pictureBox_bed1";
@@ -757,7 +770,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.ClientSize = new System.Drawing.Size(803, 478);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.button_endshift);
             this.Controls.Add(this.button_startshift);

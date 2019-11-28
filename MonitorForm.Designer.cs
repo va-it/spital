@@ -57,10 +57,8 @@
             this.panelMonitorNumberContainer = new System.Windows.Forms.Panel();
             this.panelMonitorNumber = new System.Windows.Forms.Panel();
             this.monitorNumber = new System.Windows.Forms.Label();
-            this.panelAlertMessageContainer = new System.Windows.Forms.Panel();
-            this.panelAlertMessage = new System.Windows.Forms.Panel();
-            this.alertMessage = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.AlarmTextBox = new System.Windows.Forms.TextBox();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.copyright = new System.Windows.Forms.Label();
@@ -80,8 +78,6 @@
             this.limitsTable.SuspendLayout();
             this.panelMonitorNumberContainer.SuspendLayout();
             this.panelMonitorNumber.SuspendLayout();
-            this.panelAlertMessageContainer.SuspendLayout();
-            this.panelAlertMessage.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelFooter.SuspendLayout();
@@ -91,6 +87,7 @@
             // 
             // groupBoxModule
             // 
+            this.groupBoxModule.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBoxModule.Controls.Add(this.readingsTable);
             this.groupBoxModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBoxModule.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +129,7 @@
             // moduleName4
             // 
             this.moduleName4.AutoSize = true;
+            this.moduleName4.BackColor = System.Drawing.SystemColors.Window;
             this.moduleName4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleName4.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.moduleName4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -145,6 +143,7 @@
             // moduleName3
             // 
             this.moduleName3.AutoSize = true;
+            this.moduleName3.BackColor = System.Drawing.SystemColors.Window;
             this.moduleName3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleName3.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.moduleName3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -158,6 +157,7 @@
             // moduleName2
             // 
             this.moduleName2.AutoSize = true;
+            this.moduleName2.BackColor = System.Drawing.SystemColors.Window;
             this.moduleName2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleName2.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.moduleName2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -170,6 +170,7 @@
             // 
             // moduleIcon1
             // 
+            this.moduleIcon1.BackColor = System.Drawing.SystemColors.Window;
             this.moduleIcon1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon1.Location = new System.Drawing.Point(5, 5);
             this.moduleIcon1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -181,6 +182,7 @@
             // 
             // moduleIcon2
             // 
+            this.moduleIcon2.BackColor = System.Drawing.SystemColors.Window;
             this.moduleIcon2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon2.Location = new System.Drawing.Point(5, 134);
             this.moduleIcon2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -192,6 +194,7 @@
             // 
             // moduleIcon3
             // 
+            this.moduleIcon3.BackColor = System.Drawing.SystemColors.Window;
             this.moduleIcon3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon3.Location = new System.Drawing.Point(5, 263);
             this.moduleIcon3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -203,6 +206,7 @@
             // 
             // moduleIcon4
             // 
+            this.moduleIcon4.BackColor = System.Drawing.SystemColors.Window;
             this.moduleIcon4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleIcon4.Location = new System.Drawing.Point(5, 392);
             this.moduleIcon4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -215,6 +219,7 @@
             // moduleName1
             // 
             this.moduleName1.AutoSize = true;
+            this.moduleName1.BackColor = System.Drawing.SystemColors.Window;
             this.moduleName1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleName1.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.moduleName1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -228,6 +233,7 @@
             // groupBoxLimits
             // 
             this.groupBoxLimits.AccessibleDescription = "";
+            this.groupBoxLimits.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBoxLimits.Controls.Add(this.label_MaximumLimit);
             this.groupBoxLimits.Controls.Add(this.label_MinimumLimit);
             this.groupBoxLimits.Controls.Add(this.limitsTable);
@@ -278,8 +284,8 @@
             this.limitsTable.Controls.Add(this.label_Module4Min, 0, 3);
             this.limitsTable.Controls.Add(this.label_Module4Max, 1, 3);
             this.limitsTable.Controls.Add(this.label_Module1Min, 0, 0);
-            this.limitsTable.Location = new System.Drawing.Point(28, 79);
-            this.limitsTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.limitsTable.Location = new System.Drawing.Point(16, 44);
+            this.limitsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.limitsTable.Name = "limitsTable";
             this.limitsTable.RowCount = 4;
             this.limitsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -292,6 +298,7 @@
             // label_Module1Max
             // 
             this.label_Module1Max.AutoSize = true;
+            this.label_Module1Max.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module1Max.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module1Max.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module1Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -305,6 +312,7 @@
             // label_Module2Min
             // 
             this.label_Module2Min.AutoSize = true;
+            this.label_Module2Min.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module2Min.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module2Min.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module2Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -318,6 +326,7 @@
             // label_Module2Max
             // 
             this.label_Module2Max.AutoSize = true;
+            this.label_Module2Max.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module2Max.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module2Max.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module2Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -331,6 +340,7 @@
             // label_Module3Min
             // 
             this.label_Module3Min.AutoSize = true;
+            this.label_Module3Min.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module3Min.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module3Min.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module3Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -344,6 +354,7 @@
             // label_Module3Max
             // 
             this.label_Module3Max.AutoSize = true;
+            this.label_Module3Max.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module3Max.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module3Max.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module3Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -357,6 +368,7 @@
             // label_Module4Min
             // 
             this.label_Module4Min.AutoSize = true;
+            this.label_Module4Min.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module4Min.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module4Min.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module4Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -370,6 +382,7 @@
             // label_Module4Max
             // 
             this.label_Module4Max.AutoSize = true;
+            this.label_Module4Max.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module4Max.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module4Max.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module4Max.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -383,6 +396,7 @@
             // label_Module1Min
             // 
             this.label_Module1Min.AutoSize = true;
+            this.label_Module1Min.BackColor = System.Drawing.SystemColors.Window;
             this.label_Module1Min.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Module1Min.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label_Module1Min.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -443,11 +457,11 @@
             this.panelMonitorNumberContainer.BackColor = System.Drawing.Color.LightGray;
             this.panelMonitorNumberContainer.Controls.Add(this.panelMonitorNumber);
             this.panelMonitorNumberContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelMonitorNumberContainer.Location = new System.Drawing.Point(410, 50);
-            this.panelMonitorNumberContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMonitorNumberContainer.Location = new System.Drawing.Point(191, 26);
+            this.panelMonitorNumberContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMonitorNumberContainer.Name = "panelMonitorNumberContainer";
-            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelMonitorNumberContainer.Size = new System.Drawing.Size(96, 71);
+            this.panelMonitorNumberContainer.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelMonitorNumberContainer.Size = new System.Drawing.Size(30, 37);
             this.panelMonitorNumberContainer.TabIndex = 7;
             // 
             // panelMonitorNumber
@@ -458,7 +472,7 @@
             this.panelMonitorNumber.Location = new System.Drawing.Point(2, 2);
             this.panelMonitorNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMonitorNumber.Name = "panelMonitorNumber";
-            this.panelMonitorNumber.Size = new System.Drawing.Size(92, 67);
+            this.panelMonitorNumber.Size = new System.Drawing.Size(28, 35);
             this.panelMonitorNumber.TabIndex = 0;
             // 
             // monitorNumber
@@ -471,53 +485,33 @@
             this.monitorNumber.Size = new System.Drawing.Size(0, 63);
             this.monitorNumber.TabIndex = 0;
             // 
-            // panelAlertMessageContainer
-            // 
-            this.panelAlertMessageContainer.BackColor = System.Drawing.Color.LightGray;
-            this.panelAlertMessageContainer.Controls.Add(this.panelAlertMessage);
-            this.panelAlertMessageContainer.ForeColor = System.Drawing.Color.Red;
-            this.panelAlertMessageContainer.Location = new System.Drawing.Point(514, 50);
-            this.panelAlertMessageContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelAlertMessageContainer.Name = "panelAlertMessageContainer";
-            this.panelAlertMessageContainer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelAlertMessageContainer.Size = new System.Drawing.Size(922, 71);
-            this.panelAlertMessageContainer.TabIndex = 8;
-            // 
-            // panelAlertMessage
-            // 
-            this.panelAlertMessage.BackColor = System.Drawing.Color.White;
-            this.panelAlertMessage.Controls.Add(this.alertMessage);
-            this.panelAlertMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAlertMessage.Location = new System.Drawing.Point(2, 2);
-            this.panelAlertMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelAlertMessage.Name = "panelAlertMessage";
-            this.panelAlertMessage.Size = new System.Drawing.Size(918, 67);
-            this.panelAlertMessage.TabIndex = 2;
-            // 
-            // alertMessage
-            // 
-            this.alertMessage.AutoSize = true;
-            this.alertMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.alertMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alertMessage.Location = new System.Drawing.Point(0, 0);
-            this.alertMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.alertMessage.Name = "alertMessage";
-            this.alertMessage.Size = new System.Drawing.Size(0, 63);
-            this.alertMessage.TabIndex = 1;
-            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panelHeader.Controls.Add(this.AlarmTextBox);
             this.panelHeader.Controls.Add(this.logo);
-            this.panelHeader.Controls.Add(this.panelAlertMessageContainer);
             this.panelHeader.Controls.Add(this.panelMonitorNumberContainer);
             this.panelHeader.Controls.Add(this.alarmButton);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1766, 165);
+            this.panelHeader.Size = new System.Drawing.Size(880, 86);
             this.panelHeader.TabIndex = 9;
+            // 
+            // AlarmTextBox
+            // 
+            this.AlarmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlarmTextBox.ForeColor = System.Drawing.Color.Red;
+            this.AlarmTextBox.Location = new System.Drawing.Point(234, 26);
+            this.AlarmTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AlarmTextBox.Multiline = true;
+            this.AlarmTextBox.Name = "AlarmTextBox";
+            this.AlarmTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.AlarmTextBox.Size = new System.Drawing.Size(502, 38);
+            this.AlarmTextBox.TabIndex = 8;
+            this.AlarmTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.AlarmTextBox.WordWrap = false;
             // 
             // logo
             // 
@@ -537,10 +531,10 @@
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panelFooter.Controls.Add(this.copyright);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 922);
-            this.panelFooter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFooter.Location = new System.Drawing.Point(0, 476);
+            this.panelFooter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1766, 63);
+            this.panelFooter.Size = new System.Drawing.Size(880, 33);
             this.panelFooter.TabIndex = 10;
             // 
             // copyright
@@ -558,6 +552,7 @@
             // groupBoxReading
             // 
             this.groupBoxReading.AccessibleDescription = "";
+            this.groupBoxReading.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBoxReading.Controls.Add(this.tableReading);
             this.groupBoxReading.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxReading.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -575,13 +570,13 @@
             this.tableReading.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableReading.ColumnCount = 1;
             this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableReading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableReading.Controls.Add(this.label1reading, 0, 0);
             this.tableReading.Controls.Add(this.label2reading, 0, 1);
             this.tableReading.Controls.Add(this.label3reading, 0, 2);
             this.tableReading.Controls.Add(this.label4reading, 0, 3);
-            this.tableReading.Location = new System.Drawing.Point(8, 77);
-            this.tableReading.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableReading.Location = new System.Drawing.Point(4, 44);
+            this.tableReading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableReading.Name = "tableReading";
             this.tableReading.RowCount = 4;
             this.tableReading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -594,6 +589,7 @@
             // label1reading
             // 
             this.label1reading.AutoSize = true;
+            this.label1reading.BackColor = System.Drawing.SystemColors.Window;
             this.label1reading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label1reading.Location = new System.Drawing.Point(5, 1);
@@ -606,6 +602,7 @@
             // label2reading
             // 
             this.label2reading.AutoSize = true;
+            this.label2reading.BackColor = System.Drawing.SystemColors.Window;
             this.label2reading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label2reading.Location = new System.Drawing.Point(5, 130);
@@ -618,6 +615,7 @@
             // label3reading
             // 
             this.label3reading.AutoSize = true;
+            this.label3reading.BackColor = System.Drawing.SystemColors.Window;
             this.label3reading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label3reading.Location = new System.Drawing.Point(5, 259);
@@ -630,12 +628,13 @@
             // label4reading
             // 
             this.label4reading.AutoSize = true;
+            this.label4reading.BackColor = System.Drawing.SystemColors.Window;
             this.label4reading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4reading.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.label4reading.Location = new System.Drawing.Point(5, 388);
             this.label4reading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4reading.Name = "label4reading";
-            this.label4reading.Size = new System.Drawing.Size(274, 130);
+            this.label4reading.Size = new System.Drawing.Size(136, 67);
             this.label4reading.TabIndex = 3;
             this.label4reading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -643,8 +642,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1766, 985);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(880, 509);
             this.Controls.Add(this.groupBoxReading);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
@@ -674,10 +673,8 @@
             this.panelMonitorNumberContainer.ResumeLayout(false);
             this.panelMonitorNumber.ResumeLayout(false);
             this.panelMonitorNumber.PerformLayout();
-            this.panelAlertMessageContainer.ResumeLayout(false);
-            this.panelAlertMessage.ResumeLayout(false);
-            this.panelAlertMessage.PerformLayout();
             this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
@@ -702,10 +699,7 @@
         private System.Windows.Forms.PictureBox moduleIcon4;
         private System.Windows.Forms.Button modulesButton;
         private System.Windows.Forms.Panel panelMonitorNumberContainer;
-        private System.Windows.Forms.Panel panelAlertMessageContainer;
         private System.Windows.Forms.Label monitorNumber;
-        private System.Windows.Forms.Label alertMessage;
-        private System.Windows.Forms.Panel panelAlertMessage;
         private System.Windows.Forms.Panel panelMonitorNumber;
         private System.Windows.Forms.Label moduleName4;
         private System.Windows.Forms.Label moduleName3;
@@ -731,6 +725,7 @@
         private System.Windows.Forms.Label label2reading;
         private System.Windows.Forms.Label label3reading;
         private System.Windows.Forms.Label label4reading;
+        private System.Windows.Forms.TextBox AlarmTextBox;
     }
 }
 

@@ -107,6 +107,7 @@
             // 
             // groupBox_Modules
             // 
+            this.groupBox_Modules.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox_Modules.Controls.Add(this.checkedListBox_Modules);
             this.groupBox_Modules.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Modules.Location = new System.Drawing.Point(23, 72);
@@ -128,14 +129,14 @@
             this.checkedListBox_Modules.Location = new System.Drawing.Point(12, 30);
             this.checkedListBox_Modules.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_Modules.Name = "checkedListBox_Modules";
-            this.checkedListBox_Modules.Size = new System.Drawing.Size(433, 144);
+            this.checkedListBox_Modules.Size = new System.Drawing.Size(433, 132);
             this.checkedListBox_Modules.TabIndex = 0;
             // 
             // ModulesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(501, 366);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);

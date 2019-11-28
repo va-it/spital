@@ -98,7 +98,7 @@
             // 
             // ModulesBox
             // 
-            this.ModulesBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.ModulesBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ModulesBox.Controls.Add(this.panelModule4);
             this.ModulesBox.Controls.Add(this.panelModule3);
             this.ModulesBox.Controls.Add(this.panelModule2);
@@ -204,7 +204,7 @@
             // 
             // minBox
             // 
-            this.minBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.minBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.minBox.Controls.Add(this.minLimit4);
             this.minBox.Controls.Add(this.minLimit3);
             this.minBox.Controls.Add(this.minLimit2);
@@ -305,7 +305,7 @@
             // 
             // maxBox
             // 
-            this.maxBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.maxBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.maxBox.Controls.Add(this.maxLimit4);
             this.maxBox.Controls.Add(this.maxLimit3);
             this.maxBox.Controls.Add(this.maxLimit1);
@@ -495,7 +495,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(775, 438);
             this.Controls.Add(this.ModuleIcon4);
             this.Controls.Add(this.ModuleIcon3);

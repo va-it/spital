@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public class MonitorModule
+    class MonitorModule
     {
         // Auto-implemented properties for trivial get and set
         public int Id { get; set; }
@@ -55,7 +55,6 @@ namespace spital
         {
             Alarm alarm = new Alarm(this);
             alarm.Save();
-            SendAlarmToCentralDisplay(alarm);
         }
 
         /// <summary>
@@ -103,12 +102,6 @@ namespace spital
             { 
                 TriggerAlarm();
             }
-        }
-
-        public void SendAlarmToCentralDisplay(Alarm alarm)
-        {
-            // Implement
-            CentralDisplay.Instance.DisplayAlarm(alarm);
         }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace spital
         private DateTime DateTimeEnd { get; set; }
 
         //Generic SELECT and INSERT Statement for module table 
-        private static readonly string selectStatement = 
+        private static readonly string selectStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID;";
 
         private static readonly string selectWhereStatement =
@@ -63,7 +63,7 @@ namespace spital
         /// Returns a DataTable object of all sessions
         /// </summary>
         /// <returns></returns>
-        public DataTable GetAll()
+        public static DataTable GetAll()
         {
             DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
             DataTable sessionDataTable = sessionDataSet.Tables[0];
@@ -145,5 +145,8 @@ namespace spital
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
         }
+
+       
+
     }
 }

@@ -35,6 +35,11 @@ namespace spital
             "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID;";
 
         /// <summary>
+        /// Constructor. Does not set any value.
+        /// </summary>
+        public Session() { }
+
+        /// <summary>
         /// Constructor. Sets Id value;
         /// </summary>
         public Session(int id)
@@ -63,7 +68,7 @@ namespace spital
         /// Returns a DataTable object of all sessions
         /// </summary>
         /// <returns></returns>
-        public DataTable GetAll()
+        public static DataTable GetAll()
         {
             DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
             DataTable sessionDataTable = sessionDataSet.Tables[0];
@@ -144,6 +149,29 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public static Session GetLatestActiveForStaff(int staffId)
+        {
+            DataTable sessionDataTable = GetAll();
+
+            Session session = new Session();
+
+            foreach (DataRow sessionDataRow in sessionDataTable.Rows)
+            {
+                if (Int32.Parse(sessionDataRow["staffID"].ToString()) == staffId)
+                {
+                    if (sessionDataRow["dateTimeEnd"] == DBNull.Value)
+                    {
+                        // this is the latest session for this user which hasn't ended yet
+                        session.Id = Int32.Parse(sessionDataRow["sessionID"].ToString());
+                        session.DateTimeStart = DateTime.Parse(sessionDataRow["dateTimeStart"].ToString());
+                        session.StaffId = Int32.Parse(sessionDataRow["staffID"].ToString());
+                    }
+                }
+            }
+
+            return session;
         }
     }
 }

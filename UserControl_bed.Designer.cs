@@ -89,9 +89,8 @@
             this.label_alertmsg.Location = new System.Drawing.Point(4, 131);
             this.label_alertmsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_alertmsg.Name = "label_alertmsg";
-            this.label_alertmsg.Size = new System.Drawing.Size(51, 20);
+            this.label_alertmsg.Size = new System.Drawing.Size(0, 20);
             this.label_alertmsg.TabIndex = 4;
-            this.label_alertmsg.Text = "label1";
             // 
             // hiddenLabel_MonitorID
             // 
@@ -100,6 +99,7 @@
             this.hiddenLabel_MonitorID.Name = "hiddenLabel_MonitorID";
             this.hiddenLabel_MonitorID.Size = new System.Drawing.Size(0, 20);
             this.hiddenLabel_MonitorID.TabIndex = 5;
+            this.hiddenLabel_MonitorID.Visible = false;
             // 
             // UserControl_bed
             // 

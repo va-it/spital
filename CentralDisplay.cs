@@ -34,12 +34,10 @@ namespace spital
             }
         }
 
-
-
         public CentralDisplay()
         {
             InitializeComponent();
-            BedLabel();
+            BedNumberLabel();
             InitializeMonitorForms();
 
         }
@@ -56,7 +54,7 @@ namespace spital
             beds.Add(userControl_bed8);
         }
 
-        public void BedLabel()
+        public void BedNumberLabel()
         {
             userControl_bed1.BedNumber = "Bed 1";
             userControl_bed2.BedNumber = "Bed 2";
@@ -110,50 +108,50 @@ namespace spital
             //ideally, if we use a Usercontrol we can loop over all of them until
             // we get to the one for Monitor with monitorId
 
-            switch (monitorId)
-            {
-                case 1:
-                    alertsignpicturebox_bed1.Image = Resources.icon_Alert;
-                    pictureBox_bed1.BackColor = Color.Yellow;
-                    label_bed1msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 2:
-                    alertsignpicturebox_bed2.Image = Resources.icon_Alert;
-                    pictureBox_bed2.BackColor = Color.Yellow;
-                    label_bed2msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 3:
-                    alertsignpicturebox_bed3.Image = Resources.icon_Alert;
-                    pictureBox_bed3.BackColor = Color.Yellow;
-                    label_bed3msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 4:
-                    alertsignpicturebox_bed4.Image = Resources.icon_Alert;
-                    pictureBox_bed4.BackColor = Color.Yellow;
-                    label_bed4msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 5:
-                    alertsignpicturebox_bed5.Image = Resources.icon_Alert;
-                    pictureBox_bed5.BackColor = Color.Yellow;
-                    label_bed5msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 6:
-                    alertsignpicturebox_bed6.Image = Resources.icon_Alert;
-                    pictureBox_bed6.BackColor = Color.Yellow;
-                    label_bed6msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 7:
-                    alertsignpicturebox_bed7.Image = Resources.icon_Alert;
-                    pictureBox_bed7.BackColor = Color.Yellow;
-                    label_bed7msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
-                case 8:
-                    alertsignpicturebox_bed8.Image = Resources.icon_Alert;
-                    pictureBox_bed8.BackColor = Color.Yellow;
-                    label_bed8msg.Text = alarm.MonitorModule.Module.Name;
-                    break;
+            //switch (monitorId)
+            //{
+            //    case 1:
+            //        alertsignpicturebox_bed1.Image = Resources.icon_Alert;
+            //        pictureBox_bed1.BackColor = Color.Yellow;
+            //        label_bed1msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 2:
+            //        alertsignpicturebox_bed2.Image = Resources.icon_Alert;
+            //        pictureBox_bed2.BackColor = Color.Yellow;
+            //        label_bed2msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 3:
+            //        alertsignpicturebox_bed3.Image = Resources.icon_Alert;
+            //        pictureBox_bed3.BackColor = Color.Yellow;
+            //        label_bed3msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 4:
+            //        alertsignpicturebox_bed4.Image = Resources.icon_Alert;
+            //        pictureBox_bed4.BackColor = Color.Yellow;
+            //        label_bed4msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 5:
+            //        alertsignpicturebox_bed5.Image = Resources.icon_Alert;
+            //        pictureBox_bed5.BackColor = Color.Yellow;
+            //        label_bed5msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 6:
+            //        alertsignpicturebox_bed6.Image = Resources.icon_Alert;
+            //        pictureBox_bed6.BackColor = Color.Yellow;
+            //        label_bed6msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 7:
+            //        alertsignpicturebox_bed7.Image = Resources.icon_Alert;
+            //        pictureBox_bed7.BackColor = Color.Yellow;
+            //        label_bed7msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
+            //    case 8:
+            //        alertsignpicturebox_bed8.Image = Resources.icon_Alert;
+            //        pictureBox_bed8.BackColor = Color.Yellow;
+            //        label_bed8msg.Text = alarm.MonitorModule.Module.Name;
+            //        break;
 
-            }
+            //}
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -162,83 +160,86 @@ namespace spital
             registrationForm.Show();
         }
 
-        private void bed1_panel_Click(object sender, EventArgs e)
+        public void HideAlarms(MonitorForm monitor)
         {
-            monitorForms.ElementAt(0).Show();
+            // remove picture and text from monitorUserControl based on monitor.Id
+        }
+        
+
+        private void userControl_bed1_Click(object sender, EventArgs e)
+        {
+            monitorForms.ElementAt(0).ShowDialog();
             if (monitorForms.ElementAt(0).Active)
             {
-                pictureBox_bed1.BackColor = Color.Chartreuse;
+                userControl_bed1.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
         }
 
-        private void bed2_panel_Click(object sender, EventArgs e)
+        private void userControl_bed2_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(1).ShowDialog();
             if (monitorForms.ElementAt(1).Active)
             {
-                // we need to check if there active alarms.
-                // if yes, then don't set the colour here
-                pictureBox_bed2.BackColor = Color.Chartreuse;
+                userControl_bed2.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
         }
 
-        private void bed3_panel_Click(object sender, EventArgs e)
+        private void userControl_bed3_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(2).ShowDialog();
             if (monitorForms.ElementAt(2).Active)
             {
-                pictureBox_bed3.BackColor = Color.Chartreuse;
+                userControl_bed3.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
         }
 
-        private void bed4_panel_Click(object sender, EventArgs e)
+        private void userControl_bed4_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(3).ShowDialog();
             if (monitorForms.ElementAt(3).Active)
             {
-                pictureBox_bed4.BackColor = Color.Chartreuse;
+                userControl_bed4.pictureBox_bed.BackColor = Color.Chartreuse;
             }
         }
 
-        private void bed5_panel_Click(object sender, EventArgs e)
+        private void userControl_bed5_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(4).ShowDialog();
             if (monitorForms.ElementAt(4).Active)
             {
-                pictureBox_bed5.BackColor = Color.Chartreuse;
+                userControl_bed5.pictureBox_bed.BackColor = Color.Chartreuse;
             }
         }
 
-        private void bed6_panel_Click(object sender, EventArgs e)
+        private void userControl_bed6_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(5).ShowDialog();
             if (monitorForms.ElementAt(5).Active)
             {
-                pictureBox_bed6.BackColor = Color.Chartreuse;
+                userControl_bed6.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
         }
 
-        private void bed7_panel_Click(object sender, EventArgs e)
+        private void userControl_bed7_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(6).ShowDialog();
             if (monitorForms.ElementAt(6).Active)
             {
-                pictureBox_bed7.BackColor = Color.Chartreuse;
+                userControl_bed7.pictureBox_bed.BackColor = Color.Chartreuse;
             }
         }
 
-        private void bed8_panel_Click(object sender, EventArgs e)
+        private void userControl_bed8_Click(object sender, EventArgs e)
         {
             monitorForms.ElementAt(7).ShowDialog();
             if (monitorForms.ElementAt(7).Active)
             {
-                pictureBox_bed8.BackColor = Color.Chartreuse;
+                userControl_bed8.pictureBox_bed.BackColor = Color.Chartreuse;
             }
-        }
-
-        public void HideAlarms(MonitorForm monitor)
-        {
-            // remove picture and text from monitorUserControl based on monitor.Id
         }
     }
 }

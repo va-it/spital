@@ -18,6 +18,7 @@ namespace spital
         {
             InitializeComponent();
         }
+        Monitor monitor = new Monitor();
 
         public string BedNumber
         {
@@ -30,6 +31,12 @@ namespace spital
             get { return label_alertmsg.Text; }
             set { label_alertmsg.Text = value; }
         } 
+        
+        public string MonitorID
+        {
+            get { return hiddenLabel_MonitorID.Text; }
+            set { hiddenLabel_MonitorID.Text = Convert.ToString(monitor.Id); }
+        }
 
     }
 }

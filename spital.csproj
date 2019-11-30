@@ -77,6 +77,12 @@
     <Compile Include="LimitsForm.Designer.cs">
       <DependentUpon>LimitsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementForm.Designer.cs">
+      <DependentUpon>ManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LimitsForm.resx">
       <DependentUpon>LimitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementForm.resx">
+      <DependentUpon>ManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModulesForm.resx">
       <DependentUpon>ModulesForm.cs</DependentUpon>

@@ -18,8 +18,10 @@ namespace spital
         public DateTime StartDateTime { get; set; }
         public Nullable<DateTime> EndDateTime { get; set; }
 
-        private static readonly string selectStatement = 
+        private static readonly string selectStatement =
             "SELECT * FROM alarm INNER JOIN monitorModule ON monitorModule.monitorModuleID = alarm.monitorModuleID;";
+        private static readonly string selectWhereStatement =
+            "SELECT * FROM alarm WHERE alarmID=@alarmID;";
 
         private static readonly string insertStatement =
             "INSERT INTO alarm (monitorModuleID,startDateTime,endDateTime) " +
@@ -99,6 +101,39 @@ namespace spital
             }
         }
 
+        public string Name { get; set; }
+        public string StaffID { get; set; }
+        public string MonitorModuleID { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
+
+        public Alarm(int id)
+        {
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@alarmID", id));
+
+            DataSet alarmDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
+
+            DataTable alarmDataTable = alarmDataSet.Tables[0];
+
+            if (alarmDataTable.Rows.Count == 1)
+            {
+                DataRow row = alarmDataTable.Rows[0];
+
+                Id = Int32.Parse(row["alarmID"].ToString());
+                StaffID = row["staffID"].ToString();
+                MonitorModuleID = row["monitorModuleID"].ToString();
+                Start = DateTime.Parse(row["startDateTime"].ToString());
+                End = DateTime.Parse(row["endDateTme"].ToString());
+            }
+        }
+        public static DataTable GetAll()
+        {
+            DataSet alarmDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable alarmDataTable = alarmDataSet.Tables[0];
+            return alarmDataTable;
+        }
+
         public static List<Alarm> GetAllForMonitor(int monitorID)
         {
             List<Alarm> alarms = new List<Alarm>();
@@ -129,6 +164,7 @@ namespace spital
 
             return alarms;
         }
+
 
     }
 }

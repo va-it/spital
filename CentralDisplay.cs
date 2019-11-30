@@ -37,11 +37,12 @@ namespace spital
         public CentralDisplay()
         {
             InitializeComponent();
-            GenerateConstrolList();
+            GenerateControlList();
             BedNumberLabel();
         }
 
-        public void GenerateConstrolList()
+        //Adding usercontrol to list of beds
+        public void GenerateControlList()
         {
             beds.Add(userControl_bed1);
             beds.Add(userControl_bed2);
@@ -53,6 +54,7 @@ namespace spital
             beds.Add(userControl_bed8);
         }
 
+        //Assign value for bed number
         public void BedNumberLabel()
         {
             userControl_bed1.BedNumber = "Bed 1";
@@ -65,6 +67,7 @@ namespace spital
             userControl_bed8.BedNumber = "Bed 8";
         }
 
+        //checks which monitor id triggered alarm and compares it with monitor id on the usercontrol to display alerts
         public void DisplayAlarm(Alarm alarm)
         {
             int monitorId = alarm.MonitorModule.Monitor.Id;
@@ -75,58 +78,9 @@ namespace spital
                 {
                     userControl_Bed.AlertPictureBox = Resources.icon_Alert;
                     userControl_Bed.pictureBox_bed.BackColor = Color.Yellow;
-                    userControl_Bed.Alert = alarm.MonitorModule.Module.Name;
-                }
-                
+                    userControl_Bed.Alert = alarm.MonitorModule.Module.Name + " out of range";
+                } 
             }
-
-            //ideally, if we use a Usercontrol we can loop over all of them until
-            // we get to the one for Monitor with monitorId
-
-            //switch (monitorId)
-            //{
-            //    case 1:
-            //        alertsignpicturebox_bed1.Image = Resources.icon_Alert;
-            //        pictureBox_bed1.BackColor = Color.Yellow;
-            //        label_bed1msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 2:
-            //        alertsignpicturebox_bed2.Image = Resources.icon_Alert;
-            //        pictureBox_bed2.BackColor = Color.Yellow;
-            //        label_bed2msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 3:
-            //        alertsignpicturebox_bed3.Image = Resources.icon_Alert;
-            //        pictureBox_bed3.BackColor = Color.Yellow;
-            //        label_bed3msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 4:
-            //        alertsignpicturebox_bed4.Image = Resources.icon_Alert;
-            //        pictureBox_bed4.BackColor = Color.Yellow;
-            //        label_bed4msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 5:
-            //        alertsignpicturebox_bed5.Image = Resources.icon_Alert;
-            //        pictureBox_bed5.BackColor = Color.Yellow;
-            //        label_bed5msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 6:
-            //        alertsignpicturebox_bed6.Image = Resources.icon_Alert;
-            //        pictureBox_bed6.BackColor = Color.Yellow;
-            //        label_bed6msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 7:
-            //        alertsignpicturebox_bed7.Image = Resources.icon_Alert;
-            //        pictureBox_bed7.BackColor = Color.Yellow;
-            //        label_bed7msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-            //    case 8:
-            //        alertsignpicturebox_bed8.Image = Resources.icon_Alert;
-            //        pictureBox_bed8.BackColor = Color.Yellow;
-            //        label_bed8msg.Text = alarm.MonitorModule.Module.Name;
-            //        break;
-
-            //}
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -140,7 +94,7 @@ namespace spital
             // remove picture and text from monitorUserControl based on monitor.Id
         }
         
-
+        
         private void userControl_bed1_Click(object sender, EventArgs e)
         {
             //Initialise monitor

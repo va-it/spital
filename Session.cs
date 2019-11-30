@@ -34,6 +34,12 @@ namespace spital
             "UPDATE session SET staffID = @staffID, dateTimeStart = @dateTimeStart, " +
             "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID;";
 
+        //SELECT statement for session details
+        private static readonly string selectSessionDetails =
+            "SELECT session.staffID AS 'Staff ID', staff.username AS 'Username', session.startDateTime AS 'Start Date Time',  session.endDateTime AS 'End Date Time'" +
+            "FROM session " +
+            "INNER JOIN staff ON session.staffID = staff.staffID";
+
         /// <summary>
         /// Constructor. Sets Id value;
         /// </summary>
@@ -65,9 +71,8 @@ namespace spital
         /// <returns></returns>
         public static DataTable GetAll()
         {
-            DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectSessionDetails);
             DataTable sessionDataTable = sessionDataSet.Tables[0];
-
             return sessionDataTable;
         }
 

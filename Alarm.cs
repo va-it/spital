@@ -23,6 +23,12 @@ namespace spital
         private static readonly string selectWhereStatement =
             "SELECT * FROM alarm WHERE alarmID=@alarmID;";
 
+        private static readonly string selectAlarm =
+            "SELECT alarm.alarmID AS 'Alarm ID', monitorModule.monitorID AS 'Monitor ID', module.name AS 'Module Name' , alarm.startDateTime AS 'Alarm Start Time', alarm.endDateTime AS 'Alarm End Time'" +
+            "FROM alarm " +
+            "LEFT JOIN monitorModule ON monitorModule.monitorModuleID = alarm.monitorModuleID " +
+            "LEFT JOIN module ON monitorModule.moduleID = module.moduleID";
+
         private static readonly string insertStatement =
             "INSERT INTO alarm (monitorModuleID,startDateTime,endDateTime) " +
             "VALUES (@monitorModuleID,@startDateTime,@endDateTime);";
@@ -129,10 +135,11 @@ namespace spital
         }
         public static DataTable GetAll()
         {
-            DataSet alarmDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataSet alarmDataSet = DatabaseConnection.Instance.GetDataSet(selectAlarm);
             DataTable alarmDataTable = alarmDataSet.Tables[0];
             return alarmDataTable;
         }
+
 
         public static List<Alarm> GetAllForMonitor(int monitorID)
         {

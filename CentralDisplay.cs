@@ -69,15 +69,15 @@ namespace spital
         {
             int monitorId = alarm.MonitorModule.Monitor.Id;
 
-            //int index = 0;
-
             foreach (UserControl_bed userControl_Bed in beds)
             {
                 if (monitorId == alarm.MonitorModule.Monitor.Id && int.Parse(userControl_Bed.hiddenLabel_MonitorID.Text) == monitorId )
                 {
                     userControl_Bed.AlertPictureBox = Resources.icon_Alert;
+                    userControl_Bed.pictureBox_bed.BackColor = Color.Yellow;
+                    userControl_Bed.Alert = alarm.MonitorModule.Module.Name;
                 }
-                //index++;
+                
             }
 
             //ideally, if we use a Usercontrol we can loop over all of them until

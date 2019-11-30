@@ -82,6 +82,8 @@
             // label_alertmsg
             // 
             this.label_alertmsg.AutoSize = true;
+            this.label_alertmsg.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_alertmsg.ForeColor = System.Drawing.Color.Red;
             this.label_alertmsg.Location = new System.Drawing.Point(3, 85);
             this.label_alertmsg.Name = "label_alertmsg";
             this.label_alertmsg.Size = new System.Drawing.Size(0, 13);

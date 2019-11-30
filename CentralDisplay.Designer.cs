@@ -45,9 +45,8 @@
             this.button_startshift = new System.Windows.Forms.Button();
             this.button_endshift = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
-
             this.flowLayoutPanel_Bay = new System.Windows.Forms.FlowLayoutPanel();
-
+            this.bt_ManagementReport = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel_footer.SuspendLayout();
@@ -57,6 +56,7 @@
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel_header.Controls.Add(this.bt_ManagementReport);
             this.panel_header.Controls.Add(this.pictureBox_logo);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(0, 0);
@@ -79,9 +79,7 @@
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel_footer.Controls.Add(this.labelcopyright);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            this.panel_footer.Location = new System.Drawing.Point(0, 449);
-
+            this.panel_footer.Location = new System.Drawing.Point(0, 455);
             this.panel_footer.Name = "panel_footer";
             this.panel_footer.Size = new System.Drawing.Size(702, 39);
             this.panel_footer.TabIndex = 1;
@@ -117,6 +115,7 @@
             // userControl_bed8
             // 
             this.userControl_bed8.Alert = "";
+            this.userControl_bed8.AlertPictureBox = null;
             this.userControl_bed8.BackColor = System.Drawing.Color.White;
             this.userControl_bed8.BedNumber = "";
             this.userControl_bed8.Location = new System.Drawing.Point(523, 170);
@@ -129,6 +128,7 @@
             // userControl_bed7
             // 
             this.userControl_bed7.Alert = "";
+            this.userControl_bed7.AlertPictureBox = null;
             this.userControl_bed7.BackColor = System.Drawing.Color.White;
             this.userControl_bed7.BedNumber = "";
             this.userControl_bed7.Location = new System.Drawing.Point(353, 170);
@@ -141,6 +141,7 @@
             // userControl_bed6
             // 
             this.userControl_bed6.Alert = "";
+            this.userControl_bed6.AlertPictureBox = null;
             this.userControl_bed6.BackColor = System.Drawing.Color.White;
             this.userControl_bed6.BedNumber = "";
             this.userControl_bed6.Location = new System.Drawing.Point(183, 170);
@@ -153,6 +154,7 @@
             // userControl_bed5
             // 
             this.userControl_bed5.Alert = "";
+            this.userControl_bed5.AlertPictureBox = null;
             this.userControl_bed5.BackColor = System.Drawing.Color.White;
             this.userControl_bed5.BedNumber = "";
             this.userControl_bed5.Location = new System.Drawing.Point(13, 170);
@@ -165,6 +167,7 @@
             // userControl_bed4
             // 
             this.userControl_bed4.Alert = "";
+            this.userControl_bed4.AlertPictureBox = null;
             this.userControl_bed4.BackColor = System.Drawing.Color.White;
             this.userControl_bed4.BedNumber = "";
             this.userControl_bed4.Location = new System.Drawing.Point(523, 25);
@@ -177,6 +180,7 @@
             // userControl_bed3
             // 
             this.userControl_bed3.Alert = "";
+            this.userControl_bed3.AlertPictureBox = null;
             this.userControl_bed3.BackColor = System.Drawing.Color.White;
             this.userControl_bed3.BedNumber = "";
             this.userControl_bed3.Location = new System.Drawing.Point(353, 25);
@@ -189,6 +193,7 @@
             // userControl_bed2
             // 
             this.userControl_bed2.Alert = "";
+            this.userControl_bed2.AlertPictureBox = null;
             this.userControl_bed2.BackColor = System.Drawing.Color.White;
             this.userControl_bed2.BedNumber = "";
             this.userControl_bed2.Location = new System.Drawing.Point(183, 25);
@@ -201,6 +206,7 @@
             // userControl_bed1
             // 
             this.userControl_bed1.Alert = "";
+            this.userControl_bed1.AlertPictureBox = null;
             this.userControl_bed1.BackColor = System.Drawing.Color.White;
             this.userControl_bed1.BedNumber = "";
             this.userControl_bed1.Location = new System.Drawing.Point(13, 25);
@@ -216,7 +222,7 @@
             this.button_startshift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_startshift.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_startshift.ForeColor = System.Drawing.Color.White;
-            this.button_startshift.Location = new System.Drawing.Point(287, 395);
+            this.button_startshift.Location = new System.Drawing.Point(298, 395);
             this.button_startshift.Name = "button_startshift";
             this.button_startshift.Size = new System.Drawing.Size(114, 37);
             this.button_startshift.TabIndex = 3;
@@ -229,7 +235,7 @@
             this.button_endshift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_endshift.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_endshift.ForeColor = System.Drawing.Color.White;
-            this.button_endshift.Location = new System.Drawing.Point(493, 395);
+            this.button_endshift.Location = new System.Drawing.Point(512, 395);
             this.button_endshift.Name = "button_endshift";
             this.button_endshift.Size = new System.Drawing.Size(114, 37);
             this.button_endshift.TabIndex = 4;
@@ -242,7 +248,7 @@
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(61, 395);
+            this.buttonRegister.Location = new System.Drawing.Point(75, 395);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(114, 37);
             this.buttonRegister.TabIndex = 5;
@@ -250,7 +256,6 @@
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
-
             // flowLayoutPanel_Bay
             // 
             this.flowLayoutPanel_Bay.Location = new System.Drawing.Point(18, 102);
@@ -258,15 +263,26 @@
             this.flowLayoutPanel_Bay.Size = new System.Drawing.Size(662, 280);
             this.flowLayoutPanel_Bay.TabIndex = 6;
             // 
-
+            // bt_ManagementReport
+            // 
+            this.bt_ManagementReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.bt_ManagementReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_ManagementReport.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.bt_ManagementReport.ForeColor = System.Drawing.Color.White;
+            this.bt_ManagementReport.Location = new System.Drawing.Point(512, 36);
+            this.bt_ManagementReport.Name = "bt_ManagementReport";
+            this.bt_ManagementReport.Size = new System.Drawing.Size(174, 36);
+            this.bt_ManagementReport.TabIndex = 1;
+            this.bt_ManagementReport.Text = "Management Report";
+            this.bt_ManagementReport.UseVisualStyleBackColor = false;
+            this.bt_ManagementReport.Click += new System.EventHandler(this.bt_ManagementReport_Click);
+            // 
             // CentralDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-
             this.ClientSize = new System.Drawing.Size(702, 494);
-
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.button_endshift);
             this.Controls.Add(this.button_startshift);
@@ -307,5 +323,6 @@
         private UserControl_bed userControl_bed2;
         private UserControl_bed userControl_bed1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Bay;
+        private System.Windows.Forms.Button bt_ManagementReport;
     }
 }

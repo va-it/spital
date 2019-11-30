@@ -19,7 +19,7 @@ namespace spital
         private DateTime DateTimeEnd { get; set; }
 
         //Generic SELECT and INSERT Statement for module table 
-        private static readonly string selectStatement = 
+        private static readonly string selectStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID;";
 
         private static readonly string selectWhereStatement =
@@ -33,6 +33,12 @@ namespace spital
         private static readonly string updateStatement =
             "UPDATE session SET staffID = @staffID, dateTimeStart = @dateTimeStart, " +
             "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID;";
+
+        //SELECT statement for session details
+        private static readonly string selectSessionDetails =
+            "SELECT session.staffID AS 'Staff ID', staff.username AS 'Username', session.startDateTime AS 'Start Date Time',  session.endDateTime AS 'End Date Time'" +
+            "FROM session " +
+            "INNER JOIN staff ON session.staffID = staff.staffID";
 
         /// <summary>
         /// Constructor. Sets Id value;
@@ -63,11 +69,10 @@ namespace spital
         /// Returns a DataTable object of all sessions
         /// </summary>
         /// <returns></returns>
-        public DataTable GetAll()
+        public static DataTable GetAll()
         {
-            DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectSessionDetails);
             DataTable sessionDataTable = sessionDataSet.Tables[0];
-
             return sessionDataTable;
         }
 
@@ -145,5 +150,8 @@ namespace spital
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
         }
+
+
+
     }
 }

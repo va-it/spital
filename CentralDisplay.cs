@@ -78,7 +78,7 @@ namespace spital
                 {
                     userControl_Bed.AlertPictureBox = Resources.icon_Alert;
                     userControl_Bed.pictureBox_bed.BackColor = Color.Yellow;
-                    userControl_Bed.Alert = alarm.MonitorModule.Module.Name + " out of range";
+                    userControl_Bed.Alert = alarm.MonitorModule.Module.Name;
                 } 
             }
         }
@@ -88,6 +88,7 @@ namespace spital
             RegistrationForm registrationForm = new RegistrationForm();
             registrationForm.Show();
         }
+
 
         public void HideAlarms(MonitorForm monitor)
         {
@@ -239,6 +240,12 @@ namespace spital
             {
                 userControl_bed8.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+        }
+
+        private void bt_ManagementReport_Click(object sender, EventArgs e)
+        {
+            ManagementForm managementForm = new ManagementForm();
+            managementForm.ShowDialog();
         }
     }
 }

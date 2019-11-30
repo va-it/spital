@@ -45,6 +45,9 @@
             this.button_startshift = new System.Windows.Forms.Button();
             this.button_endshift = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
+
+            this.flowLayoutPanel_Bay = new System.Windows.Forms.FlowLayoutPanel();
+
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel_footer.SuspendLayout();
@@ -76,7 +79,9 @@
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel_footer.Controls.Add(this.labelcopyright);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
+
             this.panel_footer.Location = new System.Drawing.Point(0, 449);
+
             this.panel_footer.Name = "panel_footer";
             this.panel_footer.Size = new System.Drawing.Size(702, 39);
             this.panel_footer.TabIndex = 1;
@@ -245,18 +250,30 @@
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
+
+            // flowLayoutPanel_Bay
+            // 
+            this.flowLayoutPanel_Bay.Location = new System.Drawing.Point(18, 102);
+            this.flowLayoutPanel_Bay.Name = "flowLayoutPanel_Bay";
+            this.flowLayoutPanel_Bay.Size = new System.Drawing.Size(662, 280);
+            this.flowLayoutPanel_Bay.TabIndex = 6;
+            // 
+
             // CentralDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(702, 488);
+
+            this.ClientSize = new System.Drawing.Size(702, 494);
+
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.button_endshift);
             this.Controls.Add(this.button_startshift);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel_footer);
             this.Controls.Add(this.panel_header);
+            this.Controls.Add(this.flowLayoutPanel_Bay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CentralDisplay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -289,5 +306,6 @@
         private UserControl_bed userControl_bed3;
         private UserControl_bed userControl_bed2;
         private UserControl_bed userControl_bed1;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Bay;
     }
 }

@@ -61,8 +61,6 @@ namespace spital
             monitor.Id = MonitorId;
             
 
-            GenerateListsOfControls();
-
             // Check if we already a monitor with this ID
             Monitor newMonitor = Monitor.GetOne(MonitorId);
 
@@ -70,15 +68,12 @@ namespace spital
             {
                 monitor.Save();
             }
-            else
-            {
-                RefreshModules();
-            }
             
             
 
             monitorNumber.Text = MonitorId.ToString();
-            CheckReadings();
+
+            GenerateListsOfControls();
         }
 
         private void FillMonitor()
@@ -199,8 +194,6 @@ namespace spital
             }
 
             AlarmTextBox.Text = "";
-
-            CentralDisplay.Instance.HideAlarms(this);
         }
 
         public void RefreshModules()

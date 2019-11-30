@@ -37,6 +37,7 @@ namespace spital
         public CentralDisplay()
         {
             InitializeComponent();
+            GenerateConstrolList();
             BedNumberLabel();
         }
 
@@ -67,6 +68,17 @@ namespace spital
         public void DisplayAlarm(Alarm alarm)
         {
             int monitorId = alarm.MonitorModule.Monitor.Id;
+
+            //int index = 0;
+
+            foreach (UserControl_bed userControl_Bed in beds)
+            {
+                if (monitorId == alarm.MonitorModule.Monitor.Id && int.Parse(userControl_Bed.hiddenLabel_MonitorID.Text) == monitorId )
+                {
+                    userControl_Bed.AlertPictureBox = Resources.icon_Alert;
+                }
+                //index++;
+            }
 
             //ideally, if we use a Usercontrol we can loop over all of them until
             // we get to the one for Monitor with monitorId
@@ -134,6 +146,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm1 = new MonitorForm();
             monitorForm1.MonitorId = 1;
+            userControl_bed1.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm1.MonitorId);
             monitorForms.Add(monitorForm1);
 
             //Display initialised monitor
@@ -151,6 +164,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm2 = new MonitorForm();
             monitorForm2.MonitorId = 2;
+            userControl_bed2.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm2.MonitorId);
             monitorForms.Add(monitorForm2);
 
             //Display initialised monitor
@@ -169,6 +183,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm3 = new MonitorForm();
             monitorForm3.MonitorId = 3;
+            userControl_bed3.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm3.MonitorId);
             monitorForms.Add(monitorForm3);
 
             //Display initialised monitor
@@ -186,6 +201,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm4 = new MonitorForm();
             monitorForm4.MonitorId = 4;
+            userControl_bed4.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm4.MonitorId);
             monitorForms.Add(monitorForm4);
 
             //Display initialised monitor
@@ -203,6 +219,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm5 = new MonitorForm();
             monitorForm5.MonitorId = 5;
+            userControl_bed5.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm5.MonitorId);
             monitorForms.Add(monitorForm5);
 
             //Display initialised monitor
@@ -220,6 +237,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm6 = new MonitorForm();
             monitorForm6.MonitorId = 6;
+            userControl_bed6.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm6.MonitorId);
             monitorForms.Add(monitorForm6);
 
             //Display initialised monitor
@@ -238,6 +256,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm7 = new MonitorForm();
             monitorForm7.MonitorId = 7;
+            userControl_bed7.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm7.MonitorId);
             monitorForms.Add(monitorForm7);
 
             //Display initialised monitor
@@ -255,6 +274,7 @@ namespace spital
             //Initialise monitor
             MonitorForm monitorForm8 = new MonitorForm();
             monitorForm8.MonitorId = 8;
+            userControl_bed8.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm8.MonitorId);
             monitorForms.Add(monitorForm8);
 
             //Display initialised monitor

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design;
+using spital.Properties;
 
 namespace spital
 {
@@ -36,6 +37,12 @@ namespace spital
         {
             get { return hiddenLabel_MonitorID.Text; }
             set { hiddenLabel_MonitorID.Text = Convert.ToString(monitor.Id); }
+        }
+
+        public Image AlertPictureBox
+        {
+            get { return pictureBox_alert.Image; }
+            set { pictureBox_alert.Image = value; }
         }
 
     }

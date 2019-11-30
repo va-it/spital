@@ -486,7 +486,13 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
+<<<<<<< HEAD
             this.panelHeader.Size = new System.Drawing.Size(880, 86);
+=======
+
+            this.panelHeader.Size = new System.Drawing.Size(877, 86);
+
+>>>>>>> 3656ba6821ccc8a9d6f19df72a05a25ebed992e6
             this.panelHeader.TabIndex = 9;
             // 
             // AlarmTextBox
@@ -524,7 +530,13 @@
             this.panelFooter.Location = new System.Drawing.Point(0, 476);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFooter.Name = "panelFooter";
+<<<<<<< HEAD
             this.panelFooter.Size = new System.Drawing.Size(880, 33);
+=======
+
+            this.panelFooter.Size = new System.Drawing.Size(877, 33);
+
+>>>>>>> 3656ba6821ccc8a9d6f19df72a05a25ebed992e6
             this.panelFooter.TabIndex = 10;
             // 
             // copyright
@@ -633,7 +645,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(880, 509);
+=======
+
+            this.ClientSize = new System.Drawing.Size(880, 509);
+
+>>>>>>> 3656ba6821ccc8a9d6f19df72a05a25ebed992e6
             this.Controls.Add(this.groupBoxReading);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);

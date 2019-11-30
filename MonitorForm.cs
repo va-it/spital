@@ -59,7 +59,7 @@ namespace spital
         {
 
             monitor.Id = MonitorId;
-            monitor.Active = true;
+            
 
             GenerateListsOfControls();
 
@@ -75,7 +75,7 @@ namespace spital
                 RefreshModules();
             }
             
-            Active = true;
+            
 
             monitorNumber.Text = MonitorId.ToString();
             CheckReadings();

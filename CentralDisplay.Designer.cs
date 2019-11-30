@@ -45,7 +45,9 @@
             this.button_startshift = new System.Windows.Forms.Button();
             this.button_endshift = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
+
             this.flowLayoutPanel_Bay = new System.Windows.Forms.FlowLayoutPanel();
+
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel_footer.SuspendLayout();
@@ -77,7 +79,9 @@
             this.panel_footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel_footer.Controls.Add(this.labelcopyright);
             this.panel_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_footer.Location = new System.Drawing.Point(0, 455);
+
+            this.panel_footer.Location = new System.Drawing.Point(0, 449);
+
             this.panel_footer.Name = "panel_footer";
             this.panel_footer.Size = new System.Drawing.Size(702, 39);
             this.panel_footer.TabIndex = 1;
@@ -246,6 +250,7 @@
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
+
             // flowLayoutPanel_Bay
             // 
             this.flowLayoutPanel_Bay.Location = new System.Drawing.Point(18, 102);
@@ -253,12 +258,15 @@
             this.flowLayoutPanel_Bay.Size = new System.Drawing.Size(662, 280);
             this.flowLayoutPanel_Bay.TabIndex = 6;
             // 
+
             // CentralDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+
             this.ClientSize = new System.Drawing.Size(702, 494);
+
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.button_endshift);
             this.Controls.Add(this.button_startshift);

@@ -59,7 +59,7 @@ namespace spital
         {
 
             monitor.Id = MonitorId;
-            monitor.Active = true;
+            
 
             // Check if we already a monitor with this ID
             Monitor newMonitor = Monitor.GetOne(MonitorId);
@@ -69,7 +69,7 @@ namespace spital
                 monitor.Save();
             }
             
-            Active = true;
+            
 
             monitorNumber.Text = MonitorId.ToString();
 

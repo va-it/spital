@@ -23,7 +23,7 @@ namespace spital
         private void modulesButton_Click(object sender, EventArgs e)
         {
             SaveSelectedModules();
-
+            
             this.Close();
             Form limits = new LimitsForm(Monitor);
             limits.Show();
@@ -44,6 +44,8 @@ namespace spital
         // Store selected modules into database in table "monitorModule" based on the monitor and module id
         private void SaveSelectedModules()
         {
+            
+
             // retrieve list of monitorModules for current monitor
             List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
 
@@ -62,6 +64,7 @@ namespace spital
                 // if module is checked
                 if (checkedListBox_Modules.GetItemCheckState(i) == CheckState.Checked)
                 {
+                    
                     // and it is not found in the monitorModule table
                     if (!monitorModules.Exists(x => x.Module.Id == moduleID))
                     {

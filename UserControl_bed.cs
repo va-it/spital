@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design;
+using spital.Properties;
 
 namespace spital
 {
@@ -18,5 +19,31 @@ namespace spital
         {
             InitializeComponent();
         }
+        Monitor monitor = new Monitor();
+
+        public string BedNumber
+        {
+            get { return label_bednumber.Text; }
+            set { label_bednumber.Text = value; }
+        }
+
+        public string Alert
+        {
+            get { return label_alertmsg.Text; }
+            set { label_alertmsg.Text = value; }
+        } 
+        
+        public string MonitorID
+        {
+            get { return hiddenLabel_MonitorID.Text; }
+            set { hiddenLabel_MonitorID.Text = Convert.ToString(monitor.Id); }
+        }
+
+        public Image AlertPictureBox
+        {
+            get { return pictureBox_alert.Image; }
+            set { pictureBox_alert.Image = value; }
+        }
+
     }
 }

@@ -33,6 +33,7 @@
             this.pictureBox_alert = new System.Windows.Forms.PictureBox();
             this.pictureBox_bed = new System.Windows.Forms.PictureBox();
             this.label_alertmsg = new System.Windows.Forms.Label();
+            this.hiddenLabel_MonitorID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_alert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed)).BeginInit();
             this.SuspendLayout();
@@ -40,11 +41,11 @@
             // label_bednumber
             // 
             this.label_bednumber.AutoSize = true;
+            this.label_bednumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label_bednumber.Location = new System.Drawing.Point(3, 0);
             this.label_bednumber.Name = "label_bednumber";
-            this.label_bednumber.Size = new System.Drawing.Size(35, 13);
+            this.label_bednumber.Size = new System.Drawing.Size(0, 19);
             this.label_bednumber.TabIndex = 0;
-            this.label_bednumber.Text = "label1";
             // 
             // button_mute
             // 
@@ -61,34 +62,49 @@
             // 
             // pictureBox_alert
             // 
-            this.pictureBox_alert.Location = new System.Drawing.Point(16, 17);
+            this.pictureBox_alert.Location = new System.Drawing.Point(13, 20);
             this.pictureBox_alert.Name = "pictureBox_alert";
             this.pictureBox_alert.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox_alert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_alert.TabIndex = 2;
             this.pictureBox_alert.TabStop = false;
             // 
             // pictureBox_bed
             // 
+            this.pictureBox_bed.Image = global::spital.Properties.Resources.icon_Patient;
             this.pictureBox_bed.Location = new System.Drawing.Point(63, 10);
             this.pictureBox_bed.Name = "pictureBox_bed";
             this.pictureBox_bed.Size = new System.Drawing.Size(61, 72);
+            this.pictureBox_bed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_bed.TabIndex = 3;
             this.pictureBox_bed.TabStop = false;
             // 
             // label_alertmsg
             // 
             this.label_alertmsg.AutoSize = true;
+            this.label_alertmsg.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_alertmsg.ForeColor = System.Drawing.Color.Red;
             this.label_alertmsg.Location = new System.Drawing.Point(3, 85);
             this.label_alertmsg.Name = "label_alertmsg";
-            this.label_alertmsg.Size = new System.Drawing.Size(35, 13);
+            this.label_alertmsg.Size = new System.Drawing.Size(0, 13);
             this.label_alertmsg.TabIndex = 4;
-            this.label_alertmsg.Text = "label1";
+            // 
+            // hiddenLabel_MonitorID
+            // 
+            this.hiddenLabel_MonitorID.AutoSize = true;
+            this.hiddenLabel_MonitorID.Location = new System.Drawing.Point(116, 85);
+            this.hiddenLabel_MonitorID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.hiddenLabel_MonitorID.Name = "hiddenLabel_MonitorID";
+            this.hiddenLabel_MonitorID.Size = new System.Drawing.Size(0, 13);
+            this.hiddenLabel_MonitorID.TabIndex = 5;
+            this.hiddenLabel_MonitorID.Visible = false;
             // 
             // UserControl_bed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.hiddenLabel_MonitorID);
             this.Controls.Add(this.label_alertmsg);
             this.Controls.Add(this.pictureBox_bed);
             this.Controls.Add(this.pictureBox_alert);
@@ -105,10 +121,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label_bednumber;
-        private System.Windows.Forms.Button button_mute;
-        private System.Windows.Forms.PictureBox pictureBox_alert;
-        private System.Windows.Forms.PictureBox pictureBox_bed;
-        private System.Windows.Forms.Label label_alertmsg;
+        public System.Windows.Forms.Label label_bednumber;
+        public System.Windows.Forms.Button button_mute;
+        public System.Windows.Forms.PictureBox pictureBox_alert;
+        public System.Windows.Forms.PictureBox pictureBox_bed;
+        public System.Windows.Forms.Label label_alertmsg;
+        public System.Windows.Forms.Label hiddenLabel_MonitorID;
     }
 }

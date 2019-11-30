@@ -14,10 +14,7 @@ namespace spital
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            CentralDisplay centralDisplay = CentralDisplay.Instance;
-
-            Application.Run(centralDisplay);
+            Application.Run(new CentralDisplay());
 
         }
     }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    public class Module
+    class Module
     {
         // Auto-implemented properties for trivial get and set
         public int Id { get; set; }

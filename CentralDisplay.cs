@@ -1,5 +1,4 @@
-﻿using spital.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -111,6 +110,8 @@ namespace spital
             {
                 userControl_bed1.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
+            monitorForm.CheckReadings();
         }
 
         private void userControl_bed2_Click(object sender, EventArgs e)
@@ -184,6 +185,7 @@ namespace spital
             {
                 userControl_bed5.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
         }
 
         private void userControl_bed6_Click(object sender, EventArgs e)
@@ -239,6 +241,7 @@ namespace spital
             {
                 userControl_bed8.pictureBox_bed.BackColor = Color.Chartreuse;
             }
+
         }
     }
 }

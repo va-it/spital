@@ -12,7 +12,7 @@ using spital.Properties;
 
 namespace spital
 {
-    [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
+    //[Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
     public partial class UserControl_bed : UserControl
     {
         public UserControl_bed()
@@ -20,6 +20,7 @@ namespace spital
             InitializeComponent();
         }
         Monitor monitor = new Monitor();
+        MonitorForm monitorForm = new MonitorForm();
 
         public string BedNumber
         {
@@ -44,6 +45,5 @@ namespace spital
             get { return pictureBox_alert.Image; }
             set { pictureBox_alert.Image = value; }
         }
-
     }
 }

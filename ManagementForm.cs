@@ -17,27 +17,20 @@ namespace spital
             InitializeComponent();
             FillAlarmReport();
             FillSessionReport();
-
         }
 
 
         public void FillAlarmReport()
         {
             DataTable alarmTable = Alarm.GetAll();
-
             AlarmReport_DataGrid.DataSource = alarmTable;
-
         }
 
 
         public void FillSessionReport()
         {
             DataTable sessionTable = Session.GetAll();
-
             SessionReport_DataGrid.DataSource = sessionTable;
-
         }
-
-
     }
 }

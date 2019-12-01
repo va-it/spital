@@ -261,5 +261,6 @@ namespace spital
             ManagementForm managementForm = new ManagementForm();
             managementForm.ShowDialog();
         }
+
     }
 }

@@ -83,6 +83,7 @@
             this.pictureBox_bed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_bed.TabIndex = 3;
             this.pictureBox_bed.TabStop = false;
+            this.pictureBox_bed.Click += new System.EventHandler(this.pictureBox_bed_Click);
             // 
             // label_alertmsg
             // 
@@ -115,9 +116,11 @@
             this.Controls.Add(this.pictureBox_alert);
             this.Controls.Add(this.button_mute);
             this.Controls.Add(this.label_bednumber);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserControl_bed";
             this.Size = new System.Drawing.Size(194, 182);
+            this.Click += new System.EventHandler(this.UserControl_bed_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_alert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_bed)).EndInit();
             this.ResumeLayout(false);

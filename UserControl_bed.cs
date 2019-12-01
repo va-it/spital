@@ -57,15 +57,5 @@ namespace spital
             AlertPictureBox = null;
             Alert = "";
         }
-
-        private void pictureBox_bed_Click(object sender, EventArgs e)
-        {
-            UserControl_bed_Click(sender, e);
-        }
-
-        private void UserControl_bed_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

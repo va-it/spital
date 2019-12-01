@@ -399,10 +399,10 @@
             // 
             // alarmButton
             // 
-            this.alarmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.alarmButton.BackColor = System.Drawing.Color.Gold;
             this.alarmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.alarmButton.Font = new System.Drawing.Font("Calibri", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alarmButton.ForeColor = System.Drawing.Color.White;
+            this.alarmButton.ForeColor = System.Drawing.Color.Black;
             this.alarmButton.Location = new System.Drawing.Point(746, 26);
             this.alarmButton.Margin = new System.Windows.Forms.Padding(2);
             this.alarmButton.Name = "alarmButton";

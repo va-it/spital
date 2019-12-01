@@ -17,6 +17,15 @@ namespace spital
 
         List<MonitorForm> monitorForms = new List<MonitorForm>();
 
+        MonitorForm monitorForm1;
+        MonitorForm monitorForm2;
+        MonitorForm monitorForm3;
+        MonitorForm monitorForm4;
+        MonitorForm monitorForm5;
+        MonitorForm monitorForm6;
+        MonitorForm monitorForm7;
+        MonitorForm monitorForm8;
+
         private static CentralDisplay _instance;
 
         public static CentralDisplay Instance
@@ -38,7 +47,6 @@ namespace spital
         {
             InitializeComponent();
             GenerateControlList();
-            BedNumberLabel();
         }
 
         //Adding usercontrol to list of beds
@@ -52,19 +60,6 @@ namespace spital
             beds.Add(userControl_bed6);
             beds.Add(userControl_bed7);
             beds.Add(userControl_bed8);
-        }
-
-        //Assign value for bed number
-        public void BedNumberLabel()
-        {
-            userControl_bed1.BedNumber = "Bed 1";
-            userControl_bed2.BedNumber = "Bed 2";
-            userControl_bed3.BedNumber = "Bed 3";
-            userControl_bed4.BedNumber = "Bed 4";
-            userControl_bed5.BedNumber = "Bed 5";
-            userControl_bed6.BedNumber = "Bed 6";
-            userControl_bed7.BedNumber = "Bed 7";
-            userControl_bed8.BedNumber = "Bed 8";
         }
 
         //checks which monitor id triggered alarm and compares it with monitor id on the usercontrol to display alerts
@@ -93,152 +88,171 @@ namespace spital
         public void HideAlarms(MonitorForm monitor)
         {
             // remove picture and text from monitorUserControl based on monitor.Id
+            foreach (UserControl_bed userControl_Bed in beds)
+            {
+                if (monitor.MonitorId == int.Parse(userControl_Bed.hiddenLabel_MonitorID.Text))
+                {
+                    userControl_Bed.AlertPictureBox = null;
+                    userControl_Bed.pictureBox_bed.BackColor = Color.Chartreuse;
+                    userControl_Bed.Alert = null;
+                }
+            }
         }
-        
-        
+
         private void userControl_bed1_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm1 = new MonitorForm();
-            monitorForm1.MonitorId = 1;
-            userControl_bed1.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm1.MonitorId);
-            monitorForms.Add(monitorForm1);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(0).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(0).Active)
+            if (monitorForm1 == null)
             {
-                userControl_bed1.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm1 = new MonitorForm();
+                monitorForm1.MonitorId = int.Parse(userControl_bed1.MonitorID);
+                monitorForms.Add(monitorForm1);
+            }
+
+            DisplayMonitorForm(1);
+
+            if (monitorForm1.Active)
+            {
+                userControl_bed1.MarkBedAsActive();
             }
         }
 
         private void userControl_bed2_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm2 = new MonitorForm();
-            monitorForm2.MonitorId = 2;
-            userControl_bed2.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm2.MonitorId);
-            monitorForms.Add(monitorForm2);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(1).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(1).Active)
+            if (monitorForm2 == null)
             {
-                userControl_bed2.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm2 = new MonitorForm();
+                monitorForm2.MonitorId = int.Parse(userControl_bed2.MonitorID);
+                monitorForms.Add(monitorForm2);
             }
+            
+            DisplayMonitorForm(2);
 
+            if (monitorForm2.Active)
+            {
+                userControl_bed2.MarkBedAsActive();
+            }
         }
 
         private void userControl_bed3_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm3 = new MonitorForm();
-            monitorForm3.MonitorId = 3;
-            userControl_bed3.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm3.MonitorId);
-            monitorForms.Add(monitorForm3);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(2).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(2).Active)
+            if (monitorForm3 == null)
             {
-                userControl_bed3.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm3 = new MonitorForm();
+                monitorForm3.MonitorId = int.Parse(userControl_bed3.MonitorID);
+                monitorForms.Add(monitorForm3);
+            }
+            
+            DisplayMonitorForm(3);
+
+            if (monitorForm3.Active)
+            {
+                userControl_bed4.MarkBedAsActive();
             }
         }
 
         private void userControl_bed4_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm4 = new MonitorForm();
-            monitorForm4.MonitorId = 4;
-            userControl_bed4.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm4.MonitorId);
-            monitorForms.Add(monitorForm4);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(3).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(3).Active)
+            if (monitorForm4 == null)
             {
-                userControl_bed4.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm4 = new MonitorForm();
+                monitorForm4.MonitorId = int.Parse(userControl_bed4.MonitorID);
+                monitorForms.Add(monitorForm4);
+            }
+
+            DisplayMonitorForm(4);
+
+            if (monitorForm4.Active)
+            {
+                userControl_bed4.MarkBedAsActive();
             }
         }
 
         private void userControl_bed5_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm5 = new MonitorForm();
-            monitorForm5.MonitorId = 5;
-            userControl_bed5.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm5.MonitorId);
-            monitorForms.Add(monitorForm5);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(4).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(4).Active)
+            if (monitorForm5 == null)
             {
-                userControl_bed5.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm5 = new MonitorForm();
+                monitorForm5.MonitorId = int.Parse(userControl_bed5.MonitorID);
+                monitorForms.Add(monitorForm5);
+            }
+
+            DisplayMonitorForm(5);
+
+            if (monitorForm5.Active)
+            {
+                userControl_bed5.MarkBedAsActive();
             }
         }
 
         private void userControl_bed6_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm6 = new MonitorForm();
-            monitorForm6.MonitorId = 6;
-            userControl_bed6.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm6.MonitorId);
-            monitorForms.Add(monitorForm6);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(5).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(5).Active)
+            if (monitorForm6 == null)
             {
-                userControl_bed6.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm6 = new MonitorForm();
+                monitorForm6.MonitorId = int.Parse(userControl_bed6.MonitorID);
+                monitorForms.Add(monitorForm6);
+            }
+
+            DisplayMonitorForm(6);
+
+            if (monitorForm6.Active)
+            {
+                userControl_bed6.MarkBedAsActive();
             }
 
         }
 
         private void userControl_bed7_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm7 = new MonitorForm();
-            monitorForm7.MonitorId = 7;
-            userControl_bed7.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm7.MonitorId);
-            monitorForms.Add(monitorForm7);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(6).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(6).Active)
+            if (monitorForm7 == null)
             {
-                userControl_bed7.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm7 = new MonitorForm();
+                monitorForm7.MonitorId = int.Parse(userControl_bed7.MonitorID);
+                monitorForms.Add(monitorForm7);
+            }
+
+            DisplayMonitorForm(7);
+
+            if (monitorForm7.Active)
+            {
+                userControl_bed7.MarkBedAsActive();
             }
         }
 
         private void userControl_bed8_Click(object sender, EventArgs e)
         {
-            //Initialise monitor
-            MonitorForm monitorForm8 = new MonitorForm();
-            monitorForm8.MonitorId = 8;
-            userControl_bed8.hiddenLabel_MonitorID.Text = Convert.ToString(monitorForm8.MonitorId);
-            monitorForms.Add(monitorForm8);
-
-            //Display initialised monitor
-            monitorForms.ElementAt(7).ShowDialog();
-
-            //Set Background colour for the pictureBox_bed to green once the monitorForm/Bed is active
-            if (monitorForms.ElementAt(7).Active)
+            if (monitorForm8 == null)
             {
-                userControl_bed8.pictureBox_bed.BackColor = Color.Chartreuse;
+                //Initialise monitor
+                monitorForm8 = new MonitorForm();
+                monitorForm8.MonitorId = int.Parse(userControl_bed8.MonitorID);
+                monitorForms.Add(monitorForm8);
+            }
+            
+            DisplayMonitorForm(8);
+
+            if (monitorForm8.Active)
+            {
+                userControl_bed8.MarkBedAsActive();
+            }
+        }
+
+        private void DisplayMonitorForm(int monitorId)
+        {
+            foreach (MonitorForm monitorForm in monitorForms)
+            {
+                if (monitorForm.MonitorId == monitorId)
+                {
+                    //Display initialised monitor
+                    monitorForm.ShowDialog();
+                }
             }
         }
 

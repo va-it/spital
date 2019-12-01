@@ -19,8 +19,9 @@ namespace spital
         {
             InitializeComponent();
         }
-        Monitor monitor = new Monitor();
-        MonitorForm monitorForm = new MonitorForm();
+
+        //Monitor monitor = new Monitor();
+        //MonitorForm monitorForm = new MonitorForm();
 
         public string BedNumber
         {
@@ -37,13 +38,24 @@ namespace spital
         public string MonitorID
         {
             get { return hiddenLabel_MonitorID.Text; }
-            set { hiddenLabel_MonitorID.Text = Convert.ToString(monitor.Id); }
+            set { hiddenLabel_MonitorID.Text = value; }
         }
 
         public Image AlertPictureBox
         {
             get { return pictureBox_alert.Image; }
             set { pictureBox_alert.Image = value; }
+        }
+
+        public void MarkBedAsActive()
+        {
+            pictureBox_bed.BackColor = Color.Chartreuse;
+        }
+
+        private void button_mute_Click(object sender, EventArgs e)
+        {
+            AlertPictureBox = null;
+            Alert = "";
         }
     }
 }

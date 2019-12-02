@@ -151,6 +151,8 @@ namespace spital
                             moduleReading.ElementAt(index).Text = alarm.Reading.ToString();
                         }
                     }
+
+                    ShowAlarms();
                 }
 
                 ++index;

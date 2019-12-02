@@ -50,9 +50,6 @@ namespace spital
 
                 MessageBox.Show("Registration successful! Please Log in.", "Success");
 
-                // open login page 
-                LoginForm login = new LoginForm();
-                login.Show();
 
                 // close this form window
                 this.Hide();

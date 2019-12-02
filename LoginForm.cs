@@ -13,10 +13,13 @@ namespace spital
 {
     public partial class LoginForm : Form
     {
+        string Action { get; set; }
 
-        public LoginForm()
+        public LoginForm(string action)
         {
             InitializeComponent();
+
+            Action = action;
         }
 
         private void Button_Login_Click(object sender, EventArgs e)
@@ -30,7 +33,27 @@ namespace spital
 
             if (allowLogin)
             {
-                // Start session etc.
+                // Start session etc. 
+                switch (Action)
+                {
+                    case "start":
+                        //start session
+                        DataTable staffDataTable = Staff.GetWithUsername(username);
+                        if (staffDataTable.Rows.Count == 1)
+                        {
+                            DataRow row = staffDataTable.Rows[0];
+
+                            int staffID = Int32.Parse(row["staffID"].ToString());
+                            Session session = new Session(staffID);
+                            session.Save();
+                        }
+                        break;
+
+                    case "stop":
+                        //stop session
+                        break;
+
+                }
                 this.Hide();
 
                 //We should navigate back to CentralDisplay but it should be a singleton

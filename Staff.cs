@@ -22,7 +22,9 @@ namespace spital
 
         private static readonly string selectStatement = "SELECT * FROM staff;";
 
-        private static readonly string insertStatement = 
+        private static readonly string selectWithUsername = " SELECT * FROM staff WHERE username=@username;";
+
+        private static readonly string insertStatement =
             "INSERT INTO staff (staffTypeID, username, password) VALUES (@staffTypeID, @username, @password);";
 
         private static readonly string updateStatement =
@@ -136,7 +138,7 @@ namespace spital
             }
 
             return lastInsertedID;
-            
+
         }
 
         /// <summary>
@@ -161,6 +163,18 @@ namespace spital
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
 
+        }
+
+        public static DataTable GetWithUsername(string username)
+        {
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWithUsername);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@username", username));
+
+            DataSet staffDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
+
+            DataTable staffDataTable = staffDataSet.Tables[0];
+
+            return staffDataTable;
         }
     }
 }

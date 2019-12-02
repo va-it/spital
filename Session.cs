@@ -115,7 +115,7 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@staffID", Id));
+                command.Parameters.Add(new SqlParameter("@staffID", StaffId));
                 command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
                 if (EndDateTime != null)
                 {

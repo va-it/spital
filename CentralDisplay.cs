@@ -262,5 +262,11 @@ namespace spital
             managementForm.ShowDialog();
         }
 
+        private void button_startshift_Click(object sender, EventArgs e)
+        {
+            string action = "start";
+            LoginForm loginForm = new LoginForm(action);
+            loginForm.ShowDialog();
+        }
     }
 }

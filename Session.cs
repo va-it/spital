@@ -15,8 +15,8 @@ namespace spital
         // Auto-implemented properties for trivial get and set
         private int Id { get; set; }
         public int StaffId { get; set; }
-        private DateTime DateTimeStart { get; set; }
-        private DateTime DateTimeEnd { get; set; }
+        private DateTime StartDateTime { get; set; }
+        private Nullable<DateTime> EndDateTime { get; set; }
 
         //Generic SELECT and INSERT Statement for module table 
         private static readonly string selectStatement =
@@ -27,12 +27,12 @@ namespace spital
             "WHERE sessionID = @sessionID;";
 
         private static readonly string insertStatement =
-            "INSERT INTO session (staffID, dateTimeStart, dateTimeEnd) " +
-            "VALUES (@staffID, @dateTimeStart, @dateTimeEnd);";
+            "INSERT INTO session (staffID, startDateTime) " +
+            "VALUES (@staffID, @startDateTime);";
 
         private static readonly string updateStatement =
-            "UPDATE session SET staffID = @staffID, dateTimeStart = @dateTimeStart, " +
-            "dateTimeEnd = @dateTimeEnd, WHERE sessionID = @sessionID;";
+            "UPDATE session SET staffID = @staffID, startDateTime = @startDateTime, " +
+            "endDateTime = @endDateTime, WHERE sessionID = @sessionID;";
 
         //SELECT statement for session details
         private static readonly string selectSessionDetails =
@@ -43,10 +43,11 @@ namespace spital
         /// <summary>
         /// Constructor. Sets Id value;
         /// </summary>
-        public Session(int id)
+        public Session(int staffID)
         {
-            Id = id;
-            DateTimeStart = DateTime.Now;
+            StaffId = staffID;
+            StartDateTime = DateTime.Now;
+            EndDateTime = null;
         }
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace spital
         /// </summary>
         public void Start()
         {
-            DateTimeStart = DateTime.Now;
+            StartDateTime = DateTime.Now;
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace spital
         /// </summary>
         public void End()
         {
-            DateTimeEnd = DateTime.Now;
+            EndDateTime = DateTime.Now;
         }
 
         /// <summary>
@@ -95,8 +96,8 @@ namespace spital
                 // Only one record has been retrieved
                 session = new Session(id);
                 session.StaffId = Int32.Parse(row["staffID"].ToString());
-                session.DateTimeStart = DateTime.Parse(row["dateTimeStart"].ToString());
-                session.DateTimeEnd = DateTime.Parse(row["dateTimeEnd"].ToString());
+                session.StartDateTime = DateTime.Parse(row["dateTimeStart"].ToString());
+                session.EndDateTime = DateTime.Parse(row["dateTimeEnd"].ToString());
             }
 
             return session;
@@ -114,9 +115,12 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@staffID", Id));
-                command.Parameters.Add(new SqlParameter("@dateTimeStart", DateTimeStart));
-                command.Parameters.Add(new SqlParameter("@dateTimeEnd", DateTimeEnd));
+                command.Parameters.Add(new SqlParameter("@staffID", StaffId));
+                command.Parameters.Add(new SqlParameter("@startDateTime", StartDateTime));
+                if (EndDateTime != null)
+                {
+                    command.Parameters.Add(new SqlParameter("@endDateTime", EndDateTime));
+                }
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
@@ -139,8 +143,8 @@ namespace spital
 
                 command.CommandText = updateStatement;
                 command.Parameters.Add(new SqlParameter("@staffID", StaffId));
-                command.Parameters.Add(new SqlParameter("@dateTimeStart", DateTimeStart));
-                command.Parameters.Add(new SqlParameter("@dateTimeEnd", DateTimeEnd));
+                command.Parameters.Add(new SqlParameter("@dateTimeStart", StartDateTime));
+                command.Parameters.Add(new SqlParameter("@dateTimeEnd", EndDateTime));
                 command.Parameters.Add(new SqlParameter("@sessionID", Id));
 
                 DatabaseConnection.Instance.ExecuteCommand(command);

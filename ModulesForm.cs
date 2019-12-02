@@ -44,7 +44,7 @@ namespace spital
         // Store selected modules into database in table "monitorModule" based on the monitor and module id
         private void SaveSelectedModules()
         {
-            
+            List<int> monitorModulesToSkip = new List<int>();
 
             // retrieve list of monitorModules for current monitor
             List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);

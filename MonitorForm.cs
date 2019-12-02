@@ -14,7 +14,7 @@ namespace spital
         List<MonitorModule> monitorModules = new List<MonitorModule>();
         //List<MonitorModule> monitorModulesWithoutAlarm = new List<MonitorModule>();
 
-        List<Alarm> alarms = new List<Alarm>();
+        public List<Alarm> alarms = new List<Alarm>();
 
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
@@ -57,9 +57,7 @@ namespace spital
 
         private void MonitorForm_Load(object sender, EventArgs e)
         {
-
             monitor.Id = MonitorId;
-            
 
             GenerateListsOfControls();
 
@@ -69,16 +67,9 @@ namespace spital
             if (newMonitor.Id == 0)
             {
                 monitor.Save();
-            }
-            else
-            {
-                RefreshModules();
-            }
+            }      
             
-            
-
             monitorNumber.Text = MonitorId.ToString();
-            CheckReadings();
         }
 
         private void FillMonitor()
@@ -151,6 +142,16 @@ namespace spital
 
                     monitorModule.CheckReading(float.Parse(moduleReading.ElementAt(index).Text));
                 }
+                else
+                {
+                    foreach (Alarm alarm in alarms)
+                    {
+                        if (alarm.MonitorModule.Id == monitorModule.Id)
+                        {
+                            moduleReading.ElementAt(index).Text = alarm.Reading.ToString();
+                        }
+                    }
+                }
 
                 ++index;
             }
@@ -208,12 +209,12 @@ namespace spital
             // Empty all the module names and limits before retrieving new values from database
             ClearControls();
             FillMonitor();
-            CheckReadings();
             Timer();// calls the timer function
         }
 
         public void Timer()
         {
+            CheckReadings();
             //Calls the event at the end of the elapsed time interval
             myTimer.Tick += new EventHandler(TimerEventProcessor);
             //Sets the timer interval to 5 seconds.
@@ -242,6 +243,12 @@ namespace spital
             foreach (Label label in limitMax)
             {
                 label.Text = null;
+            }
+
+            foreach (Label label in moduleReading)
+            {
+                label.Text = null;
+                label.BackColor = Color.White;
             }
         }
 

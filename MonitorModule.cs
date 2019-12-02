@@ -18,13 +18,15 @@ namespace spital
         public Module Module { get; set; }
         public float AssignedMin { get; set; }
         public float AssignedMax { get; set; }
+        public bool Deleted { get; set; }
 
         private static readonly string selectStatement = 
-            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID;";
+            "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID " +
+            "WHERE monitorModule.deleted = 0";
 
         private static readonly string selectWhereStatement =
             "SELECT * FROM monitorModule INNER JOIN module ON module.moduleID = monitorModule.moduleID " +
-            "WHERE monitorModuleID = @monitorModuleID;";
+            "WHERE monitorModuleID = @monitorModuleID AND monitorModule.deleted = 0;";
 
         private static readonly string insertStatement =
             "INSERT INTO monitorModule (monitorID, moduleID, assignedMin, assignedMax) " +
@@ -32,10 +34,10 @@ namespace spital
 
         private static readonly string updateStatement =
             "UPDATE monitorModule SET monitorID = @monitorID, moduleID = @moduleID, assignedMin = @assignedMin, " +
-            "assignedMax = @assignedMax WHERE monitorModuleID = @monitorModuleID;";
+            "assignedMax = @assignedMax, deleted = @deleted WHERE monitorModuleID = @monitorModuleID;";
 
         private static readonly string deleteStatement = 
-            "DELETE FROM monitorModule WHERE monitorModuleID = @monitorModuleID;";
+            "UPDATE monitorModule SET deleted = 1 WHERE monitorModuleID = @monitorModuleID;";
 
         /// <summary>
         /// Constructor. Sets value of monitor and module from parameters
@@ -51,9 +53,9 @@ namespace spital
         /// <summary>
         /// Triggers an alarm for this monitor and module pair.
         /// </summary>
-        public void TriggerAlarm()
+        public void TriggerAlarm(float reading)
         {
-            Alarm alarm = new Alarm(this);
+            Alarm alarm = new Alarm(this, reading);
             alarm.Save();
             SendAlarmToCentralDisplay(alarm);
         }
@@ -89,6 +91,7 @@ namespace spital
                         monitorModule.Id = Int32.Parse(monitorModuleRow["monitorModuleID"].ToString());
                         monitorModule.AssignedMin = float.Parse(monitorModuleRow["assignedMin"].ToString());
                         monitorModule.AssignedMax = float.Parse(monitorModuleRow["assignedMax"].ToString());
+                        monitorModule.Deleted = Convert.ToBoolean(monitorModuleRow["deleted"].ToString());
                         monitorModulesList.Add(monitorModule);
                     }
                 }
@@ -101,7 +104,7 @@ namespace spital
         {
             if (random < AssignedMin || random > AssignedMax)
             { 
-                TriggerAlarm();
+                TriggerAlarm(random);
             }
         }
 
@@ -187,6 +190,7 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@moduleID", Module.Id));
                 command.Parameters.Add(new SqlParameter("@assignedMin", AssignedMin));
                 command.Parameters.Add(new SqlParameter("@assignedMax", AssignedMax));
+                command.Parameters.Add(new SqlParameter("@deleted", Deleted));
                 command.Parameters.Add(new SqlParameter("@monitorModuleID", Id));
 
                 rowsAffected = DatabaseConnection.Instance.ExecuteCommand(command);

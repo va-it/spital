@@ -52,7 +52,7 @@ namespace spital
 
 
                 // close this form window
-                this.Hide();
+                this.Close();
 
                 
             }

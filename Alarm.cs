@@ -157,9 +157,20 @@ namespace spital
             return alarms;
         }
 
+        /// <summary>
+        /// Prompts Central Display to show this alarm
+        /// </summary>
         public void NotifyCentralDisplay()
         {
             CentralDisplay.Instance.DisplayAlarm(this);
+        }
+
+        /// <summary>
+        /// Prompts Staff to notify members with active sessions
+        /// </summary>
+        public void NotifyStaff()
+        {
+            Staff.NotifyMembersWithActiveSessions(this);
         }
     }
 }

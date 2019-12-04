@@ -58,6 +58,7 @@ namespace spital
             Alarm alarm = new Alarm(this, reading);
             alarm.Save();
             alarm.NotifyCentralDisplay();
+            alarm.NotifyStaff();
         }
 
         /// <summary>
@@ -106,15 +107,6 @@ namespace spital
             { 
                 TriggerAlarm(random);
             }
-        }
-
-        /// <summary>
-        /// Send alarm to all active staff session 
-        /// </summary>
-        /// <param name="alarm"></param>
-        public void SendAlarmToStaff(Alarm alarm)
-        {
-            
         }
 
         /// <summary>

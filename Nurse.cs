@@ -1,6 +1,7 @@
 ﻿using spital.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -15,16 +16,18 @@ namespace spital
         public new int Id { get; }
         public string PhoneNumber { get; set; }
         public int StaffID { get; set; }
-        public string storage = "Notification.txt";
 
         private static readonly string selectStatement = "SELECT * FROM nurse;";
+
+        private static readonly string selectWhereStaffID =
+            "SELECT * FROM nurse INNER JOIN staff ON nurse.staffID = staff.staffID " +
+            "WHERE nurse.staffID = @staffID;";
 
         private static readonly string insertStatement = 
             "INSERT INTO nurse (phoneNumber, staffID) VALUES (@phoneNumber, @staffID);";
 
         private static readonly string updateStatement =
             "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID;";
-
 
         /// <summary>
         /// Constructor. Instantiates staff class with values from parameters and sets phoneNumber and staffId of nurse instance
@@ -41,29 +44,14 @@ namespace spital
         }
 
         /// <summary>
-        /// Method to store notication in .txt file
+        /// Method to SMS. Calls base class function WriteNotificationToFile
         /// </summary>
-        public void ReceiveNotification()
+        public void SendSMS(Alarm alarm)
         {
-            //open the storage file
-            StreamReader reader = new StreamReader(storage);
+            // Here there should be code to send SMS.
 
-            //while there are lines to read
-            while (!reader.EndOfStream)
-            {
-                //seperators used to break apart each file line
-                char[] seperators = { ',' };
-                //break line - the result is an containing each partof the line that was seperated by ','
-                string[] line = reader.ReadLine().Split(seperators);
-            }
-
-            //append to the storage file, seperated by coma
-            StreamWriter writer = new StreamWriter(storage, true);
-
-            //pass variable to write in the file
-            writer.WriteLine();
-            writer.Close();
-
+            //Then we write to file
+            Staff.WriteNotificationToFile(alarm);
         }
 
         /// <summary>
@@ -115,6 +103,25 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public static Nurse GetOneFromStaffID(int staffID)
+        {
+            DataSet nurseDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable nurseDataTable = nurseDataSet.Tables[0];
+
+            DataRow nurseRow = nurseDataTable.Rows[0];
+                
+            Nurse nurse = new Nurse(
+                int.Parse(nurseRow["staffTypeID"].ToString()),
+                nurseRow["username"].ToString(),
+                nurseRow["password"].ToString(),
+                nurseRow["phoneNumber"].ToString()
+                );
+
+            nurse.StaffID = int.Parse(nurseRow["staffID"].ToString());
+            
+            return nurse;
         }
     }
 }

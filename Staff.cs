@@ -7,6 +7,7 @@ using spital.Properties;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace spital
 {
@@ -30,6 +31,8 @@ namespace spital
         private static readonly string updateStatement =
             "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password " +
             "WHERE staffID = @staffID;";
+
+        private static readonly string Storage = "Notification.txt";
 
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
@@ -73,39 +76,23 @@ namespace spital
 
             return valid;
         }
-        /// <summary>
-        /// Triggers authentication and, upon success, starts session
-        /// </summary>
-        public void Register()
-        {
-            // trigger authentication and, upon success, start session
-        }
 
         /// <summary>
-        /// Triggers authentication and, upon success, ends active session
+        /// 
         /// </summary>
-        public void DeRegister()
+        /// <param name="alarm"></param>
+        public static void NotifyMembersWithActiveSessions(Alarm alarm)
         {
-            // trigger authentication and, upon success, end session
-        }
-
-        /// <summary>
-        /// Authentication trigger
-        /// </summary>
-        public void Login()
-        {
-            // Authentication trigger
-        }
-
-        public void Notify(Alarm alarm)
-        {
-            foreach(Session session in Session.GetActiveStaffSession(StaffTypeId))
+            foreach(DataRow sessionRow in Session.GetActiveSessions().Rows)
             {
-                switch (StaffTypeId)
+                int staffID = int.Parse(sessionRow["staffID"].ToString());
+
+                switch (int.Parse(sessionRow["staffTypeID"].ToString()))
                 {
                     case 1:
                         // Nurse, notify via SMS/Pager
-                        
+                        Nurse nurse = Nurse.GetOneFromStaffID(staffID);
+                        nurse.SendSMS(alarm);
                         break;
                     case 2:
                         // Consultant, notify via email
@@ -115,6 +102,29 @@ namespace spital
                         break;
                 }
             }
+        }
+
+
+        public static void WriteNotificationToFile(Alarm alarm)
+        {
+            //open the storage file
+            StreamReader reader = new StreamReader(Storage);
+
+            //while there are lines to read
+            while (!reader.EndOfStream)
+            {
+                //seperators used to break apart each file line
+                char[] seperators = { ',' };
+                //break line - the result is an containing each partof the line that was seperated by ','
+                string[] line = reader.ReadLine().Split(seperators);
+            }
+
+            //append to the storage file, seperated by coma
+            StreamWriter writer = new StreamWriter(Storage, true);
+
+            //write details about alarm variable
+            writer.WriteLine();
+            writer.Close();
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace spital
         public new int Id { get; }
         public string PhoneNumber { get; set; }
         public int StaffID { get; set; }
+        public string storage = "Notification.txt";
 
         private static readonly string selectStatement = "SELECT * FROM nurse;";
 
@@ -38,8 +40,29 @@ namespace spital
             StaffID = base.Id;
         }
 
-        public void ReceiveNotification(Alarm alarm)
+        /// <summary>
+        /// Method to store notication in .txt file
+        /// </summary>
+        public void ReceiveNotification()
         {
+            //open the storage file
+            StreamReader reader = new StreamReader(storage);
+
+            //while there are lines to read
+            while (!reader.EndOfStream)
+            {
+                //seperators used to break apart each file line
+                char[] seperators = { ',' };
+                //break line - the result is an containing each partof the line that was seperated by ','
+                string[] line = reader.ReadLine().Split(seperators);
+            }
+
+            //append to the storage file, seperated by coma
+            StreamWriter writer = new StreamWriter(storage, true);
+
+            //pass variable to write in the file
+            writer.WriteLine();
+            writer.Close();
 
         }
 

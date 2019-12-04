@@ -23,7 +23,7 @@ namespace spital
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID;";
 
         private static readonly string selectActiveStaffSession =
-            "SELECT staff.staffID , staffType.name " +
+            "SELECT staffType.staffTypeID " +
             "FROM session " +
             "LEFT JOIN staff ON session.staffID = staff.staffID " +
             "LEFT JOIN staffType on staff.[staffTypeID] = staffType.staffTypeID " +
@@ -86,30 +86,29 @@ namespace spital
             return sessionDataTable;
         }
 
-        public static List<Session> GetActiveStaffSession(int StaffId)
+        /// <summary>
+        /// List to get active staffSession 
+        /// </summary>
+        /// <param name="staffTypeId"></param>
+        /// <returns></returns>
+        public static List<Session> GetActiveStaffSession(int staffTypeId)
         {
             List<Session> sessions = new List<Session>();
 
             DataSet activeStaffSessionDataSet = DatabaseConnection.Instance.GetDataSet(selectActiveStaffSession);
             DataTable activeStaffSessionDataTable = activeStaffSessionDataSet.Tables[0];
 
-            if(activeStaffSessionDataTable.Rows != null)
+            if (activeStaffSessionDataTable.Rows != null)
             {
                 foreach (DataRow staffSession in activeStaffSessionDataTable.Rows)
                 {
                     Session session = new Session();
-                    sessions.Add(session);   
+                    sessions.Add(session);
                 }
             }
             return sessions;
         }
 
-        //public static DataTable GetAllActiveStaffSession()
-        //{
-        //    DataSet activeStaffSessionDataSet = DatabaseConnection.Instance.GetDataSet(selectActiveStaffSession);
-        //    DataTable activeStaffSessionDataTable = activeStaffSessionDataSet.Tables[0];
-        //    return activeStaffSessionDataTable;
-        //}
 
         // WIP CODE
         public Session GetOne(int id)

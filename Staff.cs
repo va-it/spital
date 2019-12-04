@@ -42,18 +42,6 @@ namespace spital
             Password = Encryption.EncryptText(password, encryptionPassword);
         }
 
-        //public List<Staff> GetActiveStaff()
-        //{
-        //    List<Staff> activeStaff = new List<Staff>();
-
-        //    //Get all active staff where staffID is this.id
-
-        //    foreach(Session session in Session.GetActiveStaffSession(Id))
-        //    {
-        //        if ()
-        //    }
-        //}
-
 
         public static bool ValidateCredentials(string username, string password)
         {
@@ -109,21 +97,24 @@ namespace spital
             // Authentication trigger
         }
 
-        public void Notify()
+        public void Notify(Alarm alarm)
         {
-            switch (StaffTypeId)
+            foreach(Session session in Session.GetActiveStaffSession(StaffTypeId))
             {
-                case 1:
-                    // Nurse, notify via SMS/Pager
-                    break;
-                case 2:
-                    // Consultant, notify via email
-                    break;
-                default:
-                    // No type matched.
-                    break;
+                switch (StaffTypeId)
+                {
+                    case 1:
+                        // Nurse, notify via SMS/Pager
+                        
+                        break;
+                    case 2:
+                        // Consultant, notify via email
+                        break;
+                    default:
+                        // No type matched.
+                        break;
+                }
             }
-
         }
 
         /// <summary>

@@ -53,22 +53,7 @@ namespace spital
             }           
         }
 
-        /// <summary>
-        /// Stops previously triggered alarm.
-        /// </summary>
-        public void StopAlarm()
-        {
-            // Stop alarm
-        }
-
-        /// <summary>
-        /// Displays the readings from associated modules.
-        /// </summary>
-        public void DisplayPatientData()
-        {
-            // Display readings from modules
-        }
-
+        
         /// <summary>
         /// Retrieve one Monitor from the database based on its ID
         /// </summary>

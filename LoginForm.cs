@@ -54,7 +54,7 @@ namespace spital
                         break;
 
                 }
-                this.Hide();
+                this.Close();
 
                 //We should navigate back to CentralDisplay but it should be a singleton
                 CentralDisplay centralDisplay = new CentralDisplay();

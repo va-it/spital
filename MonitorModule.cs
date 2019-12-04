@@ -108,10 +108,23 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Send alarm to central station
+        /// </summary>
+        /// <param name="alarm"></param>
         public void SendAlarmToCentralDisplay(Alarm alarm)
         {
             // Implement
             CentralDisplay.Instance.DisplayAlarm(alarm);
+        }
+
+        /// <summary>
+        /// Send alarm to all active staff session 
+        /// </summary>
+        /// <param name="alarm"></param>
+        public void SendAlarmToStaff(Alarm alarm)
+        {
+            
         }
 
         /// <summary>

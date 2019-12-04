@@ -42,6 +42,18 @@ namespace spital
             Password = Encryption.EncryptText(password, encryptionPassword);
         }
 
+        //public List<Staff> GetActiveStaff()
+        //{
+        //    List<Staff> activeStaff = new List<Staff>();
+
+        //    //Get all active staff where staffID is this.id
+
+        //    foreach(Session session in Session.GetActiveStaffSession(Id))
+        //    {
+        //        if ()
+        //    }
+        //}
+
 
         public static bool ValidateCredentials(string username, string password)
         {

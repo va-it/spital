@@ -38,6 +38,11 @@ namespace spital
             StaffID = base.Id;
         }
 
+        public void ReceiveNotification(Alarm alarm)
+        {
+
+        }
+
         /// <summary>
         /// Inserts this instance as row into nurse table
         /// </summary>

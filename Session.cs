@@ -57,6 +57,8 @@ namespace spital
             EndDateTime = null;
         }
 
+        public Session() { }
+
         /// <summary>
         /// Sets DateTimeStart value to the current date and time.
         /// </summary>
@@ -84,12 +86,30 @@ namespace spital
             return sessionDataTable;
         }
 
-        public static DataTable GetAllActiveStaffSession()
+        public static List<Session> GetActiveStaffSession(int StaffId)
         {
+            List<Session> sessions = new List<Session>();
+
             DataSet activeStaffSessionDataSet = DatabaseConnection.Instance.GetDataSet(selectActiveStaffSession);
             DataTable activeStaffSessionDataTable = activeStaffSessionDataSet.Tables[0];
-            return activeStaffSessionDataTable;
+
+            if(activeStaffSessionDataTable.Rows != null)
+            {
+                foreach (DataRow staffSession in activeStaffSessionDataTable.Rows)
+                {
+                    Session session = new Session();
+                    sessions.Add(session);   
+                }
+            }
+            return sessions;
         }
+
+        //public static DataTable GetAllActiveStaffSession()
+        //{
+        //    DataSet activeStaffSessionDataSet = DatabaseConnection.Instance.GetDataSet(selectActiveStaffSession);
+        //    DataTable activeStaffSessionDataTable = activeStaffSessionDataSet.Tables[0];
+        //    return activeStaffSessionDataTable;
+        //}
 
         // WIP CODE
         public Session GetOne(int id)

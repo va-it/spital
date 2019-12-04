@@ -22,6 +22,13 @@ namespace spital
         private static readonly string selectStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID;";
 
+        private static readonly string selectActiveStaffSession =
+            "SELECT staff.staffID , staffType.name " +
+            "FROM session " +
+            "LEFT JOIN staff ON session.staffID = staff.staffID " +
+            "LEFT JOIN staffType on staff.[staffTypeID] = staffType.staffTypeID " +
+            "WHERE session.endDateTime IS NULL;";
+
         private static readonly string selectWhereStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID " +
             "WHERE sessionID = @sessionID;";
@@ -75,6 +82,13 @@ namespace spital
             DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectSessionDetails);
             DataTable sessionDataTable = sessionDataSet.Tables[0];
             return sessionDataTable;
+        }
+
+        public static DataTable GetAllActiveStaffSession()
+        {
+            DataSet activeStaffSessionDataSet = DatabaseConnection.Instance.GetDataSet(selectActiveStaffSession);
+            DataTable activeStaffSessionDataTable = activeStaffSessionDataSet.Tables[0];
+            return activeStaffSessionDataTable;
         }
 
         // WIP CODE

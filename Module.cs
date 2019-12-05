@@ -25,8 +25,8 @@ namespace spital
         private static readonly string selectWhereStatement = "SELECT * FROM module WHERE moduleID = @moduleID;";
 
         private static readonly string insertStatement = 
-            "INSERT INTO module (moduleID, name, defaultMin, defaultMax) " + 
-            "VALUES (@moduleID, @name, @defaultMin, @defaultMax);";
+            "INSERT INTO module (name, icon, defaultMin, defaultMax) " + 
+            "VALUES (@name, @icon, @defaultMin, @defaultMax);";
 
         private static readonly string updateStatement = 
             "UPDATE module SET name = @name, icon = @icon, defaultMin = @defaultMin, " +
@@ -37,7 +37,7 @@ namespace spital
         /// <summary>
         /// Constructor. Sets name, icon, min and max values based on values from database
         /// </summary>
-        public Module(int id)
+        public Module(Nullable<int> id)
         {
             SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
             sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@moduleID", id));
@@ -63,7 +63,7 @@ namespace spital
         /// </summary>
         /// <param name="min"></param>
         /// <param name="max"></param>
-        public void AssignLimits(int min, int max)
+        public void AssignLimits(float min, float max)
         {
             DefaultMin = min;
             DefaultMax = max;
@@ -86,7 +86,7 @@ namespace spital
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Module</returns>
-        public static Module GetOne(int id)
+        public static Module GetOne(Nullable<int> id)
         {
             Module module = new Module(id);
 
@@ -105,10 +105,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@moduleID", Id));
                 command.Parameters.Add(new SqlParameter("@name", Name));
                 command.Parameters.Add(new SqlParameter("@icon", Icon));
-                command.Parameters.Add(new SqlParameter("@defautMin", DefaultMin));
+                command.Parameters.Add(new SqlParameter("@defaultMin", DefaultMin));
                 command.Parameters.Add(new SqlParameter("@defaultMax", DefaultMax));
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);

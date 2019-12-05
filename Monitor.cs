@@ -20,7 +20,7 @@ namespace spital
 
         private static readonly string selectWhereStatement = "SELECT * FROM monitor WHERE monitorID = @monitorID;";
 
-        private static readonly string insertStatement = "INSERT INTO monitor (monitorID, active) VALUES (@monitorID, @active);";
+        private static readonly string insertStatement = "INSERT INTO monitor (active) VALUES (@active);";
 
         private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID;";
 
@@ -84,23 +84,25 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into monitor table
         /// </summary>
-        public void Save()
+        public Nullable<int> Save()
         {
+            Nullable<int> lastInsertedID = null;
 
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@monitorID", Id));
                 command.Parameters.Add(new SqlParameter("@active", Active));
 
-                DatabaseConnection.Instance.ExecuteCommand(command);
+                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+
+            return lastInsertedID;
         }
 
         /// <summary>

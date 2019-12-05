@@ -56,9 +56,8 @@ namespace spital
                 }
                 this.Close();
 
-                //We should navigate back to CentralDisplay but it should be a singleton
-                CentralDisplay centralDisplay = new CentralDisplay();
-                centralDisplay.Show();
+                // Ensure Central Display is shown
+                CentralDisplay.Instance.Show();
 
                 //RegistrationForm registration = new RegistrationForm();
                 //registration.Show();

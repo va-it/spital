@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    class Consultant : Staff
+    public class Consultant : Staff
     {
         public new int Id { get; }
         public string Email { get; set; }

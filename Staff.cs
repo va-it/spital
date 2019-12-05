@@ -10,10 +10,10 @@ using System.Data.SqlClient;
 
 namespace spital
 {
-    abstract class Staff
+    public abstract class Staff
     {
         // Auto-implemented properties for trivial get and set
-        public int Id { get; }
+        public int Id { get; set; }
         public int StaffTypeId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }

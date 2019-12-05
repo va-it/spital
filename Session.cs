@@ -91,7 +91,7 @@ namespace spital
         public static DataTable GetActiveSessions()
         {
             
-            DataSet activeSessionsDataSet = DatabaseConnection.Instance.GetDataSet(selectActiveStaffSession);
+            DataSet activeSessionsDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
             DataTable activeSessionsDataTable = activeSessionsDataSet.Tables[0];
 
             return activeSessionsDataTable;

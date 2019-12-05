@@ -34,6 +34,7 @@ namespace spital
 
         private static readonly string Storage = "Notification.txt";
 
+        public Staff() {  }
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
         /// </summary>
@@ -105,8 +106,9 @@ namespace spital
         }
 
 
-        public static void WriteNotificationToFile(Alarm alarm)
+        public static void WriteNotificationToFile(Alarm alarm, string notificationType)
         {
+            
             //open the storage file
             StreamReader reader = new StreamReader(Storage);
 
@@ -123,7 +125,8 @@ namespace spital
             StreamWriter writer = new StreamWriter(Storage, true);
 
             //write details about alarm variable
-            writer.WriteLine();
+
+            writer.WriteLine("{0},{1}", alarm.StartDateTime, alarm.MonitorModule.Monitor.Id);
             writer.Close();
         }
 

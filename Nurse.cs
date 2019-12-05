@@ -29,6 +29,10 @@ namespace spital
         private static readonly string updateStatement =
             "UPDATE nurse SET phoneNumber = @phoneNumber, staffID = @staffID WHERE nurseID = @nurseID;";
 
+        public Nurse()
+        {
+        }
+
         /// <summary>
         /// Constructor. Instantiates staff class with values from parameters and sets phoneNumber and staffId of nurse instance
         /// </summary>
@@ -48,10 +52,10 @@ namespace spital
         /// </summary>
         public void SendSMS(Alarm alarm)
         {
+            string notifaicationType = "SMS";
             // Here there should be code to send SMS.
-
             //Then we write to file
-            Staff.WriteNotificationToFile(alarm);
+            Staff.WriteNotificationToFile(alarm, notifaicationType);
         }
 
         /// <summary>
@@ -107,20 +111,27 @@ namespace spital
 
         public static Nurse GetOneFromStaffID(int staffID)
         {
-            DataSet nurseDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+
+            Nurse nurse = new Nurse();
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStaffID);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@staffID", staffID));
+
+            DataSet nurseDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
+
             DataTable nurseDataTable = nurseDataSet.Tables[0];
 
-            DataRow nurseRow = nurseDataTable.Rows[0];
-                
-            Nurse nurse = new Nurse(
-                int.Parse(nurseRow["staffTypeID"].ToString()),
-                nurseRow["username"].ToString(),
-                nurseRow["password"].ToString(),
-                nurseRow["phoneNumber"].ToString()
-                );
+            if (nurseDataTable.Rows.Count == 1)
+            {
+                DataRow nurseRow = nurseDataTable.Rows[0];
 
-            nurse.StaffID = int.Parse(nurseRow["staffID"].ToString());
-            
+                nurse.StaffTypeId = int.Parse(nurseRow["staffTypeID"].ToString());
+                nurse.Username = nurseRow["username"].ToString();
+                nurse.Password = nurseRow["password"].ToString();
+                nurse.PhoneNumber = nurseRow["phoneNumber"].ToString();
+
+                nurse.StaffID = int.Parse(nurseRow["staffID"].ToString());
+            }
+
             return nurse;
         }
     }

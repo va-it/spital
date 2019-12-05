@@ -57,7 +57,7 @@ namespace spital
         {
             Alarm alarm = new Alarm(this, reading);
             alarm.Save();
-            SendAlarmToCentralDisplay(alarm);
+            alarm.NotifyCentralDisplay();
         }
 
         /// <summary>
@@ -106,12 +106,6 @@ namespace spital
             { 
                 TriggerAlarm(random);
             }
-        }
-
-        public void SendAlarmToCentralDisplay(Alarm alarm)
-        {
-            // Implement
-            CentralDisplay.Instance.DisplayAlarm(alarm);
         }
 
         /// <summary>

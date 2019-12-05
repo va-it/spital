@@ -157,5 +157,9 @@ namespace spital
             return alarms;
         }
 
+        public void NotifyCentralDisplay()
+        {
+            CentralDisplay.Instance.DisplayAlarm(this);
+        }
     }
 }

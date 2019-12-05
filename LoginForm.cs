@@ -51,6 +51,15 @@ namespace spital
 
                     case "stop":
                         //stop session
+                       
+                        {
+                            
+
+
+                            int staffID = Int32.Parse(row["staffID"].ToString());
+                            Session session = new Session(staffID);
+                            session.Update();
+                        }
                         break;
 
                 }

@@ -77,7 +77,6 @@ namespace spital
             return sessionDataTable;
         }
 
-        // WIP CODE
         public Session GetOne(int id)
         {
             Session session = new Session(id);
@@ -137,6 +136,7 @@ namespace spital
         /// </summary>
         public void Update()
         {
+            
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -153,6 +153,7 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+           
         }
 
 

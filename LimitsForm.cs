@@ -20,7 +20,7 @@ namespace spital
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
         List<PictureBox> moduleIcon = new List<PictureBox>();
-        public List<Label> modules = new List<Label>();
+        List<Label> modules = new List<Label>();
         List<NumericUpDown> limitMin = new List<NumericUpDown>();
         List<NumericUpDown> limitMax = new List<NumericUpDown>();
 

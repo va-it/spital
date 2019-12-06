@@ -86,7 +86,6 @@ namespace spital
         /// </summary>
         public void Save()
         {
-
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();

@@ -84,10 +84,8 @@ namespace spital
         /// <summary>
         /// Inserts this instance as row into monitor table
         /// </summary>
-        public Nullable<int> Save()
+        public void Save()
         {
-            Nullable<int> lastInsertedID = null;
-
             try
             {
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
@@ -96,14 +94,12 @@ namespace spital
                 command.Parameters.Add(new SqlParameter("@monitorID", Id));
                 command.Parameters.Add(new SqlParameter("@active", Active));
 
-                lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);
+                DatabaseConnection.Instance.ExecuteCommand(command);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
-
-            return lastInsertedID;
         }
 
         /// <summary>

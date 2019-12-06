@@ -16,13 +16,14 @@ namespace spital
         public int Id { get; set; }
         public bool Active { get; set; }
 
-        private static readonly string selectStatement = "SELECT * FROM monitor;";
+        private static readonly string selectWhereStatement = 
+            "SELECT * FROM monitor WHERE monitorID = @monitorID;";
 
-        private static readonly string selectWhereStatement = "SELECT * FROM monitor WHERE monitorID = @monitorID;";
+        private static readonly string insertStatement = 
+            "INSERT INTO monitor (monitorID, active) VALUES (@monitorID, @active);";
 
-        private static readonly string insertStatement = "INSERT INTO monitor (monitorID, active) VALUES (@monitorID, @active);";
-
-        private static readonly string updateStatement = "UPDATE monitor SET active = @active WHERE monitorID = @monitorID;";
+        private static readonly string updateStatement = 
+            "UPDATE monitor SET active = @active WHERE monitorID = @monitorID;";
 
         /// <summary>
         /// Constructor. Instantiate object without values
@@ -32,6 +33,7 @@ namespace spital
         /// <summary>
         /// Constructor. Sets Id and Active based on values from database
         /// </summary>
+        /// <param name="id">ID of monitor to retrieve from database</param>
         public Monitor(Nullable<int> id)
         {
             if (id.HasValue)
@@ -54,26 +56,10 @@ namespace spital
         }
 
         /// <summary>
-        /// Stops previously triggered alarm.
-        /// </summary>
-        public void StopAlarm()
-        {
-            // Stop alarm
-        }
-
-        /// <summary>
-        /// Displays the readings from associated modules.
-        /// </summary>
-        public void DisplayPatientData()
-        {
-            // Display readings from modules
-        }
-
-        /// <summary>
         /// Retrieve one Monitor from the database based on its ID
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>Monitor</returns>
+        /// <returns>Monitor instance</returns>
         public static Monitor GetOne(int id)
         {
             Monitor monitor = new Monitor(id);
@@ -123,6 +109,10 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Gets all alarms without an end datetime for this monitor
+        /// </summary>
+        /// <returns>List of active alarms</returns>
         public List<Alarm> GetActiveAlarms()
         {
             List<Alarm> activeAlarms = new List<Alarm>();

@@ -31,22 +31,19 @@ namespace spital
             Monitor = monitorForm;
         }
 
-        private void modulesButton_Click(object sender, EventArgs e)
-        {
-            SaveAssignedLimits();
-            Monitor.Active = true; 
-            this.Close();
-
-            Monitor.RefreshModules();
-         
-        }
-
+        /// <summary>
+        /// Populates Lists with controls in Form and retrieves monitorModule
+        /// to insert values in NumericUpDown controls
+        /// </summary>
         private void FillLimits()
         {
             GenerateControlsLists();
             GetMonitorModules();
         }
 
+        /// <summary>
+        /// Populates Lists with controls from Form
+        /// </summary>
         private void GenerateControlsLists()
         {
             modules.Add(labelModule1);
@@ -70,7 +67,10 @@ namespace spital
             limitMax.Add(maxLimit4);
         }
 
-
+        /// <summary>
+        /// Retrieves monitorModules for specific monitor 
+        /// and populates NumericUpDown controls with assigned limits
+        /// </summary>
         private void GetMonitorModules()
         {
             monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
@@ -87,6 +87,9 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Updates monitorModules with specified limits
+        /// </summary>
         private void SaveAssignedLimits()
         {
             for (int i = 0; i < monitorModules.Count; ++i)
@@ -101,6 +104,15 @@ namespace spital
         private void LimitsForm_Shown(object sender, EventArgs e)
         {
             FillLimits();
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            SaveAssignedLimits();
+            Monitor.Active = true;
+            this.Close();
+
+            Monitor.RefreshModules();
         }
     }
 }

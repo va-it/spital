@@ -43,7 +43,7 @@ namespace spital
 
         private void modulesButton_Click(object sender, EventArgs e)
         {
-            // Code to select the modules
+            // Instiate ModulesForm and display
             Form modules = new ModulesForm(this);
             modules.Show();
         }
@@ -70,11 +70,6 @@ namespace spital
             }      
             
             monitorNumber.Text = MonitorId.ToString();
-        }
-
-        private void FillMonitor()
-        {
-            GetMonitorModules();
         }
 
         private void GenerateListsOfControls()
@@ -210,7 +205,7 @@ namespace spital
         {
             // Empty all the module names and limits before retrieving new values from database
             ClearControls();
-            FillMonitor();
+            GetMonitorModules();
             Timer();// calls the timer function
         }
 

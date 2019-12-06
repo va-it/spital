@@ -111,7 +111,7 @@ namespace spital
 
             DisplayMonitorForm(1);
 
-            if (monitorForm1.Active)
+            if (monitorForm1.Active && !monitorForm1.HasAlarms)
             {
                 userControl_bed1.MarkBedAsActive();
             }
@@ -129,7 +129,7 @@ namespace spital
             
             DisplayMonitorForm(2);
 
-            if (monitorForm2.Active)
+            if (monitorForm2.Active && !monitorForm2.HasAlarms)
             {
                 userControl_bed2.MarkBedAsActive();
             }
@@ -147,9 +147,9 @@ namespace spital
             
             DisplayMonitorForm(3);
 
-            if (monitorForm3.Active)
+            if (monitorForm3.Active && !monitorForm3.HasAlarms)
             {
-                userControl_bed4.MarkBedAsActive();
+                userControl_bed3.MarkBedAsActive();
             }
         }
 
@@ -165,7 +165,7 @@ namespace spital
 
             DisplayMonitorForm(4);
 
-            if (monitorForm4.Active)
+            if (monitorForm4.Active && !monitorForm4.HasAlarms)
             {
                 userControl_bed4.MarkBedAsActive();
             }
@@ -183,7 +183,7 @@ namespace spital
 
             DisplayMonitorForm(5);
 
-            if (monitorForm5.Active)
+            if (monitorForm5.Active && !monitorForm5.HasAlarms)
             {
                 userControl_bed5.MarkBedAsActive();
             }
@@ -201,7 +201,7 @@ namespace spital
 
             DisplayMonitorForm(6);
 
-            if (monitorForm6.Active)
+            if (monitorForm6.Active && !monitorForm6.HasAlarms)
             {
                 userControl_bed6.MarkBedAsActive();
             }
@@ -220,7 +220,7 @@ namespace spital
 
             DisplayMonitorForm(7);
 
-            if (monitorForm7.Active)
+            if (monitorForm7.Active && !monitorForm7.HasAlarms)
             {
                 userControl_bed7.MarkBedAsActive();
             }
@@ -238,7 +238,7 @@ namespace spital
             
             DisplayMonitorForm(8);
 
-            if (monitorForm8.Active)
+            if (monitorForm8.Active && !monitorForm8.HasAlarms)
             {
                 userControl_bed8.MarkBedAsActive();
             }

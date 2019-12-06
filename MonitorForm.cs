@@ -28,6 +28,7 @@ namespace spital
 
         public int MonitorId { get; set; }
         public bool Active { get; set; }
+        public bool HasAlarms { get; set; }
 
         public MonitorForm()
         {
@@ -122,6 +123,7 @@ namespace spital
             foreach (MonitorModule monitorModule in monitorModules)
             {
                 hasAlarm = CheckIfMonitorModuleHasAlarm(monitorModule.Id);
+                HasAlarms = hasAlarm;
 
                 if (!hasAlarm)
                 {
@@ -197,6 +199,8 @@ namespace spital
             }
 
             AlarmTextBox.Text = "";
+
+            HasAlarms = false;
 
             CentralDisplay.Instance.HideAlarms(this);
         }

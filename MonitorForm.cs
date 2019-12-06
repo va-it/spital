@@ -12,16 +12,12 @@ namespace spital
         static Timer myTimer = new System.Windows.Forms.Timer();
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
-        //List<MonitorModule> monitorModulesWithoutAlarm = new List<MonitorModule>();
-
-        public List<Alarm> alarms = new List<Alarm>();
-
+        List<Alarm> alarms = new List<Alarm>();
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
         List<Label> moduleReading = new List<Label>();
         List<Label> limitMin = new List<Label>();
         List<Label> limitMax = new List<Label>();
-
         List<String> alarmMessage = new List<string>();
 
         Monitor monitor = new Monitor();
@@ -73,6 +69,14 @@ namespace spital
             monitorNumber.Text = MonitorId.ToString();
         }
 
+        private void MonitorForm_Shown(object sender, EventArgs e)
+        {
+            RefreshModules();
+        }
+
+        /// <summary>
+        /// Populates Lists with controls from Form
+        /// </summary>
         private void GenerateListsOfControls()
         {
             moduleName.Add(moduleName1);
@@ -101,7 +105,11 @@ namespace spital
             moduleReading.Add(label4reading);
         }
 
-
+        /// <summary>
+        /// Checks if any alarm is for a monitorModule with the passed ID
+        /// </summary>
+        /// <param name="monitorModuleId"></param>
+        /// <returns></returns>
         public bool CheckIfMonitorModuleHasAlarm(int monitorModuleId)
         {
             foreach (Alarm alarm in alarms)
@@ -115,6 +123,9 @@ namespace spital
             return false;
         }
 
+        /// <summary>
+        /// Generates random reading, and compares value with set limits
+        /// </summary>
         public void CheckReadings()
         {
             int index = 0;
@@ -156,6 +167,11 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Called every time the Timer() ticks
+        /// </summary>
+        /// <param name="myObject"></param>
+        /// <param name="myEventArgs"></param>
         private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             CheckReadings();
@@ -168,7 +184,9 @@ namespace spital
 
         }
 
-
+        /// <summary>
+        /// Retrieve monitorModules from database and sets min and max limit controls values
+        /// </summary>
         public void GetMonitorModules()
         {
             monitorModules = MonitorModule.GetAllFromMonitor(MonitorId);
@@ -186,11 +204,10 @@ namespace spital
             }
         }
 
-        private void MonitorForm_Shown(object sender, EventArgs e)
-        {
-            RefreshModules();
-        }
-
+        /// <summary>
+        /// Removes background from modules readings and promts
+        /// Central Display to change bed background and hide alarm icon and message
+        /// </summary>
         public void ResetAlarms()
         {
             foreach (Label reading in moduleReading)
@@ -205,14 +222,19 @@ namespace spital
             CentralDisplay.Instance.HideAlarms(this);
         }
 
+        /// <summary>
+        /// Empties all module names and limits before retrieving new values from database
+        /// </summary>
         public void RefreshModules()
         {
-            // Empty all the module names and limits before retrieving new values from database
             ClearControls();
             GetMonitorModules();
-            Timer();// calls the timer function
+            Timer();
         }
 
+        /// <summary>
+        /// Timer function to generate random modules readings
+        /// </summary>
         public void Timer()
         {
             CheckReadings();
@@ -223,7 +245,9 @@ namespace spital
             myTimer.Start();
         }
 
-
+        /// <summary>
+        /// Remove values from all controls
+        /// </summary>
         public void ClearControls()
         {
             foreach (Label label in moduleName)
@@ -253,6 +277,9 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Sets alarms messages and changes background of module readings
+        /// </summary>
         public void ShowAlarms()
         {
             alarmMessage.Clear();
@@ -273,6 +300,9 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Stops alarms and resets readings background and alarms messages
+        /// </summary>
         public void StopAlarms()
         {
             foreach (Alarm alarm in alarms)

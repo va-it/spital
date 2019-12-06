@@ -20,16 +20,6 @@ namespace spital
             Monitor = monitorForm;
         }
 
-        private void modulesButton_Click(object sender, EventArgs e)
-        {
-            SaveSelectedModules();
-            
-            this.Close();
-            Form limits = new LimitsForm(Monitor);
-            limits.Show();
-        }
-
-
         /// <summary>
         /// Retrieves modules from database to populate checkedListBox
         /// </summary>
@@ -139,6 +129,15 @@ namespace spital
         {
             FillModulesSelection();
             SelectExistingModules();
+        }
+
+        private void modulesButton_Click(object sender, EventArgs e)
+        {
+            SaveSelectedModules();
+
+            this.Close();
+            Form limits = new LimitsForm(Monitor);
+            limits.Show();
         }
     }
 }

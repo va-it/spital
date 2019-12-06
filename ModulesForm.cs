@@ -30,8 +30,10 @@ namespace spital
         }
 
 
-        // to retrive module type from database
-        public void FillModuleType()
+        /// <summary>
+        /// Retrieves modules from database to populate checkedListBox
+        /// </summary>
+        public void FillModulesSelection()
         {
             DataTable modulesTable = Module.GetAll();
 
@@ -41,7 +43,9 @@ namespace spital
             
         }
 
-        // Store selected modules into database in table "monitorModule" based on the monitor and module id
+        /// <summary>
+        /// Store selected modules in table "monitorModule"
+        /// </summary>
         private void SaveSelectedModules()
         {
             List<int> monitorModulesToSkip = new List<int>();
@@ -109,6 +113,9 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Automatically select modules in checkedListBox if already attached to monitor
+        /// </summary>
         private void SelectExistingModules()
         {
             List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
@@ -130,7 +137,7 @@ namespace spital
 
         private void ModulesForm_Load(object sender, EventArgs e)
         {
-            FillModuleType();
+            FillModulesSelection();
             SelectExistingModules();
         }
     }

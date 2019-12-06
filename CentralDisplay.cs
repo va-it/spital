@@ -244,6 +244,10 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Display monitor form based on monitor ID
+        /// </summary>
+        /// <param name="monitorId"></param>
         private void DisplayMonitorForm(int monitorId)
         {
             foreach (MonitorForm monitorForm in monitorForms)
@@ -255,6 +259,8 @@ namespace spital
                 }
             }
         }
+
+
 
         private void bt_ManagementReport_Click(object sender, EventArgs e)
         {

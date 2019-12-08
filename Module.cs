@@ -59,17 +59,6 @@ namespace spital
         }
 
         /// <summary>
-        /// Assigns parameters to module limits.
-        /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        public void AssignLimits(float min, float max)
-        {
-            DefaultMin = min;
-            DefaultMax = max;
-        }
-
-        /// <summary>
         /// Returns a DataTable object of all Modules
         /// </summary>
         /// <returns></returns>

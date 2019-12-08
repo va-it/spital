@@ -128,11 +128,14 @@ namespace spital
             {
                 DataRow row = monitorModuleDataTable.Rows[0];
 
+                
+
                 Monitor monitor = new Monitor(Int32.Parse(row["monitorID"].ToString()));
                 Module module = new Module(Int32.Parse(row["moduleID"].ToString()));
 
                 monitorModule = new MonitorModule(monitor, module)
                 {
+                    Id = Int32.Parse(row["monitorID"].ToString()),
                     AssignedMin = float.Parse(row["assignedMin"].ToString()),
                     AssignedMax = float.Parse(row["assignedMax"].ToString())
                 };

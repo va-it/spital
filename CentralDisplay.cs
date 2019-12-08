@@ -76,9 +76,7 @@ namespace spital
             {
                 if (monitorId == alarm.MonitorModule.Monitor.Id && int.Parse(userControl_Bed.hiddenLabel_MonitorID.Text) == monitorId )
                 {
-                    userControl_Bed.AlertPictureBox = Resources.icon_Alert;
-                    userControl_Bed.pictureBox_bed.BackColor = Color.Yellow;
-                    userControl_Bed.Alert = alarm.MonitorModule.Module.Name;
+                    userControl_Bed.ShowAlarm(alarm.MonitorModule.Module.Name);
                 } 
             }
         }
@@ -115,7 +113,7 @@ namespace spital
                 monitorForms.Add(monitorForm1);
             }
 
-            DisplayMonitorForm(1);
+            DisplayMonitorForm(monitorForm1.MonitorId);
 
             if (monitorForm1.Active && !monitorForm1.HasAlarms)
             {
@@ -133,7 +131,7 @@ namespace spital
                 monitorForms.Add(monitorForm2);
             }
             
-            DisplayMonitorForm(2);
+            DisplayMonitorForm(monitorForm2.MonitorId);
 
             if (monitorForm2.Active && !monitorForm2.HasAlarms)
             {
@@ -151,7 +149,7 @@ namespace spital
                 monitorForms.Add(monitorForm3);
             }
             
-            DisplayMonitorForm(3);
+            DisplayMonitorForm(monitorForm3.MonitorId);
 
             if (monitorForm3.Active && !monitorForm3.HasAlarms)
             {
@@ -169,7 +167,7 @@ namespace spital
                 monitorForms.Add(monitorForm4);
             }
 
-            DisplayMonitorForm(4);
+            DisplayMonitorForm(monitorForm4.MonitorId);
 
             if (monitorForm4.Active && !monitorForm4.HasAlarms)
             {
@@ -187,7 +185,7 @@ namespace spital
                 monitorForms.Add(monitorForm5);
             }
 
-            DisplayMonitorForm(5);
+            DisplayMonitorForm(monitorForm5.MonitorId);
 
             if (monitorForm5.Active && !monitorForm5.HasAlarms)
             {
@@ -205,7 +203,7 @@ namespace spital
                 monitorForms.Add(monitorForm6);
             }
 
-            DisplayMonitorForm(6);
+            DisplayMonitorForm(monitorForm6.MonitorId);
 
             if (monitorForm6.Active && !monitorForm6.HasAlarms)
             {
@@ -224,7 +222,7 @@ namespace spital
                 monitorForms.Add(monitorForm7);
             }
 
-            DisplayMonitorForm(7);
+            DisplayMonitorForm(monitorForm7.MonitorId);
 
             if (monitorForm7.Active && !monitorForm7.HasAlarms)
             {
@@ -242,7 +240,7 @@ namespace spital
                 monitorForms.Add(monitorForm8);
             }
             
-            DisplayMonitorForm(8);
+            DisplayMonitorForm(monitorForm8.MonitorId);
 
             if (monitorForm8.Active && !monitorForm8.HasAlarms)
             {

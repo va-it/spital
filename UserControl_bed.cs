@@ -61,6 +61,13 @@ namespace spital
             Alert = null;
         }
 
+        public void ShowAlarm(string alarmMessage)
+        {
+            AlertPictureBox = Resources.icon_Alert;
+            pictureBox_bed.BackColor = Color.Yellow;
+            Alert = alarmMessage;
+        }
+
         private void button_mute_Click(object sender, EventArgs e)
         {
             MuteAlarm();

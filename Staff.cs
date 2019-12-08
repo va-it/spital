@@ -42,7 +42,12 @@ namespace spital
             Password = Encryption.EncryptText(password, encryptionPassword);
         }
 
-
+        /// <summary>
+        /// Compares values passed as parameters with those stored in the database
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>True if credentials match with a record in the database</returns>
         public static bool ValidateCredentials(string username, string password)
         {
             // Retrieve values from DB and validate
@@ -72,29 +77,6 @@ namespace spital
             }
 
             return valid;
-        }
-        /// <summary>
-        /// Triggers authentication and, upon success, starts session
-        /// </summary>
-        public void Register()
-        {
-            // trigger authentication and, upon success, start session
-        }
-
-        /// <summary>
-        /// Triggers authentication and, upon success, ends active session
-        /// </summary>
-        public void DeRegister()
-        {
-            // trigger authentication and, upon success, end session
-        }
-
-        /// <summary>
-        /// Authentication trigger
-        /// </summary>
-        public void Login()
-        {
-            // Authentication trigger
         }
 
         public void Notify()

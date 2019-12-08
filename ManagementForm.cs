@@ -15,22 +15,26 @@ namespace spital
         public ManagementForm()
         {
             InitializeComponent();
-            FillAlarmReport();
-            FillSessionReport();
+            GetAlarms();
+            GetSessions();
         }
 
-
-        public void FillAlarmReport()
+        /// <summary>
+        /// Populates Alarms_Datagrid with all alarm records from database
+        /// </summary>
+        public void GetAlarms()
         {
             DataTable alarmTable = Alarm.GetAll();
-            AlarmReport_DataGrid.DataSource = alarmTable;
+            Alarms_DataGrid.DataSource = alarmTable;
         }
 
-
-        public void FillSessionReport()
+        /// <summary>
+        /// Populates Sessions_Datagrid with all session records from database
+        /// </summary>
+        public void GetSessions()
         {
             DataTable sessionTable = Session.GetAll();
-            SessionReport_DataGrid.DataSource = sessionTable;
+            Sessions_DataGrid.DataSource = sessionTable;
         }
     }
 }

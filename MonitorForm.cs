@@ -109,7 +109,7 @@ namespace spital
         /// Checks if any alarm is for a monitorModule with the passed ID
         /// </summary>
         /// <param name="monitorModuleId"></param>
-        /// <returns></returns>
+        /// <returns>Boolean</returns>
         public bool CheckIfMonitorModuleHasAlarm(int monitorModuleId)
         {
             foreach (Alarm alarm in alarms)
@@ -185,7 +185,7 @@ namespace spital
         }
 
         /// <summary>
-        /// Retrieve monitorModules from database and sets min and max limit controls values
+        /// Retrieves monitorModules from database and sets min and max limit controls values
         /// </summary>
         public void GetMonitorModules()
         {
@@ -246,7 +246,7 @@ namespace spital
         }
 
         /// <summary>
-        /// Remove values from all controls
+        /// Removes values from all controls
         /// </summary>
         public void ClearControls()
         {

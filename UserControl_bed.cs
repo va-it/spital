@@ -20,9 +20,6 @@ namespace spital
             InitializeComponent();
         }
 
-        //Monitor monitor = new Monitor();
-        //MonitorForm monitorForm = new MonitorForm();
-
         public string BedNumber
         {
             get { return label_bednumber.Text; }
@@ -47,15 +44,26 @@ namespace spital
             set { pictureBox_alert.Image = value; }
         }
 
+        /// <summary>
+        /// Changes background of bed icon to Chartreuse
+        /// </summary>
         public void MarkBedAsActive()
         {
             pictureBox_bed.BackColor = Color.Chartreuse;
         }
 
-        private void button_mute_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Hides alarm message and icon
+        /// </summary>
+        public void MuteAlarm()
         {
             AlertPictureBox = null;
-            Alert = "";
+            Alert = null;
+        }
+
+        private void button_mute_Click(object sender, EventArgs e)
+        {
+            MuteAlarm();
         }
     }
 }

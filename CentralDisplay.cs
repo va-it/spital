@@ -49,7 +49,9 @@ namespace spital
             GenerateControlList();
         }
 
-        //Adding usercontrol to list of beds
+        /// <summary>
+        /// Adds bed userControls to List of beds
+        /// </summary>
         public void GenerateControlList()
         {
             beds.Add(userControl_bed1);
@@ -62,7 +64,10 @@ namespace spital
             beds.Add(userControl_bed8);
         }
 
-        //checks which monitor id triggered alarm and compares it with monitor id on the usercontrol to display alerts
+        /// <summary>
+        /// Displays details of alarm from parameter on the appropriate bed usercontrol
+        /// </summary>
+        /// <param name="alarm"></param>
         public void DisplayAlarm(Alarm alarm)
         {
             int monitorId = alarm.MonitorModule.Monitor.Id;
@@ -84,7 +89,10 @@ namespace spital
             registrationForm.Show();
         }
 
-
+        /// <summary>
+        /// Hides alarm icon and message from bed userControl
+        /// </summary>
+        /// <param name="monitor"></param>
         public void HideAlarms(MonitorForm monitor)
         {
             // remove picture and text from monitorUserControl based on monitor.Id
@@ -92,9 +100,7 @@ namespace spital
             {
                 if (monitor.MonitorId == int.Parse(userControl_Bed.hiddenLabel_MonitorID.Text))
                 {
-                    userControl_Bed.AlertPictureBox = null;
-                    userControl_Bed.pictureBox_bed.BackColor = Color.Chartreuse;
-                    userControl_Bed.Alert = null;
+                    userControl_Bed.MuteAlarm();
                 }
             }
         }

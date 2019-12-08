@@ -32,16 +32,16 @@
             this.panel_header = new System.Windows.Forms.Panel();
             this.panel_footer = new System.Windows.Forms.Panel();
             this.label_copyRight = new System.Windows.Forms.Label();
-            this.AlarmReport_DataGrid = new System.Windows.Forms.DataGridView();
-            this.SessionReport_DataGrid = new System.Windows.Forms.DataGridView();
+            this.Alarms_DataGrid = new System.Windows.Forms.DataGridView();
+            this.Sessions_DataGrid = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel_header.SuspendLayout();
             this.panel_footer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AlarmReport_DataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SessionReport_DataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Alarms_DataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sessions_DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -79,34 +79,34 @@
             this.label_copyRight.TabIndex = 18;
             this.label_copyRight.Text = "© 2019 East Anglia Hospital Trust";
             // 
-            // AlarmReport_DataGrid
+            // Alarms_DataGrid
             // 
-            this.AlarmReport_DataGrid.AllowUserToAddRows = false;
-            this.AlarmReport_DataGrid.AllowUserToDeleteRows = false;
-            this.AlarmReport_DataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.AlarmReport_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AlarmReport_DataGrid.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.AlarmReport_DataGrid.Location = new System.Drawing.Point(5, 5);
-            this.AlarmReport_DataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.AlarmReport_DataGrid.Name = "AlarmReport_DataGrid";
-            this.AlarmReport_DataGrid.ReadOnly = true;
-            this.AlarmReport_DataGrid.RowTemplate.Height = 33;
-            this.AlarmReport_DataGrid.Size = new System.Drawing.Size(584, 310);
-            this.AlarmReport_DataGrid.TabIndex = 1;
+            this.Alarms_DataGrid.AllowUserToAddRows = false;
+            this.Alarms_DataGrid.AllowUserToDeleteRows = false;
+            this.Alarms_DataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.Alarms_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Alarms_DataGrid.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Alarms_DataGrid.Location = new System.Drawing.Point(5, 5);
+            this.Alarms_DataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.Alarms_DataGrid.Name = "Alarms_DataGrid";
+            this.Alarms_DataGrid.ReadOnly = true;
+            this.Alarms_DataGrid.RowTemplate.Height = 33;
+            this.Alarms_DataGrid.Size = new System.Drawing.Size(584, 310);
+            this.Alarms_DataGrid.TabIndex = 1;
             // 
-            // SessionReport_DataGrid
+            // Sessions_DataGrid
             // 
-            this.SessionReport_DataGrid.AllowUserToAddRows = false;
-            this.SessionReport_DataGrid.AllowUserToDeleteRows = false;
-            this.SessionReport_DataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.SessionReport_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SessionReport_DataGrid.Location = new System.Drawing.Point(5, 5);
-            this.SessionReport_DataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.SessionReport_DataGrid.Name = "SessionReport_DataGrid";
-            this.SessionReport_DataGrid.ReadOnly = true;
-            this.SessionReport_DataGrid.RowTemplate.Height = 33;
-            this.SessionReport_DataGrid.Size = new System.Drawing.Size(584, 310);
-            this.SessionReport_DataGrid.TabIndex = 38;
+            this.Sessions_DataGrid.AllowUserToAddRows = false;
+            this.Sessions_DataGrid.AllowUserToDeleteRows = false;
+            this.Sessions_DataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.Sessions_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Sessions_DataGrid.Location = new System.Drawing.Point(5, 5);
+            this.Sessions_DataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.Sessions_DataGrid.Name = "Sessions_DataGrid";
+            this.Sessions_DataGrid.ReadOnly = true;
+            this.Sessions_DataGrid.RowTemplate.Height = 33;
+            this.Sessions_DataGrid.Size = new System.Drawing.Size(584, 310);
+            this.Sessions_DataGrid.TabIndex = 38;
             // 
             // pictureBox1
             // 
@@ -133,7 +133,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.AlarmReport_DataGrid);
+            this.tabPage1.Controls.Add(this.Alarms_DataGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -144,7 +144,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.SessionReport_DataGrid);
+            this.tabPage2.Controls.Add(this.Sessions_DataGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -172,8 +172,8 @@
             this.panel_header.ResumeLayout(false);
             this.panel_footer.ResumeLayout(false);
             this.panel_footer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AlarmReport_DataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SessionReport_DataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Alarms_DataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sessions_DataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -187,8 +187,8 @@
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.Panel panel_footer;
         private System.Windows.Forms.Label label_copyRight;
-        private System.Windows.Forms.DataGridView AlarmReport_DataGrid;
-        private System.Windows.Forms.DataGridView SessionReport_DataGrid;
+        private System.Windows.Forms.DataGridView Alarms_DataGrid;
+        private System.Windows.Forms.DataGridView Sessions_DataGrid;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;

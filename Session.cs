@@ -67,9 +67,9 @@ namespace spital
         }
 
         /// <summary>
-        /// Returns a DataTable object of all sessions
+        /// Retrieves all sessions from database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable of all sessions</returns>
         public static DataTable GetAll()
         {
             DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectSessionDetails);
@@ -77,7 +77,11 @@ namespace spital
             return sessionDataTable;
         }
 
-        // WIP CODE
+        /// <summary>
+        /// Retrieves one session record from database with ID as parameter
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Session with ID as parameter</returns>
         public Session GetOne(int id)
         {
             Session session = new Session(id);

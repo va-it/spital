@@ -24,8 +24,6 @@ namespace spital
 
         private void Button_Login_Click(object sender, EventArgs e)
         {
-
-
             string username = textBox_username.Text;
             string password = textBox_password.Text;
 
@@ -58,9 +56,6 @@ namespace spital
 
                 // Ensure Central Display is shown
                 CentralDisplay.Instance.Show();
-
-                //RegistrationForm registration = new RegistrationForm();
-                //registration.Show();
             }
             else
             {

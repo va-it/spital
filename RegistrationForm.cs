@@ -67,6 +67,9 @@ namespace spital
             FillStaffType();
         }
 
+        /// <summary>
+        /// Populates select control with staff types stored in database
+        /// </summary>
         public void FillStaffType()
         {
 

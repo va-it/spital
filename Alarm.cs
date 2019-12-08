@@ -113,7 +113,10 @@ namespace spital
             }
         }
         
-
+        /// <summary>
+        /// Retrieves all records from database
+        /// </summary>
+        /// <returns>DataTable of all alarms</returns>
         public static DataTable GetAll()
         {
             DataSet alarmDataSet = DatabaseConnection.Instance.GetDataSet(selectAlarm);
@@ -121,7 +124,11 @@ namespace spital
             return alarmDataTable;
         }
 
-
+        /// <summary>
+        /// Retrieves all alarms associated with the monitor with ID as parameter
+        /// </summary>
+        /// <param name="monitorID"></param>
+        /// <returns>List of alarms for monitor with ID as parameter</returns>
         public static List<Alarm> GetAllForMonitor(int monitorID)
         {
             List<Alarm> alarms = new List<Alarm>();
@@ -157,6 +164,9 @@ namespace spital
             return alarms;
         }
 
+        /// <summary>
+        /// Prompts Central Display to show details about this alarm
+        /// </summary>
         public void NotifyCentralDisplay()
         {
             CentralDisplay.Instance.DisplayAlarm(this);

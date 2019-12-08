@@ -63,7 +63,7 @@ namespace spital
         /// <summary>
         /// Returns a DataTable object of all MonitorModules
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable of all monitorModules</returns>
         public static DataTable GetAll()
         {
             DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
@@ -72,6 +72,11 @@ namespace spital
             return monitorModuleDataTable;
         }
 
+        /// <summary>
+        /// Retrieve all monitorModules for monitor with ID as parameter
+        /// </summary>
+        /// <param name="monitorID"></param>
+        /// <returns>List of monitorModules for monitor with ID as parameter</returns>
         public static List<MonitorModule> GetAllFromMonitor(Nullable<int> monitorID)
         {
             List<MonitorModule> monitorModulesList = new List<MonitorModule>();
@@ -100,6 +105,10 @@ namespace spital
             return monitorModulesList;
         }
 
+        /// <summary>
+        /// Triggers alarm if parameter is outside the AssignedMin and AssignedMax range
+        /// </summary>
+        /// <param name="random"></param>
         public void CheckReading(float random)
         {
             if (random < AssignedMin || random > AssignedMax)
@@ -195,6 +204,10 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Sets the value of deleted column for this entry to TRUE
+        /// </summary>
+        /// <returns></returns>
         public int Delete()
         {
             int rowsAffected = 0;

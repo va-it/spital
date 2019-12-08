@@ -70,9 +70,9 @@ namespace spital
         }
 
         /// <summary>
-        /// Returns a DataTable object of all Modules
+        /// Retrieves all Module records from database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable with all modules from database</returns>
         public static DataTable GetAll()
         {
             DataSet moduleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
@@ -85,7 +85,7 @@ namespace spital
         /// Retrieve one Module from the database based on its ID
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>Module</returns>
+        /// <returns>Module with ID as parameter</returns>
         public static Module GetOne(int id)
         {
             Module module = new Module(id);

@@ -25,8 +25,8 @@ namespace spital
         private static readonly string selectWhereStatement = "SELECT * FROM module WHERE moduleID = @moduleID;";
 
         private static readonly string insertStatement = 
-            "INSERT INTO module (moduleID, name, defaultMin, defaultMax) " + 
-            "VALUES (@moduleID, @name, @defaultMin, @defaultMax);";
+            "INSERT INTO module (name, icon, defaultMin, defaultMax) " + 
+            "VALUES (@name, @icon, @defaultMin, @defaultMax);";
 
         private static readonly string updateStatement = 
             "UPDATE module SET name = @name, icon = @icon, defaultMin = @defaultMin, " +
@@ -37,7 +37,7 @@ namespace spital
         /// <summary>
         /// Constructor. Sets name, icon, min and max values based on values from database
         /// </summary>
-        public Module(int id)
+        public Module(Nullable<int> id)
         {
             SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStatement);
             sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@moduleID", id));
@@ -59,18 +59,7 @@ namespace spital
         }
 
         /// <summary>
-        /// Assigns parameters to module limits.
-        /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        public void AssignLimits(int min, int max)
-        {
-            DefaultMin = min;
-            DefaultMax = max;
-        }
-
-        /// <summary>
-        /// Retrieves all Module records from database
+        /// Returns a DataTable object of all Modules
         /// </summary>
         /// <returns>DataTable with all modules from database</returns>
         public static DataTable GetAll()
@@ -85,8 +74,8 @@ namespace spital
         /// Retrieve one Module from the database based on its ID
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>Module with ID as parameter</returns>
-        public static Module GetOne(int id)
+        /// <returns>Module</returns>
+        public static Module GetOne(Nullable<int> id)
         {
             Module module = new Module(id);
 
@@ -105,10 +94,9 @@ namespace spital
                 SqlCommand command = DatabaseConnection.Instance.GetSqlCommand();
 
                 command.CommandText = insertStatement;
-                command.Parameters.Add(new SqlParameter("@moduleID", Id));
                 command.Parameters.Add(new SqlParameter("@name", Name));
                 command.Parameters.Add(new SqlParameter("@icon", Icon));
-                command.Parameters.Add(new SqlParameter("@defautMin", DefaultMin));
+                command.Parameters.Add(new SqlParameter("@defaultMin", DefaultMin));
                 command.Parameters.Add(new SqlParameter("@defaultMax", DefaultMax));
 
                 lastInsertedID = DatabaseConnection.Instance.ExecuteInsert(command);

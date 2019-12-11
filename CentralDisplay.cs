@@ -264,6 +264,8 @@ namespace spital
             }
         }
 
+
+
         private void bt_ManagementReport_Click(object sender, EventArgs e)
         {
             ManagementForm managementForm = new ManagementForm();

@@ -73,10 +73,10 @@ namespace spital
         }
 
         /// <summary>
-        /// Retrieve all monitorModules for monitor with ID as parameter
+        /// Retrieves from database all monitorModule records associated with monitor having ID as parameter
         /// </summary>
         /// <param name="monitorID"></param>
-        /// <returns>List of monitorModules for monitor with ID as parameter</returns>
+        /// <returns>List of monitorModules associated with Monitor with ID as parameter</returns>
         public static List<MonitorModule> GetAllFromMonitor(Nullable<int> monitorID)
         {
             List<MonitorModule> monitorModulesList = new List<MonitorModule>();
@@ -106,7 +106,7 @@ namespace spital
         }
 
         /// <summary>
-        /// Triggers alarm if parameter is outside the AssignedMin and AssignedMax range
+        /// Triggers alarm if parameter is outside the assigned limits range 
         /// </summary>
         /// <param name="random"></param>
         public void CheckReading(float random)
@@ -137,11 +137,14 @@ namespace spital
             {
                 DataRow row = monitorModuleDataTable.Rows[0];
 
+                
+
                 Monitor monitor = new Monitor(Int32.Parse(row["monitorID"].ToString()));
                 Module module = new Module(Int32.Parse(row["moduleID"].ToString()));
 
                 monitorModule = new MonitorModule(monitor, module)
                 {
+                    Id = Int32.Parse(row["monitorID"].ToString()),
                     AssignedMin = float.Parse(row["assignedMin"].ToString()),
                     AssignedMax = float.Parse(row["assignedMax"].ToString())
                 };

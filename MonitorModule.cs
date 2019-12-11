@@ -72,6 +72,11 @@ namespace spital
             return monitorModuleDataTable;
         }
 
+        /// <summary>
+        /// Retrieves from database all monitorModule records associated with monitor having ID as parameter
+        /// </summary>
+        /// <param name="monitorID"></param>
+        /// <returns>List of monitorModules associated with Monitor with ID as parameter</returns>
         public static List<MonitorModule> GetAllFromMonitor(Nullable<int> monitorID)
         {
             List<MonitorModule> monitorModulesList = new List<MonitorModule>();
@@ -100,6 +105,10 @@ namespace spital
             return monitorModulesList;
         }
 
+        /// <summary>
+        /// Triggers alarm if parameter is outside the assigned limits range 
+        /// </summary>
+        /// <param name="random"></param>
         public void CheckReading(float random)
         {
             if (random < AssignedMin || random > AssignedMax)

@@ -24,8 +24,6 @@ namespace spital
 
         private void Button_Login_Click(object sender, EventArgs e)
         {
-
-
             string username = textBox_username.Text;
             string password = textBox_password.Text;
 
@@ -56,12 +54,8 @@ namespace spital
                 }
                 this.Close();
 
-                //We should navigate back to CentralDisplay but it should be a singleton
-                CentralDisplay centralDisplay = new CentralDisplay();
-                centralDisplay.Show();
-
-                //RegistrationForm registration = new RegistrationForm();
-                //registration.Show();
+                // Ensure Central Display is shown
+                CentralDisplay.Instance.Show();
             }
             else
             {

@@ -63,7 +63,7 @@ namespace spital
         /// <summary>
         /// Returns a DataTable object of all MonitorModules
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable of all monitorModules</returns>
         public static DataTable GetAll()
         {
             DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
@@ -207,6 +207,10 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Sets the value of deleted column for this entry to TRUE
+        /// </summary>
+        /// <returns></returns>
         public int Delete()
         {
             int rowsAffected = 0;

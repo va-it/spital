@@ -281,7 +281,9 @@ namespace spital
 
         private void button_endshift_Click(object sender, EventArgs e)
         {
-
+            string action = "stop";
+            LoginForm loginForm = new LoginForm(action);
+            loginForm.ShowDialog();
         }
     }
 }

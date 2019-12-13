@@ -278,5 +278,10 @@ namespace spital
             LoginForm loginForm = new LoginForm(action);
             loginForm.ShowDialog();
         }
+
+        private void button_endshift_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

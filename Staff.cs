@@ -7,6 +7,7 @@ using spital.Properties;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace spital
 {
@@ -31,6 +32,9 @@ namespace spital
             "UPDATE staff SET staffTypeID = @staffTypeID, username = @username, password = @password " +
             "WHERE staffID = @staffID;";
 
+        private static readonly string Storage = "Notification.txt";
+
+        public Staff() {  }
         /// <summary>
         /// Constructor. Sets Id automatically and values from parameters
         /// </summary>
@@ -79,21 +83,45 @@ namespace spital
             return valid;
         }
 
-        public void Notify()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="alarm"></param>
+        public static void NotifyMembersWithActiveSessions(Alarm alarm)
         {
-            switch (StaffTypeId)
+            foreach(DataRow sessionRow in Session.GetActiveSessions().Rows)
             {
-                case 1:
-                    // Nurse, notify via SMS/Pager
-                    break;
-                case 2:
-                    // Consultant, notify via email
-                    break;
-                default:
-                    // No type matched.
-                    break;
-            }
+                int staffID = int.Parse(sessionRow["staffID"].ToString());
 
+                switch (int.Parse(sessionRow["staffTypeID"].ToString()))
+                {
+                    case 1:
+                        // Nurse, notify via SMS/Pager
+                        Nurse nurse = Nurse.GetOneFromStaffID(staffID);
+                        nurse.SendSMS(alarm);
+                        break;
+                    case 2:
+                        // Consultant, notify via email
+                        Consultant consultant = Consultant.GetOneFromStaffID(staffID);
+                        consultant.SendEmail(alarm);
+                        break;
+                    default:
+                        // No type matched.
+                        break;
+                }
+            }
+        }
+
+        public static void WriteNotificationToFile(Alarm alarm, int staffId, string notificationType)
+        {
+           
+            //append to the storage file, seperated by coma
+            StreamWriter writer = new StreamWriter(Storage, true);
+
+            //write details about alarm variable
+
+            writer.WriteLine("{0} - Monitor {1} - Staff {2} - {3} out of range - Notification Type: {4}", alarm.StartDateTime, alarm.MonitorModule.Monitor.Id, staffId, alarm.MonitorModule.Module.Name, notificationType);
+            writer.Close();
         }
 
         /// <summary>

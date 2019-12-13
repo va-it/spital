@@ -22,6 +22,11 @@ namespace spital
         private static readonly string selectStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID;";
 
+        private static readonly string selectActiveStaffSession =
+            "SELECT * FROM session " +
+            "INNER JOIN staff ON session.staffID = staff.staffID " +
+            "WHERE session.endDateTime IS NULL;";
+
         private static readonly string selectWhereStatement =
             "SELECT * FROM session INNER JOIN staff ON session.staffID = staff.staffID " +
             "WHERE sessionID = @sessionID;";
@@ -55,6 +60,8 @@ namespace spital
             EndDateTime = null;
         }
 
+        public Session() { }
+
         /// <summary>
         /// Sets DateTimeStart value to the current date and time.
         /// </summary>
@@ -83,6 +90,20 @@ namespace spital
         }
 
         /// <summary>
+        /// Retrieves all active sessions 
+        /// </summary>
+        /// <returns>A DataTable containing active sessions</returns>
+        public static DataTable GetActiveSessions()
+        {
+            
+            DataSet activeSessionsDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
+            DataTable activeSessionsDataTable = activeSessionsDataSet.Tables[0];
+
+            return activeSessionsDataTable;
+        }
+
+
+        // WIP CODE
         /// Retrieves one session record from database with ID as parameter
         /// </summary>
         /// <param name="id"></param>

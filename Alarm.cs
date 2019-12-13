@@ -171,5 +171,13 @@ namespace spital
         {
             CentralDisplay.Instance.DisplayAlarm(this);
         }
+
+        /// <summary>
+        /// Prompts Staff to notify members with active sessions
+        /// </summary>
+        public void NotifyStaff()
+        {
+            Staff.NotifyMembersWithActiveSessions(this);
+        }
     }
 }

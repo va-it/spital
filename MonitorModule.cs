@@ -58,6 +58,7 @@ namespace spital
             Alarm alarm = new Alarm(this, reading);
             alarm.Save();
             alarm.NotifyCentralDisplay();
+            alarm.NotifyStaff();
         }
 
         /// <summary>

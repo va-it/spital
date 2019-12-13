@@ -274,6 +274,7 @@
             this.button_endshift.TabIndex = 4;
             this.button_endshift.Text = "End Session";
             this.button_endshift.UseVisualStyleBackColor = false;
+            this.button_endshift.Click += new System.EventHandler(this.button_endshift_Click);
             // 
             // buttonRegister
             // 

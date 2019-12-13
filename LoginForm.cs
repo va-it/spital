@@ -31,12 +31,14 @@ namespace spital
 
             if (allowLogin)
             {
+                DataTable staffDataTable = Staff.GetWithUsername(username);
+
                 // Start session etc. 
                 switch (Action)
                 {
                     case "start":
                         //start session
-                        DataTable staffDataTable = Staff.GetWithUsername(username);
+                        
                         if (staffDataTable.Rows.Count == 1)
                         {
                             DataRow row = staffDataTable.Rows[0];
@@ -49,6 +51,18 @@ namespace spital
 
                     case "stop":
                         //stop session
+                        if (staffDataTable.Rows.Count == 1)
+                        {
+                            DataRow row = staffDataTable.Rows[0];
+
+                            int staffID = Int32.Parse(row["staffID"].ToString());
+
+                            Session session = Session.GetActiveForStaffMember(staffID);
+
+                            session.End();
+
+                            session.Update();
+                        }
                         break;
 
                 }

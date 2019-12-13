@@ -11,10 +11,10 @@ using System.IO;
 
 namespace spital
 {
-    abstract class Staff
+    public abstract class Staff
     {
         // Auto-implemented properties for trivial get and set
-        public int Id { get; }
+        public int Id { get; set; }
         public int StaffTypeId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -46,7 +46,12 @@ namespace spital
             Password = Encryption.EncryptText(password, encryptionPassword);
         }
 
-
+        /// <summary>
+        /// Compares values passed as parameters with those stored in the database
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>True if credentials match with a record in the database</returns>
         public static bool ValidateCredentials(string username, string password)
         {
             // Retrieve values from DB and validate
@@ -106,7 +111,6 @@ namespace spital
                 }
             }
         }
-
 
         public static void WriteNotificationToFile(Alarm alarm, int staffId, string notificationType)
         {

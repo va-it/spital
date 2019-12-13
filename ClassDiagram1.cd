@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="spital.Alarm">
+    <Position X="3.25" Y="7.5" Width="2.5" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectAlarm" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="selectWhereStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYKAoAAAQAAEgAAAABAAAAAICAAAAAAIgAAgAAAgAA=</HashCode>
+      <FileName>Alarm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.CentralDisplay" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="_instance" Hidden="true" />
+      <Field Name="beds" Hidden="true" />
+      <Field Name="bt_ManagementReport" Hidden="true" />
+      <Field Name="button_endshift" Hidden="true" />
+      <Field Name="button_startshift" Hidden="true" />
+      <Field Name="buttonRegister" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="flowLayoutPanel_Bay" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="labelcopyright" Hidden="true" />
+      <Field Name="monitorForm1" Hidden="true" />
+      <Field Name="monitorForm2" Hidden="true" />
+      <Field Name="monitorForm3" Hidden="true" />
+      <Field Name="monitorForm4" Hidden="true" />
+      <Field Name="monitorForm5" Hidden="true" />
+      <Field Name="monitorForm6" Hidden="true" />
+      <Field Name="monitorForm7" Hidden="true" />
+      <Field Name="monitorForm8" Hidden="true" />
+      <Field Name="monitorForms" Hidden="true" />
+      <Field Name="panel_footer" Hidden="true" />
+      <Field Name="panel_header" Hidden="true" />
+      <Field Name="pictureBox1" Hidden="true" />
+      <Field Name="userControl_bed1" Hidden="true" />
+      <Field Name="userControl_bed2" Hidden="true" />
+      <Field Name="userControl_bed3" Hidden="true" />
+      <Field Name="userControl_bed4" Hidden="true" />
+      <Field Name="userControl_bed5" Hidden="true" />
+      <Field Name="userControl_bed6" Hidden="true" />
+      <Field Name="userControl_bed7" Hidden="true" />
+      <Field Name="userControl_bed8" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>wC8UAAAAEGAAgESEABCCAAACAP0CABBAUHAgAgBAAAA=</HashCode>
+      <FileName>CentralDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Consultant">
+    <Position X="1" Y="4.5" Width="1.5" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYCAIAAACAAAgAAAAAAAAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Consultant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Encryption">
+    <Position X="17.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAIAAAAAAAECAAAAAEAIAAAAAAA=</HashCode>
+      <FileName>Encryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.LimitsForm" Collapsed="true">
+    <Position X="18" Y="2.5" Width="2.25" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="confirmButton" Hidden="true" />
+      <Field Name="copyright" Hidden="true" />
+      <Field Name="labelModule1" Hidden="true" />
+      <Field Name="labelModule2" Hidden="true" />
+      <Field Name="labelModule3" Hidden="true" />
+      <Field Name="labelModule4" Hidden="true" />
+      <Field Name="limitMax" Hidden="true" />
+      <Field Name="limitMin" Hidden="true" />
+      <Field Name="logo" Hidden="true" />
+      <Field Name="maxBox" Hidden="true" />
+      <Field Name="maxLimit1" Hidden="true" />
+      <Field Name="maxLimit2" Hidden="true" />
+      <Field Name="maxLimit3" Hidden="true" />
+      <Field Name="maxLimit4" Hidden="true" />
+      <Field Name="minBox" Hidden="true" />
+      <Field Name="minLimit1" Hidden="true" />
+      <Field Name="minLimit2" Hidden="true" />
+      <Field Name="minLimit3" Hidden="true" />
+      <Field Name="minLimit4" Hidden="true" />
+      <Field Name="moduleIcon" Hidden="true" />
+      <Field Name="ModuleIcon1" Hidden="true" />
+      <Field Name="ModuleIcon2" Hidden="true" />
+      <Field Name="ModuleIcon3" Hidden="true" />
+      <Field Name="ModuleIcon4" Hidden="true" />
+      <Field Name="modules" Hidden="true" />
+      <Field Name="ModulesBox" Hidden="true" />
+      <Field Name="monitorModules" Hidden="true" />
+      <Field Name="panelFooter" Hidden="true" />
+      <Field Name="panelHeader" Hidden="true" />
+      <Field Name="panelModule1" Hidden="true" />
+      <Field Name="panelModule2" Hidden="true" />
+      <Field Name="panelModule3" Hidden="true" />
+      <Field Name="panelModule4" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAFAAAACGCEEAAMQABCAACICSACAAACIBAAAgAECAgA=</HashCode>
+      <FileName>LimitsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.LoginForm" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="2.25" />
+    <Members>
+      <Field Name="button_Login" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="label_copyRight" Hidden="true" />
+      <Field Name="label_login" Hidden="true" />
+      <Field Name="label_password" Hidden="true" />
+      <Field Name="label_username" Hidden="true" />
+      <Field Name="panel_footer" Hidden="true" />
+      <Field Name="panel_header" Hidden="true" />
+      <Field Name="panel_line_password" Hidden="true" />
+      <Field Name="panel_line_username" Hidden="true" />
+      <Field Name="panel_loginUnderline" Hidden="true" />
+      <Field Name="pictureBox_leftDock" Hidden="true" />
+      <Field Name="pictureBox_logo" Hidden="true" />
+      <Field Name="pictureBox_password" Hidden="true" />
+      <Field Name="pictureBox_user" Hidden="true" />
+      <Field Name="textBox_password" Hidden="true" />
+      <Field Name="textBox_username" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ADgAAAAAAGAIAgAAAACQgAIGAAgAABBAEABAAEQAAAQ=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.ManagementForm" Collapsed="true">
+    <Position X="18" Y="1.5" Width="2.25" />
+    <Members>
+      <Field Name="Alarms_DataGrid" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="label_copyRight" Hidden="true" />
+      <Field Name="panel_footer" Hidden="true" />
+      <Field Name="panel_header" Hidden="true" />
+      <Field Name="pictureBox1" Hidden="true" />
+      <Field Name="Sessions_DataGrid" Hidden="true" />
+      <Field Name="tabControl1" Hidden="true" />
+      <Field Name="tabPage1" Hidden="true" />
+      <Field Name="tabPage2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgCAAAAAACAAAAAAAACAAAACAAAABBACEACAAARBBAA=</HashCode>
+      <FileName>ManagementForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Module">
+    <Position X="6.75" Y="7.5" Width="2" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="selectWhereStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYCAJAAAAAAAgAAAAAAAARAADAAAAAAAgAAAAEggAA=</HashCode>
+      <FileName>Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.ModulesForm" Collapsed="true">
+    <Position X="18" Y="3.5" Width="2.25" />
+    <Members>
+      <Field Name="checkedListBox_Modules" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="copyright" Hidden="true" />
+      <Field Name="groupBox_Modules" Hidden="true" />
+      <Field Name="logo" Hidden="true" />
+      <Field Name="modulesButton" Hidden="true" />
+      <Field Name="panelFooter" Hidden="true" />
+      <Field Name="panelHeader" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EAEAAAAIAKEAAAIAAACAEAACAAAUgAAAAAAAAAACAAA=</HashCode>
+      <FileName>ModulesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Monitor">
+    <Position X="9.75" Y="5" Width="2.5" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectWhereStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYCAIAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAggAA=</HashCode>
+      <FileName>Monitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.MonitorForm" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="3" />
+    <Members>
+      <Field Name="alarmButton" Hidden="true" />
+      <Field Name="alarmMessage" Hidden="true" />
+      <Field Name="alarms" Hidden="true" />
+      <Field Name="AlarmTextBox" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="copyright" Hidden="true" />
+      <Field Name="groupBoxLimits" Hidden="true" />
+      <Field Name="groupBoxModule" Hidden="true" />
+      <Field Name="groupBoxReading" Hidden="true" />
+      <Field Name="label_MaximumLimit" Hidden="true" />
+      <Field Name="label_MinimumLimit" Hidden="true" />
+      <Field Name="label_Module1Max" Hidden="true" />
+      <Field Name="label_Module1Min" Hidden="true" />
+      <Field Name="label_Module2Max" Hidden="true" />
+      <Field Name="label_Module2Min" Hidden="true" />
+      <Field Name="label_Module3Max" Hidden="true" />
+      <Field Name="label_Module3Min" Hidden="true" />
+      <Field Name="label_Module4Max" Hidden="true" />
+      <Field Name="label_Module4Min" Hidden="true" />
+      <Field Name="label1reading" Hidden="true" />
+      <Field Name="label2reading" Hidden="true" />
+      <Field Name="label3reading" Hidden="true" />
+      <Field Name="label4reading" Hidden="true" />
+      <Field Name="limitMax" Hidden="true" />
+      <Field Name="limitMin" Hidden="true" />
+      <Field Name="limitsButton" Hidden="true" />
+      <Field Name="limitsTable" Hidden="true" />
+      <Field Name="logo" Hidden="true" />
+      <Field Name="moduleIcon1" Hidden="true" />
+      <Field Name="moduleIcon2" Hidden="true" />
+      <Field Name="moduleIcon3" Hidden="true" />
+      <Field Name="moduleIcon4" Hidden="true" />
+      <Field Name="moduleName" Hidden="true" />
+      <Field Name="moduleName1" Hidden="true" />
+      <Field Name="moduleName2" Hidden="true" />
+      <Field Name="moduleName3" Hidden="true" />
+      <Field Name="moduleName4" Hidden="true" />
+      <Field Name="moduleReading" Hidden="true" />
+      <Field Name="modulesButton" Hidden="true" />
+      <Field Name="modulesIcon" Hidden="true" />
+      <Field Name="monitor" Hidden="true" />
+      <Field Name="monitorModules" Hidden="true" />
+      <Field Name="monitorNumber" Hidden="true" />
+      <Field Name="myTimer" Hidden="true" />
+      <Field Name="panelFooter" Hidden="true" />
+      <Field Name="panelHeader" Hidden="true" />
+      <Field Name="panelMonitorNumber" Hidden="true" />
+      <Field Name="panelMonitorNumberContainer" Hidden="true" />
+      <Field Name="readingsTable" Hidden="true" />
+      <Field Name="tableReading" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>YAmCEhACCHUZACGCBg2TEHQCggQAgmAoRAAAgQDugAE=</HashCode>
+      <FileName>MonitorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.MonitorModule">
+    <Position X="9" Y="0.5" Width="3.25" />
+    <Members>
+      <Field Name="deleteStatement" Hidden="true" />
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="selectWhereStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYCAIAAACAAAkAAAJCAEAAAACEAAAAAAgAACQAggAA=</HashCode>
+      <FileName>MonitorModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Nurse">
+    <Position X="3.25" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYCAIAAAAAAAgAAAAAAQAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Nurse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Program" Collapsed="true">
+    <Position X="14.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.RandomGenerator">
+    <Position X="14.5" Y="5.75" Width="2.25" />
+    <Members>
+      <Field Name="_instance" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAA=</HashCode>
+      <FileName>RandomGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.RegistrationForm" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="3" />
+    <Members>
+      <Field Name="button_Register" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="label_confirmPassword" Hidden="true" />
+      <Field Name="label_ContactDetails" Hidden="true" />
+      <Field Name="label_copyRight" Hidden="true" />
+      <Field Name="label_password" Hidden="true" />
+      <Field Name="label_registration" Hidden="true" />
+      <Field Name="label_username" Hidden="true" />
+      <Field Name="panel_footer" Hidden="true" />
+      <Field Name="panel_header" Hidden="true" />
+      <Field Name="panel_line_confirmPassword" Hidden="true" />
+      <Field Name="panel_line_password" Hidden="true" />
+      <Field Name="panel_line_username" Hidden="true" />
+      <Field Name="panel_registrationUnderline" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="pictureBox_confirmPassword" Hidden="true" />
+      <Field Name="pictureBox_ContactDetails" Hidden="true" />
+      <Field Name="pictureBox_leftDock" Hidden="true" />
+      <Field Name="pictureBox_logo" Hidden="true" />
+      <Field Name="pictureBox_password" Hidden="true" />
+      <Field Name="pictureBox_user" Hidden="true" />
+      <Field Name="staffType" Hidden="true" />
+      <Field Name="textBox_ConfirmPassword" Hidden="true" />
+      <Field Name="textBox_ContactDetails" Hidden="true" />
+      <Field Name="textBox_password" Hidden="true" />
+      <Field Name="textBox_username" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ADgAAAgIAGAYEgAAEgCQgAAGAAAAABBCEAAEQUyACAA=</HashCode>
+      <FileName>RegistrationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Session">
+    <Position X="6" Y="3.25" Width="2.25" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectSessionDetails" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="selectWhereStatement" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAYKAIAAACAAEgAAAAAAAAQAACAAAAACAgAAAAAggAA=</HashCode>
+      <FileName>Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Staff">
+    <Position X="1.75" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="encryptionPassword" Hidden="true" />
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+      <Field Name="selectWithUsername" Hidden="true" />
+      <Field Name="updateStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEYCAIAAAAAAAgAAAQAAAAABACBAAABCAAACAAABAAA=</HashCode>
+      <FileName>Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.StaffType">
+    <Position X="5.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="insertStatement" Hidden="true" />
+      <Field Name="selectStatement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAAAAQAACAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>StaffType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.UserControl_bed" Collapsed="true">
+    <Position X="18" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="button_mute" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="hiddenLabel_MonitorID" Hidden="true" />
+      <Field Name="label_alertmsg" Hidden="true" />
+      <Field Name="label_bednumber" Hidden="true" />
+      <Field Name="pictureBox_alert" Hidden="true" />
+      <Field Name="pictureBox_bed" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACgAAAAACAgAgAAAAGAAAACAAAAAAAAYAAAAIAEiJI=</HashCode>
+      <FileName>UserControl_bed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="spital.Properties.DatabaseConnection">
+    <Position X="14.5" Y="8" Width="2.75" />
+    <Members>
+      <Field Name="_instance" Hidden="true" />
+      <Field Name="spitalDbConnectionString" Hidden="true" />
+      <Field Name="sqlAdapter" Hidden="true" />
+      <Field Name="sqlconn" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAMCAACAAAAAIAAAABAABAAAQAAABBAYAgAAAAAAAA=</HashCode>
+      <FileName>Properties\DatabaseConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

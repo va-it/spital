@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    class Nurse : Staff
+    public class Nurse : Staff
     {
         public new int Id { get; set; }
         public string PhoneNumber { get; set; }

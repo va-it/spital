@@ -16,11 +16,19 @@ namespace spital
         private static readonly string selectStatement = "SELECT * FROM staffType";
         private static readonly string insertStatement = "INSERT INTO staffType (name) VALUES (@name)";
 
+        /// <summary>
+        /// Constructor, Instantiates the class with Name from parameter
+        /// </summary>
+        /// <param name="name"></param>
         public StaffType(string name = null)
         {
             Name = name;
         }
 
+        /// <summary>
+        /// Retrieves all records from database
+        /// </summary>
+        /// <returns>List of all staffTypes in database</returns>
         public static List<StaffType> GetAll()
         {
             DataSet staffTypesDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);

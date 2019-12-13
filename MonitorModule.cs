@@ -64,7 +64,7 @@ namespace spital
         /// <summary>
         /// Returns a DataTable object of all MonitorModules
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable of all monitorModules</returns>
         public static DataTable GetAll()
         {
             DataSet monitorModuleDataSet = DatabaseConnection.Instance.GetDataSet(selectStatement);
@@ -73,6 +73,11 @@ namespace spital
             return monitorModuleDataTable;
         }
 
+        /// <summary>
+        /// Retrieves from database all monitorModule records associated with monitor having ID as parameter
+        /// </summary>
+        /// <param name="monitorID"></param>
+        /// <returns>List of monitorModules associated with Monitor with ID as parameter</returns>
         public static List<MonitorModule> GetAllFromMonitor(Nullable<int> monitorID)
         {
             List<MonitorModule> monitorModulesList = new List<MonitorModule>();
@@ -101,6 +106,10 @@ namespace spital
             return monitorModulesList;
         }
 
+        /// <summary>
+        /// Triggers alarm if parameter is outside the assigned limits range 
+        /// </summary>
+        /// <param name="random"></param>
         public void CheckReading(float random)
         {
             if (random < AssignedMin || random > AssignedMax)
@@ -129,11 +138,14 @@ namespace spital
             {
                 DataRow row = monitorModuleDataTable.Rows[0];
 
+                
+
                 Monitor monitor = new Monitor(Int32.Parse(row["monitorID"].ToString()));
                 Module module = new Module(Int32.Parse(row["moduleID"].ToString()));
 
                 monitorModule = new MonitorModule(monitor, module)
                 {
+                    Id = Int32.Parse(row["monitorID"].ToString()),
                     AssignedMin = float.Parse(row["assignedMin"].ToString()),
                     AssignedMax = float.Parse(row["assignedMax"].ToString())
                 };
@@ -196,6 +208,10 @@ namespace spital
             }
         }
 
+        /// <summary>
+        /// Sets the value of deleted column for this entry to TRUE
+        /// </summary>
+        /// <returns></returns>
         public int Delete()
         {
             int rowsAffected = 0;

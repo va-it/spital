@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace spital
 {
-    class Session
+    public  class Session
     {
         // Auto-implemented properties for trivial get and set
         private int Id { get; set; }
@@ -74,9 +74,9 @@ namespace spital
         }
 
         /// <summary>
-        /// Returns a DataTable object of all sessions
+        /// Retrieves all sessions from database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DataTable of all sessions</returns>
         public static DataTable GetAll()
         {
             DataSet sessionDataSet = DatabaseConnection.Instance.GetDataSet(selectSessionDetails);
@@ -99,6 +99,10 @@ namespace spital
 
 
         // WIP CODE
+        /// Retrieves one session record from database with ID as parameter
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Session with ID as parameter</returns>
         public Session GetOne(int id)
         {
             Session session = new Session(id);

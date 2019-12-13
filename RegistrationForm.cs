@@ -52,7 +52,7 @@ namespace spital
 
 
                 // close this form window
-                this.Hide();
+                this.Close();
 
                 
             }
@@ -67,6 +67,9 @@ namespace spital
             FillStaffType();
         }
 
+        /// <summary>
+        /// Populates select control with staff types stored in database
+        /// </summary>
         public void FillStaffType()
         {
 

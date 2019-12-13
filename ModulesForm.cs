@@ -12,26 +12,18 @@ namespace spital
 {
     public partial class ModulesForm : Form
     {
-        private MonitorForm Monitor { get; set; }
+        private MonitorForm MonitorForm { get; set; }
 
         public ModulesForm(MonitorForm monitorForm)
         {
             InitializeComponent();
-            Monitor = monitorForm;
+            MonitorForm = monitorForm;
         }
 
-        private void modulesButton_Click(object sender, EventArgs e)
-        {
-            SaveSelectedModules();
-            
-            this.Close();
-            Form limits = new LimitsForm(Monitor);
-            limits.Show();
-        }
-
-
-        // to retrive module type from database
-        public void FillModuleType()
+        /// <summary>
+        /// Retrieves modules from database to populate checkedListBox
+        /// </summary>
+        public void FillModulesSelection()
         {
             DataTable modulesTable = Module.GetAll();
 
@@ -41,13 +33,15 @@ namespace spital
             
         }
 
-        // Store selected modules into database in table "monitorModule" based on the monitor and module id
+        /// <summary>
+        /// Store selected modules in table "monitorModule"
+        /// </summary>
         private void SaveSelectedModules()
         {
             List<int> monitorModulesToSkip = new List<int>();
 
             // retrieve list of monitorModules for current monitor
-            List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
+            List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(MonitorForm.MonitorId);
 
             //List to store all monitorModules that need to be saved
             List<MonitorModule> modulesToSave = new List<MonitorModule>();
@@ -70,7 +64,7 @@ namespace spital
                     {
                         // then we will need to save it
                         //create monitor and module objects
-                        Monitor monitor = new Monitor(Monitor.MonitorId);
+                        Monitor monitor = new Monitor(MonitorForm.MonitorId);
                         Module module = new Module(moduleID);
 
                         MonitorModule monitorModule = new MonitorModule(monitor, module);
@@ -106,12 +100,31 @@ namespace spital
             foreach (MonitorModule monitorModuleToDelete in modulesToDelete)
             {
                 monitorModuleToDelete.Delete();
+                StopAlarmForUnpluggedModule(monitorModuleToDelete);
             }
         }
 
+        /// <summary>
+        /// Stops alarm if triggered by module that is being unplugged
+        /// </summary>
+        /// <param name="monitorModuleToDelete">Module being unplugged</param>
+        private void StopAlarmForUnpluggedModule(MonitorModule monitorModuleToDelete)
+        {
+            foreach (Alarm alarm in MonitorForm.alarms)
+            {
+                if (alarm.MonitorModule.Id == monitorModuleToDelete.Id)
+                {
+                    alarm.Stop();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Automatically select modules in checkedListBox if already attached to monitor
+        /// </summary>
         private void SelectExistingModules()
         {
-            List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
+            List<MonitorModule> monitorModules = MonitorModule.GetAllFromMonitor(MonitorForm.MonitorId);
 
             for (int i = 0; i < checkedListBox_Modules.Items.Count; ++i)
             {
@@ -130,8 +143,17 @@ namespace spital
 
         private void ModulesForm_Load(object sender, EventArgs e)
         {
-            FillModuleType();
+            FillModulesSelection();
             SelectExistingModules();
+        }
+
+        private void modulesButton_Click(object sender, EventArgs e)
+        {
+            SaveSelectedModules();
+
+            this.Close();
+            Form limits = new LimitsForm(MonitorForm);
+            limits.Show();
         }
     }
 }

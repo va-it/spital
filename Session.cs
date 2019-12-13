@@ -60,8 +60,6 @@ namespace spital
             EndDateTime = null;
         }
 
-        public Session() { }
-
         /// <summary>
         /// Sets DateTimeStart value to the current date and time.
         /// </summary>

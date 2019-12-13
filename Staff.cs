@@ -97,6 +97,8 @@ namespace spital
                         break;
                     case 2:
                         // Consultant, notify via email
+                        Consultant consultant = Consultant.GetOneFromStaffID(staffID);
+                        consultant.SendEmail(alarm);
                         break;
                     default:
                         // No type matched.
@@ -106,27 +108,15 @@ namespace spital
         }
 
 
-        public static void WriteNotificationToFile(Alarm alarm, string notificationType)
+        public static void WriteNotificationToFile(Alarm alarm, int staffId, string notificationType)
         {
-            
-            //open the storage file
-            StreamReader reader = new StreamReader(Storage);
-
-            //while there are lines to read
-            while (!reader.EndOfStream)
-            {
-                //seperators used to break apart each file line
-                char[] seperators = { ',' };
-                //break line - the result is an containing each partof the line that was seperated by ','
-                string[] line = reader.ReadLine().Split(seperators);
-            }
-
+           
             //append to the storage file, seperated by coma
             StreamWriter writer = new StreamWriter(Storage, true);
 
             //write details about alarm variable
 
-            writer.WriteLine("{0},{1}", alarm.StartDateTime, alarm.MonitorModule.Monitor.Id);
+            writer.WriteLine("{0} - Monitor {1} - Staff {2} - {3} out of range - Notification Type: {4}", alarm.StartDateTime, alarm.MonitorModule.Monitor.Id, staffId, alarm.MonitorModule.Module.Name, notificationType);
             writer.Close();
         }
 

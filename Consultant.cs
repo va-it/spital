@@ -1,6 +1,7 @@
 ﻿using spital.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace spital
 {
     class Consultant : Staff
     {
-        public new int Id { get; }
+        public new int Id { get; set; }
         public string Email { get; set; }
         public int StaffID { get; set; }
         public string storage = "notification.txt";
@@ -23,6 +24,10 @@ namespace spital
 
         private static readonly string updateStatement =
             "UPDATE consultant SET email = @email, staffID = @staffID WHERE consultantID = @consultantID;";
+
+        private static readonly string selectWhereStaffID =
+            "SELECT * FROM consultant INNER JOIN staff ON consultant.staffID = staff.staffID " +
+            "WHERE consultant.staffID = @staffID;";
 
         /// <summary>
         /// Constructor. Instantiates staff class with values from parameters and sets email and staffId of consultant instance
@@ -38,31 +43,18 @@ namespace spital
             StaffID = base.Id;
         }
 
-        /// <summary>
-        /// Method to store notication in .txt file
-        /// </summary>
-        public void ReceiveNotification()
+        public Consultant()
         {
-            //open the storage file
-            StreamReader reader = new StreamReader(storage);
-
-            //while there are lines to read
-            while (!reader.EndOfStream)
-            {
-                //seperators used to break apart each file line
-                char[] seperators = { ',' };
-                //break line - the result is an containing each partof the line that was seperated by ','
-                string[] line = reader.ReadLine().Split(seperators);
-            }
-
-            //append to the storage file, seperated by coma
-            StreamWriter writer = new StreamWriter(storage, true);
-
-            //pass variable to write in the file
-            writer.WriteLine();
-            writer.Close();
-
         }
+
+        public void SendEmail(Alarm alarm)
+        {
+            string notifaicationType = "Email";
+            // Here there should be code to send SMS.
+            //Then we write to file
+            Staff.WriteNotificationToFile(alarm, StaffID, notifaicationType);
+        }
+
 
         /// <summary>
         /// Inserts this instance as row into consultant table
@@ -113,6 +105,34 @@ namespace spital
             {
                 MessageBox.Show("Error! Message: " + error.Message + ". Please try again.", "Error");
             }
+        }
+
+        public static Consultant GetOneFromStaffID(int staffID)
+        {
+
+            Consultant consultant = new Consultant();
+            SqlDataAdapter sqlDataAdapter = DatabaseConnection.Instance.GetSqlAdapter(selectWhereStaffID);
+            sqlDataAdapter.SelectCommand.Parameters.Add(new SqlParameter("@staffID", staffID));
+
+            DataSet nurseDataSet = DatabaseConnection.Instance.ExecuteSelect(sqlDataAdapter);
+
+            DataTable nurseDataTable = nurseDataSet.Tables[0];
+
+            if (nurseDataTable.Rows.Count == 1)
+            {
+                DataRow nurseRow = nurseDataTable.Rows[0];
+
+                consultant.Id = int.Parse(nurseRow["consultantID"].ToString());
+                consultant.StaffID = int.Parse(nurseRow["staffID"].ToString());
+                consultant.StaffTypeId = int.Parse(nurseRow["staffTypeID"].ToString());
+                consultant.Username = nurseRow["username"].ToString();
+                consultant.Password = nurseRow["password"].ToString();
+                consultant.Email = nurseRow["email"].ToString();
+
+                consultant.StaffID = int.Parse(nurseRow["staffID"].ToString());
+            }
+
+            return consultant;
         }
     }
 }

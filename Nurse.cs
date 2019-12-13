@@ -13,7 +13,7 @@ namespace spital
 {
     class Nurse : Staff
     {
-        public new int Id { get; }
+        public new int Id { get; set; }
         public string PhoneNumber { get; set; }
         public int StaffID { get; set; }
 
@@ -55,7 +55,7 @@ namespace spital
             string notifaicationType = "SMS";
             // Here there should be code to send SMS.
             //Then we write to file
-            Staff.WriteNotificationToFile(alarm, notifaicationType);
+            Staff.WriteNotificationToFile(alarm, StaffID, notifaicationType);
         }
 
         /// <summary>
@@ -124,6 +124,8 @@ namespace spital
             {
                 DataRow nurseRow = nurseDataTable.Rows[0];
 
+                nurse.Id = int.Parse(nurseRow["nurseID"].ToString());
+                nurse.StaffID = int.Parse(nurseRow["staffID"].ToString());
                 nurse.StaffTypeId = int.Parse(nurseRow["staffTypeID"].ToString());
                 nurse.Username = nurseRow["username"].ToString();
                 nurse.Password = nurseRow["password"].ToString();

@@ -12,7 +12,7 @@ namespace spital
         static Timer myTimer = new System.Windows.Forms.Timer();
 
         List<MonitorModule> monitorModules = new List<MonitorModule>();
-        List<Alarm> alarms = new List<Alarm>();
+        public List<Alarm> alarms = new List<Alarm>();
         List<Label> moduleName = new List<Label>();
         List<PictureBox> modulesIcon = new List<PictureBox>();
         List<Label> moduleReading = new List<Label>();
@@ -284,19 +284,23 @@ namespace spital
         {
             alarmMessage.Clear();
 
-            foreach (Alarm alarm in alarms)
+            alarms = monitor.GetActiveAlarms();
+
+            for (int i = 0; i < moduleName.Count; ++i)
             {
-                alarmMessage.Add(alarm.MonitorModule.Module.Name + " out of range");
+                moduleReading.ElementAt(i).BackColor = Color.White;
 
-                AlarmTextBox.Text = string.Join(Environment.NewLine, alarmMessage.ToArray());
-
-                for ( int i = 0; i < moduleName.Count; ++i)
+                foreach (Alarm alarm in alarms)
                 {
+                    alarmMessage.Add(alarm.MonitorModule.Module.Name + " out of range");
+
+                    AlarmTextBox.Text = string.Join(Environment.NewLine, alarmMessage.ToArray());
+
                     if (moduleName.ElementAt(i).Text == alarm.MonitorModule.Module.Name)
                     {
                         moduleReading.ElementAt(i).BackColor = Color.Red;
                     }
-                }   
+                }
             }
         }
 

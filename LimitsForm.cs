@@ -15,7 +15,7 @@ namespace spital
 {
     public partial class LimitsForm : Form
     {
-        private MonitorForm Monitor { get; set; }
+        private MonitorForm MonitorForm { get; set; }
        
         List<MonitorModule> monitorModules = new List<MonitorModule>();
 
@@ -28,7 +28,7 @@ namespace spital
         public LimitsForm(MonitorForm monitorForm)
         {
             InitializeComponent();
-            Monitor = monitorForm;
+            MonitorForm = monitorForm;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace spital
         /// </summary>
         private void GetMonitorModules()
         {
-            monitorModules = MonitorModule.GetAllFromMonitor(Monitor.MonitorId);
+            monitorModules = MonitorModule.GetAllFromMonitor(MonitorForm.MonitorId);
 
             int index = 0;
 
@@ -109,10 +109,10 @@ namespace spital
         private void confirmButton_Click(object sender, EventArgs e)
         {
             SaveAssignedLimits();
-            Monitor.Active = true;
+            MonitorForm.Active = true;
             this.Close();
 
-            Monitor.RefreshModules();
+            MonitorForm.RefreshModules();
         }
     }
 }

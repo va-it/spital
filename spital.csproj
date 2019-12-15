@@ -64,71 +64,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CentralDisplay.cs">
+    <Compile Include="Forms\CentralDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CentralDisplay.Designer.cs">
+    <Compile Include="Forms\CentralDisplay.Designer.cs">
       <DependentUpon>CentralDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultant.cs" />
-    <Compile Include="LimitsForm.cs">
+    <Compile Include="Classes\Consultant.cs" />
+    <Compile Include="Forms\LimitsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LimitsForm.Designer.cs">
+    <Compile Include="Forms\LimitsForm.Designer.cs">
       <DependentUpon>LimitsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagementForm.cs">
+    <Compile Include="Forms\ManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagementForm.Designer.cs">
+    <Compile Include="Forms\ManagementForm.Designer.cs">
       <DependentUpon>ManagementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModulesForm.cs">
+    <Compile Include="Forms\ModulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModulesForm.Designer.cs">
+    <Compile Include="Forms\ModulesForm.Designer.cs">
       <DependentUpon>ModulesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonitorForm.cs">
+    <Compile Include="Forms\MonitorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MonitorForm.Designer.cs">
+    <Compile Include="Forms\MonitorForm.Designer.cs">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alarm.cs" />
-    <Compile Include="Module.cs" />
-    <Compile Include="Monitor.cs" />
-    <Compile Include="Encryption.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Classes\Alarm.cs" />
+    <Compile Include="Classes\Module.cs" />
+    <Compile Include="Classes\Monitor.cs" />
+    <Compile Include="Classes\Encryption.cs" />
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonitorModule.cs" />
-    <Compile Include="Nurse.cs" />
+    <Compile Include="Classes\MonitorModule.cs" />
+    <Compile Include="Classes\Nurse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\DatabaseConnection.cs" />
-    <Compile Include="UserControl_bed.cs">
+    <Compile Include="UserControls\UserControl_bed.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl_bed.Designer.cs">
+    <Compile Include="UserControls\UserControl_bed.Designer.cs">
       <DependentUpon>UserControl_bed.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CentralDisplay.resx">
+    <EmbeddedResource Include="Forms\CentralDisplay.resx">
       <DependentUpon>CentralDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LimitsForm.resx">
+    <EmbeddedResource Include="Forms\LimitsForm.resx">
       <DependentUpon>LimitsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagementForm.resx">
+    <EmbeddedResource Include="Forms\ManagementForm.resx">
       <DependentUpon>ManagementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModulesForm.resx">
+    <EmbeddedResource Include="Forms\ModulesForm.resx">
       <DependentUpon>ModulesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonitorForm.resx">
+    <EmbeddedResource Include="Forms\MonitorForm.resx">
       <DependentUpon>MonitorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -142,25 +142,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="RandomGenerator.cs" />
-    <Compile Include="Session.cs" />
-    <Compile Include="RegistrationForm.cs">
+    <Compile Include="Classes\RandomGenerator.cs" />
+    <Compile Include="Classes\Session.cs" />
+    <Compile Include="Forms\RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrationForm.Designer.cs">
+    <Compile Include="Forms\RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff.cs" />
-    <Compile Include="StaffType.cs" />
-    <EmbeddedResource Include="LoginForm.resx">
+    <Compile Include="Classes\Staff.cs" />
+    <Compile Include="Classes\StaffType.cs" />
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrationForm.resx">
+    <EmbeddedResource Include="Forms\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_bed.resx">
+    <EmbeddedResource Include="UserControls\UserControl_bed.resx">
       <DependentUpon>UserControl_bed.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

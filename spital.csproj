@@ -161,7 +161,6 @@
     <EmbeddedResource Include="UserControls\UserControl_bed.resx">
       <DependentUpon>UserControl_bed.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,6 +175,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resources\icon_Password.png" />
   </ItemGroup>
   <ItemGroup>

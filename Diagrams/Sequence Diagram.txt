@@ -1,0 +1,20 @@
+Nurse->Central Station:Register to be notified
+Nurse<--Central Station:confirm registration
+Central Station->Central Station:store date and time
+Nurse->Bedside Monitor: Select module
+Nurse<--Bedside Monitor: Confirm module selection
+Nurse->Bedside Monitor: Select module limits
+Nurse<--Bedside Monitor: Confirm module limits selection
+Bedside Monitor->Bedside Monitor:Read patient details
+Bedside Monitor->Bedside Monitor:trigger alarm
+Bedside Monitor->Central Station:Notify with message
+Central Station->Central Station:Store date and time
+Nurse<--Central Station:Alert via SMS or pager
+Nurse->Central Station:Mute alarm
+Central Station->Central Station:Hide message
+Nurse->Bedside Monitor: Stop alarm
+Bedside Monitor->Central Station: Notify of stopped alarm
+Central Station->Central Station: Store date and time
+Nurse->Central Station: De-rigester to stop being notified
+Central Station<-Central Station: Store date and time
+Nurse<--Central Station: Confirm de-registration
